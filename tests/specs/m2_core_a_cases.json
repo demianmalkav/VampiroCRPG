@@ -1,7 +1,7 @@
 {
-  "fixture_version": "m2-a-candidate-0.2",
-  "status": "DRAFT_FOR_ARCHITECTURE_REVIEW",
-  "execution_status": "NOT_RUN",
+  "fixture_version": "m2-a-proof-profile-1",
+  "status": "APPROVED_FOR_PROOF",
+  "execution_status": "TRACKED_IN_REPORT",
   "scope": "A",
   "tick_unit": "synthetic",
   "seed": 20261009,
@@ -117,6 +117,11 @@
         "from": "location:L_REG",
         "to": "location:L_INC",
         "duration": 3
+      },
+      {
+        "from": "location:L_INC",
+        "to": "location:L_HAV",
+        "duration": 1
       }
     ],
     "known_channels": [
@@ -217,27 +222,34 @@
     },
     {
       "input_seq": 3,
+      "tick": 1,
+      "type": "StartTravel",
+      "actor": "actor:V0",
+      "to": "location:L_HAV"
+    },
+    {
+      "input_seq": 4,
       "tick": 2,
       "type": "ChangeAvailability",
       "actor": "actor:V0",
       "value": "asleep"
     },
     {
-      "input_seq": 4,
+      "input_seq": 5,
       "tick": 2,
       "type": "UnloadPresentation",
       "location": "location:L_INC",
       "domain_lifetime_unchanged": true
     },
     {
-      "input_seq": 5,
+      "input_seq": 6,
       "tick": 10,
       "type": "ChangeAvailability",
       "actor": "actor:V0",
       "value": "awake"
     },
     {
-      "input_seq": 6,
+      "input_seq": 7,
       "tick": 10,
       "type": "StartTravel",
       "actor": "actor:V0",
@@ -401,4 +413,3 @@
     "same_tick_removal_first"
   ]
 }
-
