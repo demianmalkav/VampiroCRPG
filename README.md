@@ -14,6 +14,7 @@ Python 3.12; sólo biblioteca estándar. No requiere un motor gráfico.
 - [Contrato M2](docs/M2_CAUSAL_SIMULATION_CONTRACT.md)
 - [Paquete de revisión 0.2](docs/M2_REVIEW_02.md)
 - [Especificación de aceptación](docs/M2_CORE_A_ACCEPTANCE.md)
+- [Propuesta de B: reglas y aceptación pendientes](docs/M2_CORE_B_PROPOSAL_01.md)
 - [Estado técnico](docs/TECHNICAL_STATE.md)
 - [Investigación Fallout 2](research/FALLOUT2/README.md)
 
