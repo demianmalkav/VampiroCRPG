@@ -9,6 +9,7 @@ Read these before making architecture claims from the Fallout 2 corpus:
 - `SYSTEM_MATRIX.md` — promoted subsystem findings and KEEP / MODIFY / REPLACE dispositions.
 - `DIALOGUE_TIME_PERSISTENCE.md` — targeted analysis for dialogue, simulation time, location persistence and M2 relevance.
 - `QUEUE_LIFETIME_CORRECTION.md` — mandatory correction: the global event queue is save-persistent, but map departure deliberately clears/resolves some map-bound event types, including ordinary script timers in the inspected implementation. Do not claim that every queued timer survives leaving a map.
+- `TACTICAL_ACTION_ECONOMY.md` — targeted source pass for combat rounds, AP budgeting, movement/action costs, tactical AI use, combat-time advancement and save/load behavior. Its findings are engineering evidence for later VTM reconciliation, not architecture decisions.
 
 The latest correction/narrower finding supersedes older wording when the documents conflict.
 
