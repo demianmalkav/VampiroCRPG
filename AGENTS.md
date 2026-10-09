@@ -34,6 +34,10 @@ No game code should be added until the initial research and architecture pass de
 - When direction's judgment is actually needed, explain the concrete decision, alternatives and consequences in the conversation. Control documents are continuity aids, not a substitute for that explanation.
 - Keep completion criteria, bounded retries, material checkpoints and small semantic commits. Reopen a closed phase only for a failure or new evidence.
 
+## Presentation target
+- Direction wants a Fallout-like traversable world with an avatar, world inspection and an observation text visor. The existing scene choice panel validates rules but is not an accepted game format.
+- Browser execution is permitted if it delivers that spatial experience. Do not confuse delivery technology with interaction design. Prioritize a small navigable scene over adding or polishing choice buttons.
+
 ## Definition of Done
 A feature is done only when it is implemented, tested, integrated, documented, regression-checked, and accepted by direction.
 

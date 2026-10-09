@@ -1,6 +1,6 @@
 # VampiroCRPG
 
-Repositorio técnico del proyecto. **La Noche que Recuerda** conecta una escena isométrica provisional con el núcleo causal y de supervivencia ya verificado.
+Repositorio técnico del proyecto. **La Noche que Recuerda** contiene un panel de ensayo conectado al núcleo causal y de supervivencia verificado. El objetivo sigue siendo un mundo isométrico recorrible con avatar, inspección y visor de observaciones; esa experiencia espacial todavía no está implementada.
 
 ```bash
 python3 -m proof.scene --open

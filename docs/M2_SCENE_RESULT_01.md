@@ -1,6 +1,8 @@
 # M2 — presentación mínima 01
 
-Estado: IMPLEMENTED / INTEGRATION_VERIFIED / BROWSER_LAYOUT_UNVERIFIED.
+Estado: IMPLEMENTED / INTEGRATION_VERIFIED / BROWSER_LAYOUT_UNVERIFIED / SPATIAL_GAME_EXPERIENCE_NOT_ACCEPTED.
+
+Dirección probó la inicialización y aclaró que el panel no corresponde al formato buscado: quiere recorrer un mundo con avatar e inspeccionar su entorno, con descripciones en un visor de texto. El navegador como ejecutor es aceptable; el diseño centrado en botones no constituye la experiencia objetivo. Las mediciones siguientes prueban integración de reglas, no cumplimiento del juego espacial.
 
 La escena isométrica provisional usa el núcleo A/B existente a través de un servidor Python de biblioteca estándar, limitado a loopback. HTML/CSS/canvas presentan información y envían decisiones; no calculan sangre, Bestia, voluntad, moralidad o investigación. No se instaló Godot ni se eligió motor de producción.
 
@@ -33,6 +35,6 @@ La experiencia, ritmo y balance siguen sin aceptación de dirección por prácti
 
 ## Continuidad
 
-NEXT: verificar esta presentación en un navegador real y probar ambas decisiones; corregir sólo fallos observados. Mantener la autoridad A/B separada. Después acordar un incremento jugable pequeño para ítems/edición o navegación; antes de escogerlo, explicar qué experiencia queremos comprobar. No instalar ni fijar motor de producción por esta prueba.
+NEXT corregido por dirección: priorizar una microescena recorrible con avatar, obstáculos/rutas, inspección de personas/objetos y visor de observaciones. Definir su autoridad espacial y vincular alimentación/acciones al contacto alcanzable. El panel actual queda como arnés de reglas. Mantener A/B y sus mediciones intactos; no fijar motor de producción por esta corrección.
 
 [Ejecución](../proof/scene/README.md) · [Núcleo B verificado](M2_CORE_B_RESULT_01.md).
