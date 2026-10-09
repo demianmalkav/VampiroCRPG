@@ -1,7 +1,7 @@
 # M2 núcleo A — especificación de aceptación
 
-Status: DRAFT FOR ARCHITECTURE REVIEW  
-Runtime results: NOT RUN. Fixtures validated statically are not acceptance tests passed.
+Status: APPROVED FOR PROOF; EXECUTED IN PYTHON PROTOTYPE  
+Runtime results: NQR-01–09 / F-01–07 PASS. [Resultado y límites](M2_CORE_A_RESULT_01.md). Fixtures validated statically are not acceptance tests passed.
 
 ## Protocolo común
 
@@ -9,7 +9,7 @@ Cada ensayo carga un mundo nuevo con versiones explícitas de contrato/perfil, s
 
 Aplicar overrides antes de inicializar. Las salidas esperadas se evalúan mediante queries de prueba; no se insertan en el mundo como instrucciones de resultado. Los labels de objetos derivados del JSON permiten identificar resultados del harness; su sintaxis no es un formato publicado de save.
 
-El runner futuro debe construir el estado, registrar inputs, avanzar ticks mediante el scheduler y obtener actual/expected con causa del desacuerdo. Ningún ensayo pasa por sólo existir el objeto JSON. Error de fixture es distinto de fallo de simulación.
+El runner construye el estado, registra inputs, avanza ticks mediante el scheduler y compara actual/expected. Ningún ensayo pasa por sólo existir el objeto JSON. Error de fixture es distinto de fallo de simulación.
 
 ## Entradas finitas y procedimientos
 
@@ -125,7 +125,7 @@ NQR-10: transacción de sangre y lesión sellada; NQR-11: Bestia y pago de acci�
 
 ## Criterio de aprobación y reporte
 
-Runner futuro debe reportar por ensayo: contrato/perfiles, seed/inputs, checkpoint, actual/expected, primer evento divergente y causas. A se acepta al pasar NQR-01–09 y F-01–07 en runtime implementado. Validación estática de JSON/documentos se informa aparte.
+El runner reporta contrato/perfil, seed/inputs, actual/expected, hash de estado, tests y traceback de fallos. El test de continuidad compara snapshots en cada commit; una aserción identifica el desacuerdo y la traza permite recorrer causas. NQR-01–09 y F-01–07 pasaron en el runtime implementado. No hay depurador interactivo de divergencias o rendimiento de producción certificado.
 
 La revisión conserva AT-01–18 a través de la matriz de correspondencia del contrato. No transforma 18 + 9 + 7 en treinta y cuatro features ni interpreta recuentos como profundidad lograda.
 

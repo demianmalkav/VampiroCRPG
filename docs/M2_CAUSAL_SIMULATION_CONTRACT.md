@@ -1,7 +1,7 @@
 # M2 Causal Simulation Contract — La Noche que Recuerda
 
-Status: DRAFT FOR ARCHITECTURE REVIEW — revision 0.2 candidate  
-Implementation status: no simulation/gameplay code; no M2 acceptance test executed.  
+Status: APPROVED FOR CORE A PROOF — revision 0.2; D-011 registrada.  
+Implementation status: núcleo Python sin gráficos implementado; NQR-01–09 y F-01–07 ejecutados. Véase [resultado](M2_CORE_A_RESULT_01.md).  
 Scope authority: [Reconciliación de alcance 01](https://docs.google.com/document/d/1GbWEeyIQvvoVT-ohiAIQkQ-uSZypaU3deCQPWOXHdow/edit).
 
 ## 1. Objetivo y límite
@@ -10,7 +10,7 @@ Demostrar la cadena hecho → observación → memoria/creencia → transmisión
 
 Esta revisión precisa el núcleo A de la propuesta 01–14. La alimentación ya resuelta entra como dato de prueba; no existe todavía una implementación de alimentación o de una Disciplina. La etapa B agregará sangre, víctima, hambre, Bestia, voluntad y moralidad mediante sus dueños reales. Combate, AP, política Kindred, ghoul completo, Vínculo dinámico y poderes canónicos se difieren a C.
 
-Los términos MUST/DEBE indican obligaciones de la propuesta, no arquitectura aprobada. Ningún archivo de esta revisión es un esquema de guardado en producción. No se elige engine, lenguaje del juego, ECS, base de datos o tecnología de serialización.
+Los términos MUST/DEBE indican obligaciones aprobadas para la prueba A. El entorno de ensayo usa Python 3.12, biblioteca estándar y snapshot JSON interno versionado. Ningún archivo es un esquema de guardado en producción. No se elige engine, lenguaje del juego, ECS o base de datos.
 
 ## 2. Disposición del corpus Fallout
 
@@ -128,7 +128,7 @@ Una cancelación WORLD_PROCESS requiere evento/causa y resultado persistente can
 
 Contrato de contenido del snapshot: versiones de contrato/perfiles/save; tick; ID allocator; enqueue_seq; contador del tick; input cursor; receipts; Actor/Location/Device; personas; eventos/causas; observations/propositions/beliefs/memories; relaciones; records/evidence/custodia/copia; mensajes; institución; procesos; cola WORLD_PROCESS; estado RNG.
 
-El formato de snapshot no se elige aquí. No se implementa migración en A: una versión incompatible se rechaza expresamente. Diseñar migraciones para una versión publicada será trabajo posterior aprobado.
+La implementación de ensayo usa el formato interno m2-proof-json-1, sin promesa de compatibilidad de saves del juego. No se implementa migración en A: una versión incompatible se rechaza expresamente. Diseñar migraciones para una versión publicada será trabajo posterior aprobado.
 
 Carga en staging: leer entidades; validar IDs/versiones/referencias/causas; reconstruir índices; restaurar cola exacta, contadores y RNG; publicar estado completo. Un error deja intacto el mundo ya cargado, sin reparar destinos ni eliminar registros en silencio.
 
@@ -140,7 +140,7 @@ Comparación de ensayo: igualdad semántica de estado ordenado y log de dominio,
 
 ## 12. Secuencia A y observación del resultado
 
-Baseline: t0 incidente resuelto; t1 encargo; t2 sueño y descarga de presentación; t3 testimonio/submisión; t4 copia; t5 llegada; t6 retirada; t7 informe; t8 revisión; t9 planificación de visita; t10 despertar/recepción.
+Baseline: t0 incidente resuelto; t1 encargo y viaje explícito de V0 L_INC → L_HAV; t2 llegada al refugio, sueño y descarga de presentación; t3 testimonio/submisión; t4 copia; t5 llegada; t6 retirada; t7 informe; t8 revisión; t9 planificación de visita; t10 despertar/recepción.
 
 Compleción del descubrimiento: V0 puede viajar L_HAV → L_INC con duración de un tick desde t10. La planificación en t9 inicia el desplazamiento de I1 desde L_REG, cuya ruta dura tres ticks; su llegada permite la indagación visible sobre el alias en t12. Si V0 está presente y percibe esa interacción, obtiene una nueva observación/claim. No recibe el contenido de un expediente privado ni todo el historial de I1. Programar una visita no teletransporta al investigador.
 
@@ -173,15 +173,15 @@ Los dieciocho AT-01–18 de 0.1 se conservan como obligaciones. Su correspondenc
 | AT-12 | NQR-06: rastro de intervención |
 | AT-17 | F-03: descarte exclusivamente visual |
 
-Estado de todos los ensayos de simulación: ESPECIFICADOS, NO EJECUTADOS. Validar sintaxis o referencias de un fixture no prueba sus consecuencias de runtime.
+Estado: NQR-01–09 y F-01–07 EJECUTADOS/PASS en el runtime de ensayo, cubiertos por 29 tests. NQR-10–12 siguen diferidos a B. El [informe](../tests/results/m2_core_a_run.json) contiene ejecución real; validar datos no prueba sus consecuencias.
 
 ## 15. Puerta de revisión y siguientes decisiones
 
 Se mantienen los ocho compromisos de revisión de 0.1: conocimiento particular y con procedencia; scheduling que sobrevive descarga; IDs persistentes/referencias reconstruibles; futuro causal guardado; ausencia de misión escalar como sustituto; relaciones multidimensionales; separación escena/mundo; ensayos headless antes de la presentación.
 
-La decisión pedida es aprobar o corregir este núcleo A y sus reglas de orden/commit/persistencia como base para el primer prototipo headless. No incluye autorización para elegir silenciosamente toda la tecnología o programar B/C con reglas abiertas.
+Dirección autorizó este núcleo A y sus reglas de orden/commit/persistencia para el primer prototipo headless, registrado en D-011. No incluye autorización para elegir silenciosamente toda la tecnología o programar B/C con reglas abiertas.
 
-Después: seleccionar el runtime/lenguaje y runner mínimo conforme al entorno objetivo; registrar aceptación en Drive; escribir núcleo A y ejecutar NQR-01–09/F-01–07. Sin esa aceptación, esta revisión permanece documental y los archivos de prueba siguen siendo especificaciones.
+Realizado: entorno Python/biblioteca estándar; aceptación registrada; núcleo y runner implementados; ensayos ejecutados. Sigue abierta la revisión del comportamiento y las decisiones de B. No se instaló ni fijó Godot.
 
 NEEDS_DECISION antes de B: gasto de despertar, perfil de alimentación, cadencia/terminación de Bestia, regla moral mínima, ventana lúcida, voluntad/recuperación, RNG y unidades de tiempo. No bloquean la revisión de A.
 
@@ -189,5 +189,5 @@ NEEDS_DECISION antes de B: gasto de despertar, perfil de alimentación, cadencia
 
 Autoridades: [AGENTS.md](../AGENTS.md); [reconciliación 01](https://docs.google.com/document/d/1GbWEeyIQvvoVT-ohiAIQkQ-uSZypaU3deCQPWOXHdow/edit); [Readiness 02](https://docs.google.com/document/d/1CwQjBfdCBV50V0dULWe-0D_xylWhP-dFOcM7xEzuiqk/edit); [matriz Fallout](../research/FALLOUT2/SYSTEM_MATRIX.md) y [corrección de cola](../research/FALLOUT2/QUEUE_LIFETIME_CORRECTION.md). Reglas exactas de supervivencia siguen en Traducciones 01/02/03/08/11 y sus fuentes.
 
-No nueva dependencia, engine, game code o esquema publicado de save. La revisión especifica comportamiento y prepara datos de ensayo para una implementación posterior.
+Sin dependencias externas, engine gráfico o esquema publicado de save. Hay código de ensayo separado del futuro runtime del juego; B/C siguen fuera del alcance implementado.
 

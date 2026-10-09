@@ -1,0 +1,746 @@
+{
+  "status": "PASS",
+  "runtime": "m2-python-proof-1",
+  "contract": "m2-a-0.2",
+  "profile": "m2-a-proof-profile-1",
+  "python": "3.12.14",
+  "generated_at_utc": "2026-10-09T04:57:35.587657+00:00",
+  "command": "python3 -m proof.m2 --suite --report tests/results/m2_core_a_run.json",
+  "tests_run": 29,
+  "failures": 0,
+  "errors": 0,
+  "snapshot_comparison": "semantic JSON at every atomic boundary, before and after save/load",
+  "canonicalization": "UTF-8 JSON; sorted object keys; preserved list order; SHA-256",
+  "test_results": [
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F01_same_tick_copy_first",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F02_same_tick_removal_first",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F03_presentation_discard_keeps_world_work",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F04_work_limit_is_persistent_and_preserves_pending_work",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F05_invalid_load_preserves_previous_world",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F06_replay_and_pure_queries",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F07_original_copy_and_grants_have_separate_authority",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_cancel_after_removal_does_not_resurrect_evidence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_incident_injection_is_not_a_player_command",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_invalid_json_profile_and_duplicate_keys_fail_without_publication",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_transaction_rollback_includes_clock_resources_receipts_and_queue",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR01_direct_observation_and_transformed_hearsay",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR02_camera_only_and_authorized_alias_matching",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR02_no_channels_no_omniscient_case",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR02_witness_only",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR03_late_cleanup_and_causes",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR04_early_removal_preserves_testimony",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_denied_access_and_missing_information",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_idempotency_after_save_and_collision",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_insufficient_resources_and_expired_deadline",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_revalidate_availability_and_permission_at_action",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR06_cleanup_access_trace_is_acquired",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR07_inaccessible_record_denies_content_without_effects",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR07_refusal_to_report_and_independent_video",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR08_all_cases_equal_at_every_commit_before_and_after_reload",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR08_visit_is_pending_at_save_and_arrives_later",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR09_causal_explanations_and_player_projection",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR09_world_consequence_without_player_discovery",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_unavailable_agent_cannot_report_until_reactivated",
+      "status": "PASS"
+    }
+  ],
+  "coverage": {
+    "NQR-01": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR01_direct_observation_and_transformed_hearsay"
+      ]
+    },
+    "NQR-02": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR02_camera_only_and_authorized_alias_matching",
+        "test_m2_core_a.CoreAcceptance.test_NQR02_no_channels_no_omniscient_case",
+        "test_m2_core_a.CoreAcceptance.test_NQR02_witness_only"
+      ]
+    },
+    "NQR-03": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR03_late_cleanup_and_causes"
+      ]
+    },
+    "NQR-04": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR04_early_removal_preserves_testimony"
+      ]
+    },
+    "NQR-05": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR05_denied_access_and_missing_information",
+        "test_m2_core_a.CoreAcceptance.test_NQR05_idempotency_after_save_and_collision",
+        "test_m2_core_a.CoreAcceptance.test_NQR05_insufficient_resources_and_expired_deadline",
+        "test_m2_core_a.CoreAcceptance.test_NQR05_revalidate_availability_and_permission_at_action"
+      ]
+    },
+    "NQR-06": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR06_cleanup_access_trace_is_acquired"
+      ]
+    },
+    "NQR-07": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR07_inaccessible_record_denies_content_without_effects",
+        "test_m2_core_a.CoreAcceptance.test_NQR07_refusal_to_report_and_independent_video"
+      ]
+    },
+    "NQR-08": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR08_all_cases_equal_at_every_commit_before_and_after_reload",
+        "test_m2_core_a.CoreAcceptance.test_NQR08_visit_is_pending_at_save_and_arrives_later"
+      ]
+    },
+    "NQR-09": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR09_causal_explanations_and_player_projection",
+        "test_m2_core_a.CoreAcceptance.test_NQR09_world_consequence_without_player_discovery"
+      ]
+    },
+    "F-01": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F01_same_tick_copy_first"
+      ]
+    },
+    "F-02": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F02_same_tick_removal_first"
+      ]
+    },
+    "F-03": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F03_presentation_discard_keeps_world_work"
+      ]
+    },
+    "F-04": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F04_work_limit_is_persistent_and_preserves_pending_work"
+      ]
+    },
+    "F-05": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F05_invalid_load_preserves_previous_world"
+      ]
+    },
+    "F-06": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F06_replay_and_pure_queries"
+      ]
+    },
+    "F-07": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F07_original_copy_and_grants_have_separate_authority"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "case": "late_copy",
+      "status": "PASS",
+      "seed": 20261009,
+      "overrides": [],
+      "tick": 12,
+      "actual": {
+        "original_available": false,
+        "copy_exists": true,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT",
+          "record:REC_COPY"
+        ],
+        "task_terminal": "completed",
+        "g1_budget": 1,
+        "g1_reservation": 0,
+        "result_message": "removed_original_no_other_copy_observed",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      },
+      "expected": {
+        "original_available": false,
+        "copy_exists": true,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT",
+          "record:REC_COPY"
+        ],
+        "task_terminal": "completed",
+        "g1_budget": 1,
+        "g1_reservation": 0,
+        "result_message": "removed_original_no_other_copy_observed",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      },
+      "state_sha256": "8626b15238600bd68e2aae9454aa2612a829bc9192df88cc6fdee58906b25a9f",
+      "domain_events": 43,
+      "pending_work": 0,
+      "inputs": [
+        {
+          "input_seq": 1,
+          "tick": 0,
+          "type": "InjectResolvedIncident",
+          "source": "actor:V0",
+          "location": "location:L_INC",
+          "victim": "actor:M0",
+          "resolved_features": [
+            "visible_fangs",
+            "anomalous_contact"
+          ],
+          "excluded_hidden_fields": [
+            "blood",
+            "clan",
+            "intent"
+          ],
+          "record_label": "record:REC_ORIG"
+        },
+        {
+          "input_seq": 2,
+          "tick": 1,
+          "type": "SendMessage",
+          "sender": "actor:V0",
+          "recipient": "actor:G1",
+          "channel": "phone",
+          "directive": {
+            "task": "remove_original",
+            "target_selector": {
+              "record_kind": "video",
+              "source_device": "device:D_CAM",
+              "captured_tick": 0
+            },
+            "office": "location:L_REG",
+            "grant_reference": "grant:ORIGINAL_ACCESS",
+            "deadline_tick": 7,
+            "does_not_disclose": [
+              "record:REC_COPY"
+            ]
+          }
+        },
+        {
+          "input_seq": 3,
+          "tick": 1,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_HAV"
+        },
+        {
+          "input_seq": 4,
+          "tick": 2,
+          "type": "ChangeAvailability",
+          "actor": "actor:V0",
+          "value": "asleep"
+        },
+        {
+          "input_seq": 5,
+          "tick": 2,
+          "type": "UnloadPresentation",
+          "location": "location:L_INC",
+          "domain_lifetime_unchanged": true
+        },
+        {
+          "input_seq": 6,
+          "tick": 10,
+          "type": "ChangeAvailability",
+          "actor": "actor:V0",
+          "value": "awake"
+        },
+        {
+          "input_seq": 7,
+          "tick": 10,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_INC",
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "case": "early_removal",
+      "status": "PASS",
+      "seed": 20261009,
+      "overrides": [
+        {
+          "path": "world.routes.0.duration",
+          "value": 1
+        }
+      ],
+      "tick": 12,
+      "actual": {
+        "original_available": false,
+        "copy_exists": false,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT"
+        ],
+        "task_terminal": "completed",
+        "g1_budget": 1,
+        "g1_reservation": 0,
+        "result_message": "removed_original_no_other_copy_observed",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      },
+      "expected": {
+        "original_available": false,
+        "copy_exists": false,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT"
+        ],
+        "task_terminal": "completed",
+        "g1_budget": 1,
+        "g1_reservation": 0,
+        "result_message": "removed_original_no_other_copy_observed",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      },
+      "state_sha256": "bc3739d6da8c3707a2fac4ae68c4f85ea282c1cd6cd604361bff13fea283d00f",
+      "domain_events": 42,
+      "pending_work": 0,
+      "inputs": [
+        {
+          "input_seq": 1,
+          "tick": 0,
+          "type": "InjectResolvedIncident",
+          "source": "actor:V0",
+          "location": "location:L_INC",
+          "victim": "actor:M0",
+          "resolved_features": [
+            "visible_fangs",
+            "anomalous_contact"
+          ],
+          "excluded_hidden_fields": [
+            "blood",
+            "clan",
+            "intent"
+          ],
+          "record_label": "record:REC_ORIG"
+        },
+        {
+          "input_seq": 2,
+          "tick": 1,
+          "type": "SendMessage",
+          "sender": "actor:V0",
+          "recipient": "actor:G1",
+          "channel": "phone",
+          "directive": {
+            "task": "remove_original",
+            "target_selector": {
+              "record_kind": "video",
+              "source_device": "device:D_CAM",
+              "captured_tick": 0
+            },
+            "office": "location:L_REG",
+            "grant_reference": "grant:ORIGINAL_ACCESS",
+            "deadline_tick": 7,
+            "does_not_disclose": [
+              "record:REC_COPY"
+            ]
+          }
+        },
+        {
+          "input_seq": 3,
+          "tick": 1,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_HAV"
+        },
+        {
+          "input_seq": 4,
+          "tick": 2,
+          "type": "ChangeAvailability",
+          "actor": "actor:V0",
+          "value": "asleep"
+        },
+        {
+          "input_seq": 5,
+          "tick": 2,
+          "type": "UnloadPresentation",
+          "location": "location:L_INC",
+          "domain_lifetime_unchanged": true
+        },
+        {
+          "input_seq": 6,
+          "tick": 10,
+          "type": "ChangeAvailability",
+          "actor": "actor:V0",
+          "value": "awake"
+        },
+        {
+          "input_seq": 7,
+          "tick": 10,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_INC",
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "case": "denied_access",
+      "status": "PASS",
+      "seed": 20261009,
+      "overrides": [
+        {
+          "path": "world.grant.enabled",
+          "value": false
+        }
+      ],
+      "tick": 12,
+      "actual": {
+        "original_available": true,
+        "copy_exists": true,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT",
+          "record:REC_COPY"
+        ],
+        "task_terminal": "blocked",
+        "g1_budget": 1,
+        "g1_reservation": 0,
+        "result_message": "access_denied",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      },
+      "expected": {
+        "original_available": true,
+        "copy_exists": true,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT",
+          "record:REC_COPY"
+        ],
+        "task_terminal": "blocked",
+        "g1_budget": 1,
+        "g1_reservation": 0,
+        "result_message": "access_denied",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      },
+      "state_sha256": "3942781a7f6882121db8e2f3e512e30de232d7008f3734a85a485142cc80b01c",
+      "domain_events": 41,
+      "pending_work": 0,
+      "inputs": [
+        {
+          "input_seq": 1,
+          "tick": 0,
+          "type": "InjectResolvedIncident",
+          "source": "actor:V0",
+          "location": "location:L_INC",
+          "victim": "actor:M0",
+          "resolved_features": [
+            "visible_fangs",
+            "anomalous_contact"
+          ],
+          "excluded_hidden_fields": [
+            "blood",
+            "clan",
+            "intent"
+          ],
+          "record_label": "record:REC_ORIG"
+        },
+        {
+          "input_seq": 2,
+          "tick": 1,
+          "type": "SendMessage",
+          "sender": "actor:V0",
+          "recipient": "actor:G1",
+          "channel": "phone",
+          "directive": {
+            "task": "remove_original",
+            "target_selector": {
+              "record_kind": "video",
+              "source_device": "device:D_CAM",
+              "captured_tick": 0
+            },
+            "office": "location:L_REG",
+            "grant_reference": "grant:ORIGINAL_ACCESS",
+            "deadline_tick": 7,
+            "does_not_disclose": [
+              "record:REC_COPY"
+            ]
+          }
+        },
+        {
+          "input_seq": 3,
+          "tick": 1,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_HAV"
+        },
+        {
+          "input_seq": 4,
+          "tick": 2,
+          "type": "ChangeAvailability",
+          "actor": "actor:V0",
+          "value": "asleep"
+        },
+        {
+          "input_seq": 5,
+          "tick": 2,
+          "type": "UnloadPresentation",
+          "location": "location:L_INC",
+          "domain_lifetime_unchanged": true
+        },
+        {
+          "input_seq": 6,
+          "tick": 10,
+          "type": "ChangeAvailability",
+          "actor": "actor:V0",
+          "value": "awake"
+        },
+        {
+          "input_seq": 7,
+          "tick": 10,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_INC",
+          "duration": 1
+        }
+      ]
+    },
+    {
+      "case": "insufficient_directive",
+      "status": "PASS",
+      "seed": 20261009,
+      "overrides": [
+        {
+          "path": "external_inputs.1.directive.office",
+          "value": null
+        }
+      ],
+      "tick": 12,
+      "actual": {
+        "original_available": true,
+        "copy_exists": true,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT",
+          "record:REC_COPY"
+        ],
+        "task_terminal": "blocked",
+        "g1_budget": 2,
+        "g1_reservation": 0,
+        "result_message": "missing_office_information",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      },
+      "expected": {
+        "original_available": true,
+        "copy_exists": true,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT",
+          "record:REC_COPY"
+        ],
+        "task_terminal": "blocked",
+        "g1_budget": 2,
+        "g1_reservation": 0,
+        "result_message": "missing_office_information",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      },
+      "state_sha256": "eaa20d577173f195716005928b5e3c6f004d86e90e2f9984aee555acde6451e6",
+      "domain_events": 37,
+      "pending_work": 0,
+      "inputs": [
+        {
+          "input_seq": 1,
+          "tick": 0,
+          "type": "InjectResolvedIncident",
+          "source": "actor:V0",
+          "location": "location:L_INC",
+          "victim": "actor:M0",
+          "resolved_features": [
+            "visible_fangs",
+            "anomalous_contact"
+          ],
+          "excluded_hidden_fields": [
+            "blood",
+            "clan",
+            "intent"
+          ],
+          "record_label": "record:REC_ORIG"
+        },
+        {
+          "input_seq": 2,
+          "tick": 1,
+          "type": "SendMessage",
+          "sender": "actor:V0",
+          "recipient": "actor:G1",
+          "channel": "phone",
+          "directive": {
+            "task": "remove_original",
+            "target_selector": {
+              "record_kind": "video",
+              "source_device": "device:D_CAM",
+              "captured_tick": 0
+            },
+            "office": null,
+            "grant_reference": "grant:ORIGINAL_ACCESS",
+            "deadline_tick": 7,
+            "does_not_disclose": [
+              "record:REC_COPY"
+            ]
+          }
+        },
+        {
+          "input_seq": 3,
+          "tick": 1,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_HAV"
+        },
+        {
+          "input_seq": 4,
+          "tick": 2,
+          "type": "ChangeAvailability",
+          "actor": "actor:V0",
+          "value": "asleep"
+        },
+        {
+          "input_seq": 5,
+          "tick": 2,
+          "type": "UnloadPresentation",
+          "location": "location:L_INC",
+          "domain_lifetime_unchanged": true
+        },
+        {
+          "input_seq": 6,
+          "tick": 10,
+          "type": "ChangeAvailability",
+          "actor": "actor:V0",
+          "value": "awake"
+        },
+        {
+          "input_seq": 7,
+          "tick": 10,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_INC",
+          "duration": 1
+        }
+      ]
+    }
+  ],
+  "deferred": {
+    "NQR-10": "NOT_IMPLEMENTED_STAGE_B",
+    "NQR-11": "NOT_IMPLEMENTED_STAGE_B",
+    "NQR-12": "NOT_IMPLEMENTED_STAGE_B"
+  }
+}

@@ -1,33 +1,31 @@
-# M2 revision 0.2 — revisión concreta de arquitectura
+# M2 revision 0.2 — revisión e implementación del núcleo A
 
-Status: PROPOSED / NEEDS DIRECTOR ACCEPTANCE  
-No game code added; no simulation acceptance test run.
+Status: APPROVED FOR CORE A PROOF / IMPLEMENTED  
+Dirección autorizó la prueba sin gráficos; D-011 registrada. [Resultados reales](M2_CORE_A_RESULT_01.md).
 
-## Qué cambia frente a 0.1
+## Alcance aceptado
 
-El contrato conserva las ocho obligaciones de mundo persistente, pero reduce el primer ensayo al núcleo A de la reconciliación 01–14. Son seis actores, tres lugares, un encargo y un caso. G1 es mortal; alimentación entra ya resuelta. Sangre/Bestia/voluntad/moralidad se agregan en B; combate/poderes/política completa esperan C.
+Se mantienen las ocho obligaciones de mundo persistente. El núcleo A de la reconciliación 01–14 usa seis actores, tres lugares, un encargo y un caso. G1 es mortal; alimentación entra resuelta. Sangre/Bestia/voluntad/moralidad esperan B; combate/poderes/política completa esperan C.
 
-Se precisan orden (due_tick, enqueue_seq), commits indivisibles, receipts idempotentes, límites de trabajo en un tick, carga validada y canales explícitos de acceso. Caso e informes pueden continuar aunque el original desaparezca. Lo que el jugador descubre y lo que ya hizo el mundo son estados diferentes.
+Se implementaron orden (due_tick, enqueue_seq), commits indivisibles, receipts idempotentes, límite de handlers, carga validada y acceso explícito. Caso e informes pueden continuar aunque el original desaparezca; descubrirlos es otro cambio de estado.
 
-## Decisión para dirección
+## Decisión y revisión
 
-Aprobar este núcleo A como base del primer prototipo headless, o señalar correcciones a su alcance/comportamiento. La aceptación comprende las ocho obligaciones de 0.1 y la política candidata de scheduler/commit/save de 0.2. No elige automáticamente engine/lenguaje ni cierra los pendientes de B.
-
-La revisión no equivale a aprobar una implementación inexistente. Un merge de documentación tampoco debe cambiar por sí solo NEEDS DIRECTOR ACCEPTANCE a ACCEPTED; la decisión debe quedar registrada en Drive.
+La autorización explícita comprende las obligaciones de 0.1 y el núcleo 0.2 para este prototipo. Se eligió Python/biblioteca estándar como entorno de ensayo. La aceptación no procede de un merge ni elige el lenguaje o motor del juego. Los tests PASS demuestran el alcance de prueba; no equivalen a aceptación del juego completo.
 
 ## Material para revisar
 
-- [Contrato candidato](M2_CAUSAL_SIMULATION_CONTRACT.md).
+- [Contrato](M2_CAUSAL_SIMULATION_CONTRACT.md).
 - [Ensayos y fronteras](M2_CORE_A_ACCEPTANCE.md).
-- [Cuatro fixtures declarativos](../tests/specs/m2_core_a_cases.json).
+- [Ejecución y comandos](../proof/README.md).
+- [Informe JSON](../tests/results/m2_core_a_run.json).
+- [Traza baseline](../tests/results/late_copy_trace.json).
 - [Alcance de diseño](https://docs.google.com/document/d/1GbWEeyIQvvoVT-ohiAIQkQ-uSZypaU3deCQPWOXHdow/edit).
-- [Corrección Fallout que condiciona el scheduler](../research/FALLOUT2/QUEUE_LIFETIME_CORRECTION.md).
+- [Corrección Fallout](../research/FALLOUT2/QUEUE_LIFETIME_CORRECTION.md).
 
-## Verificación de este cambio
+## Verificación y próximo paso
 
-Se valida JSON, unicidad de actores/entradas/casos, localizaciones y rutas, orden de inputs, existencia de paths de overrides, campos requeridos y cobertura documental de ensayos. No se ejecuta la simulación porque aún no existe. Las expectativas JSON permanecen NOT_RUN.
+Se ejecutaron 29 tests y cuatro escenarios, incluyendo continuidad en cada commit antes/después de Save/Load, cargas inválidas, rollback, acceso y orden simultáneo. Se corrigió el regreso al refugio que faltaba como input en el fixture candidato. Informe y traza versionados.
 
-## Después de aprobación
-
-Registrar decisión; escoger runtime/runner mínimo para A; implementar núcleo y ensayos; contrastar estados continuos con guardado/carga; diagnosticar causas; recién luego cerrar B e integrar presentación mínima. No producción masiva antes de esa validación.
+NEXT: revisar resultados y cerrar el perfil mínimo de B (sangre, hambre/Bestia y moralidad) antes de implementarlo. Presentación y producción masiva posteriores.
 
