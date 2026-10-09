@@ -2,8 +2,7 @@ name: Walk proof
 on:
   push:
     branches: ['proof/m2-walk-01']
-  pull_request:
-    branches: ['proof/m2-scene-01']
+    paths-ignore: ['docs/**', 'README.md']
 permissions:
   contents: read
 jobs:
@@ -20,14 +19,40 @@ jobs:
           python -m pip install bpy==4.5.14 Pillow==11.3.0
           npm install --no-save playwright@1.56.1
           npx playwright install --with-deps chromium
+      - name: Restore unchanged art exports
+        id: art-cache
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            assets/walk/generated
+            assets/walk/source/*.blend
+            assets/walk/source/variant
+          key: walk-art-${{ runner.os }}-${{ hashFiles('tools/art/build_walk.py', 'assets/walk/source/*.json') }}
       - name: Render common source models and eight-direction walk
+        if: steps.art-cache.outputs.cache-hit != 'true'
         run: python tools/art/build_walk.py > art-build.log 2>&1
       - name: Regenerate coat variant from material edit
+        if: steps.art-cache.outputs.cache-hit != 'true'
         env:
           WALK_STYLE: assets/walk/source/style_variant.json
           WALK_OUT: assets/walk/generated/variant
           WALK_SOURCE: assets/walk/source/variant
         run: python tools/art/build_walk.py -- player > art-variant.log 2>&1
+      - name: Preserve regenerated art before gameplay checks
+        if: steps.art-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            assets/walk/generated
+            assets/walk/source/*.blend
+            assets/walk/source/variant
+          key: ${{ steps.art-cache.outputs.cache-primary-key }}
+      - name: Upload editable art and exports
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: Walk-art-source
+          path: assets/walk/
+          retention-days: 90
       - name: Unit regression and spatial contracts
         run: python -m unittest discover -s tests -v > qa/walk/unit-results.txt 2>&1
       - name: Sprite coherence and actual browser walkthrough
