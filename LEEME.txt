@@ -1,0 +1,28 @@
+EL PASAJE — MUESTRA RECORRIBLE 01
+
+1. Descomprimí toda la carpeta.
+2. Con Python 3.11 o posterior instalado, abrí iniciar-pasaje.cmd.
+   En macOS/Linux: python3 -m proof.walk --open
+3. Se abrirá el navegador en http://127.0.0.1:8766
+   Mantené abierta la consola. Ctrl+C cierra la partida.
+
+Objetivo: encontrá tu llave y entrá al refugio.
+Clic en suelo: caminar. Clic en objeto/persona: acercarte y actuar.
+Clic derecho: mirar; leé el visor de abajo.
+I abre inventario. Esc detiene el recorrido.
+Guardar descarga la partida; Cargar permite retomarla.
+
+No abras index.html directamente: necesita el servidor local.
+Si el puerto está ocupado, cerrá otra copia o usá:
+python -m proof.walk --port 8767 --open
+
+Los gráficos son una base inicial, todavía simple. Se incluyen modelos
+editables .blend y la receta de exportación para ampliar el arte coherentemente.
+Blender no hace falta para jugar. Sólo se necesita para modificar/regenerar arte.
+
+Vestuario de prueba alternativo:
+http://127.0.0.1:8766/?look=variant
+Cambia el abrigo exportado; conserva la misma partida.
+
+La muestra no integra todavía alimentación, combate, frenesí ni campañas.
+La prueba anterior de reglas permanece separada.

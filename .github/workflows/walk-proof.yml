@@ -1,0 +1,58 @@
+name: Walk proof
+on:
+  push:
+    branches: ['proof/m2-walk-01']
+  pull_request:
+    branches: ['proof/m2-scene-01']
+permissions:
+  contents: read
+jobs:
+  build-test-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.11'
+      - name: Authoring and browser QA dependencies
+        run: |
+          python -m pip install bpy==4.5.14 Pillow==11.3.0
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Render common source models and eight-direction walk
+        run: python tools/art/build_walk.py > art-build.log 2>&1
+      - name: Regenerate coat variant from material edit
+        env:
+          WALK_STYLE: assets/walk/source/style_variant.json
+          WALK_OUT: assets/walk/generated/variant
+          WALK_SOURCE: assets/walk/source/variant
+        run: python tools/art/build_walk.py -- player > art-variant.log 2>&1
+      - name: Unit regression and spatial contracts
+        run: python -m unittest discover -s tests -v > qa/walk/unit-results.txt 2>&1
+      - name: Sprite coherence and actual browser walkthrough
+        env:
+          PYTHONPATH: .
+        run: |
+          python qa/walk/check_art.py
+          python qa/walk/check_browser.py
+      - name: Package and start extracted bundle
+        run: python qa/walk/package.py
+      - name: Upload playable folder
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: El-pasaje-muestra-01
+          path: dist/
+          retention-days: 90
+      - name: Preserve QA evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: Walk-proof-evidence
+          path: |
+            qa/walk/*.png
+            qa/walk/*.json
+            qa/walk/unit-results.txt
+            art-build.log
+            art-variant.log
+          retention-days: 90
