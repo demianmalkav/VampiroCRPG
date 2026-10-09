@@ -1,0 +1,14 @@
+{
+  "status": "APPROVED_FOR_PROOF",
+  "profile": "m2-b-proof-profile-1",
+  "notice": "Expected endpoints stay in the runner; they never enter the simulation authority.",
+  "cases": [
+    {"id":"conservative","until":86460,"expected":{"blood":3,"victim_blood":8,"victim_condition":"no_emergency","punctures_open":false,"willpower":5,"humanity":7,"conscience":3,"governance":"NORMAL","moral_incidents":1,"evaluations":1,"moral_levels":[8],"trauma_pending":0},"public_expected":{"original_available":false,"copy_exists":true,"task_terminal":"completed","v0_knows_copy":false,"visit_fired_tick":86460,"v0_observed_alias_inquiry":true}},
+    {"id":"lethal","until":30,"expected":{"blood":10,"victim_blood":0,"victim_condition":"dead","punctures_open":true,"willpower":5,"humanity":6,"conscience":3,"governance":"NORMAL","moral_incidents":1,"evaluations":1,"moral_levels":[4],"trauma_pending":0}},
+    {"id":"lucid_escape","until":30,"expected":{"blood":5,"victim_blood":5,"victim_condition":"medical_emergency","punctures_open":true,"willpower":4,"humanity":7,"conscience":3,"governance":"NORMAL","moral_incidents":1,"evaluations":1,"moral_levels":[8],"trauma_pending":0}},
+    {"id":"botch","until":30,"expected":{"blood":10,"victim_blood":0,"victim_condition":"dead","punctures_open":true,"willpower":5,"humanity":6,"conscience":2,"governance":"NORMAL","moral_incidents":1,"evaluations":1,"moral_levels":[4],"trauma_pending":1}},
+    {"id":"early_removal","until":86460,"expected":{"blood":3,"victim_blood":8,"victim_condition":"no_emergency","punctures_open":false,"willpower":5,"humanity":7,"conscience":3,"governance":"NORMAL","moral_incidents":1,"evaluations":1,"moral_levels":[8],"trauma_pending":0},"public_expected":{"original_available":false,"copy_exists":false,"task_terminal":"completed","v0_knows_copy":false,"visit_fired_tick":86460,"v0_observed_alias_inquiry":true}},
+    {"id":"denied_access","until":86460,"expected":{"blood":3,"victim_blood":8,"victim_condition":"no_emergency","punctures_open":false,"willpower":5,"humanity":7,"conscience":3,"governance":"NORMAL","moral_incidents":1,"evaluations":1,"moral_levels":[8],"trauma_pending":0},"public_expected":{"original_available":true,"copy_exists":true,"task_terminal":"blocked","v0_knows_copy":false,"visit_fired_tick":86460,"v0_observed_alias_inquiry":true}},
+    {"id":"insufficient_directive","until":86460,"expected":{"blood":3,"victim_blood":8,"victim_condition":"no_emergency","punctures_open":false,"willpower":5,"humanity":7,"conscience":3,"governance":"NORMAL","moral_incidents":1,"evaluations":1,"moral_levels":[8],"trauma_pending":0},"public_expected":{"original_available":true,"copy_exists":true,"task_terminal":"blocked","v0_knows_copy":false,"visit_fired_tick":86460,"v0_observed_alias_inquiry":true}}
+  ]
+}

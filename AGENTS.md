@@ -24,9 +24,16 @@ This repository is the technical source of truth for VampiroCRPG.
 - GitHub: code, tests, tools, schemas, technical documentation, implemented architecture.
 
 ## Current phase
-M0 — Foundation / preproduction.
+M2 — verified headless A/B proof / preproduction. A and the minimum B profile are authorized for this isolated Python proof; production technology remains undecided.
 
 No game code should be added until the initial research and architecture pass defines the implementation target.
 
+## Direction and communication
+- Direction delegates routine technical choices and control-file maintenance to the assistant. Execute NEXT from PROJECT_STATE_MASTER when asked to continue; do not require the user to follow GitHub/Drive control files.
+- B's minimum headless profile was authorized in conversation. A request to continue does not require repeating an already resolved approval.
+- When direction's judgment is actually needed, explain the concrete decision, alternatives and consequences in the conversation. Control documents are continuity aids, not a substitute for that explanation.
+- Keep completion criteria, bounded retries, material checkpoints and small semantic commits. Reopen a closed phase only for a failure or new evidence.
+
 ## Definition of Done
 A feature is done only when it is implemented, tested, integrated, documented, regression-checked, and accepted by direction.
+

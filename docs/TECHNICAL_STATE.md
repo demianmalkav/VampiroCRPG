@@ -1,15 +1,13 @@
 # Technical State
 
-Phase: M2 — core A executable proof / preproduction  
-Approval: director authorization recorded as D-011; game engine/language undecided.
+Phase: M2 — A/B headless proof executed / preproduction. Direction authorized B's minimum profile and delegated routine implementation/control-file decisions; engine/language of production undecided.
 
-DONE: implemented standard-library Python proof: causal knowledge/messages/records/processes, permissions, transactional scheduler, receipts and internal snapshots. Six actors/three locations, bounded cleanup and inquiry procedures. CLI can narrate, save/resume and execute acceptance tests.
+DONE: A's causal world plus B owners for blood/victim loss, hunger, Beast governance, one paid lucid action, nightly Willpower and moral incident. Text CLI narrates, accepts interactive decisions, saves/resumes and executes acceptance. G1 remains mortal; no resolved feeding injection in B.
 
-EVIDENCE: 29 tests PASS, covering NQR-01–09 and F-01–07; four fixtures agree with expected outcomes; per-commit save/load states are semantically equal; CLI save/resume and wrong-case rejection verified. [Report](../tests/results/m2_core_a_run.json), [result](M2_CORE_A_RESULT_01.md), [run instructions](../proof/README.md).
+EVIDENCE: [B report](../tests/results/m2_core_b_run.json): 59 tests PASS (29 A, 30 B), seven B scenarios PASS, NQR-01–12 and A/B boundaries/integration covered. Every-commit before/after load preserves state/causes/queue/resources/RNG. Disk CLI resume and interactive choice verified. [B result](M2_CORE_B_RESULT_01.md), [instructions](../proof/m2b/README.md). Historical [A report](../tests/results/m2_core_a_run.json) remains intact.
 
-OPEN: direction's review of observed behavior; minimum B rules (blood, feeding, Beast, willpower, morality, time/RNG). No graphics, general inventory/combat, production save compatibility or large-world performance validation. Godot is not installed or selected.
+OPEN: player experience/balance review, minimal presentation, broader survival/morality, inventory/combat and production performance/saves. Trauma persists as a pending marker; behavior is not implemented. No Godot installation or engine selection. Draft review branches remain unmerged.
 
-NEXT: prepare the minimum B rules proposal from existing translations and resolve open choices before implementation. Do not reopen completed source extraction without new evidence.
+NEXT: prepare a minimal scene presentation over the verified core to make decisions/consequences inspectable, without selecting a production engine. Maintain the separation between presentation and authority. Do not rerun closed source extraction or A/B validation without new changes/failures. Ask direction only for a concrete experience/scope choice, explaining it in conversation.
 
-The authoritative executive state remains PROJECT_STATE_MASTER in Drive. This file tracks the technical branch; the PR remains a draft pending review and is not merged into main.
-
+PROJECT_STATE_MASTER remains the authoritative executive state. Technical evidence lives here; control files are maintained by the assistant and are not required reading for direction.

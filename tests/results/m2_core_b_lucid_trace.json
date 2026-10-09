@@ -1,0 +1,830 @@
+{
+  "case": "lucid_escape",
+  "events": [
+    {
+      "id": "event:1",
+      "type": "WorldInitialized",
+      "tick": 0,
+      "source": "institution:P1",
+      "targets": [],
+      "causes": [],
+      "payload": {},
+      "refs": [
+        "institution:P1"
+      ]
+    },
+    {
+      "id": "event:2",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "institution:P1",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "CopyAttempt",
+        "due_tick": 43320
+      },
+      "refs": [
+        "institution:P1"
+      ]
+    },
+    {
+      "id": "event:4",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "institution:P1",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "ReviewAttempt",
+        "due_tick": 43560
+      },
+      "refs": [
+        "institution:P1"
+      ]
+    },
+    {
+      "id": "event:6",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "institution:P1",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "PlanVisitAttempt",
+        "due_tick": 43620
+      },
+      "refs": [
+        "institution:P1"
+      ]
+    },
+    {
+      "id": "event:8",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "NightBoundary",
+        "due_tick": 0
+      },
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:10",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "NightBoundary",
+        "due_tick": 86400
+      },
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:12",
+      "type": "NightBloodSpent",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "night_id": "night:1",
+        "amount": 1
+      },
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:13",
+      "type": "WillpowerRecovered",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:12"
+      ],
+      "payload": {
+        "night_id": "night:1",
+        "amount": 0
+      },
+      "refs": [
+        "actor:V0",
+        "event:12"
+      ]
+    },
+    {
+      "id": "event:16",
+      "type": "FeedingStarted",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [
+        "actor:M0",
+        "process:14"
+      ],
+      "causes": [],
+      "payload": {
+        "visible_fangs": true,
+        "policy": "conservative"
+      },
+      "refs": [
+        "actor:V0",
+        "actor:M0",
+        "process:14"
+      ]
+    },
+    {
+      "id": "event:17",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "kind": "FeedExtract",
+        "due_tick": 3
+      },
+      "refs": [
+        "actor:V0",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:19",
+      "type": "IncidentObserved",
+      "tick": 0,
+      "source": "actor:W1",
+      "targets": [],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "features": [
+          "anomalous_contact",
+          "contact_details",
+          "visible_fangs"
+        ],
+        "claims": [
+          "anomaly",
+          "alias_attribution"
+        ]
+      },
+      "refs": [
+        "actor:W1",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:26",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:W1",
+      "targets": [],
+      "causes": [
+        "event:19"
+      ],
+      "payload": {
+        "kind": "Testimony",
+        "due_tick": 43260
+      },
+      "refs": [
+        "actor:W1",
+        "event:19"
+      ]
+    },
+    {
+      "id": "event:28",
+      "type": "CameraCapturedAndArchived",
+      "tick": 0,
+      "source": "device:D_CAM",
+      "targets": [
+        "location:L_REG"
+      ],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "channel": "fixed_authorized_camera_to_archive_channel"
+      },
+      "refs": [
+        "device:D_CAM",
+        "location:L_REG",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:29",
+      "type": "BloodStimulusObserved",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [
+        "actor:M0"
+      ],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "sense": "taste"
+      },
+      "refs": [
+        "actor:V0",
+        "actor:M0",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:31",
+      "type": "CheckResolved",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:29"
+      ],
+      "payload": {
+        "dice": [
+          2,
+          4
+        ],
+        "difficulty": 6,
+        "raw_successes": 0,
+        "one_count": 0,
+        "net_successes": 0,
+        "result": "FAILURE",
+        "system": "beast",
+        "pool": 2,
+        "stream": "actor:V0/beast",
+        "mode": "TEST_VECTOR",
+        "algorithm": "sha256_counter_d10_v1",
+        "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+        "counter_before": 0,
+        "counter_after": 0,
+        "vector_index": 0
+      },
+      "refs": [
+        "actor:V0",
+        "event:29"
+      ]
+    },
+    {
+      "id": "event:32",
+      "type": "FrenzyStarted",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [
+        "process:30"
+      ],
+      "causes": [
+        "event:31"
+      ],
+      "payload": {
+        "botch": false
+      },
+      "refs": [
+        "actor:V0",
+        "process:30",
+        "event:31"
+      ]
+    },
+    {
+      "id": "event:33",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:32"
+      ],
+      "payload": {
+        "kind": "BeastTick",
+        "due_tick": 3
+      },
+      "refs": [
+        "actor:V0",
+        "event:32"
+      ]
+    },
+    {
+      "id": "event:35",
+      "type": "MoralRiskWarning",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "text": "Seguir alimentándote durante el frenesí puede matar y provocar degeneración. Una acción lúcida cuesta un punto de voluntad."
+      },
+      "refs": [
+        "actor:V0",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:36",
+      "type": "BloodExtracted",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [
+        "actor:M0",
+        "process:14"
+      ],
+      "causes": [
+        "event:17"
+      ],
+      "payload": {
+        "amount": 3,
+        "retained": 3,
+        "government": "BEAST"
+      },
+      "refs": [
+        "actor:V0",
+        "actor:M0",
+        "process:14",
+        "event:17"
+      ]
+    },
+    {
+      "id": "event:37",
+      "type": "VictimConditionChanged",
+      "tick": 3,
+      "source": "actor:M0",
+      "targets": [],
+      "causes": [
+        "event:36"
+      ],
+      "payload": {
+        "condition": "medical_emergency"
+      },
+      "refs": [
+        "actor:M0",
+        "event:36"
+      ]
+    },
+    {
+      "id": "event:40",
+      "type": "WorkScheduled",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:36"
+      ],
+      "payload": {
+        "kind": "FeedExtract",
+        "due_tick": 6
+      },
+      "refs": [
+        "actor:V0",
+        "event:36"
+      ]
+    },
+    {
+      "id": "event:42",
+      "type": "MoralRiskWarning",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:36"
+      ],
+      "payload": {
+        "text": "Seguir alimentándote durante el frenesí puede matar y provocar degeneración. Una acción lúcida cuesta un punto de voluntad."
+      },
+      "refs": [
+        "actor:V0",
+        "event:36"
+      ]
+    },
+    {
+      "id": "event:43",
+      "type": "WorkScheduled",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:33"
+      ],
+      "payload": {
+        "kind": "BeastTick",
+        "due_tick": 6
+      },
+      "refs": [
+        "actor:V0",
+        "event:33"
+      ]
+    },
+    {
+      "id": "event:45",
+      "type": "WillpowerSpent",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [
+        "process:30"
+      ],
+      "causes": [
+        "event:29"
+      ],
+      "payload": {
+        "amount": 1
+      },
+      "refs": [
+        "actor:V0",
+        "process:30",
+        "event:29"
+      ]
+    },
+    {
+      "id": "event:46",
+      "type": "WorkCancelled",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:45",
+        "event:43"
+      ],
+      "payload": {
+        "work_id": "scheduled:44",
+        "kind": "BeastTick"
+      },
+      "refs": [
+        "actor:V0",
+        "event:45",
+        "event:43"
+      ]
+    },
+    {
+      "id": "event:48",
+      "type": "LucidActionStarted",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:45"
+      ],
+      "payload": {
+        "action": "MoveTo",
+        "duration": 3,
+        "token": "action:47"
+      },
+      "refs": [
+        "actor:V0",
+        "event:45"
+      ]
+    },
+    {
+      "id": "event:49",
+      "type": "FeedingStopped",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [
+        "process:14"
+      ],
+      "causes": [
+        "event:48"
+      ],
+      "payload": {
+        "reason": "LUCID_RELEASE"
+      },
+      "refs": [
+        "actor:V0",
+        "process:14",
+        "event:48"
+      ]
+    },
+    {
+      "id": "event:50",
+      "type": "WorkCancelled",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:49",
+        "event:40"
+      ],
+      "payload": {
+        "work_id": "scheduled:41",
+        "kind": "FeedExtract"
+      },
+      "refs": [
+        "actor:V0",
+        "event:49",
+        "event:40"
+      ]
+    },
+    {
+      "id": "event:51",
+      "type": "WorkScheduled",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:49"
+      ],
+      "payload": {
+        "kind": "MoralAssessment",
+        "due_tick": 3
+      },
+      "refs": [
+        "actor:V0",
+        "event:49"
+      ]
+    },
+    {
+      "id": "event:53",
+      "type": "TravelStarted",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [
+        "location:L_HAV"
+      ],
+      "causes": [
+        "event:48"
+      ],
+      "payload": {
+        "from": "location:L_INC",
+        "to": "location:L_HAV",
+        "duration": 3,
+        "charged": 0
+      },
+      "refs": [
+        "actor:V0",
+        "location:L_HAV",
+        "event:48"
+      ]
+    },
+    {
+      "id": "event:54",
+      "type": "WorkScheduled",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:53"
+      ],
+      "payload": {
+        "kind": "Arrival",
+        "due_tick": 6
+      },
+      "refs": [
+        "actor:V0",
+        "event:53"
+      ]
+    },
+    {
+      "id": "event:56",
+      "type": "WorkScheduled",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:48"
+      ],
+      "payload": {
+        "kind": "ActionComplete",
+        "due_tick": 6
+      },
+      "refs": [
+        "actor:V0",
+        "event:48"
+      ]
+    },
+    {
+      "id": "event:58",
+      "type": "MoralIncidentAssessed",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [
+        "process:15"
+      ],
+      "causes": [
+        "event:49"
+      ],
+      "payload": {
+        "level": 8,
+        "result": "NOT_REQUIRED",
+        "humanity_delta": 0,
+        "conscience_delta": 0
+      },
+      "refs": [
+        "actor:V0",
+        "process:15",
+        "event:49"
+      ]
+    },
+    {
+      "id": "event:59",
+      "type": "TravelArrived",
+      "tick": 6,
+      "source": "actor:V0",
+      "targets": [
+        "location:L_HAV"
+      ],
+      "causes": [
+        "event:54"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:V0",
+        "location:L_HAV",
+        "event:54"
+      ]
+    },
+    {
+      "id": "event:60",
+      "type": "ActionCompleted",
+      "tick": 6,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:56"
+      ],
+      "payload": {
+        "action": "MoveTo",
+        "token": "action:47"
+      },
+      "refs": [
+        "actor:V0",
+        "event:56"
+      ]
+    },
+    {
+      "id": "event:61",
+      "type": "BeastControlResumed",
+      "tick": 6,
+      "source": "actor:V0",
+      "targets": [
+        "process:30"
+      ],
+      "causes": [
+        "event:60"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:V0",
+        "process:30",
+        "event:60"
+      ]
+    },
+    {
+      "id": "event:62",
+      "type": "WorkScheduled",
+      "tick": 6,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:60"
+      ],
+      "payload": {
+        "kind": "BeastTick",
+        "due_tick": 9
+      },
+      "refs": [
+        "actor:V0",
+        "event:60"
+      ]
+    },
+    {
+      "id": "event:64",
+      "type": "WorkScheduled",
+      "tick": 9,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:62"
+      ],
+      "payload": {
+        "kind": "BeastTick",
+        "due_tick": 12
+      },
+      "refs": [
+        "actor:V0",
+        "event:62"
+      ]
+    },
+    {
+      "id": "event:66",
+      "type": "WorkScheduled",
+      "tick": 12,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:64"
+      ],
+      "payload": {
+        "kind": "BeastTick",
+        "due_tick": 15
+      },
+      "refs": [
+        "actor:V0",
+        "event:64"
+      ]
+    },
+    {
+      "id": "event:68",
+      "type": "FrenzyEnded",
+      "tick": 15,
+      "source": "actor:V0",
+      "targets": [
+        "process:30"
+      ],
+      "causes": [
+        "event:66"
+      ],
+      "payload": {
+        "reason": "CALM_WINDOWS",
+        "seconds": 9
+      },
+      "refs": [
+        "actor:V0",
+        "process:30",
+        "event:66"
+      ]
+    }
+  ],
+  "player_view": {
+    "actor": "actor:V0",
+    "location": "location:L_HAV",
+    "availability": "awake",
+    "memories": [
+      {
+        "features": [
+          "medical_emergency"
+        ],
+        "claims": []
+      }
+    ],
+    "messages": [],
+    "actions": [
+      "Sleep",
+      "Wake",
+      "SendMessage",
+      "StartTravel",
+      "AttemptFeed",
+      "SealBite"
+    ],
+    "blood": 5,
+    "hungry": false,
+    "willpower": 4,
+    "humanity": 7,
+    "governance": "NORMAL",
+    "active_action": null,
+    "warnings": [
+      "Seguir alimentándote durante el frenesí puede matar y provocar degeneración. Una acción lúcida cuesta un punto de voluntad."
+    ]
+  },
+  "actual": {
+    "blood": 5,
+    "victim_blood": 5,
+    "victim_condition": "medical_emergency",
+    "punctures_open": true,
+    "willpower": 4,
+    "humanity": 7,
+    "conscience": 3,
+    "governance": "NORMAL",
+    "moral_incidents": 1,
+    "evaluations": 1,
+    "moral_levels": [
+      8
+    ],
+    "trauma_pending": 0,
+    "public": {
+      "original_available": true,
+      "copy_exists": false,
+      "report_exists": false,
+      "case_open": false,
+      "review_support": [],
+      "task_terminal": null,
+      "g1_budget": 2,
+      "g1_reservation": 0,
+      "result_message": null,
+      "v0_knows_copy": false,
+      "visit_fired_tick": null,
+      "v0_observed_alias_inquiry": false
+    }
+  },
+  "state_sha256": "dfa0621bcab3b0eb8b3582a58b2dec75262ffc29fde05d16eb1b46c9ae7b4a96",
+  "rng": {
+    "algorithm": "sha256_counter_d10_v1",
+    "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+    "streams": {
+      "actor:V0/beast": 0,
+      "actor:V0/moral": 0
+    },
+    "vector_cursors": {
+      "actor:V0/beast": 1
+    }
+  }
+}
