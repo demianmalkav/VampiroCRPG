@@ -1,709 +1,193 @@
 # M2 Causal Simulation Contract — La Noche que Recuerda
 
-Status: DRAFT FOR ARCHITECTURE REVIEW
-Phase: M0.2 → M2 specification bridge
+Status: APPROVED FOR CORE A PROOF — revision 0.2; D-011 registrada.  
+Implementation status: núcleo Python sin gráficos implementado; NQR-01–09 y F-01–07 ejecutados. Véase [resultado](M2_CORE_A_RESULT_01.md).  
+Scope authority: [Reconciliación de alcance 01](https://docs.google.com/document/d/1GbWEeyIQvvoVT-ohiAIQkQ-uSZypaU3deCQPWOXHdow/edit).
 
-This document is an engine-agnostic technical contract for the first systemic proof, **La Noche que Recuerda**. It reconciles the VTM Pass 5 causal requirements with verified Fallout 2 engineering patterns without copying Fallout 2's concrete implementation.
+## 1. Objetivo y límite
 
-No Godot node tree, database, ECS, serialization technology, or scripting language is selected here.
+Demostrar la cadena hecho → observación → memoria/creencia → transmisión/registro → procedimiento → consecuencia diferida, con causas auditables, conocimiento individual y continuidad al guardar o descargar una escena.
 
-## 1. Contract objective
+Esta revisión precisa el núcleo A de la propuesta 01–14. La alimentación ya resuelta entra como dato de prueba; no existe todavía una implementación de alimentación o de una Disciplina. La etapa B agregará sangre, víctima, hambre, Bestia, voluntad y moralidad mediante sus dueños reales. Combate, AP, política Kindred, ghoul completo, Vínculo dinámico y poderes canónicos se difieren a C.
 
-Prove deterministically that:
+Los términos MUST/DEBE indican obligaciones aprobadas para la prueba A. El entorno de ensayo usa Python 3.12, biblioteca estándar y snapshot JSON interno versionado. Ningún archivo es un esquema de guardado en producción. No se elige engine, lenguaje del juego, ECS o base de datos.
 
-`world event -> observation -> proposition -> belief/memory -> evidence/record -> transmission -> relationship/process/institution change -> delayed consequence -> new world event`
+## 2. Disposición del corpus Fallout
 
-can occur persistently, partly offscreen, survive save/load, and later be discovered by the player through explicit causal provenance.
+Se conserva la frontera intención/ejecución, las superficies finitas de eventos, la propiedad del estado, el tiempo de simulación y el guardado coordinado. Se extienden con observaciones y memoria individuales, custodia de registros, procesos persistentes y explicación causal. Se reemplazan globals de misión como autoridad causal, reacción social universal y persistencia de punteros.
 
-The proof fails if it requires:
+La [corrección de cola](../research/FALLOUT2/QUEUE_LIFETIME_CORRECTION.md) prevalece sobre generalizaciones anteriores: el guardado completo de Fallout no implica que todo timer sobreviva al salir del mapa. Testimonio, encargo, copia, revisión y visita de M2 DEBEN sobrevivir a la descarga de presentación.
 
-- faction-global omniscience;
-- one authoritative quest-stage variable;
-- deleting history when evidence is removed;
-- scene loading as the lifetime of world causality;
-- runtime LLM reasoning;
-- hidden nondeterministic wall-clock behavior.
+## 3. Reparto, localizaciones e identidad
 
----
+Seis actores: actor:V0, actor:M0, actor:W1, actor:W2, actor:G1 y actor:I1. M0 es la víctima; W1 es otra persona. G1 usa perfil mortal en A. P1 es institution:P1, una organización con registros/procedimientos, no un cerebro que comparte memorias.
 
-## 2. Cross-corpus disposition
+Tres localizaciones: location:L_INC, location:L_REG y location:L_HAV. device:D_CAM crea record:REC_ORIG; record:REC_COPY es una copia independiente; record:REC_REPORT contiene el testimonio de W2. persona:V0_ALIAS es un alias, no otro Actor.
 
-### KEEP from the Fallout 2 reference pattern
+H1/R1/C1 de documentos anteriores no son IDs reutilizables: se usaron para roles diferentes. Un receptor Kindred futuro será actor:K1; un contacto será actor:CONTACT1; un segundo refugio tendrá otro LocationId.
 
-- finite event/callback surfaces between engine systems and authored/contextual logic;
-- command/request boundary: authored logic requests, authoritative systems execute;
-- explicit state ownership/lifetime rather than putting every fact in one global scope;
-- deterministic simulation time;
-- ordered scheduled events;
-- save/load as a coordinated multi-subsystem contract;
-- serialized stable identities and explicit post-load reference restoration;
-- persistent location state separate from loaded presentation state;
-- dynamic dialogue built from current state with executable consequences;
-- controlled authored override points where the engine explicitly permits them.
+Todo objeto persistente tiene ID tipado y estable. El asignador determinista, su namespace/contador y su versión se preservan. No se reutilizan IDs en una misma línea de guardado. Las referencias de runtime se reconstruyen; nunca son autoridad persistida. Un ID ausente causa un error validado y no se sustituye por un actor “parecido”.
 
-### EXTEND beyond Fallout 2
+## 4. Superficie mínima de registros
 
-- world/process-lifetime scheduled events that survive location unload;
-- actor-specific observation, belief and memory state;
-- evidence and documentary custody/provenance;
-- institutions that know only what their actors/records transmit to them;
-- multidimensional relationships;
-- persistent processes such as investigations and cover-ups;
-- causal ancestry/debug queries;
-- persona/documentary identity separate from actor identity.
+Esta tabla define responsabilidades y campos conceptuales obligatorios. La forma concreta de clases/archivos queda para implementación después de aprobación.
 
-### REPLACE
+| Registro | Dueño y campos mínimos | Restricción |
+| --- | --- | --- |
+| WorldState | tick, versions, allocator, enqueue_seq, counters, RNG, input cursor | No reloj de pared; configura el orden común |
+| ActorState | id, location, persona, availability, task_budget de prueba | El presupuesto sintético no es sangre, AP ni voluntad |
+| Location/Device | id, location, coverage/access/schedule profile | Existencia separada de presentación |
+| WorldEvent | id, type, tick, source, targets, typed payload, causes, command/process | Hecho ocurrido; no conocimiento automático |
+| Observation | id, observer, channel, perceived features, source IDs, tick | Proyección autorizada; excluye campos secretos |
+| Proposition | id, typed claim, referents, objective status si se conoce | Claim distinto de certeza del titular |
+| Belief/Memory | holder, proposition/content, provenance, stance, acquisition event | Directo y testimonio conservan procedencias distintas |
+| Record/Evidence | id, origin, contents/features, custody, location, integrity, access, derivation | Copia independiente; borrar original no borra descendientes |
+| Message | id, sender, recipient/channel, disclosed content, sent/delivery events | Enviar no equivale a recibir; no acceso al pensamiento |
+| Relationship | directed pair, named dimensions, causes | A usa fear/trust por observación; no reputación global |
+| Institution | id, roles/access/procedure profiles, record/case IDs | Memoria de un miembro no equivale a expediente |
+| Process | id, type, owner/participants, state, references, pending work, causes | Estado de tarea/caso legítimo; no misión global |
+| ScheduledEvent | id, due_tick, enqueue_seq, lifetime, owner, payload, causes, status | WORLD/PROCESS no se cancela por descargar una escena |
+| CommandReceipt | command_id, canonical payload identity, result/event IDs | Una misma solicitud no aplica dos veces el efecto |
 
-- anonymous indexed integer arrays as the primary world ontology;
-- scalar quest stage as the primary causal authority;
-- scalar NPC reaction as the complete social model;
-- implicit pointer/reference persistence;
-- generic script override as an unrestricted escape hatch.
+Una memoria individual conserva el acto de percibir o recibir. Un registro institucional conserva contenido sometido a custodia/acceso. Una creencia puede citar cualquiera de ellos sin convertir su procedencia en verdad objetiva. Las escalas de creencia/relación de la prueba son bandas declarativas versionadas; no representan balance social final.
 
----
+Evidence es el rol de un objeto/registro al usarse como indicio, no una copia obligatoria de todos sus datos. Una grabación puede ser Record y servir como Evidence por referencia al mismo ID. Evitar dos autoridades para su integridad o custodia.
 
-## 3. Stable identity contract
+## 5. Commands, hechos y transacciones
 
-Every persistent simulation entity or record participating in causal chains MUST have a stable ID that survives save/load and presentation unload.
+Superficie A: SendMessage, AcceptDirective, StartTravel, InspectRecord, RemoveRecord, SubmitRecord, ReviewCase, ScheduleVisit, ChangeAvailability y RequestInteraction. InjectResolvedIncident es exclusivamente una entrada privilegiada del harness, jamás una opción de jugador/contenido. AdvanceTo y Save/Load son operaciones del núcleo/harness.
 
-Minimum persistent ID families for M2:
+El dueño valida identidad, agencia, información comunicada, lugar, permisos, recursos y estado actual del objetivo. Rechazo devuelve una razón y no modifica el estado de dominio ni consume RNG. Un nuevo intento deliberado usa otro CommandId.
 
-- `ActorId`
-- `PersonaId`
-- `LocationId`
-- `InstitutionId`
-- `WorldEventId`
-- `ObservationId`
-- `PropositionId`
-- `BeliefId`
-- `MemoryId`
-- `EvidenceId`
-- `RecordId`
-- `RelationshipId`
-- `MessageId`
-- `ProcessId`
-- `ScheduledEventId`
+Un command aceptado o un handler diferido se confirma como transacción indivisible: mutaciones, pagos/reservas, receipt, eventos derivados e inserciones/cancelaciones de cola se hacen visibles juntos. El guardado ocurre entre estas confirmaciones. No se permite guardar una mitad de la retirada y después cobrarla de nuevo.
 
-Requirements:
+Reenviar el mismo CommandId con idéntico payload devuelve su receipt anterior, sin nueva retirada, cargo, RNG o enqueue_seq. Reutilizarlo con payload diferente devuelve COMMAND_ID_COLLISION. Los receipts se preservan durante todo A; su compactación es trabajo futuro.
 
-1. Serialized data stores IDs, never raw runtime pointers as authority.
-2. Runtime references are reconstructed from IDs after load.
-3. Missing targets are validation errors with defined handling; they must not silently retarget.
-4. IDs are not reused during the lifetime of a save lineage unless an explicit migration strategy guarantees safety.
-5. Presentation-scene object identity may be ephemeral; it maps to persistent simulation IDs rather than replacing them.
+Un evento documenta un resultado ya confirmado. Los handlers de efectos derivados reciben eventos sólo después del commit; se ejecutan por el scheduler común o dentro de una composición transaccional explícita. No hay callbacks reentrantes que modifiquen medio estado.
 
----
+## 6. Percepción, mensaje y acceso
 
-## 4. Authoritative state ownership
+El incidente contiene rasgos objetivos necesarios para el ensayo, por ejemplo colmillos visibles y contacto con M0. El perfil de W1/D_CAM determina qué rasgos capturan. No se copia a un observer el estado interno de sangre, intención o clan. La hipótesis inicial puede ser “incidente anómalo relacionado con el alias”; certeza vampírica no es requisito.
 
-M2 state is divided by semantic ownership, not merely storage convenience.
+El alias es reconocible para W1 sólo porque el fixture inicial incluye familiaridad/contacto previo con esa identidad presentada. La cámara por sí sola registra rasgos visibles; asociar una imagen al alias requiere un canal configurado. Desactivar ese canal impide el enlace aunque haya vídeo.
 
-### World-owned
+El mensaje de W1 puede perder detalles conforme a una transformación determinista. W2 conserva el origen testimonial y su propia interpretación. MSG_DIRECTIVE transporta objetivo, oficina, permiso y plazo que V0 conoce; no incluye REC_COPY por acceso al debug.
 
-- simulation clock;
-- deterministic RNG state/streams;
-- world events;
-- propositions whose objective status is known by the simulation;
-- world/process scheduler;
-- stable-ID registry/version data.
+Consultar un registro crea una adquisición de contenido con su causa de acceso. Tener permiso no significa que ya se leyó. Estar en P1 tampoco. G1 puede inspeccionar el original autorizado; no recibe acceso a todo el archivo institucional.
 
-### Actor-owned
+## 7. Encargo acotado de G1
 
-- current persistent location reference;
-- active persona(s);
-- observations made by that actor;
-- memories;
-- belief states;
-- motives relevant to M2;
-- relationship edges;
-- memberships/roles needed for M2.
+Una tarea exclusiva: retirar REC_ORIG. Estados propuestos: awaiting_delivery, offered, accepted, travelling, access_check, acting, reporting, completed/blocked/cancelled. Los estados son progreso real del proceso y pueden derivarse de sus eventos. No habilitan resultados por sí solos.
 
-### Location-owned
+Al aceptar, se verifica la información mínima y se reserva una unidad del task_budget sintético. El primer desplazamiento confirma ese gasto. Si el encargo no inicia el viaje, se libera la reserva; haber llegado y no poder entrar no devuelve el coste de viaje. El perfil inicial tiene dos unidades y usa una. Es un contador de prueba para verificar propiedad/idempotencia, no economía final.
 
-- semantic context;
-- persistent devices/sensors;
-- persistent evidence physically present there;
-- local access/security state;
-- local presentation-independent state.
+Llegada, acceso y retirada validan nuevamente condiciones al ejecutarse. G1 debe conocer ubicación/objetivo; tener la autorización limitada; estar disponible; llegar dentro del plazo; encontrar el original accesible. La copia no desaparece por compartir una derivación.
 
-### Institution-owned
+El informe exitoso declara “retiré el original; no observé otras copias”. No declara ausencia global de copias. Un bloqueo produce un informe de su limitación. Cancelación posterior a la retirada detiene lo pendiente, sin resucitar el original.
 
-- records in custody;
-- institution-level propositions/beliefs only when produced by an explicit procedure or authorized aggregation;
-- active cases/processes;
-- relevant members/roles/resources.
+## 8. Procedimiento institucional de prueba
 
-### Process-owned
+P1 tiene roles declarados: W2 puede someter su informe; I1 está asignado y puede acceder a los registros de su caso. Un procedimiento automático de archivo de P1 puede copiar una grabación recibida mediante su acceso explícito. Esto no crea creencias ni otorga contenido a otros miembros.
 
-- objective;
-- participants/owner;
-- phase;
-- accumulated evidence/claims/resources;
-- deadlines/windows;
-- scheduled transitions;
-- success/failure/cancellation state.
+Política mínima A, versionada y ficticia:
 
-No store may become a shortcut for omniscience.
+- Un informe elegible con contenido de anomalía y procedencia abre un caso sin exigir certeza sobrenatural.
+- Una revisión de grabación obtenida por vía autorizada puede abrir un caso si no hay informe.
+- Obtener las dos vías agrega corroboración; una revisión no transforma por defecto el testimonio en observación directa.
+- La visita a L_INC requiere caso abierto y la lectura por I1 de al menos un indicio elegible. Identificar el alias requiere atribución conocida por ese canal.
+- Revisión/copia no puede leer un original retirado/inaccesible. Una copia previa válida sigue disponible por su propio acceso.
+- La visita no revela L_HAV, clan, sangre ni identidad real.
 
----
+Una ruta sólo testimonial puede justificar la misma visita con otra base informativa. La prueba distingue sus referencias y corroboración, aunque una consecuencia visible coincida. Branch sensitivity no exige que toda variante termine en una misión distinta.
 
-## 5. Event envelope contract
+Los umbrales y roles son procedimiento del fixture, no un simulador completo de policía ni una regla VTM universal. CaseState puede ser open/reviewed/visit_planned; sus transiciones exigen hechos/access reales, no un QUEST_STAGE.
 
-Every state-changing simulation event MUST have a common envelope conceptually containing:
+## 9. Scheduler candidato: orden y avance exactos
 
-- `event_id`
-- `event_type`
-- `simulation_time`
-- `initiator_id` or system source
-- zero or more target IDs
-- `location_id` when spatially relevant
-- typed payload
-- zero or more causal parent IDs
-- deterministic ordering key
-- optional process ID
-- optional source command ID if commands are tracked separately
+Tiempo A: tick entero lógico; no minutos, turnos VTM u horas solares. La conversión de tiempo de B sigue pendiente.
 
-The event is the authoritative fact that the state transition occurred.
+Orden total de trabajo diferido: (due_tick, enqueue_seq). enqueue_seq es global, único y monótono; se asigna al confirmar la programación y se guarda. No hay prioridad secreta por tipo de actor/evento. Si copia y retirada vencen en el mismo tick, gana la que se programó primero.
 
-An event does **not** automatically grant knowledge of itself to any actor.
+Las entradas externas tienen input_seq único y un orden serializado. AdvanceTo(T) procesa todo trabajo con due_tick <= T antes de aceptar la siguiente entrada externa. Si ésta programa trabajo en el tick actual, se procesa antes de la siguiente entrada. Los productores recorren destinos en orden estable; nunca depende de la iteración de un contenedor.
 
----
+Un handler que programa trabajo para el tick actual recibe un enqueue_seq posterior y no salta por delante de trabajo ya en cola. Programar en el pasado se rechaza. El tick lógico nunca retrocede.
 
-## 6. Command / execution boundary
+Perfil de protección A: máximo de 128 handlers en un mismo tick. El contador se guarda y sólo se reinicia al avanzar el tick; dividir llamadas o cargar no evita el límite. Si se excede, se detiene en el último commit, queda el siguiente trabajo pendiente y se expone diagnóstico. No se borra silenciosamente trabajo para “resolver” el bucle.
 
-Systems and authored content interact through a request/command boundary inspired by Fallout 2's script-request pattern.
+Guardar entre handlers confirmados permite restaurar el siguiente trabajo exactamente. AdvanceTo puede hacer múltiples commits; su parada intermedia no se presenta como operación de dominio indivisible.
 
-A command expresses intent, for example:
+## 10. Lifetimes y descarga
 
-- `PerformSupernaturalAction`
-- `SendMessage`
-- `CreateRecord`
-- `AlterEvidence`
-- `StartInvestigation`
-- `TransferEvidence`
-- `ThreatenActor`
-- `AttemptCleanup`
-- `ChangeLocation`
+WORLD_PROCESS es el único lifetime del scheduler de dominio de A. Incluye testimonio, recepción, viaje, copia, retirada, informe, revisión y visita.
 
-A command MUST be validated by the subsystem that owns the protected state.
+PRESENTATION_LOCAL es un canal separado para callbacks visuales descartables. Descargar L_INC destruye sus callbacks/presentación, pero no un Actor/Record/Process ni sus eventos. La revisión 0.1 permitía hablar ambiguamente de descargar una “simulation slice”; para A esa interpretación queda excluida.
 
-The result is either:
+Una cancelación WORLD_PROCESS requiere evento/causa y resultado persistente cancelled/superseded. Ausencia de permisos al vencer una tarea produce un bloqueo comprobable, no pérdida del evento. Cancelar una comunicación por incapacidad real del emisor tampoco cancela una copia independiente.
 
-- rejection/no state change with a reason; or
-- one or more authoritative world events.
+## 11. Guardado, restauración y RNG
 
-Content logic MUST NOT directly edit protected state when a system owns the invariant.
+Contrato de contenido del snapshot: versiones de contrato/perfiles/save; tick; ID allocator; enqueue_seq; contador del tick; input cursor; receipts; Actor/Location/Device; personas; eventos/causas; observations/propositions/beliefs/memories; relaciones; records/evidence/custodia/copia; mensajes; institución; procesos; cola WORLD_PROCESS; estado RNG.
 
----
+La implementación de ensayo usa el formato interno m2-proof-json-1, sin promesa de compatibilidad de saves del juego. No se implementa migración en A: una versión incompatible se rechaza expresamente. Diseñar migraciones para una versión publicada será trabajo posterior aprobado.
 
-## 7. Observation contract
+Carga en staging: leer entidades; validar IDs/versiones/referencias/causas; reconstruir índices; restaurar cola exacta, contadores y RNG; publicar estado completo. Un error deja intacto el mundo ya cargado, sin reparar destinos ni eliminar registros en silencio.
 
-A `WorldEvent` may produce zero or more observations.
+Los índices de búsqueda y objetos visuales son reconstruibles y no autoridad. El historial causal se conserva íntegro en A; no se exige event sourcing como única persistencia ni reconstruir todo el mundo desde el log.
 
-Observation creation depends on explicit channels such as:
+A usa procedimientos deterministas y no necesita consumir aleatoriedad para ocultar huecos de reglas. Si un handler futuro usa RNG, tiene algoritmo/versión y estado persistidos, lo consume en ejecución autorizada y no en rendering, previews, guardado o consultas. Elegir el algoritmo para B sigue NEEDS_DECISION antes de esa implementación.
 
-- direct human perception;
-- camera/sensor capture;
-- later inspection of evidence;
-- access to a record;
-- supernatural perception if/when implemented.
+Comparación de ensayo: igualdad semántica de estado ordenado y log de dominio, excluyendo metadatos locales de archivo/UI. Si se usa hash, se declara canonicalización y algoritmo. Cambiar orden serializado de inputs/perfiles es cambiar el ensayo.
 
-An observation stores only perceived features plus uncertainty/context. It must not copy inaccessible objective event fields.
+## 12. Secuencia A y observación del resultado
 
-Required M2 distinction:
+Baseline: t0 incidente resuelto; t1 encargo y viaje explícito de V0 L_INC → L_HAV; t2 llegada al refugio, sueño y descarga de presentación; t3 testimonio/submisión; t4 copia; t5 llegada; t6 retirada; t7 informe; t8 revisión; t9 planificación de visita; t10 despertar/recepción.
 
-`WorldEvent != Observation`
+Compleción del descubrimiento: V0 puede viajar L_HAV → L_INC con duración de un tick desde t10. La planificación en t9 inicia el desplazamiento de I1 desde L_REG, cuya ruta dura tres ticks; su llegada permite la indagación visible sobre el alias en t12. Si V0 está presente y percibe esa interacción, obtiene una nueva observación/claim. No recibe el contenido de un expediente privado ni todo el historial de I1. Programar una visita no teletransporta al investigador.
 
-Two observers of the same event may produce conflicting observations without corrupting objective event state.
+El fixture baseline y tres variantes están en [m2_core_a_cases.json](../tests/specs/m2_core_a_cases.json). La llegada temprana t2/retirada t3 impide la copia t4 del original. La tardía permite REC_COPY. La denegación conserva el original y su copia. Cada variante modifica condiciones y tiempos, no fuerza un resultado institucional.
 
----
+La cámara/archivo se ubican en L_INC/L_REG como objetos distintos: captura en el primero y almacenamiento autorizado en el segundo por el canal fijo del fixture. El transporte/registro de ese contenido es explícito en el evento de captura/ingreso; G1 no retira una cámara desde otra ubicación.
 
-## 8. Proposition and belief contract
+## 13. Queries y conocimiento de jugador
 
-A `Proposition` is a claim that actors or institutions may believe, reject, doubt or leave unresolved.
+Debug: WhyBelieves(holder, proposition), WhyProcessStarted(process), Descendants(event), WhoAccessed(record), PendingWorldWork, ExplainCommand(receipt). Deben recorrer referencias causales sin conocer nombres de misión.
 
-Minimum simulation-level objective status:
+Player: recursos propios autorizados, acciones legales y sus límites conocidos, mensajes recibidos, registros leídos y consecuencias percibidas. El journal es derivado. Ni UI ni queries de jugador llaman a debug para revelar la copia desconocida.
 
-- `True`
-- `False`
-- `Unknown`
-- `ScenarioDependent` reserved for later/content-level use if necessary
+La consulta de causas no consume RNG, avanza reloj ni crea memoria. Descubrir el caso en t12 crea el conocimiento de V0, no el caso retroactivo.
 
-A `BeliefState` belongs to a holder and references a proposition.
+## 14. Ensayos vigentes y continuidad con 0.1
 
-Minimum belief dimensions for M2:
+Los nueve ensayos A son NQR-01–09; los tres de supervivencia NQR-10–12 esperan B. La [especificación de aceptación](M2_CORE_A_ACCEPTANCE.md) define precondiciones, estímulos y postcondiciones, además de ensayos de frontera del scheduler/carga.
 
-- holder ID;
-- proposition ID;
-- confidence;
-- provenance source ID/type;
-- acquired/updated time;
-- optional interpretation/frame;
-- secrecy/disclosure constraint if relevant;
-- supporting/opposing observation/evidence/record/message references.
+Los dieciocho AT-01–18 de 0.1 se conservan como obligaciones. Su correspondencia permite consolidar ensayos sin declarar obligaciones satisfechas por conteo:
 
-Required distinction:
+| AT 0.1 | Ensayo que mantiene la obligación |
+| --- | --- |
+| AT-01, AT-02, AT-03 | NQR-01: conocimiento, procedencia y transformación testimonial |
+| AT-04 | NQR-03/04: custodia, copia y retirada |
+| AT-05, AT-10 | NQR-07: acceso y procedimiento institucional |
+| AT-06, AT-07, AT-11, AT-16, AT-18 | NQR-08 + fronteras F-01–07 |
+| AT-08, AT-13, AT-14, AT-15 | NQR-09 + NQR-01: causas, UI, alias y fear/trust |
+| AT-09 | NQR-02/04/05/07: sensibilidad de canales/requisitos |
+| AT-12 | NQR-06: rastro de intervención |
+| AT-17 | F-03: descarte exclusivamente visual |
 
-`Proposition objective status != holder belief confidence`
+Estado: NQR-01–09 y F-01–07 EJECUTADOS/PASS en el runtime de ensayo, cubiertos por 29 tests. NQR-10–12 siguen diferidos a B. El [informe](../tests/results/m2_core_a_run.json) contiene ejecución real; validar datos no prueba sus consecuencias.
 
-The simulation may know something is true while every actor believes otherwise.
+## 15. Puerta de revisión y siguientes decisiones
 
----
+Se mantienen los ocho compromisos de revisión de 0.1: conocimiento particular y con procedencia; scheduling que sobrevive descarga; IDs persistentes/referencias reconstruibles; futuro causal guardado; ausencia de misión escalar como sustituto; relaciones multidimensionales; separación escena/mundo; ensayos headless antes de la presentación.
 
-## 9. Memory contract
+Dirección autorizó este núcleo A y sus reglas de orden/commit/persistencia para el primer prototipo headless, registrado en D-011. No incluye autorización para elegir silenciosamente toda la tecnología o programar B/C con reglas abiertas.
 
-A memory is persistent actor state derived from direct observation, interaction, message, record access or inference.
+Realizado: entorno Python/biblioteca estándar; aceptación registrada; núcleo y runner implementados; ensayos ejecutados. Sigue abierta la revisión del comportamiento y las decisiones de B. No se instaló ni fijó Godot.
 
-Minimum fields:
+NEEDS_DECISION antes de B: gasto de despertar, perfil de alimentación, cadencia/terminación de Bestia, regla moral mínima, ventana lúcida, voluntad/recuperación, RNG y unidades de tiempo. No bloquean la revisión de A.
 
-- memory ID;
-- owner actor ID;
-- provenance type;
-- source IDs;
-- referenced propositions;
-- confidence;
-- simulation timestamp;
-- emotional salience needed for M2, at minimum fear relevance if used;
-- secrecy/disclosure state if relevant.
+## 16. Fuentes y estado
 
-Memory decay/distortion algorithms are NOT frozen in M2. Rumor transformation is sufficient to test information mutation.
+Autoridades: [AGENTS.md](../AGENTS.md); [reconciliación 01](https://docs.google.com/document/d/1GbWEeyIQvvoVT-ohiAIQkQ-uSZypaU3deCQPWOXHdow/edit); [Readiness 02](https://docs.google.com/document/d/1CwQjBfdCBV50V0dULWe-0D_xylWhP-dFOcM7xEzuiqk/edit); [matriz Fallout](../research/FALLOUT2/SYSTEM_MATRIX.md) y [corrección de cola](../research/FALLOUT2/QUEUE_LIFETIME_CORRECTION.md). Reglas exactas de supervivencia siguen en Traducciones 01/02/03/08/11 y sus fuentes.
 
-Memory removal is not allowed as a side effect of deleting external evidence.
+Sin dependencias externas, engine gráfico o esquema publicado de save. Hay código de ensayo separado del futuro runtime del juego; B/C siguen fuera del alcance implementado.
 
----
-
-## 10. Evidence and record contract
-
-### Evidence
-
-Evidence is a trace that exists independently of what actors believe it proves.
-
-Minimum fields:
-
-- evidence ID;
-- evidence type;
-- origin event IDs if known by simulation;
-- current custody/location;
-- integrity/condition;
-- access/visibility;
-- copy relationships if applicable.
-
-### Record
-
-A record is a durable information carrier created by an actor/device/institution.
-
-Minimum fields:
-
-- record ID;
-- creator/source;
-- creation time;
-- stored propositions/claims and/or evidence references;
-- custody/storage institution/location;
-- access policy;
-- integrity/authenticity state;
-- copy/derivation links.
-
-Required distinctions:
-
-`Evidence != Interpretation`
-
-`Record contents != Objective truth`
-
-Removing one evidence item MUST NOT erase copies, memories or records already derived from it.
-
----
-
-## 11. Relationship contract
-
-Relationships are multidimensional state, not one approval score.
-
-M2 minimum dimensions where used:
-
-- trust;
-- fear;
-- hostility;
-- obligation/debt;
-- loyalty/affiliation;
-- willingness to share information.
-
-The representation may use normalized numbers, bands, typed values or another deterministic form later. The exact scale is NOT frozen.
-
-Invariant:
-
-An actor may simultaneously fear, distrust, owe and cooperate with another actor.
-
-A relationship state is distinct from a proposition about that relationship. Actors may dispute whether a debt, right or obligation exists.
-
----
-
-## 12. Institution contract
-
-An institution is persistent collective state with members, records, processes and procedures.
-
-An institution MUST NOT automatically know everything any member knows.
-
-Institutional knowledge can be created only through explicit mechanisms such as:
-
-- record submission;
-- briefing/report;
-- database/file access;
-- case assignment;
-- defined aggregation procedure.
-
-Minimum M2 institution behavior:
-
-1. receive a record or evidence through a valid path;
-2. evaluate configured threshold/procedure;
-3. start or advance an investigation process;
-4. assign an actor such as I1;
-5. preserve the record across time/save/load.
-
----
-
-## 13. Process contract
-
-M2 processes represent multi-event causal activities that persist beyond one scene.
-
-Required process types for the proof:
-
-- `InvestigationProcess`
-- `CleanupProcess`
-
-Optional:
-
-- `RumorPropagationProcess`
-- `InstitutionReviewProcess`
-
-Minimum process fields:
-
-- process ID;
-- type;
-- owner/participants;
-- objective;
-- phase/state;
-- relevant propositions/evidence/records;
-- deadlines/windows;
-- scheduled event IDs;
-- secrecy if relevant;
-- causal parent IDs or initiating event IDs.
-
-A process may continue while none of its actors are present in the player's loaded scene.
-
----
-
-## 14. Scheduler contract
-
-The scheduler is one of the most important explicit extensions beyond Fallout 2's map-bound timer behavior.
-
-Every scheduled event MUST declare a lifetime/scope.
-
-Minimum scopes:
-
-### `LocationLifetime`
-
-May be cancelled/resolved/transformed when the owning location presentation/simulation slice unloads, if its semantics are truly local.
-
-Examples: local ambient/presentation callbacks, some scene-local object behavior.
-
-### `WorldProcessLifetime`
-
-Survives location unload and full travel. Ends only when fired or causally cancelled/superseded.
-
-Examples:
-
-- W1's opportunity to contact W2;
-- G1 daylight cleanup;
-- a record review deadline;
-- I1 follow-up;
-- rumor/institution escalation.
-
-Required scheduler fields:
-
-- scheduled event ID;
-- due simulation time or explicit trigger condition;
-- event type/payload;
-- scope/lifetime;
-- owner/target persistent IDs;
-- parent cause/process IDs;
-- deterministic ordering key;
-- cancellation/supersession state.
-
-Required semantics:
-
-1. Simulation time, not real time, is authoritative.
-2. Equal-time ordering is deterministic and documented.
-3. Save/load restores future events exactly.
-4. Location unload MUST NOT cancel `WorldProcessLifetime` events.
-5. Cancellation requires an explicit cause.
-6. Same-tick self-scheduling must have loop protection.
-
----
-
-## 15. Location / presentation boundary
-
-Persistent simulation location state is distinct from a loaded Godot scene or future presentation object.
-
-For M2:
-
-- L1 may unload from presentation memory;
-- its persistent camera/evidence/access state remains;
-- W1 can move elsewhere;
-- G1 can later interact with L1 through simulation or a newly loaded presentation;
-- P1/I1 processes can advance elsewhere;
-- re-entering L1 reconstructs presentation from persistent state.
-
-Required rule:
-
-`Scene unloaded` is not a semantic event equivalent to `world ceased to exist`.
-
----
-
-## 16. Persona / identity contract
-
-Actor identity and recognized persona are distinct.
-
-Minimum fields:
-
-- persona ID;
-- owning actor ID;
-- alias/name;
-- documentary footprint/reference set needed for M2;
-- known-to actor/institution relations or derivable knowledge;
-- compromise state per observer/institution, not necessarily one global boolean.
-
-I1 may link an anomalous event to a persona without learning that persona's full vampiric identity.
-
----
-
-## 17. Determinism contract
-
-For the M2 headless proof:
-
-`same initial state + same seed + same ordered external/player inputs => same ordered causal log + same final state`
-
-Required measures:
-
-- deterministic simulation clock;
-- persisted RNG state or named deterministic RNG streams;
-- stable event ordering;
-- no wall-clock calls in simulation outcomes;
-- no iteration-order dependence on unordered runtime containers unless normalized;
-- deterministic serialization/state hash for test checkpoints.
-
----
-
-## 18. Save/load contract
-
-A save after the incident but before later transmission MUST preserve enough state to resume the exact causal chain.
-
-Minimum persistent categories:
-
-- schema/save version;
-- simulation time;
-- RNG state/streams;
-- stable ID allocator/registry state;
-- actors and persistent location references;
-- personas;
-- world events needed by causal history;
-- observations;
-- propositions;
-- beliefs;
-- memories;
-- evidence and custody/integrity;
-- records and copies/access;
-- relationships;
-- institutions;
-- processes;
-- scheduled world/process events;
-- messages already sent/received;
-- causal parent links needed for debugging/explanation.
-
-Post-load phase MUST:
-
-1. reconstruct records by stable ID;
-2. rebuild runtime references/indexes;
-3. validate referential integrity;
-4. restore scheduler ordering;
-5. restore deterministic RNG state;
-6. fail loudly or quarantine invalid records rather than silently changing causal targets.
-
----
-
-## 19. Causal log/debug contract
-
-Every state-changing event in M2 MUST produce a compact deterministic log entry or equivalent inspectable history.
-
-Minimum fields:
-
-- event ID;
-- simulation time;
-- type;
-- source/initiator;
-- targets;
-- affected persistent IDs;
-- parent-cause IDs;
-- process ID if any;
-- deterministic result/state-delta reference.
-
-The debug layer MUST eventually answer:
-
-- Who knows proposition P?
-- Why does that holder believe it?
-- Who directly observed EVT-001?
-- Who only heard about it?
-- Which evidence still exists?
-- Who can access each record/evidence item?
-- Why did an investigation start?
-- What did cleanup alter?
-- Which later events descend from EVT-001?
-- Which persona is compromised to which observer/institution and why?
-
----
-
-## 20. M2 deterministic scenario contract
-
-Required actors/objects:
-
-- V0 player vampire;
-- W1 direct mortal witness;
-- W2 hearsay recipient;
-- G1 cleanup/daylight proxy;
-- I1 investigator;
-- P1 mortal institution;
-- optional H1 Kindred social receiver;
-- L1 incident location;
-- optional C1 camera/sensor;
-- E1 evidence;
-- R1 institutional record;
-- investigation process;
-- cleanup process.
-
-Required sequence:
-
-1. V0 performs overt supernatural action -> world event.
-2. W1 receives a direct observation.
-3. W1 forms proposition/belief/memory.
-4. Optional C1/E1 creates independent evidence path.
-5. V0 may leave/intervene/request cleanup.
-6. Location may unload; world/process causal events survive.
-7. W1 later transmits a possibly transformed claim to W2.
-8. W2 may create R1 through its own decision/rules.
-9. P1 receives R1 through explicit procedure.
-10. I1 gains access and investigation advances.
-11. Optional H1 learns a separate distorted/social version through another path.
-12. Player later discovers that the world changed while absent.
-
-No step may read inaccessible global truth to manufacture knowledge.
-
----
-
-## 21. Acceptance tests
-
-### AT-01 No hidden information leak
-
-Only W1/C1 may know/capture the incident immediately unless another explicit channel exists.
-
-### AT-02 Direct observation differs from hearsay
-
-W1 and W2 can hold related propositions with different provenance/confidence.
-
-### AT-03 Rumor mutation
-
-A deterministic transmission rule can alter detail, certainty, attribution or interpretation while preserving ancestry.
-
-### AT-04 Evidence custody
-
-Evidence can move, be altered or be removed without deleting source events or memories.
-
-### AT-05 Institution requires an information path
-
-P1 cannot start an investigation from telepathic/global knowledge.
-
-### AT-06 Daylight/proxy causality
-
-G1 can act while V0 lacks direct agency and can create new traces.
-
-### AT-07 Save/load equivalence
-
-Uninterrupted run and save/reload run converge to the same state/log for identical inputs/seed.
-
-### AT-08 Causal ancestry query
-
-I1's suspicion can be traced back through record/message/memory/observation/event ancestry.
-
-### AT-09 Branch sensitivity
-
-Silencing W1, removing E1, disabling C1 or preventing W2's report produces causally different downstream states.
-
-### AT-10 No institution-global memory
-
-One member learning something privately does not grant it to all institution members.
-
-### AT-11 Deterministic replay
-
-Replay of the same seed/input log reproduces state hashes/checkpoints.
-
-### AT-12 Cover-up can create traces
-
-Cleanup may generate access logs, witnesses or contradictions that increase suspicion.
-
-### AT-13 Player knowledge is separate
-
-The player does not automatically see W1/W2/I1 internal beliefs.
-
-### AT-14 Persona linkage is partial
-
-I1 may link evidence to a persona without resolving V0's full supernatural identity.
-
-### AT-15 Relationship consequence is systemic
-
-Fear/trust/etc. change because of observed interactions, not because a quest stage changed.
-
-### AT-16 Scheduler lifetime
-
-Unload L1 after W1 forms a memory but before a scheduled world-process testimony event. The testimony event remains scheduled and can fire later unless explicitly cancelled by a causal event.
-
-### AT-17 Scene-local event cleanup
-
-A deliberately `LocationLifetime` test event may be discarded on L1 unload without altering persistent social causality.
-
-### AT-18 Reference restoration
-
-Save/load restores every persistent ID reference and scheduled target. Any unresolved reference fails validation deterministically.
-
----
-
-## 22. Explicit non-goals for this contract
-
-Not selected or implemented here:
-
-- Godot node/resource hierarchy;
-- ECS vs object model;
-- SQL/JSON/binary save format;
-- networking;
-- full dialogue authoring format;
-- full police AI;
-- full city simulation;
-- full VTM character sheet;
-- Disciplines/combat implementation;
-- sophisticated memory decay;
-- final reputation/Status systems;
-- UI/art presentation;
-- LLM runtime NPC reasoning.
-
----
-
-## 23. Architecture review gate
-
-This contract is ready to move from research to architecture only if direction accepts the following non-trivial commitments:
-
-1. Knowledge is actor/institution-specific and provenance-bearing.
-2. World/process scheduling survives location unload.
-3. Persistent IDs are semantic and versioned; runtime pointers are reconstructible only.
-4. Save/load preserves future causality, not just current snapshots.
-5. Quest-stage variables cannot substitute for causal state in M2.
-6. Relationships are not one scalar.
-7. Loaded presentation scenes are not the lifetime boundary of the simulated world.
-8. Headless deterministic tests are mandatory before visual implementation of M2.
-
-If accepted, the next artifact is an **M2 Data Contract** specifying record schemas/interfaces at field level while still remaining independent of Godot presentation.
