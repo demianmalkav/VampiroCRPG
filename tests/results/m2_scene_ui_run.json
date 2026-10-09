@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "frontend": "actual scene.js",
+  "authority": "local ephemeral loopback server",
+  "checks": [
+    "mode change",
+    "live feeding",
+    "paid retreat",
+    "save download",
+    "file restore",
+    "lucid completion",
+    "death and humanity consequence",
+    "canvas draw calls"
+  ],
+  "limit": "DOM/canvas harness; not browser layout verification"
+}

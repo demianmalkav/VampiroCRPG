@@ -1,0 +1,329 @@
+{
+  "status": "PASS",
+  "command": "python3 qa/scene/check.py",
+  "generated_at_utc": "2026-10-09T17:41:08.736993+00:00",
+  "tests_run": 68,
+  "failures": 0,
+  "errors": 0,
+  "scene_tests": 9,
+  "core_regression_tests": 59,
+  "test_results": [
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F01_same_tick_copy_first",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F02_same_tick_removal_first",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F03_presentation_discard_keeps_world_work",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F04_work_limit_is_persistent_and_preserves_pending_work",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F05_invalid_load_preserves_previous_world",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F06_replay_and_pure_queries",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F07_original_copy_and_grants_have_separate_authority",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_cancel_after_removal_does_not_resurrect_evidence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_incident_injection_is_not_a_player_command",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_invalid_json_profile_and_duplicate_keys_fail_without_publication",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_transaction_rollback_includes_clock_resources_receipts_and_queue",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR01_direct_observation_and_transformed_hearsay",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR02_camera_only_and_authorized_alias_matching",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR02_no_channels_no_omniscient_case",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR02_witness_only",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR03_late_cleanup_and_causes",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR04_early_removal_preserves_testimony",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_denied_access_and_missing_information",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_idempotency_after_save_and_collision",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_insufficient_resources_and_expired_deadline",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_revalidate_availability_and_permission_at_action",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR06_cleanup_access_trace_is_acquired",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR07_inaccessible_record_denies_content_without_effects",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR07_refusal_to_report_and_independent_video",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR08_all_cases_equal_at_every_commit_before_and_after_reload",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR08_visit_is_pending_at_save_and_arrives_later",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR09_causal_explanations_and_player_projection",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR09_world_consequence_without_player_discovery",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_unavailable_agent_cannot_report_until_reactivated",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF01_initial_awake_receipt_prevents_same_night_farming",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF01_night_cost_while_asleep_and_wake_recovery_once",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF01_unsupported_exhaustion_rejects_without_repair",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF02_inaccessible_or_unseen_sources_do_not_roll_or_transfer",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF03_beast_waits_without_source_and_cannot_issue_player_actions",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF03_five_accumulated_successes_and_current_pool",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF03_pressure_withdrawal_and_feed_same_tick_cancel_retry",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF04_next_night_pool_is_recomputed_and_contact_observed_again",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF04_revised_cancellation_and_botch_vectors",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF04_rng_format_references_rejection_sampling_and_overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF05_full_capacity_and_death_block_additional_extraction",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF05_invalid_lucid_action_and_empty_willpower_are_atomic",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF05_wait_lucid_window_suspends_feeding_not_extra_turn",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_bad_snapshots_do_not_replace_live_world",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_cli_disk_save_resume_and_wrong_case_rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_cli_interactive_decision_changes_actual_outcome",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_every_atomic_commit_save_load_continuity",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_injected_extraction_failure_rolls_back_both_resources_rng_queue",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_resolved_incident_and_profile_tampering_cannot_bypass_owners",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF07_hierarchy_context_threshold_and_single_evaluation",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF08_rendering_unload_camera_and_private_morality_independence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BI01_daytime_case_and_next_night_visit_follow_feeding",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BI01_early_denied_and_incomplete_cleanup_preserve_boundaries",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR10_duplicate_feed_and_seal_do_not_repeat",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR10_safe_transfer_and_seal_preserve_evidence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR11_filling_or_losing_hunger_does_not_end_frenzy",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR11_lucid_escape_spends_once_and_restores_beast",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR12_forbidden_willpower_does_not_suppress_pending_assessment",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR12_grave_frenzy_incident_success_failure_and_botch",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR12_warning_precedes_fatal_action_even_under_beast",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_scene.SceneTests.test_daytime_world_and_acquired_inquiry_without_omniscience",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_scene.SceneTests.test_duplicate_paid_request_and_stale_view",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_scene.SceneTests.test_forged_save_and_forbidden_commands_leave_session_intact",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_scene.SceneTests.test_http_get_post_save_origin_and_malformed_boundaries",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_scene.SceneTests.test_mid_action_save_load_preserves_future_and_cost",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_scene.SceneTests.test_player_projection_hides_rng_offscreen_actors_and_institution",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_scene.SceneTests.test_real_lucid_choice_differs_from_uninterrupted_feeding",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_scene.SceneTests.test_reset_is_explicit_and_no_hidden_scenario_decisions",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_scene.SceneTests.test_view_and_action_probes_do_not_mutate_authority",
+      "status": "PASS"
+    }
+  ],
+  "b_scenarios": [
+    {
+      "case": "conservative",
+      "status": "PASS",
+      "state_sha256": "a3e2764caaadece6e31c929c0602d5b80714fc65b329e63d6357d96aea6647c4"
+    },
+    {
+      "case": "lethal",
+      "status": "PASS",
+      "state_sha256": "b3cf9e18eeb147109340c1cf802d7a2729092566c75e3888cf794865ac41d420"
+    },
+    {
+      "case": "lucid_escape",
+      "status": "PASS",
+      "state_sha256": "dfa0621bcab3b0eb8b3582a58b2dec75262ffc29fde05d16eb1b46c9ae7b4a96"
+    },
+    {
+      "case": "botch",
+      "status": "PASS",
+      "state_sha256": "3dfd20e14cecdc9a7a42d54451955919c3f2ab1e0664475df28aa285ce4a55ce"
+    },
+    {
+      "case": "early_removal",
+      "status": "PASS",
+      "state_sha256": "22e960b9edb3ca47a631890a83732b141b20d25c26fe06b0ad6ab2d571a19cee"
+    },
+    {
+      "case": "denied_access",
+      "status": "PASS",
+      "state_sha256": "396ed4fec4cf7183c2ca6fecc74c52ae0ea861ee9df2f42f7874548fb19a1547"
+    },
+    {
+      "case": "insufficient_directive",
+      "status": "PASS",
+      "state_sha256": "e48efd8bcd811f52387a30a61e9a009254c92b4c7ccff76822ff537a5be0e67a"
+    }
+  ],
+  "browser_layout": "UNVERIFIED: browser executable absent; download failed",
+  "frontend_event_check": "Separate Node DOM/canvas harness report: m2_scene_ui_run.json",
+  "limitations": [
+    "one visible scene assumption; no general perception/lighting/occlusion system",
+    "presentation geometry does not own spatial simulation",
+    "private saves include whole world; ordinary view excludes it",
+    "no production engine, art, inventory or combat"
+  ]
+}

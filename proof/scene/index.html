@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>La Noche que Recuerda</title><link rel="stylesheet" href="/scene.css"><script src="/scene.js" defer></script></head>
+<body>
+<header><div><p class="eyebrow">VAMPIRO CRPG · PRUEBA DE ESCENA</p><h1>La noche que recuerda<span>Una decisión deja huellas.</span></h1></div><div class="settings"><label for="mode">Situación</label><select id="mode"><option value="control">Alimentación controlada</option><option value="pressure">Al borde del frenesí</option></select><button id="reset">Reiniciar</button></div></header>
+<main>
+<section class="stage" aria-label="Escena isométrica"><div class="scene-head"><span id="place">Callejón</span><span id="clock">Noche 1 · 0 s</span></div><canvas id="scene" width="1000" height="620" aria-label="Vista de la escena con personajes y cámara"></canvas><div class="scene-foot"><p id="scene-description"></p><span>Formas provisionales · estética abierta</span></div></section>
+<aside><div class="status" id="control" role="status">Tenés el control</div><div class="resources"><div><span>Sangre</span><strong id="blood"></strong><meter id="blood-meter" min="0" max="10"></meter></div><div><span>Voluntad</span><strong id="willpower"></strong><meter id="will-meter" min="0" max="5"></meter></div><div><span>Humanidad</span><strong id="humanity"></strong><span id="hunger" class="quiet"></span></div></div><p id="guide" class="guide"></p><p id="warning" class="warning" hidden></p><h2>Tu próxima decisión</h2><div id="actions" class="actions"></div><div class="time-controls"><button id="advance" data-action="advance">Avanzar 3 s <kbd>Espacio</kbd></button><button id="minute" data-action="minute" hidden>Esperar hasta 1 minuto</button><button id="wake" data-action="wake" hidden>Continuar hasta despertar</button></div><p id="error" role="alert" hidden></p></aside>
+<section class="journal"><div><h2>Lo que viviste</h2><p>Se conservan las consecuencias aunque salgas de la escena.</p></div><ol id="log" aria-live="polite"></ol></section>
+</main><footer><p id="demo"></p><div><button id="save">Guardar partida</button><button id="load">Cargar partida</button><input type="file" id="file" accept=".json,application/json" hidden></div></footer>
+</body></html>

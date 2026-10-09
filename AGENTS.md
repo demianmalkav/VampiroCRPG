@@ -24,7 +24,7 @@ This repository is the technical source of truth for VampiroCRPG.
 - GitHub: code, tests, tools, schemas, technical documentation, implemented architecture.
 
 ## Current phase
-M2 — verified headless A/B proof / preproduction. A and the minimum B profile are authorized for this isolated Python proof; production technology remains undecided.
+M2 — verified A/B proof plus minimal scene presentation / preproduction. A and the minimum B profile are authorized for this isolated Python proof; production technology remains undecided.
 
 No game code should be added until the initial research and architecture pass defines the implementation target.
 

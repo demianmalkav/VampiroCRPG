@@ -1,13 +1,13 @@
 # Technical State
 
-Phase: M2 — A/B headless proof executed / preproduction. Direction authorized B's minimum profile and delegated routine implementation/control-file decisions; engine/language of production undecided.
+Phase: M2 — A/B verified with a minimal scene presentation / preproduction. Routine technical/control work delegated to the assistant; production engine undecided.
 
-DONE: A's causal world plus B owners for blood/victim loss, hunger, Beast governance, one paid lucid action, nightly Willpower and moral incident. Text CLI narrates, accepts interactive decisions, saves/resumes and executes acceptance. G1 remains mortal; no resolved feeding injection in B.
+DONE: local stdlib Python server and HTML/CSS/canvas scene drive the existing A/B authority. Actual feeding, paid lucid choices, seal, travel, cleanup message, sleep, player observation and save/load. Fixtures supply only the first night boundary; later choices come from the player. No Godot or major runtime dependency introduced; B save schema unchanged.
 
-EVIDENCE: [B report](../tests/results/m2_core_b_run.json): 59 tests PASS (29 A, 30 B), seven B scenarios PASS, NQR-01–12 and A/B boundaries/integration covered. Every-commit before/after load preserves state/causes/queue/resources/RNG. Disk CLI resume and interactive choice verified. [B result](M2_CORE_B_RESULT_01.md), [instructions](../proof/m2b/README.md). Historical [A report](../tests/results/m2_core_a_run.json) remains intact.
+EVIDENCE: [scene report](../tests/results/m2_scene_run.json): 68 tests PASS (59 A/B regression, nine scene), seven B cases PASS. Private save/reload during a paid action, retries/stale revisions, rejection rollback, acquired knowledge and HTTP boundaries checked. [Actual JS event harness](../tests/results/m2_scene_ui_run.json): eight checks PASS with real server; not browser layout coverage. Historical A/B reports preserved. [Scene result](M2_SCENE_RESULT_01.md), [run instructions](../proof/scene/README.md).
 
-OPEN: player experience/balance review, minimal presentation, broader survival/morality, inventory/combat and production performance/saves. Trauma persists as a pending marker; behavior is not implemented. No Godot installation or engine selection. Draft review branches remain unmerged.
+OPEN: browser appearance/layout UNVERIFIED (no executable; download failed), player experience/pace/balance, general perception/navigation, items/inventory/combat and production. Art is provisional. Trauma remains a pending marker; zero blood/torpor remain excluded. Draft branches unmerged.
 
-NEXT: prepare a minimal scene presentation over the verified core to make decisions/consequences inspectable, without selecting a production engine. Maintain the separation between presentation and authority. Do not rerun closed source extraction or A/B validation without new changes/failures. Ask direction only for a concrete experience/scope choice, explaining it in conversation.
+NEXT: verify this scene in a real browser and play both decision paths; fix observed issues. Then define one small playable increment for items/editing or navigation, explaining the experience choice in conversation when direction's judgment is needed. Do not reopen closed A/B or select/install a production engine merely to present this proof.
 
-PROJECT_STATE_MASTER remains the authoritative executive state. Technical evidence lives here; control files are maintained by the assistant and are not required reading for direction.
+PROJECT_STATE_MASTER is the executive source. Control files are assistant-maintained continuity aids, not required reading for direction.
