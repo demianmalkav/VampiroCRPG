@@ -1,28 +1,20 @@
 # VampiroCRPG
 
-Repositorio técnico del proyecto. **La Noche que Recuerda** contiene un panel de ensayo conectado al núcleo causal y de supervivencia verificado. El objetivo sigue siendo un mundo isométrico recorrible con avatar, inspección y visor de observaciones; esa experiencia espacial todavía no está implementada.
+**El pasaje** es la primera muestra recorrible con avatar: caminar entre obstáculos, mirar personas y objetos en un visor, recoger una llave y entrar al refugio.
 
-```bash
-python3 -m proof.scene --open
-python3 -m proof.m2b --case conservative
-python3 -m proof.m2b --case lethal --interactive
-python3 -m proof.m2b --suite --report tests/results/m2_core_b_run.json
-```
+[Descargar la muestra verificada](https://drive.google.com/file/d/1EO6JA-I2w6Z9bWltBX-_RZqawpDRVscQ/view?usp=drivesdk). Descomprimir y abrir iniciar-pasaje.cmd en Windows con Python 3.11+; macOS/Linux: `python3 -m proof.walk --open`. La consola debe permanecer abierta. El paquete incluye PNG y modelos editables; Blender no hace falta para jugar.
 
-Python 3.12; sólo biblioteca estándar. No requiere un motor gráfico.
+Al clonar el repositorio, generar primero el arte con la receta de [ejecución y autoría](proof/walk/README.md). Las exportaciones completas también están en el paquete de Drive y el artefacto Walk-art-source del workflow.
 
-- [Escena mínima: ejecución y límites](proof/scene/README.md)
-- [Resultado de la escena](docs/M2_SCENE_RESULT_01.md)
-- [Ejecución y límites de B](proof/m2b/README.md)
-- [Núcleo A conservado](proof/README.md)
-- [Resultados B verificados](docs/M2_CORE_B_RESULT_01.md)
-- [Resultados A](docs/M2_CORE_A_RESULT_01.md)
-- [Contrato M2](docs/M2_CAUSAL_SIMULATION_CONTRACT.md)
-- [Paquete de revisión 0.2](docs/M2_REVIEW_02.md)
-- [Especificación de aceptación](docs/M2_CORE_A_ACCEPTANCE.md)
-- [Perfil B aprobado y ejecutado](docs/M2_CORE_B_PROPOSAL_01.md)
+[Resultado y límites](docs/M2_WALK_RESULT_01.md) · [Contrato espacial C](docs/M2_WALK_CONTRACT_01.md) · [Workflow PASS](https://github.com/demianmalkav/VampiroCRPG/actions/runs/37993656561).
+
+80 tests PASS: 59 A/B, nueve del panel y doce espaciales; ocho comprobaciones en navegador real y coherencia de 72 cuadros por vestuario. Arte inicial, experiencia todavía pendiente de dirección; sin motor de producción elegido.
+
+La muestra anterior **La Noche que Recuerda** queda como panel de ensayo de las reglas A/B, separado de este recorrido. No es el formato objetivo del juego.
+
+- [Panel de reglas](proof/scene/README.md)
+- [Núcleo B](proof/m2b/README.md)
+- [Núcleo A](proof/README.md)
+- [Resultados B](docs/M2_CORE_B_RESULT_01.md)
 - [Estado técnico](docs/TECHNICAL_STATE.md)
 - [Investigación Fallout 2](research/FALLOUT2/README.md)
-
-68 tests PASS (59 regresiones A/B y nueve de escena), siete escenarios B PASS. Sangre, Bestia, voluntad y moralidad mínima implementadas y conectadas a la interfaz. Apariencia en navegador pendiente de verificación. Combate, inventario general, arte y motor de producción siguen pendientes; el balance requiere prueba con jugadores.
-

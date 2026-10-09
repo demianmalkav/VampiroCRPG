@@ -1,13 +1,28 @@
 # M2 C — El pasaje
 
-Estado inicial: IMPLEMENTED / REMOTE_VERIFICATION_PENDING / PLAYER_ACCEPTANCE_PENDING.
+Estado: IMPLEMENTED / BROWSER_AND_PACKAGE_VERIFIED / PLAYER_ACCEPTANCE_PENDING.
 
-Muestra acotada: avatar, rutas sin cortar esquinas, obstáculos, objetos percibidos, visor de inspección, aproximación real, llave con propietario único, puerta y entrada al refugio. Guardado/carga de movimiento e intención pendiente. A/B permanecen separados y sin cambios.
+Una escena recorrible con avatar: clic en suelo traza rutas, evita sólidos y esquinas; clic derecho describe personas/objetos en el visor; clic en un objeto solicita aproximación y actúa sólo al alcanzarlo. La llave tiene dueño único y abre la puerta; cruzar físicamente el umbral completa el objetivo. Guardar/cargar conserva ruta, paso parcial, intención pendiente, inventario y observaciones. El cliente interpola; la autoridad espacial permanece en Python.
 
-Arte generado desde modelos editables comunes con Blender 4.5.14; atlas de 72 cuadros, props y variante de abrigo desde un material. No hay dependencia Blender para jugar. Geometría y textura iniciales simples; aceptación estética pendiente.
+## Evidencia
 
-Evidencia inicial local: lógica del recorrido llave/puerta y replay de partida correctos; Python/JS compilaron; navegador Chromium 153 abrió la escena y produjo captura inicial sin errores JS. El entorno se desconectó durante el recorrido de QA, antes de verificar su final y antes de empaquetar. No se presume PASS del recorrido por esa captura.
+Código verificado: 05454dfb85e6c19e51c1976aa4a821c6828c8e90.
+[Workflow completo PASS](https://github.com/demianmalkav/VampiroCRPG/actions/runs/37993656561).
 
-Continuación: workflow Walk proof, desde la rama proof/m2-walk-01, genera recursos, corre regresión A/B/escena/C, verifica mouse real, inventario, guardado/carga, final del recorrido y cambio de abrigo con estado idéntico; conserva capturas y paquete. Registrar resultados reales al completarse. No entregar una carpeta como verificada antes de eso.
+80 tests PASS: 59 A/B históricos, nueve del panel de reglas y doce del contrato espacial. Regresión adicional del suite B: 59 pruebas y siete escenarios PASS. A/B, sus esquemas y sus informes originales permanecen sin modificaciones.
 
-NEXT: resolver cualquier fallo observado, verificar arranque del paquete limpio y dar a dirección una descarga del ZIP. Su criterio requerido: si el movimiento/inspección se acercan a la experiencia buscada y qué falta a la estética urbana noventera; el control técnico no requiere revisión por su parte.
+Navegador real con mouse: ocho comprobaciones PASS: inspección en visor, ruta con obstáculos, recogida/inventario, guardar a mitad de movimiento y continuar al cargar, puerta/entrada, vestuario regenerado con estado idéntico, reinicio y disposición móvil sin desborde horizontal. Cero errores JavaScript en el recorrido corregido.
+
+72 cuadros por vestuario: idle y ocho cuadros de caminata en cada una de ocho direcciones. El cambio de un material regenera los 72 cuadros; anclajes y dimensiones permanecen iguales. Variante observada dentro de la misma escena con estado autoritativo idéntico.
+
+Paquete descomprimido en carpeta nueva inicia el servidor, carga mapa e imágenes. Python 3.11 estándar más PNG exportados; Blender/Pillow sólo para autoría. Muestra Windows/macOS/Linux entregada como fuentes con lanzador Windows; no es un .exe ni una prueba de ejecución en Windows.
+
+La primera ejecución de navegador completó el recorrido pero detectó errores al dibujar mientras la cámara se reiniciaba. Se añadieron guardas durante carga/reinicio y la ejecución completa siguiente pasó. El entorno local se desconectó; el código y la receta de arte se conservaron y las pruebas se completaron en CI.
+
+## Entrega y continuidad
+
+[El-pasaje-muestra-01.zip en Drive](https://drive.google.com/file/d/1EO6JA-I2w6Z9bWltBX-_RZqawpDRVscQ/view?usp=drivesdk), carpeta 09_BUILDS. Incluye modelos .blend, materiales, receta de exportación, PNG, variante de abrigo y capturas/informes de comprobación. El repositorio versiona la receta; las exportaciones completas están en el paquete y en el artefacto Walk-art-source del workflow.
+
+Arte todavía simple: base de proporciones/cámara/materiales comunes, no acabado urbano gótico final. Percepción discreta, mapa pequeño y un objeto de inventario; sin segunda escena interior, combate, alimentación o frenesí integrados. No se instaló Godot ni se decidió motor de producción.
+
+NEXT: dirección juega la muestra y aporta criterio sobre recorrido/inspección/visor y distancia de la estética buscada. Corregir observaciones concretas antes de ampliar el escenario. No reabrir A/B ni agregar más sistemas por conjetura. El mantenimiento de controles sigue delegado.
