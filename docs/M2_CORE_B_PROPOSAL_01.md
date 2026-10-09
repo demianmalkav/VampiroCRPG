@@ -1,12 +1,12 @@
 # M2 — propuesta mínima de B, revisión 01
 
-Estado: PROPOSED / NEEDS_DIRECTION_DECISION / NOT_IMPLEMENTED / NOT_RUN.
+Estado: APPROVED_FOR_PROOF / IMPLEMENTED / EXECUTED. [Resultado medido](M2_CORE_B_RESULT_01.md).
 
-La segunda prueba sustituirá el incidente de alimentación ya resuelto de A por un proceso real: sangre del vampiro, pérdida de sangre de la víctima, control de la Bestia, una acción lúcida y una evaluación moral. Mantiene los dueños, permisos, procedencias, cola y commits indivisibles de A. No selecciona motor, lenguaje de producción, combate, inventario o presentación gráfica.
+La segunda prueba sustituye el incidente de alimentación ya resuelto de A por un proceso real: sangre del vampiro, pérdida de sangre de la víctima, control de la Bestia, una acción lúcida y una evaluación moral. Mantiene los dueños, permisos, procedencias, cola y commits indivisibles de A. No selecciona motor, lenguaje de producción, combate, inventario o presentación gráfica.
 
-## Decisión que se solicita
+## Decisión registrada
 
-Aprobar este perfil únicamente para implementar y verificar B sin gráficos en el entorno de ensayo Python/biblioteca estándar. Los ocho puntos de la sección 15 del [contrato](M2_CAUSAL_SIMULATION_CONTRACT.md) siguen NEEDS_DECISION hasta que dirección acepte esta propuesta. Crear el documento o un PR no constituye aprobación. A conserva sus 29 tests PASS y sus fixtures originales.
+Dirección indicó que asume la lógica propuesta y pidió continuar trabajando, delegando decisiones técnicas rutinarias y mantenimiento de registros. Se acepta este perfil para B sin gráficos en Python/biblioteca estándar; los ocho puntos del [contrato](M2_CAUSAL_SIMULATION_CONTRACT.md) quedan resueltos para este ensayo. La aceptación procede de esa instrucción, no de crear un PR. A conserva sus fixtures y su informe histórico; sus 29 tests pasaron como regresión de B.
 
 | Punto | Propuesta concreta | Autoridad |
 | --- | --- | --- |
@@ -19,7 +19,7 @@ Aprobar este perfil únicamente para implementar y verificar B sin gráficos en 
 | Moralidad | Un incidente por proceso de alimentación; Conciencia a dificultad 8; voluntad prohibida; muerte en frenesí nivel 4 | Manual pp. 221–222; agrupación digital explícita |
 | Tiempo y azar | Tick de un segundo, acciones de 3 segundos; streams SHA-256 con contador y versión persistidos | Decisión técnica propuesta para el ensayo |
 
-Perfil de datos: [m2_core_b_profile_candidate.json](../tests/specs/m2_core_b_profile_candidate.json). Es especificación candidata, no fixture ejecutable, código ni esquema de guardado publicado. Los valores iniciales y tiempos de la noche son datos de ensayo; no fijan el balance del juego.
+Perfil de datos aprobado: [m2_core_b_profile.json](../tests/specs/m2_core_b_profile.json). El [candidato original](../tests/specs/m2_core_b_profile_candidate.json) se conserva como antecedente. Es un perfil interno de ensayo, no esquema de guardado publicado. Los valores iniciales y tiempos de la noche son datos de ensayo; no fijan el balance del juego.
 
 ## Fuentes y precisiones
 
@@ -40,7 +40,7 @@ Precisiones que prevalecen en B sobre formulaciones ambiguas de las traducciones
 3. Muerte del recipiente durante frenesí pertenece al nivel 4; muerte accidental por hambre fuera del frenesí al nivel 6 (p. 221). El ejemplo de pérdida de control no habilita a confundir ambos contextos.
 4. El aviso moral también alcanza al personaje en frenesí, antes del acto grave (pp. 221–222). No exige devolver control gratis ni revelar el estado oculto de la víctima.
 
-Las traducciones originales mantienen identidad y estado de working design. Esta revisión registra las precisiones para B; no afirma haber corregido todos sus documentos ni implementado esas reglas.
+Las traducciones originales mantienen identidad y estado de working design. Esta revisión registra las precisiones usadas por B; no afirma haber corregido todos los documentos originales ni implementado todo su alcance.
 
 ## Estado inicial y propietarios
 
@@ -139,7 +139,7 @@ Los snapshots internos de B serán versionados aparte. Persisten sangre/fuente, 
 
 ## Aceptación que deberá ejecutarse
 
-Estado de todos los casos siguientes: SPECIFIED / NOT_RUN. No hay un informe de PASS de B.
+Casos siguientes ejecutados con PASS en el [informe B](../tests/results/m2_core_b_run.json). La regla accidental fuera de frenesí se comprueba aisladamente con hechos de prueba, no como recorrido alimentario completo.
 
 | ID | Evidencia exigida |
 | --- | --- |
@@ -161,4 +161,4 @@ Vectores de referencia, no resultados observados: dificultad 6, [6,1] → fallo 
 
 Variante lúcida verificable: fallo inicial, M0 empieza con 8; la primera extracción deja V0=5 y M0=5 en segundo 3. MoveTo legal al refugio 3→6 paga voluntad 5→4 y libera el contacto; M0 conserva vida y emergencia médica, no se declara recuperado. Bestia continúa activa y, sin fuente allí ni nueva provocación, termina tras 9 segundos tranquilos. El caso sin intervención sigue extrayendo 3+3+2 y produce la muerte en segundo 9.
 
-Se aprobará ejecución de B sólo con resultados medidos, diferencias diagnosticadas y trazas auditables. Preparar o validar estos datos no ejecuta la simulación. El próximo paso es decisión de dirección sobre este perfil; tras aceptación, implementar B por propietarios, ejecutar esta aceptación y registrar los resultados. Godot y gráficos permanecen fuera de esta etapa.
+La ejecución y sus 59 tests/siete escenarios se registran en el resultado medido. El regreso del protagonista al incidente antes de la visita se hizo mediante viaje explícito, como precisa el resultado. El siguiente paso es presentación mínima sobre el núcleo verificado. Godot y gráficos permanecen fuera de esta ejecución.

@@ -1,0 +1,1334 @@
+{
+  "case": "conservative",
+  "events": [
+    {
+      "id": "event:1",
+      "type": "WorldInitialized",
+      "tick": 0,
+      "source": "institution:P1",
+      "targets": [],
+      "causes": [],
+      "payload": {},
+      "refs": [
+        "institution:P1"
+      ]
+    },
+    {
+      "id": "event:2",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "institution:P1",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "CopyAttempt",
+        "due_tick": 43320
+      },
+      "refs": [
+        "institution:P1"
+      ]
+    },
+    {
+      "id": "event:4",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "institution:P1",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "ReviewAttempt",
+        "due_tick": 43560
+      },
+      "refs": [
+        "institution:P1"
+      ]
+    },
+    {
+      "id": "event:6",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "institution:P1",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "PlanVisitAttempt",
+        "due_tick": 43620
+      },
+      "refs": [
+        "institution:P1"
+      ]
+    },
+    {
+      "id": "event:8",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "NightBoundary",
+        "due_tick": 0
+      },
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:10",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "kind": "NightBoundary",
+        "due_tick": 86400
+      },
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:12",
+      "type": "NightBloodSpent",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "night_id": "night:1",
+        "amount": 1
+      },
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:13",
+      "type": "WillpowerRecovered",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:12"
+      ],
+      "payload": {
+        "night_id": "night:1",
+        "amount": 0
+      },
+      "refs": [
+        "actor:V0",
+        "event:12"
+      ]
+    },
+    {
+      "id": "event:16",
+      "type": "FeedingStarted",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [
+        "actor:M0",
+        "process:14"
+      ],
+      "causes": [],
+      "payload": {
+        "visible_fangs": true,
+        "policy": "conservative"
+      },
+      "refs": [
+        "actor:V0",
+        "actor:M0",
+        "process:14"
+      ]
+    },
+    {
+      "id": "event:17",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "kind": "FeedExtract",
+        "due_tick": 3
+      },
+      "refs": [
+        "actor:V0",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:19",
+      "type": "IncidentObserved",
+      "tick": 0,
+      "source": "actor:W1",
+      "targets": [],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "features": [
+          "anomalous_contact",
+          "contact_details",
+          "visible_fangs"
+        ],
+        "claims": [
+          "anomaly",
+          "alias_attribution"
+        ]
+      },
+      "refs": [
+        "actor:W1",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:26",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:W1",
+      "targets": [],
+      "causes": [
+        "event:19"
+      ],
+      "payload": {
+        "kind": "Testimony",
+        "due_tick": 43260
+      },
+      "refs": [
+        "actor:W1",
+        "event:19"
+      ]
+    },
+    {
+      "id": "event:28",
+      "type": "CameraCapturedAndArchived",
+      "tick": 0,
+      "source": "device:D_CAM",
+      "targets": [
+        "location:L_REG"
+      ],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "channel": "fixed_authorized_camera_to_archive_channel"
+      },
+      "refs": [
+        "device:D_CAM",
+        "location:L_REG",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:29",
+      "type": "BloodStimulusObserved",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [
+        "actor:M0"
+      ],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "sense": "taste"
+      },
+      "refs": [
+        "actor:V0",
+        "actor:M0",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:31",
+      "type": "CheckResolved",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:29"
+      ],
+      "payload": {
+        "dice": [
+          6,
+          2
+        ],
+        "difficulty": 6,
+        "raw_successes": 1,
+        "one_count": 0,
+        "net_successes": 1,
+        "result": "SUCCESS",
+        "system": "beast",
+        "pool": 2,
+        "stream": "actor:V0/beast",
+        "mode": "RNG",
+        "algorithm": "sha256_counter_d10_v1",
+        "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+        "counter_before": 0,
+        "counter_after": 2
+      },
+      "refs": [
+        "actor:V0",
+        "event:29"
+      ]
+    },
+    {
+      "id": "event:32",
+      "type": "WorkScheduled",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:31"
+      ],
+      "payload": {
+        "kind": "ControlRetry",
+        "due_tick": 3
+      },
+      "refs": [
+        "actor:V0",
+        "event:31"
+      ]
+    },
+    {
+      "id": "event:34",
+      "type": "MoralRiskWarning",
+      "tick": 0,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:16"
+      ],
+      "payload": {
+        "text": "Seguir alimentándote durante el frenesí puede matar y provocar degeneración. Una acción lúcida cuesta un punto de voluntad."
+      },
+      "refs": [
+        "actor:V0",
+        "event:16"
+      ]
+    },
+    {
+      "id": "event:35",
+      "type": "BloodExtracted",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [
+        "actor:M0",
+        "process:14"
+      ],
+      "causes": [
+        "event:17"
+      ],
+      "payload": {
+        "amount": 2,
+        "retained": 2,
+        "government": "RESISTING"
+      },
+      "refs": [
+        "actor:V0",
+        "actor:M0",
+        "process:14",
+        "event:17"
+      ]
+    },
+    {
+      "id": "event:36",
+      "type": "FeedingStopped",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [
+        "process:14"
+      ],
+      "causes": [
+        "event:35"
+      ],
+      "payload": {
+        "reason": "EXTRACTION_COMPLETE"
+      },
+      "refs": [
+        "actor:V0",
+        "process:14",
+        "event:35"
+      ]
+    },
+    {
+      "id": "event:37",
+      "type": "WorkScheduled",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:36"
+      ],
+      "payload": {
+        "kind": "MoralAssessment",
+        "due_tick": 3
+      },
+      "refs": [
+        "actor:V0",
+        "event:36"
+      ]
+    },
+    {
+      "id": "event:39",
+      "type": "HungerPressureEnded",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [
+        "process:30"
+      ],
+      "causes": [
+        "event:32"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:V0",
+        "process:30",
+        "event:32"
+      ]
+    },
+    {
+      "id": "event:40",
+      "type": "MoralIncidentAssessed",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [
+        "process:15"
+      ],
+      "causes": [
+        "event:36"
+      ],
+      "payload": {
+        "level": 8,
+        "result": "NOT_REQUIRED",
+        "humanity_delta": 0,
+        "conscience_delta": 0
+      },
+      "refs": [
+        "actor:V0",
+        "process:15",
+        "event:36"
+      ]
+    },
+    {
+      "id": "event:42",
+      "type": "ActionStarted",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "action": "SealBite",
+        "duration": 3,
+        "token": "action:41"
+      },
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:43",
+      "type": "WorkScheduled",
+      "tick": 3,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:42"
+      ],
+      "payload": {
+        "kind": "ActionComplete",
+        "due_tick": 6
+      },
+      "refs": [
+        "actor:V0",
+        "event:42"
+      ]
+    },
+    {
+      "id": "event:45",
+      "type": "BiteWoundSealed",
+      "tick": 6,
+      "source": "actor:V0",
+      "targets": [
+        "actor:M0"
+      ],
+      "causes": [
+        "event:43"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:V0",
+        "actor:M0",
+        "event:43"
+      ]
+    },
+    {
+      "id": "event:46",
+      "type": "ActionCompleted",
+      "tick": 6,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:43"
+      ],
+      "payload": {
+        "action": "SealBite",
+        "token": "action:41"
+      },
+      "refs": [
+        "actor:V0",
+        "event:43"
+      ]
+    },
+    {
+      "id": "event:47",
+      "type": "MessageSent",
+      "tick": 12,
+      "source": "actor:V0",
+      "targets": [
+        "actor:G1"
+      ],
+      "causes": [],
+      "payload": {
+        "channel": "phone"
+      },
+      "refs": [
+        "actor:V0",
+        "actor:G1"
+      ]
+    },
+    {
+      "id": "event:48",
+      "type": "WorkScheduled",
+      "tick": 12,
+      "source": "actor:G1",
+      "targets": [],
+      "causes": [
+        "event:47"
+      ],
+      "payload": {
+        "kind": "DirectiveReceived",
+        "due_tick": 12
+      },
+      "refs": [
+        "actor:G1",
+        "event:47"
+      ]
+    },
+    {
+      "id": "event:50",
+      "type": "MessageReceived",
+      "tick": 12,
+      "source": "actor:G1",
+      "targets": [
+        "message:DIRECTIVE"
+      ],
+      "causes": [
+        "event:47",
+        "event:48"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:G1",
+        "message:DIRECTIVE",
+        "event:47",
+        "event:48"
+      ]
+    },
+    {
+      "id": "event:53",
+      "type": "DirectiveAccepted",
+      "tick": 12,
+      "source": "actor:G1",
+      "targets": [
+        "process:CLEANUP"
+      ],
+      "causes": [
+        "event:50"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:G1",
+        "process:CLEANUP",
+        "event:50"
+      ]
+    },
+    {
+      "id": "event:54",
+      "type": "WorkScheduled",
+      "tick": 12,
+      "source": "actor:G1",
+      "targets": [],
+      "causes": [
+        "event:53"
+      ],
+      "payload": {
+        "kind": "CleanupDeparture",
+        "due_tick": 43260
+      },
+      "refs": [
+        "actor:G1",
+        "event:53"
+      ]
+    },
+    {
+      "id": "event:56",
+      "type": "TravelStarted",
+      "tick": 12,
+      "source": "actor:V0",
+      "targets": [
+        "location:L_HAV"
+      ],
+      "causes": [],
+      "payload": {
+        "from": "location:L_INC",
+        "to": "location:L_HAV",
+        "duration": 3,
+        "charged": 0
+      },
+      "refs": [
+        "actor:V0",
+        "location:L_HAV"
+      ]
+    },
+    {
+      "id": "event:57",
+      "type": "WorkScheduled",
+      "tick": 12,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:56"
+      ],
+      "payload": {
+        "kind": "Arrival",
+        "due_tick": 15
+      },
+      "refs": [
+        "actor:V0",
+        "event:56"
+      ]
+    },
+    {
+      "id": "event:59",
+      "type": "TravelArrived",
+      "tick": 15,
+      "source": "actor:V0",
+      "targets": [
+        "location:L_HAV"
+      ],
+      "causes": [
+        "event:57"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:V0",
+        "location:L_HAV",
+        "event:57"
+      ]
+    },
+    {
+      "id": "event:60",
+      "type": "SleepStarted",
+      "tick": 15,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {},
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:61",
+      "type": "WorkScheduled",
+      "tick": 15,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:60"
+      ],
+      "payload": {
+        "kind": "WakeBoundary",
+        "due_tick": 86400
+      },
+      "refs": [
+        "actor:V0",
+        "event:60"
+      ]
+    },
+    {
+      "id": "event:63",
+      "type": "MessageSent",
+      "tick": 43260,
+      "source": "actor:W1",
+      "targets": [
+        "actor:W2"
+      ],
+      "causes": [
+        "event:26"
+      ],
+      "payload": {
+        "channel": "phone"
+      },
+      "refs": [
+        "actor:W1",
+        "actor:W2",
+        "event:26"
+      ]
+    },
+    {
+      "id": "event:64",
+      "type": "MessageReceived",
+      "tick": 43260,
+      "source": "actor:W2",
+      "targets": [
+        "message:TESTIMONY"
+      ],
+      "causes": [
+        "event:63",
+        "event:63"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:W2",
+        "message:TESTIMONY",
+        "event:63",
+        "event:63"
+      ]
+    },
+    {
+      "id": "event:71",
+      "type": "ReportSubmitted",
+      "tick": 43260,
+      "source": "actor:W2",
+      "targets": [
+        "institution:P1"
+      ],
+      "causes": [
+        "event:64"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:W2",
+        "institution:P1",
+        "event:64"
+      ]
+    },
+    {
+      "id": "event:72",
+      "type": "CaseOpened",
+      "tick": 43260,
+      "source": "institution:P1",
+      "targets": [
+        "record:REC_REPORT"
+      ],
+      "causes": [
+        "event:71"
+      ],
+      "payload": {},
+      "refs": [
+        "institution:P1",
+        "record:REC_REPORT",
+        "event:71"
+      ]
+    },
+    {
+      "id": "event:73",
+      "type": "TravelStarted",
+      "tick": 43260,
+      "source": "actor:G1",
+      "targets": [
+        "location:L_REG",
+        "process:CLEANUP"
+      ],
+      "causes": [
+        "event:54"
+      ],
+      "payload": {
+        "from": "location:L_HAV",
+        "to": "location:L_REG",
+        "duration": 120,
+        "charged": 1
+      },
+      "refs": [
+        "actor:G1",
+        "location:L_REG",
+        "process:CLEANUP",
+        "event:54"
+      ]
+    },
+    {
+      "id": "event:74",
+      "type": "WorkScheduled",
+      "tick": 43260,
+      "source": "actor:G1",
+      "targets": [],
+      "causes": [
+        "event:73"
+      ],
+      "payload": {
+        "kind": "Arrival",
+        "due_tick": 43380
+      },
+      "refs": [
+        "actor:G1",
+        "event:73"
+      ]
+    },
+    {
+      "id": "event:76",
+      "type": "RecordCopied",
+      "tick": 43320,
+      "source": "institution:P1",
+      "targets": [
+        "record:REC_ORIG"
+      ],
+      "causes": [
+        "event:28",
+        "event:2"
+      ],
+      "payload": {
+        "access": "archive_profile"
+      },
+      "refs": [
+        "institution:P1",
+        "record:REC_ORIG",
+        "event:28",
+        "event:2"
+      ]
+    },
+    {
+      "id": "event:77",
+      "type": "TravelArrived",
+      "tick": 43380,
+      "source": "actor:G1",
+      "targets": [
+        "location:L_REG"
+      ],
+      "causes": [
+        "event:74"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:G1",
+        "location:L_REG",
+        "event:74"
+      ]
+    },
+    {
+      "id": "event:78",
+      "type": "WorkScheduled",
+      "tick": 43380,
+      "source": "actor:G1",
+      "targets": [],
+      "causes": [
+        "event:77"
+      ],
+      "payload": {
+        "kind": "RemovalAttempt",
+        "due_tick": 43440
+      },
+      "refs": [
+        "actor:G1",
+        "event:77"
+      ]
+    },
+    {
+      "id": "event:80",
+      "type": "RecordAccessed",
+      "tick": 43440,
+      "source": "actor:G1",
+      "targets": [
+        "record:REC_ORIG"
+      ],
+      "causes": [
+        "event:28",
+        "event:78"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:G1",
+        "record:REC_ORIG",
+        "event:28",
+        "event:78"
+      ]
+    },
+    {
+      "id": "event:85",
+      "type": "RecordRemoved",
+      "tick": 43440,
+      "source": "actor:G1",
+      "targets": [
+        "record:REC_ORIG"
+      ],
+      "causes": [
+        "event:28",
+        "event:80"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:G1",
+        "record:REC_ORIG",
+        "event:28",
+        "event:80"
+      ]
+    },
+    {
+      "id": "event:86",
+      "type": "WorkScheduled",
+      "tick": 43440,
+      "source": "actor:G1",
+      "targets": [],
+      "causes": [
+        "event:85"
+      ],
+      "payload": {
+        "kind": "TaskReport",
+        "due_tick": 43500
+      },
+      "refs": [
+        "actor:G1",
+        "event:85"
+      ]
+    },
+    {
+      "id": "event:88",
+      "type": "MessageSent",
+      "tick": 43500,
+      "source": "actor:G1",
+      "targets": [
+        "actor:V0"
+      ],
+      "causes": [
+        "event:86"
+      ],
+      "payload": {
+        "channel": "mailbox"
+      },
+      "refs": [
+        "actor:G1",
+        "actor:V0",
+        "event:86"
+      ]
+    },
+    {
+      "id": "event:89",
+      "type": "RecordAccessed",
+      "tick": 43560,
+      "source": "actor:I1",
+      "targets": [
+        "record:REC_REPORT"
+      ],
+      "causes": [
+        "event:71",
+        "event:4"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:I1",
+        "record:REC_REPORT",
+        "event:71",
+        "event:4"
+      ]
+    },
+    {
+      "id": "event:96",
+      "type": "RecordAccessed",
+      "tick": 43560,
+      "source": "actor:I1",
+      "targets": [
+        "record:REC_COPY"
+      ],
+      "causes": [
+        "event:76",
+        "event:4"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:I1",
+        "record:REC_COPY",
+        "event:76",
+        "event:4"
+      ]
+    },
+    {
+      "id": "event:103",
+      "type": "CaseReviewed",
+      "tick": 43560,
+      "source": "actor:I1",
+      "targets": [
+        "process:CASE",
+        "record:REC_REPORT",
+        "record:REC_COPY"
+      ],
+      "causes": [
+        "event:72",
+        "event:89",
+        "event:96"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:I1",
+        "process:CASE",
+        "record:REC_REPORT",
+        "record:REC_COPY",
+        "event:72",
+        "event:89",
+        "event:96"
+      ]
+    },
+    {
+      "id": "event:104",
+      "type": "VisitPlanned",
+      "tick": 43620,
+      "source": "actor:I1",
+      "targets": [
+        "process:CASE",
+        "location:L_INC"
+      ],
+      "causes": [
+        "event:103",
+        "event:6"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:I1",
+        "process:CASE",
+        "location:L_INC",
+        "event:103",
+        "event:6"
+      ]
+    },
+    {
+      "id": "event:105",
+      "type": "WorkScheduled",
+      "tick": 43620,
+      "source": "actor:I1",
+      "targets": [],
+      "causes": [
+        "event:104"
+      ],
+      "payload": {
+        "kind": "VisitDeparture",
+        "due_tick": 86400
+      },
+      "refs": [
+        "actor:I1",
+        "event:104"
+      ]
+    },
+    {
+      "id": "event:107",
+      "type": "NightBloodSpent",
+      "tick": 86400,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "night_id": "night:2",
+        "amount": 1
+      },
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:108",
+      "type": "AvailabilityChanged",
+      "tick": 86400,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [],
+      "payload": {
+        "value": "awake"
+      },
+      "refs": [
+        "actor:V0"
+      ]
+    },
+    {
+      "id": "event:109",
+      "type": "MessageReceived",
+      "tick": 86400,
+      "source": "actor:V0",
+      "targets": [
+        "message:RESULT"
+      ],
+      "causes": [
+        "event:88",
+        "event:108"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:V0",
+        "message:RESULT",
+        "event:88",
+        "event:108"
+      ]
+    },
+    {
+      "id": "event:112",
+      "type": "WillpowerRecovered",
+      "tick": 86400,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:108"
+      ],
+      "payload": {
+        "night_id": "night:2",
+        "amount": 0
+      },
+      "refs": [
+        "actor:V0",
+        "event:108"
+      ]
+    },
+    {
+      "id": "event:113",
+      "type": "TravelStarted",
+      "tick": 86400,
+      "source": "actor:I1",
+      "targets": [
+        "location:L_INC"
+      ],
+      "causes": [
+        "event:105"
+      ],
+      "payload": {
+        "from": "location:L_REG",
+        "to": "location:L_INC",
+        "duration": 60,
+        "charged": 0
+      },
+      "refs": [
+        "actor:I1",
+        "location:L_INC",
+        "event:105"
+      ]
+    },
+    {
+      "id": "event:114",
+      "type": "WorkScheduled",
+      "tick": 86400,
+      "source": "actor:I1",
+      "targets": [],
+      "causes": [
+        "event:113"
+      ],
+      "payload": {
+        "kind": "Arrival",
+        "due_tick": 86460
+      },
+      "refs": [
+        "actor:I1",
+        "event:113"
+      ]
+    },
+    {
+      "id": "event:116",
+      "type": "TravelStarted",
+      "tick": 86400,
+      "source": "actor:V0",
+      "targets": [
+        "location:L_INC"
+      ],
+      "causes": [],
+      "payload": {
+        "from": "location:L_HAV",
+        "to": "location:L_INC",
+        "duration": 3,
+        "charged": 0
+      },
+      "refs": [
+        "actor:V0",
+        "location:L_INC"
+      ]
+    },
+    {
+      "id": "event:117",
+      "type": "WorkScheduled",
+      "tick": 86400,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:116"
+      ],
+      "payload": {
+        "kind": "Arrival",
+        "due_tick": 86403
+      },
+      "refs": [
+        "actor:V0",
+        "event:116"
+      ]
+    },
+    {
+      "id": "event:119",
+      "type": "TravelArrived",
+      "tick": 86403,
+      "source": "actor:V0",
+      "targets": [
+        "location:L_INC"
+      ],
+      "causes": [
+        "event:117"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:V0",
+        "location:L_INC",
+        "event:117"
+      ]
+    },
+    {
+      "id": "event:120",
+      "type": "TravelArrived",
+      "tick": 86460,
+      "source": "actor:I1",
+      "targets": [
+        "location:L_INC"
+      ],
+      "causes": [
+        "event:114"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:I1",
+        "location:L_INC",
+        "event:114"
+      ]
+    },
+    {
+      "id": "event:121",
+      "type": "AliasInquiry",
+      "tick": 86460,
+      "source": "actor:I1",
+      "targets": [
+        "location:L_INC",
+        "process:CASE"
+      ],
+      "causes": [
+        "event:120",
+        "event:103"
+      ],
+      "payload": {},
+      "refs": [
+        "actor:I1",
+        "location:L_INC",
+        "process:CASE",
+        "event:120",
+        "event:103"
+      ]
+    },
+    {
+      "id": "event:122",
+      "type": "InquiryObserved",
+      "tick": 86460,
+      "source": "actor:V0",
+      "targets": [],
+      "causes": [
+        "event:121"
+      ],
+      "payload": {
+        "claims": [
+          "alias_inquiry"
+        ],
+        "features": [
+          "public_inquiry"
+        ]
+      },
+      "refs": [
+        "actor:V0",
+        "event:121"
+      ]
+    }
+  ],
+  "player_view": {
+    "actor": "actor:V0",
+    "location": "location:L_INC",
+    "availability": "awake",
+    "memories": [
+      {
+        "result": "removed_original_no_other_copy_observed"
+      },
+      {
+        "claims": [
+          "alias_inquiry"
+        ],
+        "features": [
+          "public_inquiry"
+        ]
+      }
+    ],
+    "messages": [
+      {
+        "result": "removed_original_no_other_copy_observed"
+      }
+    ],
+    "actions": [
+      "Sleep",
+      "Wake",
+      "SendMessage",
+      "StartTravel",
+      "AttemptFeed",
+      "SealBite"
+    ],
+    "blood": 3,
+    "hungry": true,
+    "willpower": 5,
+    "humanity": 7,
+    "governance": "NORMAL",
+    "active_action": null,
+    "warnings": [
+      "Seguir alimentándote durante el frenesí puede matar y provocar degeneración. Una acción lúcida cuesta un punto de voluntad."
+    ]
+  },
+  "actual": {
+    "blood": 3,
+    "victim_blood": 8,
+    "victim_condition": "no_emergency",
+    "punctures_open": false,
+    "willpower": 5,
+    "humanity": 7,
+    "conscience": 3,
+    "governance": "NORMAL",
+    "moral_incidents": 1,
+    "evaluations": 1,
+    "moral_levels": [
+      8
+    ],
+    "trauma_pending": 0,
+    "public": {
+      "original_available": false,
+      "copy_exists": true,
+      "report_exists": true,
+      "case_open": true,
+      "review_support": [
+        "record:REC_REPORT",
+        "record:REC_COPY"
+      ],
+      "task_terminal": "completed",
+      "g1_budget": 1,
+      "g1_reservation": 0,
+      "result_message": "removed_original_no_other_copy_observed",
+      "v0_knows_copy": false,
+      "visit_fired_tick": 86460,
+      "v0_observed_alias_inquiry": true
+    }
+  },
+  "state_sha256": "a3e2764caaadece6e31c929c0602d5b80714fc65b329e63d6357d96aea6647c4",
+  "rng": {
+    "algorithm": "sha256_counter_d10_v1",
+    "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+    "streams": {
+      "actor:V0/beast": 2,
+      "actor:V0/moral": 0
+    },
+    "vector_cursors": {}
+  }
+}

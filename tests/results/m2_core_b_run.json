@@ -1,0 +1,1227 @@
+{
+  "status": "PASS",
+  "profile": "m2-b-proof-profile-1",
+  "contract": "m2-b-0.1",
+  "runtime": "m2-b-python-proof-1",
+  "generated_at_utc": "2026-10-09T12:24:17.600792+00:00",
+  "python": "3.12.14",
+  "command": "python3 -m proof.m2b --suite --report tests/results/m2_core_b_run.json",
+  "tests_run": 59,
+  "failures": 0,
+  "errors": 0,
+  "a_regression_tests": 29,
+  "test_results": [
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F01_same_tick_copy_first",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F02_same_tick_removal_first",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F03_presentation_discard_keeps_world_work",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F04_work_limit_is_persistent_and_preserves_pending_work",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F05_invalid_load_preserves_previous_world",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F06_replay_and_pure_queries",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_F07_original_copy_and_grants_have_separate_authority",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_cancel_after_removal_does_not_resurrect_evidence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_incident_injection_is_not_a_player_command",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_invalid_json_profile_and_duplicate_keys_fail_without_publication",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.BoundaryAcceptance.test_transaction_rollback_includes_clock_resources_receipts_and_queue",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR01_direct_observation_and_transformed_hearsay",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR02_camera_only_and_authorized_alias_matching",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR02_no_channels_no_omniscient_case",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR02_witness_only",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR03_late_cleanup_and_causes",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR04_early_removal_preserves_testimony",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_denied_access_and_missing_information",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_idempotency_after_save_and_collision",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_insufficient_resources_and_expired_deadline",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR05_revalidate_availability_and_permission_at_action",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR06_cleanup_access_trace_is_acquired",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR07_inaccessible_record_denies_content_without_effects",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR07_refusal_to_report_and_independent_video",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR08_all_cases_equal_at_every_commit_before_and_after_reload",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR08_visit_is_pending_at_save_and_arrives_later",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR09_causal_explanations_and_player_projection",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_NQR09_world_consequence_without_player_discovery",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_a.CoreAcceptance.test_unavailable_agent_cannot_report_until_reactivated",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF01_initial_awake_receipt_prevents_same_night_farming",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF01_night_cost_while_asleep_and_wake_recovery_once",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF01_unsupported_exhaustion_rejects_without_repair",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF02_inaccessible_or_unseen_sources_do_not_roll_or_transfer",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF03_beast_waits_without_source_and_cannot_issue_player_actions",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF03_five_accumulated_successes_and_current_pool",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF03_pressure_withdrawal_and_feed_same_tick_cancel_retry",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF04_next_night_pool_is_recomputed_and_contact_observed_again",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF04_revised_cancellation_and_botch_vectors",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF04_rng_format_references_rejection_sampling_and_overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF05_full_capacity_and_death_block_additional_extraction",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF05_invalid_lucid_action_and_empty_willpower_are_atomic",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF05_wait_lucid_window_suspends_feeding_not_extra_turn",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_bad_snapshots_do_not_replace_live_world",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_cli_disk_save_resume_and_wrong_case_rejection",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_cli_interactive_decision_changes_actual_outcome",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_every_atomic_commit_save_load_continuity",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_injected_extraction_failure_rolls_back_both_resources_rng_queue",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF06_resolved_incident_and_profile_tampering_cannot_bypass_owners",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF07_hierarchy_context_threshold_and_single_evaluation",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BF08_rendering_unload_camera_and_private_morality_independence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BI01_daytime_case_and_next_night_visit_follow_feeding",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_BI01_early_denied_and_incomplete_cleanup_preserve_boundaries",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR10_duplicate_feed_and_seal_do_not_repeat",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR10_safe_transfer_and_seal_preserve_evidence",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR11_filling_or_losing_hunger_does_not_end_frenzy",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR11_lucid_escape_spends_once_and_restores_beast",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR12_forbidden_willpower_does_not_suppress_pending_assessment",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR12_grave_frenzy_incident_success_failure_and_botch",
+      "status": "PASS"
+    },
+    {
+      "test": "test_m2_core_b.SurvivalAcceptance.test_NQR12_warning_precedes_fatal_action_even_under_beast",
+      "status": "PASS"
+    }
+  ],
+  "coverage": {
+    "NQR-01": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR01_direct_observation_and_transformed_hearsay"
+      ]
+    },
+    "NQR-02": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR02_camera_only_and_authorized_alias_matching",
+        "test_m2_core_a.CoreAcceptance.test_NQR02_no_channels_no_omniscient_case",
+        "test_m2_core_a.CoreAcceptance.test_NQR02_witness_only"
+      ]
+    },
+    "NQR-03": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR03_late_cleanup_and_causes"
+      ]
+    },
+    "NQR-04": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR04_early_removal_preserves_testimony"
+      ]
+    },
+    "NQR-05": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR05_denied_access_and_missing_information",
+        "test_m2_core_a.CoreAcceptance.test_NQR05_idempotency_after_save_and_collision",
+        "test_m2_core_a.CoreAcceptance.test_NQR05_insufficient_resources_and_expired_deadline",
+        "test_m2_core_a.CoreAcceptance.test_NQR05_revalidate_availability_and_permission_at_action"
+      ]
+    },
+    "NQR-06": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR06_cleanup_access_trace_is_acquired"
+      ]
+    },
+    "NQR-07": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR07_inaccessible_record_denies_content_without_effects",
+        "test_m2_core_a.CoreAcceptance.test_NQR07_refusal_to_report_and_independent_video"
+      ]
+    },
+    "NQR-08": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR08_all_cases_equal_at_every_commit_before_and_after_reload",
+        "test_m2_core_a.CoreAcceptance.test_NQR08_visit_is_pending_at_save_and_arrives_later"
+      ]
+    },
+    "NQR-09": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.CoreAcceptance.test_NQR09_causal_explanations_and_player_projection",
+        "test_m2_core_a.CoreAcceptance.test_NQR09_world_consequence_without_player_discovery"
+      ]
+    },
+    "NQR-10": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_NQR10_duplicate_feed_and_seal_do_not_repeat",
+        "test_m2_core_b.SurvivalAcceptance.test_NQR10_safe_transfer_and_seal_preserve_evidence"
+      ]
+    },
+    "NQR-11": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_NQR11_filling_or_losing_hunger_does_not_end_frenzy",
+        "test_m2_core_b.SurvivalAcceptance.test_NQR11_lucid_escape_spends_once_and_restores_beast"
+      ]
+    },
+    "NQR-12": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_NQR12_forbidden_willpower_does_not_suppress_pending_assessment",
+        "test_m2_core_b.SurvivalAcceptance.test_NQR12_grave_frenzy_incident_success_failure_and_botch",
+        "test_m2_core_b.SurvivalAcceptance.test_NQR12_warning_precedes_fatal_action_even_under_beast"
+      ]
+    },
+    "F-01": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F01_same_tick_copy_first"
+      ]
+    },
+    "F-02": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F02_same_tick_removal_first"
+      ]
+    },
+    "F-03": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F03_presentation_discard_keeps_world_work"
+      ]
+    },
+    "F-04": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F04_work_limit_is_persistent_and_preserves_pending_work"
+      ]
+    },
+    "F-05": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F05_invalid_load_preserves_previous_world"
+      ]
+    },
+    "F-06": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F06_replay_and_pure_queries"
+      ]
+    },
+    "F-07": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_a.BoundaryAcceptance.test_F07_original_copy_and_grants_have_separate_authority"
+      ]
+    },
+    "B-F01": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_BF01_initial_awake_receipt_prevents_same_night_farming",
+        "test_m2_core_b.SurvivalAcceptance.test_BF01_night_cost_while_asleep_and_wake_recovery_once",
+        "test_m2_core_b.SurvivalAcceptance.test_BF01_unsupported_exhaustion_rejects_without_repair"
+      ]
+    },
+    "B-F02": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_BF02_inaccessible_or_unseen_sources_do_not_roll_or_transfer"
+      ]
+    },
+    "B-F03": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_BF03_beast_waits_without_source_and_cannot_issue_player_actions",
+        "test_m2_core_b.SurvivalAcceptance.test_BF03_five_accumulated_successes_and_current_pool",
+        "test_m2_core_b.SurvivalAcceptance.test_BF03_pressure_withdrawal_and_feed_same_tick_cancel_retry"
+      ]
+    },
+    "B-F04": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_BF04_next_night_pool_is_recomputed_and_contact_observed_again",
+        "test_m2_core_b.SurvivalAcceptance.test_BF04_revised_cancellation_and_botch_vectors",
+        "test_m2_core_b.SurvivalAcceptance.test_BF04_rng_format_references_rejection_sampling_and_overflow"
+      ]
+    },
+    "B-F05": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_BF05_full_capacity_and_death_block_additional_extraction",
+        "test_m2_core_b.SurvivalAcceptance.test_BF05_invalid_lucid_action_and_empty_willpower_are_atomic",
+        "test_m2_core_b.SurvivalAcceptance.test_BF05_wait_lucid_window_suspends_feeding_not_extra_turn"
+      ]
+    },
+    "B-F06": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_BF06_bad_snapshots_do_not_replace_live_world",
+        "test_m2_core_b.SurvivalAcceptance.test_BF06_cli_disk_save_resume_and_wrong_case_rejection",
+        "test_m2_core_b.SurvivalAcceptance.test_BF06_cli_interactive_decision_changes_actual_outcome",
+        "test_m2_core_b.SurvivalAcceptance.test_BF06_every_atomic_commit_save_load_continuity",
+        "test_m2_core_b.SurvivalAcceptance.test_BF06_injected_extraction_failure_rolls_back_both_resources_rng_queue",
+        "test_m2_core_b.SurvivalAcceptance.test_BF06_resolved_incident_and_profile_tampering_cannot_bypass_owners"
+      ]
+    },
+    "B-F07": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_BF07_hierarchy_context_threshold_and_single_evaluation"
+      ]
+    },
+    "B-F08": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_BF08_rendering_unload_camera_and_private_morality_independence"
+      ]
+    },
+    "B-I01": {
+      "status": "PASS",
+      "tests": [
+        "test_m2_core_b.SurvivalAcceptance.test_BI01_daytime_case_and_next_night_visit_follow_feeding",
+        "test_m2_core_b.SurvivalAcceptance.test_BI01_early_denied_and_incomplete_cleanup_preserve_boundaries"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "case": "conservative",
+      "status": "PASS",
+      "tick": 86460,
+      "actual": {
+        "blood": 3,
+        "victim_blood": 8,
+        "victim_condition": "no_emergency",
+        "punctures_open": false,
+        "willpower": 5,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0,
+        "public": {
+          "original_available": false,
+          "copy_exists": true,
+          "report_exists": true,
+          "case_open": true,
+          "review_support": [
+            "record:REC_REPORT",
+            "record:REC_COPY"
+          ],
+          "task_terminal": "completed",
+          "g1_budget": 1,
+          "g1_reservation": 0,
+          "result_message": "removed_original_no_other_copy_observed",
+          "v0_knows_copy": false,
+          "visit_fired_tick": 86460,
+          "v0_observed_alias_inquiry": true
+        }
+      },
+      "expected": {
+        "blood": 3,
+        "victim_blood": 8,
+        "victim_condition": "no_emergency",
+        "punctures_open": false,
+        "willpower": 5,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0
+      },
+      "public_expected": {
+        "original_available": false,
+        "copy_exists": true,
+        "task_terminal": "completed",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 86460,
+        "v0_observed_alias_inquiry": true
+      },
+      "rng_mode": "RNG",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "state_sha256": "a3e2764caaadece6e31c929c0602d5b80714fc65b329e63d6357d96aea6647c4",
+      "domain_events": 66,
+      "pending_work": 0,
+      "inputs": [
+        {
+          "tick": 0,
+          "type": "NightStarted",
+          "night_id": "night:1",
+          "input_seq": 1
+        },
+        {
+          "tick": 0,
+          "type": "AttemptFeed",
+          "target": "actor:M0",
+          "amount": 2,
+          "input_seq": 2
+        },
+        {
+          "tick": 3,
+          "type": "SealBite",
+          "target": "actor:M0",
+          "input_seq": 3
+        },
+        {
+          "input_seq": 4,
+          "tick": 12,
+          "type": "SendMessage",
+          "sender": "actor:V0",
+          "recipient": "actor:G1",
+          "channel": "phone",
+          "directive": {
+            "task": "remove_original",
+            "target_selector": {
+              "record_kind": "video",
+              "source_device": "device:D_CAM",
+              "captured_tick": 0
+            },
+            "office": "location:L_REG",
+            "grant_reference": "grant:ORIGINAL_ACCESS",
+            "deadline_tick": 43500,
+            "does_not_disclose": [
+              "record:REC_COPY"
+            ],
+            "not_before": 43260
+          }
+        },
+        {
+          "tick": 12,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_HAV",
+          "input_seq": 5
+        },
+        {
+          "tick": 15,
+          "type": "SleepUntil",
+          "until": 86400,
+          "input_seq": 6
+        },
+        {
+          "tick": 15,
+          "type": "UnloadPresentation",
+          "location": "location:L_INC",
+          "input_seq": 7
+        },
+        {
+          "tick": 86400,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_INC",
+          "input_seq": 8
+        }
+      ]
+    },
+    {
+      "case": "lethal",
+      "status": "PASS",
+      "tick": 30,
+      "actual": {
+        "blood": 10,
+        "victim_blood": 0,
+        "victim_condition": "dead",
+        "punctures_open": true,
+        "willpower": 5,
+        "humanity": 6,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          4
+        ],
+        "trauma_pending": 0,
+        "public": {
+          "original_available": true,
+          "copy_exists": false,
+          "report_exists": false,
+          "case_open": false,
+          "review_support": [],
+          "task_terminal": null,
+          "g1_budget": 2,
+          "g1_reservation": 0,
+          "result_message": null,
+          "v0_knows_copy": false,
+          "visit_fired_tick": null,
+          "v0_observed_alias_inquiry": false
+        }
+      },
+      "expected": {
+        "blood": 10,
+        "victim_blood": 0,
+        "victim_condition": "dead",
+        "punctures_open": true,
+        "willpower": 5,
+        "humanity": 6,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          4
+        ],
+        "trauma_pending": 0
+      },
+      "public_expected": {},
+      "rng_mode": "TEST_VECTOR_HARNESS",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "state_sha256": "b3cf9e18eeb147109340c1cf802d7a2729092566c75e3888cf794865ac41d420",
+      "domain_events": 37,
+      "pending_work": 5,
+      "inputs": [
+        {
+          "tick": 0,
+          "type": "NightStarted",
+          "night_id": "night:1",
+          "input_seq": 1
+        },
+        {
+          "tick": 0,
+          "type": "AttemptFeed",
+          "target": "actor:M0",
+          "amount": 2,
+          "input_seq": 2
+        }
+      ]
+    },
+    {
+      "case": "lucid_escape",
+      "status": "PASS",
+      "tick": 30,
+      "actual": {
+        "blood": 5,
+        "victim_blood": 5,
+        "victim_condition": "medical_emergency",
+        "punctures_open": true,
+        "willpower": 4,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0,
+        "public": {
+          "original_available": true,
+          "copy_exists": false,
+          "report_exists": false,
+          "case_open": false,
+          "review_support": [],
+          "task_terminal": null,
+          "g1_budget": 2,
+          "g1_reservation": 0,
+          "result_message": null,
+          "v0_knows_copy": false,
+          "visit_fired_tick": null,
+          "v0_observed_alias_inquiry": false
+        }
+      },
+      "expected": {
+        "blood": 5,
+        "victim_blood": 5,
+        "victim_condition": "medical_emergency",
+        "punctures_open": true,
+        "willpower": 4,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0
+      },
+      "public_expected": {},
+      "rng_mode": "TEST_VECTOR_HARNESS",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "state_sha256": "dfa0621bcab3b0eb8b3582a58b2dec75262ffc29fde05d16eb1b46c9ae7b4a96",
+      "domain_events": 40,
+      "pending_work": 5,
+      "inputs": [
+        {
+          "tick": 0,
+          "type": "NightStarted",
+          "night_id": "night:1",
+          "input_seq": 1
+        },
+        {
+          "tick": 0,
+          "type": "AttemptFeed",
+          "target": "actor:M0",
+          "amount": 2,
+          "input_seq": 2
+        },
+        {
+          "tick": 3,
+          "type": "LucidAction",
+          "action": "MoveTo",
+          "target": "location:L_HAV",
+          "input_seq": 3
+        }
+      ]
+    },
+    {
+      "case": "botch",
+      "status": "PASS",
+      "tick": 30,
+      "actual": {
+        "blood": 10,
+        "victim_blood": 0,
+        "victim_condition": "dead",
+        "punctures_open": true,
+        "willpower": 5,
+        "humanity": 6,
+        "conscience": 2,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          4
+        ],
+        "trauma_pending": 1,
+        "public": {
+          "original_available": true,
+          "copy_exists": false,
+          "report_exists": false,
+          "case_open": false,
+          "review_support": [],
+          "task_terminal": null,
+          "g1_budget": 2,
+          "g1_reservation": 0,
+          "result_message": null,
+          "v0_knows_copy": false,
+          "visit_fired_tick": null,
+          "v0_observed_alias_inquiry": false
+        }
+      },
+      "expected": {
+        "blood": 10,
+        "victim_blood": 0,
+        "victim_condition": "dead",
+        "punctures_open": true,
+        "willpower": 5,
+        "humanity": 6,
+        "conscience": 2,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          4
+        ],
+        "trauma_pending": 1
+      },
+      "public_expected": {},
+      "rng_mode": "TEST_VECTOR_HARNESS",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "state_sha256": "3dfd20e14cecdc9a7a42d54451955919c3f2ab1e0664475df28aa285ce4a55ce",
+      "domain_events": 41,
+      "pending_work": 5,
+      "inputs": [
+        {
+          "tick": 0,
+          "type": "NightStarted",
+          "night_id": "night:1",
+          "input_seq": 1
+        },
+        {
+          "tick": 0,
+          "type": "AttemptFeed",
+          "target": "actor:M0",
+          "amount": 2,
+          "input_seq": 2
+        }
+      ]
+    },
+    {
+      "case": "early_removal",
+      "status": "PASS",
+      "tick": 86460,
+      "actual": {
+        "blood": 3,
+        "victim_blood": 8,
+        "victim_condition": "no_emergency",
+        "punctures_open": false,
+        "willpower": 5,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0,
+        "public": {
+          "original_available": false,
+          "copy_exists": false,
+          "report_exists": true,
+          "case_open": true,
+          "review_support": [
+            "record:REC_REPORT"
+          ],
+          "task_terminal": "completed",
+          "g1_budget": 1,
+          "g1_reservation": 0,
+          "result_message": "removed_original_no_other_copy_observed",
+          "v0_knows_copy": false,
+          "visit_fired_tick": 86460,
+          "v0_observed_alias_inquiry": true
+        }
+      },
+      "expected": {
+        "blood": 3,
+        "victim_blood": 8,
+        "victim_condition": "no_emergency",
+        "punctures_open": false,
+        "willpower": 5,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0
+      },
+      "public_expected": {
+        "original_available": false,
+        "copy_exists": false,
+        "task_terminal": "completed",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 86460,
+        "v0_observed_alias_inquiry": true
+      },
+      "rng_mode": "RNG",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "state_sha256": "22e960b9edb3ca47a631890a83732b141b20d25c26fe06b0ad6ab2d571a19cee",
+      "domain_events": 65,
+      "pending_work": 0,
+      "inputs": [
+        {
+          "tick": 0,
+          "type": "NightStarted",
+          "night_id": "night:1",
+          "input_seq": 1
+        },
+        {
+          "tick": 0,
+          "type": "AttemptFeed",
+          "target": "actor:M0",
+          "amount": 2,
+          "input_seq": 2
+        },
+        {
+          "tick": 3,
+          "type": "SealBite",
+          "target": "actor:M0",
+          "input_seq": 3
+        },
+        {
+          "input_seq": 4,
+          "tick": 12,
+          "type": "SendMessage",
+          "sender": "actor:V0",
+          "recipient": "actor:G1",
+          "channel": "phone",
+          "directive": {
+            "task": "remove_original",
+            "target_selector": {
+              "record_kind": "video",
+              "source_device": "device:D_CAM",
+              "captured_tick": 0
+            },
+            "office": "location:L_REG",
+            "grant_reference": "grant:ORIGINAL_ACCESS",
+            "deadline_tick": 43500,
+            "does_not_disclose": [
+              "record:REC_COPY"
+            ],
+            "not_before": 43260
+          }
+        },
+        {
+          "tick": 12,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_HAV",
+          "input_seq": 5
+        },
+        {
+          "tick": 15,
+          "type": "SleepUntil",
+          "until": 86400,
+          "input_seq": 6
+        },
+        {
+          "tick": 15,
+          "type": "UnloadPresentation",
+          "location": "location:L_INC",
+          "input_seq": 7
+        },
+        {
+          "tick": 86400,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_INC",
+          "input_seq": 8
+        }
+      ]
+    },
+    {
+      "case": "denied_access",
+      "status": "PASS",
+      "tick": 86460,
+      "actual": {
+        "blood": 3,
+        "victim_blood": 8,
+        "victim_condition": "no_emergency",
+        "punctures_open": false,
+        "willpower": 5,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0,
+        "public": {
+          "original_available": true,
+          "copy_exists": true,
+          "report_exists": true,
+          "case_open": true,
+          "review_support": [
+            "record:REC_REPORT",
+            "record:REC_COPY"
+          ],
+          "task_terminal": "blocked",
+          "g1_budget": 1,
+          "g1_reservation": 0,
+          "result_message": "access_denied",
+          "v0_knows_copy": false,
+          "visit_fired_tick": 86460,
+          "v0_observed_alias_inquiry": true
+        }
+      },
+      "expected": {
+        "blood": 3,
+        "victim_blood": 8,
+        "victim_condition": "no_emergency",
+        "punctures_open": false,
+        "willpower": 5,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0
+      },
+      "public_expected": {
+        "original_available": true,
+        "copy_exists": true,
+        "task_terminal": "blocked",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 86460,
+        "v0_observed_alias_inquiry": true
+      },
+      "rng_mode": "RNG",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "state_sha256": "396ed4fec4cf7183c2ca6fecc74c52ae0ea861ee9df2f42f7874548fb19a1547",
+      "domain_events": 64,
+      "pending_work": 0,
+      "inputs": [
+        {
+          "tick": 0,
+          "type": "NightStarted",
+          "night_id": "night:1",
+          "input_seq": 1
+        },
+        {
+          "tick": 0,
+          "type": "AttemptFeed",
+          "target": "actor:M0",
+          "amount": 2,
+          "input_seq": 2
+        },
+        {
+          "tick": 3,
+          "type": "SealBite",
+          "target": "actor:M0",
+          "input_seq": 3
+        },
+        {
+          "input_seq": 4,
+          "tick": 12,
+          "type": "SendMessage",
+          "sender": "actor:V0",
+          "recipient": "actor:G1",
+          "channel": "phone",
+          "directive": {
+            "task": "remove_original",
+            "target_selector": {
+              "record_kind": "video",
+              "source_device": "device:D_CAM",
+              "captured_tick": 0
+            },
+            "office": "location:L_REG",
+            "grant_reference": "grant:ORIGINAL_ACCESS",
+            "deadline_tick": 43500,
+            "does_not_disclose": [
+              "record:REC_COPY"
+            ],
+            "not_before": 43260
+          }
+        },
+        {
+          "tick": 12,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_HAV",
+          "input_seq": 5
+        },
+        {
+          "tick": 15,
+          "type": "SleepUntil",
+          "until": 86400,
+          "input_seq": 6
+        },
+        {
+          "tick": 15,
+          "type": "UnloadPresentation",
+          "location": "location:L_INC",
+          "input_seq": 7
+        },
+        {
+          "tick": 86400,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_INC",
+          "input_seq": 8
+        }
+      ]
+    },
+    {
+      "case": "insufficient_directive",
+      "status": "PASS",
+      "tick": 86460,
+      "actual": {
+        "blood": 3,
+        "victim_blood": 8,
+        "victim_condition": "no_emergency",
+        "punctures_open": false,
+        "willpower": 5,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0,
+        "public": {
+          "original_available": true,
+          "copy_exists": true,
+          "report_exists": true,
+          "case_open": true,
+          "review_support": [
+            "record:REC_REPORT",
+            "record:REC_COPY"
+          ],
+          "task_terminal": "blocked",
+          "g1_budget": 2,
+          "g1_reservation": 0,
+          "result_message": "missing_office_information",
+          "v0_knows_copy": false,
+          "visit_fired_tick": 86460,
+          "v0_observed_alias_inquiry": true
+        }
+      },
+      "expected": {
+        "blood": 3,
+        "victim_blood": 8,
+        "victim_condition": "no_emergency",
+        "punctures_open": false,
+        "willpower": 5,
+        "humanity": 7,
+        "conscience": 3,
+        "governance": "NORMAL",
+        "moral_incidents": 1,
+        "evaluations": 1,
+        "moral_levels": [
+          8
+        ],
+        "trauma_pending": 0
+      },
+      "public_expected": {
+        "original_available": true,
+        "copy_exists": true,
+        "task_terminal": "blocked",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 86460,
+        "v0_observed_alias_inquiry": true
+      },
+      "rng_mode": "RNG",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "state_sha256": "e48efd8bcd811f52387a30a61e9a009254c92b4c7ccff76822ff537a5be0e67a",
+      "domain_events": 59,
+      "pending_work": 0,
+      "inputs": [
+        {
+          "tick": 0,
+          "type": "NightStarted",
+          "night_id": "night:1",
+          "input_seq": 1
+        },
+        {
+          "tick": 0,
+          "type": "AttemptFeed",
+          "target": "actor:M0",
+          "amount": 2,
+          "input_seq": 2
+        },
+        {
+          "tick": 3,
+          "type": "SealBite",
+          "target": "actor:M0",
+          "input_seq": 3
+        },
+        {
+          "input_seq": 4,
+          "tick": 12,
+          "type": "SendMessage",
+          "sender": "actor:V0",
+          "recipient": "actor:G1",
+          "channel": "phone",
+          "directive": {
+            "task": "remove_original",
+            "target_selector": {
+              "record_kind": "video",
+              "source_device": "device:D_CAM",
+              "captured_tick": 0
+            },
+            "office": null,
+            "grant_reference": "grant:ORIGINAL_ACCESS",
+            "deadline_tick": 43500,
+            "does_not_disclose": [
+              "record:REC_COPY"
+            ],
+            "not_before": 43260
+          }
+        },
+        {
+          "tick": 12,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_HAV",
+          "input_seq": 5
+        },
+        {
+          "tick": 15,
+          "type": "SleepUntil",
+          "until": 86400,
+          "input_seq": 6
+        },
+        {
+          "tick": 15,
+          "type": "UnloadPresentation",
+          "location": "location:L_INC",
+          "input_seq": 7
+        },
+        {
+          "tick": 86400,
+          "type": "StartTravel",
+          "actor": "actor:V0",
+          "to": "location:L_INC",
+          "input_seq": 8
+        }
+      ]
+    }
+  ],
+  "snapshot_comparison": "semantic state/causes/queue/resources/RNG before and after every atomic commit in seven B cases",
+  "limitations": [
+    "headless proof only",
+    "synthetic calendar",
+    "test vectors explicitly labeled",
+    "trauma marker has no derangement behavior",
+    "no zero blood/torpor/full morality/combat/inventory/graphics"
+  ]
+}

@@ -8,7 +8,7 @@ Scope authority: [Reconciliación de alcance 01](https://docs.google.com/documen
 
 Demostrar la cadena hecho → observación → memoria/creencia → transmisión/registro → procedimiento → consecuencia diferida, con causas auditables, conocimiento individual y continuidad al guardar o descargar una escena.
 
-Esta revisión precisa el núcleo A de la propuesta 01–14. La alimentación ya resuelta entra como dato de prueba; no existe todavía una implementación de alimentación o de una Disciplina. La etapa B agregará sangre, víctima, hambre, Bestia, voluntad y moralidad mediante sus dueños reales. Combate, AP, política Kindred, ghoul completo, Vínculo dinámico y poderes canónicos se difieren a C.
+Esta revisión precisa el núcleo A de la propuesta 01–14. La alimentación ya resuelta entra como dato de prueba; el paquete A no implementa alimentación ni Disciplinas. La extensión B agrega sangre, víctima, hambre, Bestia, voluntad y moralidad mediante sus dueños reales, con resultado medido separado. Combate, AP, política Kindred, ghoul completo, Vínculo dinámico y poderes canónicos se difieren a C.
 
 Los términos MUST/DEBE indican obligaciones aprobadas para la prueba A. El entorno de ensayo usa Python 3.12, biblioteca estándar y snapshot JSON interno versionado. Ningún archivo es un esquema de guardado en producción. No se elige engine, lenguaje del juego, ECS o base de datos.
 
@@ -183,11 +183,11 @@ Dirección autorizó este núcleo A y sus reglas de orden/commit/persistencia pa
 
 Realizado: entorno Python/biblioteca estándar; aceptación registrada; núcleo y runner implementados; ensayos ejecutados. Sigue abierta la revisión del comportamiento y las decisiones de B. No se instaló ni fijó Godot.
 
-NEEDS_DECISION antes de B: gasto de despertar, perfil de alimentación, cadencia/terminación de Bestia, regla moral mínima, ventana lúcida, voluntad/recuperación, RNG y unidades de tiempo. No bloquean la revisión de A.
+Los ocho pendientes antes de B (gasto nocturno, alimentación, cadencia/fin de Bestia, moralidad, lucidez, voluntad/recuperación, RNG y tiempo) fueron resueltos para el [perfil mínimo aprobado](M2_CORE_B_PROPOSAL_01.md). Dirección indicó asumir la lógica y continuar; B está [implementado y verificado](M2_CORE_B_RESULT_01.md). La aceptación es del ensayo, no de balance o tecnología de producción. El alcance y fixtures A de este contrato se conservan.
 
 ## 16. Fuentes y estado
 
 Autoridades: [AGENTS.md](../AGENTS.md); [reconciliación 01](https://docs.google.com/document/d/1GbWEeyIQvvoVT-ohiAIQkQ-uSZypaU3deCQPWOXHdow/edit); [Readiness 02](https://docs.google.com/document/d/1CwQjBfdCBV50V0dULWe-0D_xylWhP-dFOcM7xEzuiqk/edit); [matriz Fallout](../research/FALLOUT2/SYSTEM_MATRIX.md) y [corrección de cola](../research/FALLOUT2/QUEUE_LIFETIME_CORRECTION.md). Reglas exactas de supervivencia siguen en Traducciones 01/02/03/08/11 y sus fuentes.
 
-Sin dependencias externas, engine gráfico o esquema publicado de save. Hay código de ensayo separado del futuro runtime del juego; B/C siguen fuera del alcance implementado.
+Sin dependencias externas, engine gráfico o esquema publicado de save. Hay código de ensayo separado del futuro runtime del juego. B se implementa en proof/m2b con perfil aprobado y resultados separados; C sigue pendiente.
 
