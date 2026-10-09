@@ -1,0 +1,404 @@
+{
+  "fixture_version": "m2-a-candidate-0.2",
+  "status": "DRAFT_FOR_ARCHITECTURE_REVIEW",
+  "execution_status": "NOT_RUN",
+  "scope": "A",
+  "tick_unit": "synthetic",
+  "seed": 20261009,
+  "reference": "../../docs/M2_CAUSAL_SIMULATION_CONTRACT.md",
+  "notice": "Test specification data, not a save schema, simulation implementation or VTM rules profile.",
+  "world": {
+    "initial_tick": 0,
+    "ordering": [
+      "due_tick",
+      "enqueue_seq"
+    ],
+    "max_handlers_per_tick": 128,
+    "actors": [
+      {
+        "id": "actor:V0",
+        "location": "location:L_INC",
+        "persona": "persona:V0_ALIAS",
+        "availability": "awake",
+        "knows": [
+          "device:D_CAM",
+          "location:L_REG",
+          "grant:ORIGINAL_ACCESS"
+        ],
+        "incident_knowledge": false
+      },
+      {
+        "id": "actor:M0",
+        "location": "location:L_INC",
+        "availability": "active",
+        "incident_knowledge": false
+      },
+      {
+        "id": "actor:W1",
+        "location": "location:L_INC",
+        "availability": "active",
+        "prior_alias_familiarity": true,
+        "incident_knowledge": false
+      },
+      {
+        "id": "actor:W2",
+        "location": "location:L_REG",
+        "availability": "active",
+        "role": "report_submitter",
+        "incident_knowledge": false
+      },
+      {
+        "id": "actor:G1",
+        "location": "location:L_HAV",
+        "availability": "active",
+        "task_budget": 2,
+        "initial_reservation": 0,
+        "incident_knowledge": false
+      },
+      {
+        "id": "actor:I1",
+        "location": "location:L_REG",
+        "availability": "active",
+        "role": "assigned_reviewer",
+        "prior_alias_appearance_sample": true,
+        "incident_knowledge": false
+      }
+    ],
+    "locations": [
+      "location:L_INC",
+      "location:L_REG",
+      "location:L_HAV"
+    ],
+    "persona": {
+      "id": "persona:V0_ALIAS",
+      "owner": "actor:V0",
+      "display_name": "Alias de prueba",
+      "true_identity_excluded": true
+    },
+    "institution": {
+      "id": "institution:P1",
+      "kind": "fictional_site_security",
+      "initial_case": false,
+      "initial_incident_records": []
+    },
+    "device": {
+      "id": "device:D_CAM",
+      "location": "location:L_INC",
+      "storage": "location:L_REG",
+      "custodian": "institution:P1",
+      "capture_enabled": true,
+      "transport": "fixed_authorized_camera_to_archive_channel"
+    },
+    "grant": {
+      "id": "grant:ORIGINAL_ACCESS",
+      "issuer": "institution:P1",
+      "holder": "actor:G1",
+      "location": "location:L_REG",
+      "scope": "original_video_from_device:D_CAM",
+      "actions": [
+        "InspectRecord",
+        "RemoveRecord"
+      ],
+      "includes_copies": false,
+      "enabled": true
+    },
+    "routes": [
+      {
+        "from": "location:L_HAV",
+        "to": "location:L_REG",
+        "duration": 4
+      },
+      {
+        "from": "location:L_HAV",
+        "to": "location:L_INC",
+        "duration": 1
+      },
+      {
+        "from": "location:L_REG",
+        "to": "location:L_INC",
+        "duration": 3
+      }
+    ],
+    "known_channels": [
+      {
+        "sender": "actor:V0",
+        "recipient": "actor:G1",
+        "channel": "phone"
+      },
+      {
+        "sender": "actor:W1",
+        "recipient": "actor:W2",
+        "channel": "phone"
+      },
+      {
+        "sender": "actor:G1",
+        "recipient": "actor:V0",
+        "channel": "mailbox"
+      }
+    ],
+    "relationship_profile": {
+      "observer": "actor:W1",
+      "target": "actor:V0",
+      "change_on_anomaly": {
+        "fear": "increased",
+        "trust": "reduced"
+      },
+      "omniscient_global_reputation": false
+    }
+  },
+  "scenario_profile": {
+    "witness_enabled": true,
+    "witness_transmission_tick": 3,
+    "recipient_reports": true,
+    "copy_tick": 4,
+    "review_tick": 8,
+    "visit_planning_tick": 9,
+    "visit_due_tick": 12,
+    "travel_charge": 1,
+    "action_delay_after_arrival": 1,
+    "report_delay_after_action": 1,
+    "deadline_tick": 7,
+    "camera_alias_attribution_requires_reviewer_prior_sample": true,
+    "case_opens_from": [
+      "submitted_eligible_report",
+      "authorized_review_of_eligible_video"
+    ],
+    "witness_message_transformation": {
+      "drop_features": [
+        "contact_details"
+      ],
+      "retain_features": [
+        "anomaly",
+        "alias_attribution"
+      ],
+      "source_type": "hearsay"
+    }
+  },
+  "external_inputs": [
+    {
+      "input_seq": 1,
+      "tick": 0,
+      "type": "InjectResolvedIncident",
+      "source": "actor:V0",
+      "location": "location:L_INC",
+      "victim": "actor:M0",
+      "resolved_features": [
+        "visible_fangs",
+        "anomalous_contact"
+      ],
+      "excluded_hidden_fields": [
+        "blood",
+        "clan",
+        "intent"
+      ],
+      "record_label": "record:REC_ORIG"
+    },
+    {
+      "input_seq": 2,
+      "tick": 1,
+      "type": "SendMessage",
+      "sender": "actor:V0",
+      "recipient": "actor:G1",
+      "channel": "phone",
+      "directive": {
+        "task": "remove_original",
+        "target_selector": {
+          "record_kind": "video",
+          "source_device": "device:D_CAM",
+          "captured_tick": 0
+        },
+        "office": "location:L_REG",
+        "grant_reference": "grant:ORIGINAL_ACCESS",
+        "deadline_tick": 7,
+        "does_not_disclose": [
+          "record:REC_COPY"
+        ]
+      }
+    },
+    {
+      "input_seq": 3,
+      "tick": 2,
+      "type": "ChangeAvailability",
+      "actor": "actor:V0",
+      "value": "asleep"
+    },
+    {
+      "input_seq": 4,
+      "tick": 2,
+      "type": "UnloadPresentation",
+      "location": "location:L_INC",
+      "domain_lifetime_unchanged": true
+    },
+    {
+      "input_seq": 5,
+      "tick": 10,
+      "type": "ChangeAvailability",
+      "actor": "actor:V0",
+      "value": "awake"
+    },
+    {
+      "input_seq": 6,
+      "tick": 10,
+      "type": "StartTravel",
+      "actor": "actor:V0",
+      "to": "location:L_INC",
+      "duration": 1
+    }
+  ],
+  "derived_object_labels": {
+    "original": "record:REC_ORIG",
+    "copy": "record:REC_COPY",
+    "report": "record:REC_REPORT",
+    "task": "process:CLEANUP",
+    "case": "process:CASE",
+    "access_log": "record:ACCESS_LOG",
+    "result_message": "message:RESULT"
+  },
+  "save_boundaries": [
+    {
+      "tick": 1,
+      "after": "directive_acceptance_commit"
+    },
+    {
+      "tick": 4,
+      "after": "copy_commit"
+    },
+    {
+      "tick": 5,
+      "after": "travel_arrival_commit"
+    },
+    {
+      "tick": 6,
+      "before": "removal_commit"
+    },
+    {
+      "tick": 6,
+      "after": "removal_commit"
+    },
+    {
+      "tick": 9,
+      "after": "visit_scheduled_commit"
+    }
+  ],
+  "cases": [
+    {
+      "id": "late_copy",
+      "overrides": [],
+      "expected": {
+        "original_available": false,
+        "copy_exists": true,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT",
+          "record:REC_COPY"
+        ],
+        "task_terminal": "completed",
+        "g1_budget": 1,
+        "g1_reservation": 0,
+        "result_message": "removed_original_no_other_copy_observed",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      }
+    },
+    {
+      "id": "early_removal",
+      "overrides": [
+        {
+          "path": "world.routes.0.duration",
+          "value": 1
+        }
+      ],
+      "expected": {
+        "original_available": false,
+        "copy_exists": false,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT"
+        ],
+        "task_terminal": "completed",
+        "g1_budget": 1,
+        "g1_reservation": 0,
+        "result_message": "removed_original_no_other_copy_observed",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      }
+    },
+    {
+      "id": "denied_access",
+      "overrides": [
+        {
+          "path": "world.grant.enabled",
+          "value": false
+        }
+      ],
+      "expected": {
+        "original_available": true,
+        "copy_exists": true,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT",
+          "record:REC_COPY"
+        ],
+        "task_terminal": "blocked",
+        "g1_budget": 1,
+        "g1_reservation": 0,
+        "result_message": "access_denied",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      }
+    },
+    {
+      "id": "insufficient_directive",
+      "overrides": [
+        {
+          "path": "external_inputs.1.directive.office",
+          "value": null
+        }
+      ],
+      "expected": {
+        "original_available": true,
+        "copy_exists": true,
+        "report_exists": true,
+        "case_open": true,
+        "review_support": [
+          "record:REC_REPORT",
+          "record:REC_COPY"
+        ],
+        "task_terminal": "blocked",
+        "g1_budget": 2,
+        "g1_reservation": 0,
+        "result_message": "missing_office_information",
+        "v0_knows_copy": false,
+        "visit_fired_tick": 12,
+        "v0_observed_alias_inquiry": true
+      }
+    }
+  ],
+  "acceptance_test_ids": [
+    "NQR-01",
+    "NQR-02",
+    "NQR-03",
+    "NQR-04",
+    "NQR-05",
+    "NQR-06",
+    "NQR-07",
+    "NQR-08",
+    "NQR-09"
+  ],
+  "additional_required_profiles_in_spec": [
+    "witness_only",
+    "camera_only",
+    "no_information_channel",
+    "recipient_refuses_report",
+    "cleanup_access_trace",
+    "same_tick_copy_first",
+    "same_tick_removal_first"
+  ]
+}
+
