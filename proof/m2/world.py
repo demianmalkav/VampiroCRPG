@@ -393,8 +393,17 @@ class World:
             raise Rejected("INCIDENT_LOCATION")
         ev = self.event("ResolvedIncident", p["source"], [p["victim"], p["location"]], payload={"features": p["resolved_features"]})
         self.s["actors"][p["victim"]]["condition"] = "resolved_incident_victim"
-        features = [f for f in p["resolved_features"] if f in ("visible_fangs", "anomalous_contact", "contact_details")]
-        if self.profile["witness_enabled"] and self.s["actors"]["actor:W1"]["location"] == p["location"]:
+        self.observe_incident(ev, p["location"], p["resolved_features"])
+        return {"ok": True, "events": [ev]}
+
+    def observe_incident(self, ev, location, visible_features):
+        """Publish perceptible facts from an already committed domain action.
+
+        A supplies a resolved fixture event; B supplies a real feeding event.
+        This adapter never owns blood, health, intent or morality.
+        """
+        features = [f for f in visible_features if f in ("visible_fangs", "anomalous_contact", "contact_details")]
+        if self.profile["witness_enabled"] and self.s["actors"]["actor:W1"]["location"] == location:
             claims = ["anomaly"]
             if self.s["actors"]["actor:W1"]["prior_alias_familiarity"]:
                 claims.append("alias_attribution")
@@ -407,11 +416,10 @@ class World:
                                         "cause": obs, "refs": [relation["observer"], relation["target"], obs]})
             self.schedule("Testimony", self.profile["witness_transmission_tick"], {"content": content}, "actor:W1", [obs])
         cam = self.s["devices"]["device:D_CAM"]
-        if cam["capture_enabled"] and cam["location"] == p["location"]:
+        if cam["capture_enabled"] and cam["location"] == location:
             capture = self.event("CameraCapturedAndArchived", cam["id"], [cam["storage"]], [ev], {"channel": cam["transport"]})
             self.make_record("record:REC_ORIG", "video", {"features": features, "claims": ["anomaly"]}, capture,
                              source_device=cam["id"], captured_tick=self.s["tick"])
-        return {"ok": True, "events": [ev]}
 
     def make_record(self, key, kind, content, cause, derived_from=None, **extra):
         obj = {"id": key, "kind": kind, "content": copy.deepcopy(content), "available": True, "integrity": "intact",
@@ -487,9 +495,12 @@ class World:
         accepted = self.event("DirectiveAccepted", a["id"], [task["id"]], [received])
         task["state"] = "accepted"
         try:
-            self.travel(a["id"], d["office"], [accepted], task["id"])
+            self.dispatch_cleanup_travel(a["id"], d["office"], [accepted], task["id"])
         except Rejected as exc:
             self.block_task(str(exc), [accepted])
+
+    def dispatch_cleanup_travel(self, actor, destination, causes, process):
+        self.travel(actor, destination, causes, process)
 
     def route(self, origin, destination):
         for route in self.s["config"]["routes"]:

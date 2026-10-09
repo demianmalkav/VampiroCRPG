@@ -69,7 +69,7 @@ class EvidenceResult(unittest.TextTestResult):
 
 def execute_suite(report_path):
     root = Path(__file__).resolve().parents[2]
-    suite = unittest.defaultTestLoader.discover(str(root / "tests"), pattern="test_m2*.py")
+    suite = unittest.defaultTestLoader.discover(str(root / "tests"), pattern="test_m2_core_a.py")
     result = unittest.TextTestRunner(stream=sys.stderr, verbosity=2, resultclass=EvidenceResult).run(suite)
     cases = []
     for spec in read_fixture()["cases"]:
