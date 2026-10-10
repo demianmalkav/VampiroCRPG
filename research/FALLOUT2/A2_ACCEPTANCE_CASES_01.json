@@ -89,7 +89,28 @@
       "preconditions": "Actor moves with partially completed segment.",
       "stimulus": "Redirect at 150 ms and repeatedly before arrival; cancel using Escape.",
       "expected_vampiro": "No position discontinuity; previous interaction cancelled; last valid destination wins at next node. Record original/CE behavior separately from proposed C policy.",
-      "reference_observed": null,
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_REDIRECTION_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "observed": [
+          "single partial-step redirect reaches new target",
+          "two partial-step redirects reach last target",
+          "repeated destination changes walk animation 1 to run 19",
+          "Escape opens options, pose stays unchanged between snapshots, closing resumes original route",
+          "clicking current actor tile interrupts and stops at that tile",
+          "same-tile offset/frame reset after changed direction and stop"
+        ],
+        "open": [
+          "exact 150ms schedule and logical timing",
+          "pending interaction cancellation and resources",
+          "all repeated-input races or interrupted save/load",
+          "Windows original comparison",
+          "Vampiro implementation and adaptation acceptance"
+        ],
+        "measured_scenario_count": 5
+      },
       "vampiro_observed": null,
       "evidence_required": [
         "input trace",
@@ -364,5 +385,8 @@
   "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents.",
   "vampiro_status": "NOT_VERIFIED",
   "reference_evidence": "CE_NAVIGATION_2026-10-10.json",
-  "reference_note": "21 guarded requests and 53 native tile observations (initial plus 52 changes); A2-01/A2-02 partial reference coverage. Remaining ten cases not executed; all Vampiro acceptance remains unverified."
+  "reference_note": "A2-01/A2-02: 21 guarded requests, 53 native tile observations. A2-03: five guarded scenarios, 429 native pose snapshots, changed-direction offset/frame resets, repeated destination selects running, Escape pauses then resumes and current-tile request stops. All three have partial reference coverage; remaining nine cases unexecuted. All Vampiro acceptance remains unverified.",
+  "reference_evidence_additional": [
+    "CE_REDIRECTION_2026-10-10.json"
+  ]
 }
