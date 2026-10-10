@@ -44,6 +44,22 @@ La sincronización usa una acción identificada y tiempos definidos, no dos anim
 
 Aseo, desgaste e intoxicación visuales son dimensiones distintas de la conducta y la mecánica. Definir sus efectos sistémicos sólo cuando el diseño los requiera; no derivarlos automáticamente de una textura.
 
+## Equipo visible e identidad de los ítems
+
+Requisito de dirección: intercambiar ropa y armaduras debe cambiar la apariencia del personaje. Un arma utilizada o sostenida debe coincidir lo más fielmente posible con su representación en inventario. REQUISITO REGISTRADO; equipamiento visual general y armas todavía NOT_IMPLEMENTED.
+
+Proponer una definición estable de ítem que relacione su diseño visual de referencia, fuente editable, materiales y variantes con icono, representación en el suelo y representación equipada. Conservar forma, proporciones características, color, componentes y estado relevante entre vistas, aunque su escala e iluminación sean distintas. El icono puede exportarse de la misma fuente con cámara de inventario; no diseñar por separado dos armas que sólo compartan nombre.
+
+Separar posesión, equipo asignado y modo de uso. Un arma transportada puede estar guardada; al empuñarla y actuar, el recurso mostrado debe corresponder a ese ítem. Estos estados deberán persistirse en su futura especificación; el inventario de una sola llave en C no tiene ya slots ni empuñado.
+
+Ropa y armaduras requieren piezas o conjuntos compatibles con el cuerpo, con cambios de silueta cuando corresponda, además de color y textura. Definir zonas ocupadas, capas, piezas cubiertas y combinaciones admitidas; verificar intersecciones y deformación al moverse. Un abrigo, una chaqueta y una armadura no se resuelven todos recoloreando el torso.
+
+Las armas necesitan puntos de agarre, posición/orientación y restricciones de una o dos manos, más familias de poses o clips adecuados. La misma pistola, cuchillo u objeto puede compartir fuente entre vistas; sostenerlos puede requerir movimientos diferentes. Los detalles exactos se fijarán al especificar cada familia y sus reglas. Mostrar un arma no implementa aún su ataque o daño.
+
+Estrategia de exportación: evaluar conjuntos equipados prerenderizados desde la fuente común y/o capas compatibles con profundidad controlada. No prometer combinaciones arbitrarias gratuitas ni multiplicar todos los clips por todas las prendas sin medir coste. NEEDS_DECISION técnico cuando exista un personaje fuente y un conjunto reducido real para comparar memoria, generación, calidad y oclusión.
+
+Prueba posterior acotada: dos vestuarios con diferencia de silueta, un equipo de protección y un arma representada tanto en inventario como en mano, en orientaciones y acciones pertinentes. Comprobar identidad visual, agarre, ausencia de intersecciones, cambio de equipo y continuidad al guardar/cargar cuando existan esas reglas. Es una ampliación de validación posterior a la base del pasaje; no declara nuevas capacidades del paquete actual.
+
 ## Vehículos y clima
 
 Vehículos: reservar soporte conceptual para entidades de varias celdas, orientación, ocupantes, interacción de entrada/salida y condiciones propias de movimiento. Esto demandará rutas y colisiones para su tamaño. No representar un vehículo funcional sólo ampliando el sprite humano. Conducción directa o transporte entre lugares: NEEDS_DECISION futuro.
