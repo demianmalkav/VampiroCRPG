@@ -1,6 +1,6 @@
 # Plan de asimilación de Fallout 2
 
-Estado: A1_CONTRACT_DEFINED / A2_RESOURCE_INSPECTION_COMPLETE_RUNTIME_NOT_EXECUTED, 2026-10-09 Argentina / 2026-10-10 UTC. Dirección autorizó comenzar la asimilación orientada a motor productivo, campaña individual primero y online en un orden posterior. A1 documental y auditoría baseline ejecutados; inspección privada inicial de A2 completada; gates conductuales A2–A5 pendientes. Motor productivo todavía no seleccionado.
+Estado: A1_CONTRACT_DEFINED / A2_INPUT_TRANSFER_RESOLVED_STATIC_MAP_AUDIT_COMPLETE_RUNTIME_NOT_EXECUTED, 2026-10-10 Argentina. Dirección autorizó comenzar la asimilación orientada a motor productivo, campaña individual primero y online en un orden posterior. A1 documental y auditoría baseline ejecutados; master recuperado y mapa urbano inspeccionado; gates conductuales A2–A5 pendientes. Motor productivo todavía no seleccionado.
 
 ## Objetivo
 
@@ -22,7 +22,9 @@ Entrega: [contrato espacial reconciliado](../../docs/FALLOUT_ASSIMILATION_A1_SPA
 
 ## A2 — Laboratorio ejecutable de referencia — NEXT
 
-**Avance vigente:** el usuario subió la carpeta descomprimida y el acceso funciona. [Inspección](INSTALLATION_INSPECTION_2026-10-10.md) y [evidencia](INSTALLATION_INSPECTION_2026-10-10.json): quince descargas con SHA256; sfall 2.19a/Hi-Res 4.1.8.0 identificados; tres DAT, 7.786 entradas y 224.382 registros de cuadros comprobados; cabeceras de quince mapas/tres prototipos. `master.dat` (333177805 bytes) devuelve 413 por límite de 268435456; no se ejecutó EXE ni se construyó CE. Continuar desde estos archivos reales, sin volver a pedir la instalación entera. Los doce casos permanecen NOT_EXECUTED.
+**Avance vigente 2026-10-10 Argentina:** [recuperación y mapa](MASTER_RECOVERY_AND_MAP_AUDIT_2026-10-10.md), [evidencia](MASTER_RECOVERY_AND_MAP_AUDIT_2026-10-10.json). Dos RAR descargados, master.dat reconstruido de 333177805 bytes, SHA256 9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711. Las 23140 entradas leídas/validadas; NCR1 base/parche consumidos hasta EOF, 32 puertas y 1098 referencias existentes por versión. Once tests sintéticos PASS; no ejecución de EXE/CE ni caso A2 conductual. Transferencia cerrada: preparar entorno/arranque aislado con identidad de mapa y extensiones registradas. No pedir más partes ni otra instalación.
+
+**Avance inicial, histórico:** [inspección](INSTALLATION_INSPECTION_2026-10-10.md) y [evidencia](INSTALLATION_INSPECTION_2026-10-10.json): quince descargas con SHA256; sfall 2.19a/Hi-Res 4.1.8.0 identificados; tres DAT, 7.786 entradas y 224.382 registros de cuadros comprobados; cabeceras de quince mapas/tres prototipos. La descarga directa del master devolvió 413; este bloqueo fue resuelto por los volúmenes recibidos después. Los doce casos permanecen NOT_EXECUTED.
 
 Antecedente de transferencia: `Fallout2_clean_Windows11.rar`, ID `1G8uAAZ_QIiF9XYQ1dAJrp40s-N4LA8BS`, 741208238 bytes, devuelve 413 y no se descargó. Su bloqueo queda superado para inspección por la carpeta descomprimida. La ficha declaraba ISO/Windows 11, 1.02d + 1.02.31: la lectura nueva identifica sfall/Hi-Res pero mantiene sin resolver el segundo número y la versión exacta del EXE. No pedir al usuario localizar otra copia ni tratarlo como material ausente.
 
