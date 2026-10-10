@@ -1,5 +1,9 @@
 # Fallout 2 System Matrix
 
+## Spatial reference — current package 2026-10-10
+
+Siete arranques/575 poses nativas, 138 ensayos de cursor: 65 superposiciones opacas frontales, 70 supresiones por techo y 103 puntos egg. Perímetro del poste en ambos sentidos; pared con vecinos bloqueados/inaccesibles; armario seleccionado pero sin efecto con acceso cerrado, panel correcto a contacto1 después de abrir/entrar. Revelación de armario oculto por techo repetida dos veces: discrepancia CE con percepción prevista para Vampiro. Omisión de un tramo del log contrastada con recibos nativos y repetición independiente; causa del logger sin verificar. 83 tests/siete guards PASS. A2-01/02/03/05/06/07/08/09/10 parciales, tres casos sin ejecutar; todo Vampiro sin verificar. [Report](CE_SPATIAL_2026-10-10.md) / [scoped evidence](CE_SPATIAL_2026-10-10.json). Native roof hit detection and raster visibility disagree in the repeated hidden-locker case. Do not inherit this as Vampiro perception policy; contact distance source is not a general wall recheck. Prior pickup/save findings stay frozen. NEXT: Paquete de persistencia durante movimiento: guardar/cargar por UI original al caminar/correr y con una redirección pendiente; comparar posición, intención/cola, pose y continuación con controles sin carga. Registrar cancelación o reanudación efectiva, sin imponer persistencia de fases a CE ni cambiar originales. Cerrar alcance A2-09 con evidencias y límites concretos; motor/VTM/arte siguen abiertos.
+
 Status: ACTIVE / REOPENED SPATIAL AND PRODUCTION INVESTIGATION — 2026-10-10
 
 Purpose: record verified behavioral and engineering patterns from Fallout 2 and public reimplementations, then decide what VampiroCRPG should KEEP, MODIFY, REPLACE, or REMOVE. This file is an abstraction layer, not a source-code transplant.

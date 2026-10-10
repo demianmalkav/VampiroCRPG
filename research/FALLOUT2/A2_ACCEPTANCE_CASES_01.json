@@ -84,9 +84,10 @@
       ],
       "reference_evidence_additional": [
         "CE_DOOR_2026-10-10.json",
-        "CE_CONTAINER_2026-10-10.json"
+        "CE_CONTAINER_2026-10-10.json",
+        "CE_SPATIAL_2026-10-10.json"
       ],
-      "additional_reference_observed": "Door access allows locker14499 approach at14500; locked use refuses panel. Unlocked empty locker14497 reached at14498 and opens inventory; full perimeter remains unmeasured."
+      "additional_reference_observed": "Door access allows locker14499 approach at14500; locked use refuses panel. Unlocked empty locker14497 reached at14498 and opens inventory; full perimeter remains unmeasured. Spatial package: all six post neighbors reached in both directions; two solid wall-neighbor tiles rejected, one free neighbor unreachable from exterior; sampled poses have no blocker, one log gap bridged by native receipts and discriminating repeat."
     },
     {
       "id": "A2-03",
@@ -261,16 +262,21 @@
         "observed": [
           "normal visible-art pixel selects compound locker identity",
           "visor LOOK/LOCKED/SEARCH diagnostics follow chosen locker state",
-          "inventory native target equals selected unlocked locker"
+          "inventory native target equals selected unlocked locker",
+          "65 opaque nonzero-pixel overlaps choose observed native front object",
+          "70 roof-suppressed point trials choose no object",
+          "arrow-wall inspect versus move-wall and move-free-ground contrasted",
+          "hidden roof-covered locker disclosed by visor in two original starts; second reads hover LOOK target matching compound identity"
         ],
         "open": [
-          "overlapping object selection",
-          "hidden object behind opaque wall",
-          "wall/free-ground input comparison",
+          "full object hidden behind opaque wall, distinct from roof-covered fixture",
+          "origin of CE roof hit/raster discrepancy",
+          "actor-specific perception adaptation",
           "Windows original comparison",
           "Vampiro implementation"
         ],
-        "full_case_accepted": false
+        "full_case_accepted": false,
+        "deviation": "HIDDEN_ROOF_LOCKER_DISCLOSED"
       },
       "vampiro_observed": null,
       "evidence_required": [
@@ -279,7 +285,10 @@
         "runtime/source revision",
         "capture or video when visual"
       ],
-      "expected_trace": []
+      "expected_trace": [],
+      "reference_evidence_additional": [
+        "CE_SPATIAL_2026-10-10.json"
+      ]
     },
     {
       "id": "A2-07",
@@ -287,7 +296,25 @@
       "preconditions": "Tall wall, wide dumpster and elevated decoration.",
       "stimulus": "Walk fixed perimeter in both directions; pass near wall-mounted pieces.",
       "expected_vampiro": "Feet and body stay coherent with volume; front/back occlusion follows extent, not merely center sort; video mandatory.",
-      "reference_observed": null,
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_SPATIAL_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "full_case_accepted": false,
+        "observed": [
+          "original post six-neighbor perimeter forward/reverse, body/post opaque-pixel order and actual GIFs",
+          "wall-neighbor inputs: blocked versus unreachable recorded separately",
+          "interior walls/roof exposure and 103 actor-point egg flags; private captures/GIF frames reviewed"
+        ],
+        "open": [
+          "wide dumpster and elevated decorations",
+          "all render extents/frames and atomic occlusion equivalence",
+          "logger omission root cause",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ]
+      },
       "vampiro_observed": null,
       "evidence_required": [
         "input trace",
@@ -295,7 +322,10 @@
         "runtime/source revision",
         "capture or video when visual"
       ],
-      "expected_trace": []
+      "expected_trace": [],
+      "reference_evidence_additional": [
+        "CE_SPATIAL_2026-10-10.json"
+      ]
     },
     {
       "id": "A2-08",
@@ -399,7 +429,26 @@
       "preconditions": "Target near actor but wall separates contact point.",
       "stimulus": "Attempt talk/use/feed; alter target availability while approaching.",
       "expected_vampiro": "No action through barrier; permissions/contact rechecked at effect; no acquisition or resource debit on rejection.",
-      "reference_observed": null,
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_SPATIAL_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "full_case_accepted": false,
+        "observed": [
+          "locker14497 selected at distance14 with original room access closed, UI use and move do not approach/open/transfer",
+          "original door opened by UI then crossing to15709, locker approach14498/contact1 and correct inventory target",
+          "hidden inaccessible locker disclosure/use refusal repeated"
+        ],
+        "open": [
+          "near target separated by wall, rather than distant closed-access fixture",
+          "target removed/availability changed during approach",
+          "atomic barrier/permission revalidation at effect",
+          "general contact gate beyond source distance check",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ]
+      },
       "vampiro_observed": null,
       "evidence_required": [
         "input trace",
@@ -407,7 +456,10 @@
         "runtime/source revision",
         "capture or video when visual"
       ],
-      "expected_trace": []
+      "expected_trace": [],
+      "reference_evidence_additional": [
+        "CE_SPATIAL_2026-10-10.json"
+      ]
     },
     {
       "id": "A2-11",
@@ -457,12 +509,13 @@
   "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents.",
   "vampiro_status": "NOT_VERIFIED",
   "reference_evidence": "CE_NAVIGATION_2026-10-10.json",
-  "reference_note": "A2-01/02/03/05/06/08/09 have partial reference coverage. CE pickup-cycle package: eight starts/526 native queue-state observations, early/late/post-effect cancellation attempts, physical repeat and native save/load before/after/during gesture. Marker/delay relation measured; atomic callback boundary and action-ID replay remain unverified. During-gesture save clears pending action. Five remaining cases unexecuted; all Vampiro acceptance unverified.",
+  "reference_note": "Siete arranques/575 poses nativas, 138 ensayos de cursor: 65 superposiciones opacas frontales, 70 supresiones por techo y 103 puntos egg. Per\u00edmetro del poste en ambos sentidos; pared con vecinos bloqueados/inaccesibles; armario seleccionado pero sin efecto con acceso cerrado, panel correcto a contacto1 despu\u00e9s de abrir/entrar. Revelaci\u00f3n de armario oculto por techo repetida dos veces: discrepancia CE con percepci\u00f3n prevista para Vampiro. Omisi\u00f3n de un tramo del log contrastada con recibos nativos y repetici\u00f3n independiente; causa del logger sin verificar. 83 tests/siete guards PASS. A2-01/02/03/05/06/07/08/09/10 parciales, tres casos sin ejecutar; todo Vampiro sin verificar.",
   "reference_evidence_additional": [
     "CE_REDIRECTION_2026-10-10.json",
     "CE_DOOR_2026-10-10.json",
     "CE_CONTAINER_2026-10-10.json",
     "CE_PICKUP_2026-10-10.json",
-    "CE_PICKUP_CYCLE_2026-10-10.json"
+    "CE_PICKUP_CYCLE_2026-10-10.json",
+    "CE_SPATIAL_2026-10-10.json"
   ]
 }

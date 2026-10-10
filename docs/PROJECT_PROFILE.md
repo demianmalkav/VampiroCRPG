@@ -31,6 +31,7 @@ python3 tools/research/check_ce_door_evidence.py research/FALLOUT2/CE_DOOR_2026-
 python3 tools/research/check_ce_container_evidence.py research/FALLOUT2/CE_CONTAINER_2026-10-10.json --check-source-hashes
 python3 tools/research/check_ce_pickup_evidence.py research/FALLOUT2/CE_PICKUP_2026-10-10.json --check-source-hashes
 python3 tools/research/check_ce_pickup_cycle_evidence.py research/FALLOUT2/CE_PICKUP_CYCLE_2026-10-10.json --check-source-hashes
+python3 tools/research/check_ce_spatial_evidence.py research/FALLOUT2/CE_SPATIAL_2026-10-10.json --check-source-hashes
 ```
 
 A/B/escena/C: `python3 -m unittest discover -s tests -v`. El test HTTP del arte C necesita las exportaciones generadas; seguir [la receta](../proof/walk/README.md) antes de ejecutarlo. CI Walk proof las construye.

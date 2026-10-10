@@ -1,0 +1,1 @@
+{"map":"NCR1.MAP","role":"wall-sampling-diagnostic","actions":[{"op":"move","tile":14309,"label":"repeat-first-wall-request"},{"op":"move","tile":13915,"label":"return-origin"}]}

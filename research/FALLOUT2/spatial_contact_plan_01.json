@@ -1,0 +1,15 @@
+{
+  "map":"NCR1.MAP","role":"closed-open-access",
+  "actions":[
+    {"op":"move","tile":15711,"label":"closed-door-outside"},
+    {"op":"key","key":"Home"},
+    {"op":"use-target","field":"locker","identity":[968,132,14497,0],"label":"closed-access-use","seconds":6},
+    {"op":"move","tile":14497,"label":"closed-access-move"},
+    {"op":"use-target","field":"door","identity":[26,33555281,15710,0],"label":"open-original-door"},
+    {"op":"move","tile":15709,"label":"enter-original-room"},
+    {"op":"key","key":"Home"},
+    {"op":"scan","limit":20,"label":"interior-overlaps"},
+    {"op":"use-target","field":"locker","identity":[968,132,14497,0],"label":"open-access-use","seconds":10},
+    {"op":"key","key":"Escape"}
+  ]
+}

@@ -1,0 +1,1 @@
+{"map":"NCR1.MAP","role":"selection-exterior","actions":[{"op":"scan","limit":28},{"op":"use-target","field":"locker","identity":[968,132,14497,0],"seconds":5},{"op":"move","tile":13914},{"op":"scan","limit":12}]}

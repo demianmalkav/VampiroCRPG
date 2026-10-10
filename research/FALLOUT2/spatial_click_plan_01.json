@@ -1,0 +1,49 @@
+{
+  "map": "NCR1.MAP",
+  "role": "wall-ground-input-hidden-roof-repeat",
+  "actions": [
+    {
+      "op": "point",
+      "xy": [
+        308,
+        30
+      ],
+      "label": "opaque-wall-hover"
+    },
+    {
+      "op": "click",
+      "label": "arrow-wall-examine"
+    },
+    {
+      "op": "move",
+      "tile": 14310,
+      "label": "move-wall-cell"
+    },
+    {
+      "op": "move",
+      "tile": 13915,
+      "label": "move-free-ground"
+    },
+    {
+      "op": "move",
+      "tile": 15711,
+      "label": "repeat-closed-door-outside"
+    },
+    {
+      "op": "key",
+      "key": "Home"
+    },
+    {
+      "op": "point",
+      "xy": [
+        627,
+        91
+      ],
+      "label": "hidden-locker-hover"
+    },
+    {
+      "op": "click",
+      "label": "hidden-locker-use-refused"
+    }
+  ]
+}
