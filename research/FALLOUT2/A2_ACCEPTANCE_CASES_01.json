@@ -1,6 +1,6 @@
 {
   "kind": "PLANNED_ACCEPTANCE_CASES",
-  "status": "NOT_EXECUTED",
+  "status": "REFERENCE_PARTIALLY_OBSERVED",
   "scope": "Reference ORIGINAL/CE behavior must be recorded independently of Vampiro adaptation expectations; no overall acceptance inferred from an audit.",
   "geometry_policy": "No literal translation of square C cell IDs to hex Fallout MAP coordinates.",
   "cases": [
@@ -10,7 +10,23 @@
       "preconditions": "Empty ground; native geometry and camera recorded.",
       "stimulus": "Project/unproject representative cell centers and choose each native direction.",
       "expected_vampiro": "Selected node equals intended node; equal logical distances have comparable durations; C cardinal 300 ms, diagonal 425 ms is adaptation policy, not CE expectation.",
-      "reference_observed": null,
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_NAVIGATION_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "observed": [
+          "six native neighbors from 13915",
+          "native project/unproject and actual cursor agree",
+          "six arrivals and six returns"
+        ],
+        "open": [
+          "duration equivalence and logical clock",
+          "original Windows comparison",
+          "Vampiro implementation"
+        ],
+        "measured_case_count": 12
+      },
       "vampiro_observed": null,
       "evidence_required": [
         "input trace",
@@ -26,7 +42,27 @@
       "preconditions": "Crate, wall, dumpster and actor registered with footprints.",
       "stimulus": "Request destination inside each solid; walk around each edge.",
       "expected_vampiro": "No route or execution traverses covered cells; decorated surfaces designated nonblocking remain walkable.",
-      "reference_observed": null,
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_NAVIGATION_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "observed": [
+          "streetlight/wall/guard/hydrant occupied requests approach free neighboring tile",
+          "free destination route bypasses streetlight",
+          "no blocker at actor in 53 native tile observations",
+          "desk and locker requests from 13909 yield no movement",
+          "locker tile blocker is auxiliary scenery, not item"
+        ],
+        "open": [
+          "reachable container approach and full perimeter",
+          "all edges and wide/multihex footprint",
+          "dynamic blocking between samples",
+          "original Windows comparison",
+          "Vampiro implementation"
+        ],
+        "measured_case_count": 9
+      },
       "vampiro_observed": null,
       "evidence_required": [
         "input trace",
@@ -325,5 +361,8 @@
       ]
     }
   ],
-  "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents."
+  "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents.",
+  "vampiro_status": "NOT_VERIFIED",
+  "reference_evidence": "CE_NAVIGATION_2026-10-10.json",
+  "reference_note": "21 guarded requests and 53 native tile observations (initial plus 52 changes); A2-01/A2-02 partial reference coverage. Remaining ten cases not executed; all Vampiro acceptance remains unverified."
 }
