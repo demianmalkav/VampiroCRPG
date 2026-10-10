@@ -177,9 +177,10 @@
         }
       ],
       "reference_evidence_additional": [
-        "CE_CONTAINER_2026-10-10.json"
+        "CE_CONTAINER_2026-10-10.json",
+        "CE_PICKUP_2026-10-10.json"
       ],
-      "additional_reference_observed": "Using empty unlocked locker14497 from15709 begins partial run; verified movement redirect to15709 before opening returns actor and leaves locker frame0, no gesture/search/panel, inventories unchanged in bounded observed window."
+      "additional_reference_observed": "Using empty unlocked locker14497 from15709 begins partial run; verified movement redirect to15709 before opening returns actor and leaves locker frame0, no gesture/search/panel, inventories unchanged in bounded observed window. DENBUS1 ground pickup approach also cancelled; item remains ground and inventory empty, then resumed with additional recorded UI click."
     },
     {
       "id": "A2-04",
@@ -301,7 +302,22 @@
       "preconditions": "Unique ground item within reachable contact.",
       "stimulus": "Use; cancel before effect; use again; cancel after effect; resend same action.",
       "expected_vampiro": "Item stays ground before effect and is owned once after effect; rendering cannot decide transfer; reference action-frame measured.",
-      "reference_observed": null,
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_PICKUP_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "scope": "Original DENBUS1 ground item200/pid4/tile12477; two fresh starts, pickup and approach cancellation/resumed pickup with extra UI click; one owned quantity-one slot, no longer on map. Second former-pixel click is not target/action receipt replay.",
+        "open": [
+          "atomic contact/effect boundary and delay reconciliation (FRM marker4, first observed ownership7)",
+          "cancel during gesture and after effect",
+          "target/action receipt replay",
+          "save/load",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ],
+        "full_case_accepted": false
+      },
       "vampiro_observed": null,
       "evidence_required": [
         "input trace",
@@ -424,10 +440,11 @@
   "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents.",
   "vampiro_status": "NOT_VERIFIED",
   "reference_evidence": "CE_NAVIGATION_2026-10-10.json",
-  "reference_note": "A2-01/A2-02/A2-03/A2-05/A2-06 have partial reference coverage. Container: locked refusal, empty inventory opening and approach cancellation measured in three fresh starts; 328 total pose-state records, 47 scoped interaction records. Seven remaining cases unexecuted; A2-08 ground pickup/ownership not measured; all Vampiro acceptance unverified.",
+  "reference_note": "A2-01/A2-02/A2-03/A2-05/A2-06/A2-08 have partial reference coverage. DENBUS1 original ground pickup: two starts/132 native observations; approach cancellation and resumed pickup, unique quantity-one ownership; atomic contact/delays and action-ID replay unverified. Six remaining cases unexecuted; all Vampiro acceptance unverified.",
   "reference_evidence_additional": [
     "CE_REDIRECTION_2026-10-10.json",
     "CE_DOOR_2026-10-10.json",
-    "CE_CONTAINER_2026-10-10.json"
+    "CE_CONTAINER_2026-10-10.json",
+    "CE_PICKUP_2026-10-10.json"
   ]
 }
