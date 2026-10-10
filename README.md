@@ -1,8 +1,9 @@
 # VampiroCRPG
 
-Repositorio técnico del proyecto. Primera prueba ejecutable sin gráficos: **La Noche que Recuerda** — un incidente observado, recordado, transmitido y convertido en una consecuencia persistente.
+Repositorio técnico del proyecto. **La Noche que Recuerda** contiene un panel de ensayo conectado al núcleo causal y de supervivencia verificado. El objetivo sigue siendo un mundo isométrico recorrible con avatar, inspección y visor de observaciones; esa experiencia espacial todavía no está implementada.
 
 ```bash
+python3 -m proof.scene --open
 python3 -m proof.m2b --case conservative
 python3 -m proof.m2b --case lethal --interactive
 python3 -m proof.m2b --suite --report tests/results/m2_core_b_run.json
@@ -10,6 +11,8 @@ python3 -m proof.m2b --suite --report tests/results/m2_core_b_run.json
 
 Python 3.12; sólo biblioteca estándar. No requiere un motor gráfico.
 
+- [Escena mínima: ejecución y límites](proof/scene/README.md)
+- [Resultado de la escena](docs/M2_SCENE_RESULT_01.md)
 - [Ejecución y límites de B](proof/m2b/README.md)
 - [Núcleo A conservado](proof/README.md)
 - [Resultados B verificados](docs/M2_CORE_B_RESULT_01.md)
@@ -21,5 +24,5 @@ Python 3.12; sólo biblioteca estándar. No requiere un motor gráfico.
 - [Estado técnico](docs/TECHNICAL_STATE.md)
 - [Investigación Fallout 2](research/FALLOUT2/README.md)
 
-59 tests PASS (29 de A, 30 de B), siete escenarios B PASS. Sangre, Bestia, voluntad y moralidad mínima implementadas. Combate, inventario general y gráficos siguen pendientes; el balance del juego requiere prueba con jugadores.
+68 tests PASS (59 regresiones A/B y nueve de escena), siete escenarios B PASS. Sangre, Bestia, voluntad y moralidad mínima implementadas y conectadas a la interfaz. Apariencia en navegador pendiente de verificación. Combate, inventario general, arte y motor de producción siguen pendientes; el balance requiere prueba con jugadores.
 

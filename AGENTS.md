@@ -24,7 +24,7 @@ This repository is the technical source of truth for VampiroCRPG.
 - GitHub: code, tests, tools, schemas, technical documentation, implemented architecture.
 
 ## Current phase
-M2 — verified headless A/B proof / preproduction. A and the minimum B profile are authorized for this isolated Python proof; production technology remains undecided.
+M2 — verified A/B proof plus minimal scene presentation / preproduction. A and the minimum B profile are authorized for this isolated Python proof; production technology remains undecided.
 
 No game code should be added until the initial research and architecture pass defines the implementation target.
 
@@ -33,6 +33,10 @@ No game code should be added until the initial research and architecture pass de
 - B's minimum headless profile was authorized in conversation. A request to continue does not require repeating an already resolved approval.
 - When direction's judgment is actually needed, explain the concrete decision, alternatives and consequences in the conversation. Control documents are continuity aids, not a substitute for that explanation.
 - Keep completion criteria, bounded retries, material checkpoints and small semantic commits. Reopen a closed phase only for a failure or new evidence.
+
+## Presentation target
+- Direction wants a Fallout-like traversable world with an avatar, world inspection and an observation text visor. The existing scene choice panel validates rules but is not an accepted game format.
+- Browser execution is permitted if it delivers that spatial experience. Do not confuse delivery technology with interaction design. Prioritize a small navigable scene over adding or polishing choice buttons.
 
 ## Definition of Done
 A feature is done only when it is implemented, tested, integrated, documented, regression-checked, and accepted by direction.
