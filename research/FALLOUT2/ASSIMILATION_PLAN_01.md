@@ -1,6 +1,6 @@
 # Plan de asimilación de Fallout 2
 
-Estado: A1_CONTRACT_DEFINED / A2_INPUT_TRANSFER_RESOLVED_STATIC_MAP_AUDIT_COMPLETE_RUNTIME_NOT_EXECUTED, 2026-10-10 Argentina. Dirección autorizó comenzar la asimilación orientada a motor productivo, campaña individual primero y online en un orden posterior. A1 documental y auditoría baseline ejecutados; master recuperado y mapa urbano inspeccionado; gates conductuales A2–A5 pendientes. Motor productivo todavía no seleccionado.
+Estado: A1_CONTRACT_DEFINED / A2_CE_STARTUP_VERIFIED_ACCEPTANCE_PENDING, 2026-10-10. Dirección autorizó asimilación para campaña individual de Nueva York y online posterior. CE compilado/ejecutado en laboratorio privado, tres arranques y desplazamientos medidos; doce casos completos A2 y gates A3–A5 pendientes. Motor productivo todavía no seleccionado.
 
 ## Objetivo
 
@@ -22,7 +22,9 @@ Entrega: [contrato espacial reconciliado](../../docs/FALLOUT_ASSIMILATION_A1_SPA
 
 ## A2 — Laboratorio ejecutable de referencia — NEXT
 
-**Avance vigente 2026-10-10 Argentina:** [recuperación y mapa](MASTER_RECOVERY_AND_MAP_AUDIT_2026-10-10.md), [evidencia](MASTER_RECOVERY_AND_MAP_AUDIT_2026-10-10.json). Dos RAR descargados, master.dat reconstruido de 333177805 bytes, SHA256 9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711. Las 23140 entradas leídas/validadas; NCR1 base/parche consumidos hasta EOF, 32 puertas y 1098 referencias existentes por versión. Once tests sintéticos PASS; no ejecución de EXE/CE ni caso A2 conductual. Transferencia cerrada: preparar entorno/arranque aislado con identidad de mapa y extensiones registradas. No pedir más partes ni otra instalación.
+**Avance vigente 2026-10-10:** [CE ejecutado](CE_EXECUTABLE_LAB_2026-10-10.md), [evidencia](CE_EXECUTABLE_LAB_2026-10-10.json). CE e97087b9/fpattern 8523173 limpios compilados, datos privados inalterados. Tres carpetas nuevas alcanzan NCR1 (versión 20/índice 42/elevación 0); capturas y sonda nativa confirman movimiento 13915 → 14517. Arranque y configuración/overrides activos cerrados; doce casos completos A2 siguen pendientes. Laboratorio silencioso DAT-only no reproduce las DLLs/overrides Windows. NEXT acotado: A2-01/A2-02, seis direcciones y bloqueo de suelo/muro/contenedor/actor, con IDs, flags, ruta, estado antes/después y evidencia visual. No repetir transferencia ni preparar el entorno de nuevo.
+
+**Checkpoint histórico de entrada, antes del arranque:** [recuperación y mapa](MASTER_RECOVERY_AND_MAP_AUDIT_2026-10-10.md), [evidencia](MASTER_RECOVERY_AND_MAP_AUDIT_2026-10-10.json). Dos RAR descargados, master.dat reconstruido de 333177805 bytes, SHA256 9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711. Las 23140 entradas leídas/validadas; NCR1 base/parche consumidos hasta EOF, 32 puertas y 1098 referencias existentes por versión. Once tests sintéticos PASS; no ejecución de EXE/CE ni caso A2 conductual. Transferencia cerrada entonces; arranque CE ya verificado arriba. No pedir más partes ni otra instalación.
 
 **Avance inicial, histórico:** [inspección](INSTALLATION_INSPECTION_2026-10-10.md) y [evidencia](INSTALLATION_INSPECTION_2026-10-10.json): quince descargas con SHA256; sfall 2.19a/Hi-Res 4.1.8.0 identificados; tres DAT, 7.786 entradas y 224.382 registros de cuadros comprobados; cabeceras de quince mapas/tres prototipos. La descarga directa del master devolvió 413; este bloqueo fue resuelto por los volúmenes recibidos después. Los doce casos permanecen NOT_EXECUTED.
 
