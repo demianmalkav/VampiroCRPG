@@ -13,4 +13,4 @@ También podés probar **Alimentación controlada**, cerrar las marcas, encargar
 
 Los dibujos son provisionales. Las decisiones usan la simulación real, con dos situaciones de ensayo. El modo de frenesí usa dados de prueba y una víctima que ya perdió sangre; no representa balance final. La comprobación de apariencia en navegador sigue pendiente; están verificadas las decisiones, el servidor y los eventos de interfaz.
 
-[Instrucciones detalladas](proof/scene/README.md).
+[Instrucciones detalladas](README.md).

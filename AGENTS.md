@@ -24,9 +24,9 @@ This repository is the technical source of truth for VampiroCRPG.
 - GitHub: code, tests, tools, schemas, technical documentation, implemented architecture.
 
 ## Current phase
-M2 — verified A/B proof plus minimal scene presentation / preproduction. A and the minimum B profile are authorized for this isolated Python proof; production technology remains undecided.
+Preproduction / Fallout 2 assimilation. A/B are authorized and verified within their isolated Python proof; traversable C sample 02 is rejected and has three known spatial defects. CE Linux reference behavior is partially measured. Campaign: single-player New York first, possible online later; production technology remains undecided. Read PROJECT_STATE_MASTER and docs/TECHNICAL_STATE.md for live scope.
 
-No game code should be added until the initial research and architecture pass defines the implementation target.
+Initial A/B/C prototype scopes were defined before their implementation. Production changes require a bounded target and relevant contract; do not treat this historical gate as a ban on already authorized prototype work.
 
 ## Direction and communication
 - Direction delegates routine technical choices and control-file maintenance to the assistant. Execute NEXT from PROJECT_STATE_MASTER when asked to continue; do not require the user to follow GitHub/Drive control files.

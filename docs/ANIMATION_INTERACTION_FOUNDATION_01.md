@@ -1,6 +1,6 @@
 # Animación e interacciones — base ampliable 01
 
-Estado: adopción parcial en la muestra recorrible 02. IMPLEMENTED: fuentes editables separadas del exportador, catálogo idle/walk/pickup, ocho direcciones y gesto de recoger. NOT_IMPLEMENTED: sincronización general entre actores, marcadores, combate, ropa intercambiable, armas, vehículos y clima. Aceptación artística pendiente de dirección.
+Estado: adopción parcial en la muestra recorrible 02. IMPLEMENTED: fuentes editables separadas del exportador, catálogo idle/walk/pickup, ocho direcciones y gesto de recoger. NOT_IMPLEMENTED: sincronización general entre actores, marcadores, combate, ropa intercambiable, armas, vehículos y clima. Muestra 02 RECHAZADA por dirección por un desfasaje artístico muy grande y problemas de coherencia espacial. Las capacidades implementadas enumeradas aquí no acreditan aceptación. Ver [estado vigente](TECHNICAL_STATE.md).
 
 ## Dirección vigente
 
@@ -68,7 +68,7 @@ Clima: separar estado del tiempo y efectos de presentación. Lluvia, viento o ni
 
 ## Muestra 02 y criterios de cierre
 
-La muestra 02 mantiene mapa y autoridad, integra caminata y recoger, personaje/NPC con vestuario y postura diferenciados, fachadas y entorno independientes. La puerta conserva dos estados gráficos. El acabado aún es una base de producción y está por debajo de la ilustración conceptual aprobada; no considerarlo aceptado por superar pruebas automáticas.
+La muestra 02 mantiene mapa y autoridad, integra caminata y recoger, personaje/NPC con vestuario y postura diferenciados, fachadas y entorno independientes. La puerta conserva dos estados gráficos. El acabado fue rechazado por dirección como muy inferior a la ilustración conceptual aprobada. La base de producción artística sigue sin demostrarse; superar pruebas automáticas no resuelve ese rechazo.
 
 Verificar: fuente editada se reexporta conservando cambios; identidad, escala y anclajes coherentes entre clips/direcciones; reproducción, pausa/carga e interrupción no duplican consecuencias; navegación, selección y profundidad siguen funcionando; el usuario valora el acabado real en movimiento. Ejecutar regresiones pertinentes cuando cambie runtime.
 

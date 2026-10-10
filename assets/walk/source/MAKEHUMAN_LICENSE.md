@@ -44,7 +44,7 @@ Copyright (C) 2001-2020  MakeHuman Team (www.makehumancommunity.org)
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
    
 For the full text of the source code license, see 
-[LICENSE.CODE.md](LICENSE.CODE.md)
+[LICENSE.CODE.md](https://github.com/makehumancommunity/makehuman/blob/3c701a8e52f09e69922e8b598d23be2d7dfc49e3/LICENSE.CODE.md)
 
 C. The license for the bundled assets
 -------------------------------------
@@ -63,7 +63,7 @@ that to the fullest extent possible, it is the intention of the MakeHuman
 project that anyone can do whatever they want with it.
 
 For the full text of the legal statement regarding the assets, see
-[LICENSE.ASSETS.md](LICENSE.ASSETS.md)
+[LICENSE.ASSETS.md](https://github.com/makehumancommunity/makehuman/blob/3c701a8e52f09e69922e8b598d23be2d7dfc49e3/LICENSE.ASSETS.md)
 
 D. Concerning the output from MakeHuman
 ---------------------------------------

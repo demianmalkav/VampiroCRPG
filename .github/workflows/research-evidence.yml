@@ -1,0 +1,31 @@
+name: Research evidence
+on:
+  push:
+    branches: [proof/m2-walk-01]
+    paths:
+      - 'tools/research/**'
+      - 'research/FALLOUT2/**'
+      - '.github/workflows/research-evidence.yml'
+  pull_request:
+    branches: [proof/m2-scene-01]
+    paths:
+      - 'tools/research/**'
+      - 'research/FALLOUT2/**'
+      - '.github/workflows/research-evidence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archived-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Readers and evidence rejection tests
+        run: python -m unittest discover -s tools/research -p 'test_*.py' -v
+      - name: Navigation trace integrity and measured source identity
+        run: python tools/research/check_ce_navigation_evidence.py research/FALLOUT2/CE_NAVIGATION_2026-10-10.json --check-source-hashes
+      - name: Redirection trace integrity and measured source identity
+        run: python tools/research/check_ce_redirect_evidence.py research/FALLOUT2/CE_REDIRECTION_2026-10-10.json --check-source-hashes

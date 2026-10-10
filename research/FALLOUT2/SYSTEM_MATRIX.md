@@ -1,12 +1,12 @@
 # Fallout 2 System Matrix
 
-Status: ACTIVE / REOPENED SPATIAL AND PRODUCTION INVESTIGATION — 2026-10-09 Argentina
+Status: ACTIVE / REOPENED SPATIAL AND PRODUCTION INVESTIGATION — 2026-10-10
 
 Purpose: record verified behavioral and engineering patterns from Fallout 2 and public reimplementations, then decide what VampiroCRPG should KEEP, MODIFY, REPLACE, or REMOVE. This file is an abstraction layer, not a source-code transplant.
 
 ## Current evidence and priority
 
-Sample 02 has been rejected for art and world consistency. The current research pass inventories 18 repositories and 75 retrieved files at exact revisions. Source-observed findings are in [Spatial/art/animation findings](SPATIAL_ART_ANIMATION_FINDINGS_01.md), source availability in [Research survey](RESEARCH_SURVEY_2026-10-09.md), and NEXT in [Assimilation plan](ASSIMILATION_PLAN_01.md). Engine adaptation is an open option, not yet selected. This pass did not execute external runtimes/tools or parse original game data.
+Sample 02 has been rejected for art and world consistency. The current research pass inventories 18 repositories and 75 retrieved files at exact revisions. Source-observed findings are in [Spatial/art/animation findings](SPATIAL_ART_ANIMATION_FINDINGS_01.md), source availability in [Research survey](RESEARCH_SURVEY_2026-10-09.md), and NEXT in [Assimilation plan](ASSIMILATION_PLAN_01.md). Engine adaptation is an open option, not yet selected. That survey checkpoint did not execute external runtimes/tools or parse original data. It is superseded by the measured CE and private-DAT work below.
 
 | New cluster | Source observation | Candidate disposition / required verification |
 | --- | --- | --- |
@@ -22,6 +22,16 @@ Sample 02 has been rejected for art and world consistency. The current research 
 | ALT-001 | Modern FOnline has static/dynamic blocking and model layers/attachments. | Candidate comparison only; local single-player cost and VTM turn scheduling unverified. |
 
 The historical scripting/time/persistence cluster remains useful within its scope. [QUEUE_LIFETIME_CORRECTION.md](QUEUE_LIFETIME_CORRECTION.md) explicitly supersedes any wording in F2-SYS-006/007/009 that might imply ordinary script timers survive map departure. Research availability is not implementation acceptance.
+
+## Current measured evidence — 2026-10-10
+
+- [Installation inspection](INSTALLATION_INSPECTION_2026-10-10.md) and [master/full MAP structural audit](MASTER_RECOVERY_AND_MAP_AUDIT_2026-10-10.md) record private input identities and reader bounds.
+- [CE executable lab](CE_EXECUTABLE_LAB_2026-10-10.md) records pinned Linux startup; it does not execute the original Windows installation.
+- [Navigation](CE_NAVIGATION_2026-10-10.md): 21 requests, six directions/returns, occupied-destination approach and bypass, 53 native tile observations. A2-01/A2-02 remain REFERENCE_PARTIAL.
+- [Redirection](CE_REDIRECTION_2026-10-10.md): five scenarios, 429 poses, last target wins, repeated destination selects run, Escape pauses via options/resumes, current-tile click stops. Frame/offset resets differ from C's proposed continuous-next-node policy; A2-03 remains REFERENCE_PARTIAL.
+- Native raw object IDs can repeat: wall and guard ID 47 in this measured map. Earlier identity principles below do not establish globally unique native object IDs.
+- [A2 cases](A2_ACCEPTANCE_CASES_01.json) keep nine other cases unexecuted and all Vampiro acceptance unverified. Current priority comes from the master and [assimilation plan](ASSIMILATION_PLAN_01.md), not the historical inspection list at the end of this file.
+- 25 reader/evidence tests and source-hash guards validate the published evidence. They do not rerun CE or choose an engine.
 
 ## Evidence policy
 
