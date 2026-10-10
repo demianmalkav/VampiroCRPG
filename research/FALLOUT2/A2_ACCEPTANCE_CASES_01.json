@@ -109,7 +109,7 @@
         ],
         "open": [
           "exact 150ms schedule and logical timing",
-          "interaction cancellation during gesture/after effect and nonempty resource/ownership changes",
+          "exact interruption boundary and other resource/ownership changes beyond measured pickup cases",
           "all repeated-input races or interrupted save/load",
           "Windows original comparison",
           "Vampiro implementation and adaptation acceptance"
@@ -178,9 +178,10 @@
       ],
       "reference_evidence_additional": [
         "CE_CONTAINER_2026-10-10.json",
-        "CE_PICKUP_2026-10-10.json"
+        "CE_PICKUP_2026-10-10.json",
+        "CE_PICKUP_CYCLE_2026-10-10.json"
       ],
-      "additional_reference_observed": "Using empty unlocked locker14497 from15709 begins partial run; verified movement redirect to15709 before opening returns actor and leaves locker frame0, no gesture/search/panel, inventories unchanged in bounded observed window. DENBUS1 ground pickup approach also cancelled; item remains ground and inventory empty, then resumed with additional recorded UI click."
+      "additional_reference_observed": "Using empty unlocked locker14497 from15709 begins partial run; verified movement redirect to15709 before opening returns actor and leaves locker frame0, no gesture/search/panel, inventories unchanged in bounded observed window. DENBUS1 ground pickup approach also cancelled; item remains ground and inventory empty, then resumed with additional recorded UI click. Early pickup gesture cancellation at observed frames1/2 preserves ground; post-effect move cannot undo ownership. Late trial and precise trigger retained separately."
     },
     {
       "id": "A2-04",
@@ -307,12 +308,11 @@
         "revision": "e97087b9582f37075db347a89898887320753f8b",
         "evidence": "CE_PICKUP_2026-10-10.json",
         "status": "REFERENCE_PARTIAL",
-        "scope": "Original DENBUS1 ground item200/pid4/tile12477; two fresh starts, pickup and approach cancellation/resumed pickup with extra UI click; one owned quantity-one slot, no longer on map. Second former-pixel click is not target/action receipt replay.",
+        "scope": "Original DENBUS1 item200/pid4. Queue kinds/delays explain marker4 versus first sampled property7 in silent lab; early gesture press1/release2 cancels and remains ground, late release7 already owned; post-effect movement and physical gesture repeat keep one unit. Native save/load before/after/during gesture measured; during-gesture save clears pending action, not phase persistence.",
         "open": [
-          "atomic contact/effect boundary and delay reconciliation (FRM marker4, first observed ownership7)",
-          "cancel during gesture and after effect",
+          "atomic contact/effect entry/exit instrumentation",
           "target/action receipt replay",
-          "save/load",
+          "other scripted items and all interruption races",
           "Windows original comparison",
           "Vampiro implementation"
         ],
@@ -345,6 +345,9 @@
           "item_owner": "actor",
           "repeat_same_action": "existing receipt, no second transfer"
         }
+      ],
+      "reference_evidence_additional": [
+        "CE_PICKUP_CYCLE_2026-10-10.json"
       ]
     },
     {
@@ -353,7 +356,21 @@
       "preconditions": "Movement and pending redirected intent; action in pre/post-effect phases.",
       "stimulus": "Save/load at each boundary and compare with uninterrupted input trace.",
       "expected_vampiro": "Segment, intent, phase, receipts and future work match; no teleport or duplicate effect; namespace/version explicit.",
-      "reference_observed": null,
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_PICKUP_CYCLE_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "scope": "F6/Return native save and F7 load at ground, owned and pre-effect gesture. Intervening acquired/moved state reversed on load; tile/ground/owner/quantity checked. During-gesture save clears action before load; no pending pickup automatically resumed.",
+        "open": [
+          "save/load during movement and pending redirect",
+          "full semantic world/RNG/clock/queue equality",
+          "all action receipt boundaries",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ],
+        "full_case_accepted": false
+      },
       "vampiro_observed": null,
       "evidence_required": [
         "input trace",
@@ -440,11 +457,12 @@
   "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents.",
   "vampiro_status": "NOT_VERIFIED",
   "reference_evidence": "CE_NAVIGATION_2026-10-10.json",
-  "reference_note": "A2-01/A2-02/A2-03/A2-05/A2-06/A2-08 have partial reference coverage. DENBUS1 original ground pickup: two starts/132 native observations; approach cancellation and resumed pickup, unique quantity-one ownership; atomic contact/delays and action-ID replay unverified. Six remaining cases unexecuted; all Vampiro acceptance unverified.",
+  "reference_note": "A2-01/02/03/05/06/08/09 have partial reference coverage. CE pickup-cycle package: eight starts/526 native queue-state observations, early/late/post-effect cancellation attempts, physical repeat and native save/load before/after/during gesture. Marker/delay relation measured; atomic callback boundary and action-ID replay remain unverified. During-gesture save clears pending action. Five remaining cases unexecuted; all Vampiro acceptance unverified.",
   "reference_evidence_additional": [
     "CE_REDIRECTION_2026-10-10.json",
     "CE_DOOR_2026-10-10.json",
     "CE_CONTAINER_2026-10-10.json",
-    "CE_PICKUP_2026-10-10.json"
+    "CE_PICKUP_2026-10-10.json",
+    "CE_PICKUP_CYCLE_2026-10-10.json"
   ]
 }

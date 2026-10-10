@@ -16,7 +16,7 @@ Sample 02 has been rejected for art and world consistency. The current research 
 | F2-SPA-004 | Cursor selection drives object look/examine and text monitor. | KEEP direct world inspection; EXTEND actor-specific perception/knowledge. |
 | F2-SPA-005 | Movement checks blockers again while executing and can recalculate. | KEEP execution validation; specify uninterrupted positions and save phases. |
 | F2-ART-001 | FRM carries direction, timing, offsets and action-frame metadata. | KEEP metadata discipline; format/color limits depend on selected renderer. |
-| F2-ANI-001/002 | Registered sequences coordinate approach, animation and pickup effect at an action frame. | KEEP phases/markers; REPLACE presentation-owned mutation with a tested authority contract. |
+| F2-ANI-001/002 | Registered sequences coordinate approach, animation and pickup callback with delays from an action-frame marker; silent-lab queue observes successive delays, so effect is not a literal frame-number contract. | KEEP phases/markers; REPLACE presentation-owned mutation with a tested authority contract. |
 | F2-EQU-001 | Armor chooses body art and weapon animation category selects held/attack art. | EXTEND per-item identity; original model does not meet arbitrary layered clothes or exact weapon identity automatically. |
 | F2-EXT-001 | sfall adds appearance/animation controls, with executable/runtime dependencies. | Variant-tagged comparison; do not assume CE supports every sfall function. |
 | ALT-001 | Modern FOnline has static/dynamic blocking and model layers/attachments. | Candidate comparison only; local single-player cost and VTM turn scheduling unverified. |
@@ -33,8 +33,9 @@ The historical scripting/time/persistence cluster remains useful within its scop
 - [Container/selection](CE_CONTAINER_2026-10-10.md): three starts; locked refusal14499, unlocked empty inventory14497, native selection/visor/gesture and target matching; approach redirection prevents opening in observed window. 328 total/47 interaction native observations. A2-06 partial; A2-03 receives interaction cancellation evidence. No transfer or ground pickup measured.
 - [Ground pickup](CE_PICKUP_2026-10-10.md): separate original DENBUS1 fixture, item200/pid4; two starts/132 observations, approach/gesture and one quantity-one ownership slot, item disconnected from map. Approach cancellation preserves ground, resumed pickup needs additional recorded UI click; failed earlier retry retained. FRM marker4 differs from first observed transfer7; exact callback/contact remains open. A2-08 partial; former-pixel second click is not action receipt replay.
 - Native raw object IDs can repeat: wall and guard ID 47 in this measured map. Earlier identity principles below do not establish globally unique native object IDs.
-- [A2 cases](A2_ACCEPTANCE_CASES_01.json) keep six other cases unexecuted (A2-01/02/03/05/06/08 partial) and all Vampiro acceptance unverified. Current priority comes from the master and [assimilation plan](ASSIMILATION_PLAN_01.md), not the historical inspection list at the end of this file.
-- 54 reader/evidence tests and source-hash guards validate the published evidence. They do not rerun CE or choose an engine.
+- [Pickup cycle](CE_PICKUP_CYCLE_2026-10-10.md): eight starts/526 queue-state observations; successive silent CONTINUE/pickup delays reconcile marker4/first property7. Early gesture cancellation keeps ground, late trial already owned; post-effect move and physical repeat retain one unit. Native save/load before/after/during gesture restores tile/ownership; during-gesture save clears pending action. A2-09 partial; not phase-preserving Vampiro persistence.
+- [A2 cases](A2_ACCEPTANCE_CASES_01.json) keep five other cases unexecuted (A2-01/02/03/05/06/08/09 partial) and all Vampiro acceptance unverified. Current priority comes from the master and [assimilation plan](ASSIMILATION_PLAN_01.md), not the historical inspection list at the end of this file.
+- 66 reader/evidence tests and six source-hash guards validate the published evidence. They do not rerun CE or choose an engine.
 
 ## Evidence policy
 

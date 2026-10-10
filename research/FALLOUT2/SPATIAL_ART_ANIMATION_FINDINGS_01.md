@@ -72,7 +72,9 @@ Evidencia: [CE animation.cc](https://github.com/alexbatalov/fallout2-ce/blob/e97
 
 ## F2-ANI-002 — Recoger vincula proximidad y efecto a la animación
 
-`actionPickUp` solicita acercamiento, comprueba adyacencia/coste, reproduce el gesto y registra `_obj_pickup` con el `actionFrame` del recurso. RE contiene la secuencia equivalente y `obj_pickup` en el cuadro de acción. Esto es evidencia de coordinación, no prueba de contacto geométrico exacto entre mano y objeto.
+`actionPickUp` solicita acercamiento, comprueba adyacencia/coste, reproduce el gesto y registra `_obj_pickup` con el `actionFrame` del recurso. RE contiene una coordinación equivalente y registra `obj_pickup`; la lectura estática no demuestra un número de cuadro de efecto. Esto es evidencia de coordinación, no prueba de contacto geométrico exacto entre mano y objeto.
+
+Actualización de ejecución 2026-10-10: [paquete CE](CE_PICKUP_CYCLE_2026-10-10.md), ocho arranques/526 observaciones, registra CONTINUE del sonido ausente y callback pickup con delays sucesivos derivados del marcador4. Primera propiedad observada7, sin instrumentación atómica. Guardar durante gesto limpia la acción pendiente y conserva suelo; carga no reanuda esa recogida. Esta medición acota cualquier interpretación literal anterior de «efecto en action_frame». Sigue sin equivalencia al Windows original ni aceptación de Vampiro.
 
 Evidencia: [CE actions.cc](https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/actions.cc), `actionPickUp`; [RE actions.c](https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/src/game/actions.c), `action_get_an_object`.
 
