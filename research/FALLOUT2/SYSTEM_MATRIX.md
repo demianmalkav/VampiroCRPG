@@ -29,10 +29,11 @@ The historical scripting/time/persistence cluster remains useful within its scop
 - [CE executable lab](CE_EXECUTABLE_LAB_2026-10-10.md) records pinned Linux startup; it does not execute the original Windows installation.
 - [Navigation](CE_NAVIGATION_2026-10-10.md): 21 requests, six directions/returns, occupied-destination approach and bypass, 53 native tile observations. A2-01/A2-02 remain REFERENCE_PARTIAL.
 - [Redirection](CE_REDIRECTION_2026-10-10.md): five scenarios, 429 poses, last target wins, repeated destination selects run, Escape pauses via options/resumes, current-tile click stops. Frame/offset resets differ from C's proposed continuous-next-node policy; A2-03 remains REFERENCE_PARTIAL.
-- [Door/access](CE_DOOR_2026-10-10.md): three starts/216 pose-state changes, native UI selection, approach/gesture, eight opening frames, delayed passability and interior crossing. One locker approached from interior; use unmeasured. A2-05 REFERENCE_PARTIAL. Local drift recovered to exact reference hashes before measurement.
+- [Door/access](CE_DOOR_2026-10-10.md): three starts/216 pose-state changes, native UI selection, approach/gesture, eight opening frames, delayed passability and interior crossing. One locker approached from interior; its use was unmeasured at that checkpoint. A2-05 REFERENCE_PARTIAL. Local drift recovered to exact reference hashes before measurement.
+- [Container/selection](CE_CONTAINER_2026-10-10.md): three starts; locked refusal14499, unlocked empty inventory14497, native selection/visor/gesture and target matching; approach redirection prevents opening in observed window. 328 total/47 interaction native observations. A2-06 partial; A2-03 receives interaction cancellation evidence. No transfer or ground pickup measured.
 - Native raw object IDs can repeat: wall and guard ID 47 in this measured map. Earlier identity principles below do not establish globally unique native object IDs.
-- [A2 cases](A2_ACCEPTANCE_CASES_01.json) keep eight other cases unexecuted and all Vampiro acceptance unverified. Current priority comes from the master and [assimilation plan](ASSIMILATION_PLAN_01.md), not the historical inspection list at the end of this file.
-- 34 reader/evidence tests and source-hash guards validate the published evidence. They do not rerun CE or choose an engine.
+- [A2 cases](A2_ACCEPTANCE_CASES_01.json) keep seven other cases unexecuted (A2-01/02/03/05/06 partial) and all Vampiro acceptance unverified. Current priority comes from the master and [assimilation plan](ASSIMILATION_PLAN_01.md), not the historical inspection list at the end of this file.
+- 44 reader/evidence tests and source-hash guards validate the published evidence. They do not rerun CE or choose an engine.
 
 ## Evidence policy
 

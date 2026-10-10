@@ -55,7 +55,7 @@
           "locker tile blocker is auxiliary scenery, not item"
         ],
         "open": [
-          "reachable container approach and full perimeter",
+          "full container perimeter and broader contact/footprint cases",
           "all edges and wide/multihex footprint",
           "dynamic blocking between samples",
           "original Windows comparison",
@@ -83,9 +83,10 @@
         }
       ],
       "reference_evidence_additional": [
-        "CE_DOOR_2026-10-10.json"
+        "CE_DOOR_2026-10-10.json",
+        "CE_CONTAINER_2026-10-10.json"
       ],
-      "additional_reference_observed": "After door access, occupied locker14499 from interior15709 reaches free adjacent14500; use/inventory and full perimeter unmeasured."
+      "additional_reference_observed": "Door access allows locker14499 approach at14500; locked use refuses panel. Unlocked empty locker14497 reached at14498 and opens inventory; full perimeter remains unmeasured."
     },
     {
       "id": "A2-03",
@@ -108,7 +109,7 @@
         ],
         "open": [
           "exact 150ms schedule and logical timing",
-          "pending interaction cancellation and resources",
+          "interaction cancellation during gesture/after effect and nonempty resource/ownership changes",
           "all repeated-input races or interrupted save/load",
           "Windows original comparison",
           "Vampiro implementation and adaptation acceptance"
@@ -174,7 +175,11 @@
           ],
           "next_segment_duration_ms": 425
         }
-      ]
+      ],
+      "reference_evidence_additional": [
+        "CE_CONTAINER_2026-10-10.json"
+      ],
+      "additional_reference_observed": "Using empty unlocked locker14497 from15709 begins partial run; verified movement redirect to15709 before opening returns actor and leaves locker frame0, no gesture/search/panel, inventories unchanged in bounded observed window."
     },
     {
       "id": "A2-04",
@@ -200,7 +205,7 @@
       "expected_vampiro": "No opening without key/contact; no body/leaf overlap; open state and passage agree; repeat no duplicate effect.",
       "reference_observed": {
         "evidence": "CE_DOOR_2026-10-10.json",
-        "scope": "Initially unlocked door; selection/approach/gesture/opening frames 0–7, native blocker removed after logical-open and after first final frame; crossing to interior in three starts",
+        "scope": "Initially unlocked door; selection/approach/gesture/opening frames 0\u20137, native blocker removed after logical-open and after first final frame; crossing to interior in three starts",
         "remaining": [
           "locked/key condition",
           "atomic contact/effect boundary",
@@ -246,7 +251,25 @@
       "preconditions": "Two overlapping perceived objects; one object behind opaque wall.",
       "stimulus": "Point at each visible piece and right-click inspect; click wall, then free ground.",
       "expected_vampiro": "Visible front object selected; hidden object not disclosed; wall click does not become movement through wall; world text references same ID.",
-      "reference_observed": null,
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_CONTAINER_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "observed": [
+          "normal visible-art pixel selects compound locker identity",
+          "visor LOOK/LOCKED/SEARCH diagnostics follow chosen locker state",
+          "inventory native target equals selected unlocked locker"
+        ],
+        "open": [
+          "overlapping object selection",
+          "hidden object behind opaque wall",
+          "wall/free-ground input comparison",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ],
+        "full_case_accepted": false
+      },
       "vampiro_observed": null,
       "evidence_required": [
         "input trace",
@@ -401,9 +424,10 @@
   "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents.",
   "vampiro_status": "NOT_VERIFIED",
   "reference_evidence": "CE_NAVIGATION_2026-10-10.json",
-  "reference_note": "A2-01/A2-02/A2-03/A2-05 have partial reference coverage. Door/access: three starts/216 pose-state changes, normal UI, opening/passability/interior crossing; one locker approach from interior. Eight remaining cases unexecuted; all Vampiro acceptance unverified.",
+  "reference_note": "A2-01/A2-02/A2-03/A2-05/A2-06 have partial reference coverage. Container: locked refusal, empty inventory opening and approach cancellation measured in three fresh starts; 328 total pose-state records, 47 scoped interaction records. Seven remaining cases unexecuted; A2-08 ground pickup/ownership not measured; all Vampiro acceptance unverified.",
   "reference_evidence_additional": [
     "CE_REDIRECTION_2026-10-10.json",
-    "CE_DOOR_2026-10-10.json"
+    "CE_DOOR_2026-10-10.json",
+    "CE_CONTAINER_2026-10-10.json"
   ]
 }
