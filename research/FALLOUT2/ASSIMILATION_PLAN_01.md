@@ -8,6 +8,16 @@ Comprender y comprobar cómo Fallout 2 hace funcionar un espacio recorrible con 
 
 La unidad de trabajo es un comportamiento completo, con entrada visible y consecuencia verificable. Recuperar más archivos sin cambiar nuestra comprensión no cierra una fase.
 
+## Modalidad de trabajo por paquetes — dirección 2026-10-10
+
+Agrupar ensayos relacionados y avanzar de forma autónoma durante la sesión hasta un resultado de subsistema revisable, sin devolver un NEXT por cada sonda. Mantener checkpoints y commits pequeños comprobados dentro del paquete; resumir a dirección el resultado conjunto, sus límites y la próxima unidad. Avisos breves de progreso no requieren intervención. Solicitar criterio sólo por una decisión concreta de diseño o un bloqueo que dirección deba resolver. No implica ejecución en segundo plano al terminar el turno.
+
+**Paquete siguiente, previsto y todavía sin ejecutar: ciclo de recogida de referencia CE.** La primera tarea sigue siendo el NEXT vigente: reconciliar action_frame4 y primera propiedad observada7 mediante lectura de la cola/delays/callbacks en DENBUS1. Si queda suficientemente identificado el límite de efecto, continuar con cancelación durante el gesto y después del efecto, repetición física por UI y guardado/carga en límites que el runtime permita alcanzar normalmente. Si una precondición no se cumple, probar una hipótesis discriminante antes de repetir; no forzar estado, marcadores, tiempos ni partida para conseguir el resultado esperado.
+
+**Cierre del paquete:** entregar una matriz de esos escenarios con entradas, estado de suelo/propietario/cantidad antes y después, identidad exacta de fuentes/datos y evidencia reproducible; cada escenario debe tener resultado medido o bloqueo concreto documentado. Explicar el orden entre gesto y transferencia o dejar la causa precisa UNVERIFIED. Guardado/carga debe compararse con ejecución sin interrupción donde sea practicable. Un clic físico no prueba replay de recibos/identidad de acción; ese contrato de adaptación sigue separado. Un bloqueo no equivale a completar el escenario ni A2-08 entero.
+
+**Control de errores:** observadores de sólo lectura, originales privados conservados, outputs nuevos, gates de precondición y checks afectados antes de encadenar experimentos. Conservar fallos y desacuerdos; validar regresiones pertinentes, hashes y publicación antes de sincronizar. No acumular modificaciones del motor sin revisar ni introducir nuevas reglas/arte para compensar una diferencia de referencia. Este paquete investiga CE; no implementa A3–A5 ni cambia el motor o la aceptación de Vampiro.
+
 ## A1 — Contrato espacial a partir de las fuentes — CERRADO A NIVEL DE CONTRATO
 
 Entrega: [contrato espacial reconciliado](../../docs/FALLOUT_ASSIMILATION_A1_SPATIAL_CONTRACT.md), [adaptación de motor/reglas y online futuro](../../docs/VAMPIRO_ENGINE_ADAPTATION_SINGLEPLAYER_01.md), [auditor ejecutado](A1_BASELINE_AUDIT_2026-10-09.json) y [12 casos previstos para A2](A2_ACCEPTANCE_CASES_01.json). Las tres fallas siguen reproducidas; cierre A1 no significa corrección ni aceptación del runtime.

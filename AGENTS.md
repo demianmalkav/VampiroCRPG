@@ -33,6 +33,10 @@ Initial A/B/C prototype scopes were defined before their implementation. Product
 - B's minimum headless profile was authorized in conversation. A request to continue does not require repeating an already resolved approval.
 - When direction's judgment is actually needed, explain the concrete decision, alternatives and consequences in the conversation. Control documents are continuity aids, not a substitute for that explanation.
 - Keep completion criteria, bounded retries, material checkpoints and small semantic commits. Reopen a closed phase only for a failure or new evidence.
+- Direction requests autonomous work in coherent packages, rather than ending a turn after every small probe. Define a bounded subsystem objective and closure criteria, then continue through its dependent probes, corrections, relevant regression checks and synchronization without asking for a new NEXT at each step.
+- Keep intermediate results and failed attempts in technical evidence. Give brief progress updates during active work; the final handoff should summarize the package result, evidence, unresolved limits and one next package. Escalate a concrete design decision, authorization boundary or blocker requiring direction, not routine tooling choices.
+- Larger handoffs do not relax verification: isolate experiments, preserve original inputs and measured baselines, check prerequisites before dependent work, and commit only reviewable validated increments. Stop propagation of an unexplained mismatch; after two unsupported retries use a discriminating test or record a concrete blocker. Partial or blocked measurements remain partial or blocked, not accepted features.
+- Autonomy applies during active sessions; it is not a promise of background execution after the turn ends. Never equate passing evidence guards with game correctness, full reference equivalence or artistic acceptance.
 
 ## Presentation target
 - Direction wants a Fallout-like traversable world with an avatar, world inspection and an observation text visor. The existing scene choice panel validates rules but is not an accepted game format.
