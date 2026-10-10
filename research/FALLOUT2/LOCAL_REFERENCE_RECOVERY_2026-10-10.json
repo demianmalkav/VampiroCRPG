@@ -1,0 +1,45 @@
+{
+  "kind": "LOCAL_REFERENCE_DRIFT_RECOVERY",
+  "date_utc": "2026-10-10T19:07:34.972116+00:00",
+  "cause": "UNVERIFIED",
+  "scope": "Local scratch copies only; no evidence of remote-original drift",
+  "before": {
+    "master.dat": {
+      "bytes": 177775104,
+      "sha256": "8c5e59f05ca5d09de3d56bde8d53b48f62c4f784759f00ad67f7e3569bde26eb"
+    },
+    "critter.dat": {
+      "bytes": 143399936,
+      "sha256": "988616af3bd946474ed601282b6c706ee022df78bd78c622405b15fa9ae98875"
+    },
+    "fallout2-ce": {
+      "bytes": 5563392,
+      "sha256": "08ba087ee5ec395e11986d69752507f46a83e9de4427d0b603ecfe21f4017c3f"
+    }
+  },
+  "recovery": {
+    "master.dat": "Verified intact local RARs, complete EOF/size/hash",
+    "critter.dat": "Complete Drive file 1-UZdPrRDHqS2fNwkevZzLgZpP99xBRF-, streamed; size/hash verified",
+    "fallout2-ce": "Relink existing clean pinned build objects; exact original binary hash restored"
+  },
+  "after": {
+    "master.dat": {
+      "bytes": 333177805,
+      "sha256": "9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711"
+    },
+    "critter.dat": {
+      "bytes": 166951131,
+      "sha256": "da83d615967c0bac41fbc50e6b86b3088401ff69ed9d8b2e5be1d6ac0c125bcd"
+    },
+    "patch000.dat": {
+      "bytes": 2896671,
+      "sha256": "d24788cf50294a27713a368f06cedb9b30c00ba709c2f1e0662ca2f6dddf2fc1"
+    },
+    "fallout2-ce": {
+      "bytes": 10115424,
+      "sha256": "70516cf855af0b8a5c826b0f090f646b29e5672c48e9b981322448edc6dc636c"
+    }
+  },
+  "quarantine": "private/incident-20261010",
+  "old_evidence": "Retained; current local truncation alone does not invalidate previously recorded runs"
+}

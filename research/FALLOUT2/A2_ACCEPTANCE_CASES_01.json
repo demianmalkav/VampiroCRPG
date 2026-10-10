@@ -81,7 +81,11 @@
           "intent": "MoveTo(free_cell_beyond_crate)",
           "result": "route excludes crate footprint"
         }
-      ]
+      ],
+      "reference_evidence_additional": [
+        "CE_DOOR_2026-10-10.json"
+      ],
+      "additional_reference_observed": "After door access, occupied locker14499 from interior15709 reaches free adjacent14500; use/inventory and full perimeter unmeasured."
     },
     {
       "id": "A2-03",
@@ -194,7 +198,18 @@
       "preconditions": "Locked door; key not owned, then key owned.",
       "stimulus": "Use door; cancel before effect; resume; cross only after declared opening moment.",
       "expected_vampiro": "No opening without key/contact; no body/leaf overlap; open state and passage agree; repeat no duplicate effect.",
-      "reference_observed": null,
+      "reference_observed": {
+        "evidence": "CE_DOOR_2026-10-10.json",
+        "scope": "Initially unlocked door; selection/approach/gesture/opening frames 0–7, native blocker removed after logical-open and after first final frame; crossing to interior in three starts",
+        "remaining": [
+          "locked/key condition",
+          "atomic contact/effect boundary",
+          "cancellation before effect",
+          "closure/repeated use/effect uniqueness",
+          "leaf/body overlap exhaustive check"
+        ],
+        "full_case_accepted": false
+      },
       "vampiro_observed": null,
       "evidence_required": [
         "input trace",
@@ -222,7 +237,8 @@
           "passable": true,
           "leaf": "outside corridor"
         }
-      ]
+      ],
+      "reference_status": "REFERENCE_PARTIAL"
     },
     {
       "id": "A2-06",
@@ -385,8 +401,9 @@
   "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents.",
   "vampiro_status": "NOT_VERIFIED",
   "reference_evidence": "CE_NAVIGATION_2026-10-10.json",
-  "reference_note": "A2-01/A2-02: 21 guarded requests, 53 native tile observations. A2-03: five guarded scenarios, 429 native pose snapshots, changed-direction offset/frame resets, repeated destination selects running, Escape pauses then resumes and current-tile request stops. All three have partial reference coverage; remaining nine cases unexecuted. All Vampiro acceptance remains unverified.",
+  "reference_note": "A2-01/A2-02/A2-03/A2-05 have partial reference coverage. Door/access: three starts/216 pose-state changes, normal UI, opening/passability/interior crossing; one locker approach from interior. Eight remaining cases unexecuted; all Vampiro acceptance unverified.",
   "reference_evidence_additional": [
-    "CE_REDIRECTION_2026-10-10.json"
+    "CE_REDIRECTION_2026-10-10.json",
+    "CE_DOOR_2026-10-10.json"
   ]
 }
