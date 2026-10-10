@@ -1,6 +1,17 @@
 # Fallout 2 System Analysis
 
-Purpose: study Fallout 2 as a design and engineering corpus, then abstract useful principles without inheriting its visual identity or assuming its concrete implementation should be copied.
+Purpose: study Fallout 2 as a design and engineering corpus, and evaluate practical reuse alongside independent implementation. Preserve VampiroCRPG's own visual identity and rules. Engine adaptation is now an open candidate to compare, not a rejected or accepted architecture decision.
+
+## Current priority — 2026-10-09 Argentina
+
+Direction rejected the art and world consistency of playable sample 02 and requested a thorough reverse-engineering survey before assimilation. Research now covers 18 pinned repositories and 75 retrieved resources; targeted inspection is distinct from full reading and runtime verification. No upstream code/content was incorporated and no production engine was selected.
+
+Read in this order:
+
+1. [Research survey](RESEARCH_SURVEY_2026-10-09.md) — source availability, variants, formats, tools, rights and limits.
+2. [Spatial/art/animation findings](SPATIAL_ART_ANIMATION_FINDINGS_01.md) — source-backed findings tied to the failed sample and direction's requirements.
+3. [Assimilation plan](ASSIMILATION_PLAN_01.md) — bounded A1–A5 gates; current NEXT is A1.
+4. [Pinned inventory](SOURCE_INVENTORY_2026-10-09.json) — exact source revisions and file blob identities; retrieval is not whole-corpus assimilation.
 
 ## Current research documents
 
@@ -49,4 +60,5 @@ For each subsystem:
 
 The primary behavioral target is Fallout 2. Public reimplementations such as `alexbatalov/fallout2-ce` are engineering evidence used to understand mechanisms. A pattern observed there is not automatically a project architecture decision and should not be silently generalized beyond what was inspected.
 
-The goal is abstraction and behavioral understanding, not visual reproduction or source-code transplantation.
+Behavioral understanding is mandatory whether we adapt an existing engine or build an independent implementation. Direct reuse requires exact licensing/compatibility review and an executable comparison; this research update does not authorize transplantation or select a production motor. Historical dispositions below remain mechanism-level findings and may be revisited only with concrete evidence.
+

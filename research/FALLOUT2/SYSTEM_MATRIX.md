@@ -1,8 +1,27 @@
 # Fallout 2 System Matrix
 
-Status: ACTIVE / M0.2
+Status: ACTIVE / REOPENED SPATIAL AND PRODUCTION INVESTIGATION — 2026-10-09 Argentina
 
 Purpose: record verified behavioral and engineering patterns from Fallout 2 and public reimplementations, then decide what VampiroCRPG should KEEP, MODIFY, REPLACE, or REMOVE. This file is an abstraction layer, not a source-code transplant.
+
+## Current evidence and priority
+
+Sample 02 has been rejected for art and world consistency. The current research pass inventories 18 repositories and 75 retrieved files at exact revisions. Source-observed findings are in [Spatial/art/animation findings](SPATIAL_ART_ANIMATION_FINDINGS_01.md), source availability in [Research survey](RESEARCH_SURVEY_2026-10-09.md), and NEXT in [Assimilation plan](ASSIMILATION_PLAN_01.md). Engine adaptation is an open option, not yet selected. This pass did not execute external runtimes/tools or parse original game data.
+
+| New cluster | Source observation | Candidate disposition / required verification |
+| --- | --- | --- |
+| F2-SPA-001 | Distinct object hex geometry and floor/roof tile geometry with projection helpers. | KEEP explicit coordinate contracts; choose grid after comparison. |
+| F2-SPA-002 | Routing and drawing consult registered object instances, elevation and flags; multihex blocking has specific neighbor rules. | KEEP shared identity/occupancy; extend authored footprints. Test visible volume and collision together. |
+| F2-SPA-003 | Dedicated flat/nonflat/roof rendering and tile/object lighting. | KEEP layering and occlusion policy; validate visually in motion. |
+| F2-SPA-004 | Cursor selection drives object look/examine and text monitor. | KEEP direct world inspection; EXTEND actor-specific perception/knowledge. |
+| F2-SPA-005 | Movement checks blockers again while executing and can recalculate. | KEEP execution validation; specify uninterrupted positions and save phases. |
+| F2-ART-001 | FRM carries direction, timing, offsets and action-frame metadata. | KEEP metadata discipline; format/color limits depend on selected renderer. |
+| F2-ANI-001/002 | Registered sequences coordinate approach, animation and pickup effect at an action frame. | KEEP phases/markers; REPLACE presentation-owned mutation with a tested authority contract. |
+| F2-EQU-001 | Armor chooses body art and weapon animation category selects held/attack art. | EXTEND per-item identity; original model does not meet arbitrary layered clothes or exact weapon identity automatically. |
+| F2-EXT-001 | sfall adds appearance/animation controls, with executable/runtime dependencies. | Variant-tagged comparison; do not assume CE supports every sfall function. |
+| ALT-001 | Modern FOnline has static/dynamic blocking and model layers/attachments. | Candidate comparison only; local single-player cost and VTM turn scheduling unverified. |
+
+The historical scripting/time/persistence cluster remains useful within its scope. [QUEUE_LIFETIME_CORRECTION.md](QUEUE_LIFETIME_CORRECTION.md) explicitly supersedes any wording in F2-SYS-006/007/009 that might imply ordinary script timers survive map departure. Research availability is not implementation acceptance.
 
 ## Evidence policy
 
@@ -407,3 +426,4 @@ This remains a research conclusion until promoted through project architecture r
 8. NPC scheduling/AI state that survives map unloads, if any.
 
 The next matrix gate is reached when scripting, dialogue, time, world state and save/load are understood well enough to cross-check the M2 technical contract without guessing about Fallout 2 behavior.
+
