@@ -5,6 +5,12 @@ from PIL import Image, ImageChops, ImageDraw
 
 ROOT=Path(__file__).resolve().parents[2]
 base=ROOT/'assets/walk/generated'
+for folder in [base,base/'variant']:
+    for name,meta in json.loads((folder/'index.json').read_text())['assets'].items():
+        im=Image.open(folder/meta['file'])
+        assert im.size==(meta['size'][0]*meta.get('columns',1),meta['size'][1]*meta.get('rows',1)),name
+        source=ROOT/'assets/walk/source'/meta['source']
+        assert hashlib.sha256(source.read_bytes()).hexdigest()==meta['source_sha256'],('stale export',name)
 one=json.loads((base/'index.json').read_text())['assets']['player']
 two=json.loads((base/'variant/index.json').read_text())['assets']['player']
 for key in ['size','anchor','scale','columns','rows','clips','directions']:assert one[key]==two[key]
@@ -33,6 +39,6 @@ for row in range(8):
         tile=img.crop((0,row*h,w,(row+1)*h)).resize((128,160))
         sheet.paste(tile,(row*128,40+i*180),tile)
 sheet.save(ROOT/'qa/walk/coat-comparison.png')
-report={'status':'PASS','frames':len(frames),'directions':8,'walk_frames_per_direction':8,'pickup_frames_per_direction':10,'idle_per_direction':1,'no_clipped_frames':True,'identical_anchors_and_dimensions':True,'all_frames_changed_by_material_edit':True,'projection':{'width':88,'height':44},'atlas_sha256':hashlib.sha256((base/'player.png').read_bytes()).hexdigest(),'variant_sha256':hashlib.sha256((base/'variant/player.png').read_bytes()).hexdigest()}
+report={'status':'PASS','frames':len(frames),'directions':8,'walk_frames_per_direction':8,'pickup_frames_per_direction':10,'idle_per_direction':1,'no_clipped_frames':True,'all_resource_dimensions_and_source_hashes_match':True,'identical_anchors_and_dimensions':True,'all_frames_changed_by_material_edit':True,'projection':{'width':88,'height':44},'atlas_sha256':hashlib.sha256((base/'player.png').read_bytes()).hexdigest(),'variant_sha256':hashlib.sha256((base/'variant/player.png').read_bytes()).hexdigest()}
 (ROOT/'qa/walk/art-result.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report))

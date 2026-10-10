@@ -16,7 +16,7 @@ function apply(view,animate=true){
   const key=previous.objects.find(o=>o.id==='key'),d=key&&key.pos.map((v,i)=>Math.sign(v-view.pos[i]));
   actorAction={name:'pickup',started:now,facing:d?Math.max(0,directions.findIndex(v=>v[0]===d[0]&&v[1]===d[1])):view.facing};
  }
- state=view;receivedAt=now;if(!camera)camera=cameraTarget(state.pos);$('connection').textContent='Partida local';$('clock').textContent=time(state.tick_ms);$('inventory-count').textContent=state.inventory.length;
+ state=view;receivedAt=now;if(hover&&!state.objects.some(o=>o.id===hover.id)){hover=null;$('tooltip').hidden=true;canvas.style.cursor='crosshair';}if(!camera)camera=cameraTarget(state.pos);$('connection').textContent='Partida local';$('clock').textContent=time(state.tick_ms);$('inventory-count').textContent=state.inventory.length;
  $('goal').textContent=state.complete?'Entraste al refugio.':state.inventory.length?'Llevá la llave hasta la puerta del refugio.':'Encontrá tu llave y entrá al refugio.';
  $('progress').textContent=state.complete?'Podés seguir explorando o reiniciar.':state.inventory.length?'Hacé clic en la puerta para acercarte, abrirla y entrar.':'La mujer puede orientarte. Mirá junto al contenedor.';
  $('movement').textContent=state.path.length?(state.pending?'Acercándote para interactuar…':'Caminando…'):'Clic en el suelo para caminar · clic derecho para mirar';

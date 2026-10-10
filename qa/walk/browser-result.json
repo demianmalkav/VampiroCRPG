@@ -1,0 +1,313 @@
+{
+  "status": "PASS",
+  "browser": "141.0.7390.0",
+  "real_mouse": true,
+  "checks": [
+    "inspection in visor",
+    "click route around obstacles",
+    "pickup animation with unique key ownership",
+    "save during walk and resume without pickup replay",
+    "door approach unlock and enter",
+    "regenerated coat in scene with identical authority state",
+    "reset",
+    "mobile layout no horizontal overflow"
+  ],
+  "completed": {
+    "tick_ms": 4200,
+    "pos": [
+      12,
+      3
+    ],
+    "facing": 0,
+    "path": [],
+    "progress_ms": 0,
+    "step_ms": 300,
+    "steps": 14,
+    "pending": null,
+    "door_open": true,
+    "complete": true,
+    "inventory": [
+      {
+        "id": "key",
+        "name": "Llave de bronce",
+        "asset": "key"
+      }
+    ],
+    "objects": [
+      {
+        "id": "door",
+        "name": "Puerta del refugio",
+        "pos": [
+          12,
+          4
+        ],
+        "asset": "door"
+      }
+    ],
+    "log": [
+      {
+        "tick_ms": 0,
+        "text": "La noche se termina. Entrá al refugio: necesitás encontrar tu llave en el pasaje."
+      },
+      {
+        "tick_ms": 0,
+        "text": "Un contenedor desbordado corta el paso."
+      },
+      {
+        "tick_ms": 0,
+        "text": "Una mujer fuma junto al muro. Te observa acercarte."
+      },
+      {
+        "tick_ms": 0,
+        "text": "Abrigo oscuro, botas gastadas y un cigarrillo casi consumido. Parece más cansada que sorprendida de verte."
+      },
+      {
+        "tick_ms": 1200,
+        "text": "Ves una llave de bronce en el suelo."
+      },
+      {
+        "tick_ms": 1500,
+        "text": "Una llave gastada, con una cinta roja en la argolla. Reconocés la llave del refugio."
+      },
+      {
+        "tick_ms": 1500,
+        "text": "Recogés la llave de bronce. Ahora está en tu inventario; buscá la puerta del refugio."
+      },
+      {
+        "tick_ms": 2700,
+        "text": "Distinguís la puerta del refugio, al fondo del pasaje."
+      },
+      {
+        "tick_ms": 2700,
+        "text": "Te acercás a puerta del refugio."
+      },
+      {
+        "tick_ms": 3600,
+        "text": "La llave gira. Abrís la puerta del refugio."
+      },
+      {
+        "tick_ms": 4200,
+        "text": "Entrás al refugio. Recorrido completo: caminaste, observaste, recogiste y utilizaste un objeto del mundo."
+      }
+    ],
+    "map": {
+      "id": "pasaje-01",
+      "width": 17,
+      "height": 13,
+      "walls": [
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          11,
+          4
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          4
+        ]
+      ],
+      "entry": [
+        12,
+        3
+      ]
+    },
+    "solids": [
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        9,
+        5
+      ],
+      [
+        9,
+        6
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        9,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        1
+      ],
+      [
+        10,
+        2
+      ],
+      [
+        10,
+        3
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        11,
+        4
+      ],
+      [
+        13,
+        4
+      ],
+      [
+        14,
+        4
+      ],
+      [
+        15,
+        1
+      ],
+      [
+        15,
+        2
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        15,
+        4
+      ]
+    ],
+    "objective": "Recorrido completado",
+    "revision": "5d4e355e0f8746448d37ff9601a0d3f3"
+  },
+  "mobile": {
+    "overflow": false,
+    "canvas": {
+      "x": 11,
+      "y": 171.296875,
+      "width": 368,
+      "height": 488.515625,
+      "top": 171.296875,
+      "right": 379,
+      "bottom": 659.8125,
+      "left": 11
+    },
+    "help": {
+      "x": 109,
+      "y": 261.296875,
+      "width": 260,
+      "height": 224.265625,
+      "top": 261.296875,
+      "right": 369,
+      "bottom": 485.5625,
+      "left": 109
+    }
+  },
+  "errors": []
+}

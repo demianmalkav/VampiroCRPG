@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "files": 84,
+  "runtime": "Python 3.11+ stdlib + pre-exported PNG",
+  "fresh_folder_start": true,
+  "blender_required_to_play": false
+}

@@ -1,6 +1,6 @@
 # Animación e interacciones — base ampliable 01
 
-Estado: requisitos de dirección registrados; diseño técnico propuesto para la siguiente muestra. NOT_IMPLEMENTED. El runtime C verificado no cambia con este documento.
+Estado: adopción parcial en la muestra recorrible 02. IMPLEMENTED: fuentes editables separadas del exportador, catálogo idle/walk/pickup, ocho direcciones y gesto de recoger. NOT_IMPLEMENTED: sincronización general entre actores, marcadores, combate, ropa intercambiable, armas, vehículos y clima. Aceptación artística pendiente de dirección.
 
 ## Dirección vigente
 
@@ -12,9 +12,9 @@ El juego deberá tener combate por turnos y diversas animaciones e interacciones
 
 C separa autoridad Python y presentación canvas. Actualmente ofrece desplazamiento, inspección, llave, puerta, umbral e inventario. A/B contiene reglas vampíricas todavía no integradas al recorrido.
 
-El avatar sólo tiene idle y caminata en ocho direcciones. El renderer calcula una columna de reposo o una de ocho cuadros de marcha; no existe un reproductor general de acciones. El contacto usa una pose estática.
+El avatar tiene idle (1), walk (8) y pickup (10) en ocho direcciones. El renderer elige columnas y duración desde los metadatos del clip. El contacto usa una pose estática. Recoger es un gesto visual disparado por la adquisición confirmada; no implementa fases lógicas cronometradas ni una acción conjunta.
 
-La receta Blender reconstruye geometría elemental y guarda .blend de salida. Los archivos se pueden editar, pero volver a ejecutar esa receta no reexporta esas ediciones: los reconstruye. Para arte detallado debemos separar creación del modelo y exportación de una fuente editada.
+La fuente anatómica incorpora prendas separadas y esqueleto compartido. build_ny_source.py crea las fuentes; export_ny.py reexporta los materiales, geometría y poses guardados sin reconstruirlos. La variante de abrigo se obtiene editando su material en la fuente. Reejecutar el constructor sí reemplaza fuentes: usar sólo el exportador para conservar cambios manuales.
 
 ## Recursos por acciones
 
@@ -24,7 +24,7 @@ Cada clip declara duración, repetición, orientaciones disponibles, cuadros o r
 
 La fuente debe conservar proporciones, esqueleto/articulaciones, materiales, vestuario y poses. Exportar todas las acciones desde esa misma fuente, con cámara y escala comunes. Añadir vestuario o suciedad puede requerir recursos específicos; no afirmar que cualquier ropa se deforma correctamente con un único rig.
 
-Primera adopción propuesta: fuente Blender editada + clips nombrados + exportador independiente. El rig detallado, los nuevos clips y el exportador aún no existen. Tecnología de producción permanece sin decidir.
+Primera adopción implementada: fuente Blender editable + clips nombrados + exportador independiente. Ver assets/walk/source/NY_README.md y proof/walk/README.md. Tecnología de producción permanece sin decidir; esta base no prueba todavía el acabado artístico de la referencia.
 
 ## Autoridad y reproducción
 
@@ -66,9 +66,9 @@ Vehículos: reservar soporte conceptual para entidades de varias celdas, orienta
 
 Clima: separar estado del tiempo y efectos de presentación. Lluvia, viento o niebla pueden cambiar partículas, sonido, materiales y visibilidad visual; modificar percepción, desplazamiento u otras reglas requiere condiciones explícitas de simulación. Evitar que ruido gráfico o FPS determinen consecuencias. Clima y variantes ambientales todavía no implementados.
 
-## Próxima muestra y criterios de cierre
+## Muestra 02 y criterios de cierre
 
-Mantener el pasaje y sus interacciones conocidas. Construir una fuente de personaje con el acabado buscado, caminata en ocho direcciones y al menos una acción adicional integrada —recoger o manipular la puerta— que demuestre el catálogo y su sincronización. Contacto con apariencia/postura diferenciada, arquitectura neoyorquina y recursos de entorno separados.
+La muestra 02 mantiene mapa y autoridad, integra caminata y recoger, personaje/NPC con vestuario y postura diferenciados, fachadas y entorno independientes. La puerta conserva dos estados gráficos. El acabado aún es una base de producción y está por debajo de la ilustración conceptual aprobada; no considerarlo aceptado por superar pruebas automáticas.
 
 Verificar: fuente editada se reexporta conservando cambios; identidad, escala y anclajes coherentes entre clips/direcciones; reproducción, pausa/carga e interrupción no duplican consecuencias; navegación, selección y profundidad siguen funcionando; el usuario valora el acabado real en movimiento. Ejecutar regresiones pertinentes cuando cambie runtime.
 
