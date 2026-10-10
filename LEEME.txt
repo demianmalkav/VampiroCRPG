@@ -1,4 +1,4 @@
-EL PASAJE — MUESTRA RECORRIBLE 01
+EL PASAJE — NUEVA YORK, MUESTRA RECORRIBLE 02
 
 1. Descomprimí toda la carpeta.
 2. Con Python 3.11 o posterior instalado, abrí iniciar-pasaje.cmd.
@@ -16,8 +16,9 @@ No abras index.html directamente: necesita el servidor local.
 Si el puerto está ocupado, cerrá otra copia o usá:
 python -m proof.walk --port 8767 --open
 
-Los gráficos son una base inicial, todavía simple. Se incluyen modelos
-editables .blend y la receta de exportación para ampliar el arte coherentemente.
+La muestra incorpora suelo y fachadas texturados, un personaje con prendas
+separadas, caminata en ocho direcciones y un gesto al recoger la llave.
+Se incluyen fuentes .blend editables y el exportador que conserva sus cambios.
 Blender no hace falta para jugar. Sólo se necesita para modificar/regenerar arte.
 
 Vestuario de prueba alternativo:

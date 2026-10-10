@@ -1,7 +1,7 @@
 const {chromium}=require('playwright');
 const fs=require('fs'),assert=require('assert');
 (async()=>{
- const browser=await chromium.launch({headless:true});
+ const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH,args:['--no-sandbox','--disable-dev-shm-usage','--no-zygote','--disable-gpu']}: {})});
  const page=await browser.newPage({viewport:{width:1360,height:1000},acceptDownloads:true});
  page.setDefaultTimeout(12000);
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -38,13 +38,16 @@ const fs=require('fs'),assert=require('assert');
   await clickObject('contact','right');await page.waitForFunction(()=>state.log.some(l=>l.text.includes('botas gastadas')));
   await ground([7,6]);await idle();assert.deepEqual((await world()).pos,[7,6]);assert((await world()).objects.some(o=>o.id==='key'));
   await clickObject('key','right');await page.waitForFunction(()=>state.log.some(l=>l.text.includes('cinta roja')));
-  await clickObject('key');await idle();assert.equal((await world()).inventory.length,1);assert(!(await world()).objects.some(o=>o.id==='key'));
+  await clickObject('key');await page.waitForFunction(()=>actorAction?.name==='pickup');
+  await page.waitForTimeout(400);await page.screenshot({path:'qa/walk/pickup-desktop.png'});
+  assert.equal((await world()).inventory.length,1);await idle();assert(!(await world()).objects.some(o=>o.id==='key'));
   await page.locator('#inventory-toggle').click();assert.match(await page.locator('#items').innerText(),/Llave de bronce/);await page.locator('#inventory-toggle').click();
   await ground([10,8]);await page.waitForFunction(()=>state.path.length>0);
   const downloadPromise=page.waitForEvent('download');await page.locator('#save').click();const download=await downloadPromise;await download.saveAs('qa/walk/saved-during-walk.json');
   const saved=JSON.parse(fs.readFileSync('qa/walk/saved-during-walk.json'));assert(saved.path.length>0);
   await idle();assert.deepEqual((await world()).pos,[10,8]);
-  await page.locator('#file').setInputFiles('qa/walk/saved-during-walk.json');await idle();assert.deepEqual((await world()).pos,[10,8]);assert.equal((await world()).inventory.length,1);
+  const beforeLoad=(await world()).revision;
+  await page.locator('#file').setInputFiles('qa/walk/saved-during-walk.json');await page.waitForFunction(revision=>state.revision!==revision,beforeLoad);await idle();assert.deepEqual((await world()).pos,[10,8]);assert.equal((await world()).inventory.length,1);assert.equal(await page.evaluate(()=>actorAction),null);
   await clickObject('door');await idle();assert.equal((await world()).complete,true);assert.deepEqual((await world()).pos,[12,3]);
   await page.screenshot({path:'qa/walk/completed-desktop.png'});const completed=await world();
   // Swap regenerated coat atlas with identical authority state.
@@ -59,7 +62,7 @@ const fs=require('fs'),assert=require('assert');
   await page.setViewportSize({width:390,height:844});await page.waitForTimeout(400);await page.locator('#help-toggle').click();await page.screenshot({path:'qa/walk/initial-mobile.png'});
   const mobile=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,canvas:canvas.getBoundingClientRect().toJSON(),help:$('onboarding').getBoundingClientRect().toJSON()}));
   assert.equal(mobile.overflow,false);assert.equal(errors.length,0);
-  const report={status:'PASS',browser:await browser.version(),real_mouse:true,checks:['inspection in visor','click route around obstacles','key ownership and inventory','save during walk and resume','door approach unlock and enter','regenerated coat in scene with identical authority state','reset','mobile layout no horizontal overflow'],completed,mobile,errors};
+  const report={status:'PASS',browser:await browser.version(),real_mouse:true,checks:['inspection in visor','click route around obstacles','pickup animation with unique key ownership','save during walk and resume without pickup replay','door approach unlock and enter','regenerated coat in scene with identical authority state','reset','mobile layout no horizontal overflow'],completed,mobile,errors};
   fs.writeFileSync('qa/walk/browser-result.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
  }catch(e){
   await page.screenshot({path:'qa/walk/failure.png'}).catch(()=>{});
