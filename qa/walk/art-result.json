@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "frames": 152,
+  "directions": 8,
+  "walk_frames_per_direction": 8,
+  "pickup_frames_per_direction": 10,
+  "idle_per_direction": 1,
+  "no_clipped_frames": true,
+  "all_resource_dimensions_and_source_hashes_match": true,
+  "identical_anchors_and_dimensions": true,
+  "all_frames_changed_by_material_edit": true,
+  "projection": {
+    "width": 88,
+    "height": 44
+  },
+  "atlas_sha256": "772e944b941e9731892e15d62bd096b839593ab0434c6391cba8ac91da3004e8",
+  "variant_sha256": "9ba02a9c1beba5263e29852d4b1ae30b7bb02e5e06840921c0d0490200830833"
+}

@@ -1,8 +1,45 @@
 # Fallout 2 System Matrix
 
-Status: ACTIVE / M0.2
+## Spatial reference — current package 2026-10-10
+
+Siete arranques/575 poses nativas, 138 ensayos de cursor: 65 superposiciones opacas frontales, 70 supresiones por techo y 103 puntos egg. Perímetro del poste en ambos sentidos; pared con vecinos bloqueados/inaccesibles; armario seleccionado pero sin efecto con acceso cerrado, panel correcto a contacto1 después de abrir/entrar. Revelación de armario oculto por techo repetida dos veces: discrepancia CE con percepción prevista para Vampiro. Omisión de un tramo del log contrastada con recibos nativos y repetición independiente; causa del logger sin verificar. 83 tests/siete guards PASS. A2-01/02/03/05/06/07/08/09/10 parciales, tres casos sin ejecutar; todo Vampiro sin verificar. [Report](CE_SPATIAL_2026-10-10.md) / [scoped evidence](CE_SPATIAL_2026-10-10.json). Native roof hit detection and raster visibility disagree in the repeated hidden-locker case. Do not inherit this as Vampiro perception policy; contact distance source is not a general wall recheck. Prior pickup/save findings stay frozen. NEXT: Paquete de persistencia durante movimiento: guardar/cargar por UI original al caminar/correr y con una redirección pendiente; comparar posición, intención/cola, pose y continuación con controles sin carga. Registrar cancelación o reanudación efectiva, sin imponer persistencia de fases a CE ni cambiar originales. Cerrar alcance A2-09 con evidencias y límites concretos; motor/VTM/arte siguen abiertos.
+
+Status: ACTIVE / REOPENED SPATIAL AND PRODUCTION INVESTIGATION — 2026-10-10
 
 Purpose: record verified behavioral and engineering patterns from Fallout 2 and public reimplementations, then decide what VampiroCRPG should KEEP, MODIFY, REPLACE, or REMOVE. This file is an abstraction layer, not a source-code transplant.
+
+## Current evidence and priority
+
+Sample 02 has been rejected for art and world consistency. The current research pass inventories 18 repositories and 75 retrieved files at exact revisions. Source-observed findings are in [Spatial/art/animation findings](SPATIAL_ART_ANIMATION_FINDINGS_01.md), source availability in [Research survey](RESEARCH_SURVEY_2026-10-09.md), and NEXT in [Assimilation plan](ASSIMILATION_PLAN_01.md). Engine adaptation is an open option, not yet selected. That survey checkpoint did not execute external runtimes/tools or parse original data. It is superseded by the measured CE and private-DAT work below.
+
+| New cluster | Source observation | Candidate disposition / required verification |
+| --- | --- | --- |
+| F2-SPA-001 | Distinct object hex geometry and floor/roof tile geometry with projection helpers. | KEEP explicit coordinate contracts; choose grid after comparison. |
+| F2-SPA-002 | Routing and drawing consult registered object instances, elevation and flags; multihex blocking has specific neighbor rules. | KEEP shared identity/occupancy; extend authored footprints. Test visible volume and collision together. |
+| F2-SPA-003 | Dedicated flat/nonflat/roof rendering and tile/object lighting. | KEEP layering and occlusion policy; validate visually in motion. |
+| F2-SPA-004 | Cursor selection drives object look/examine and text monitor. | KEEP direct world inspection; EXTEND actor-specific perception/knowledge. |
+| F2-SPA-005 | Movement checks blockers again while executing and can recalculate. | KEEP execution validation; specify uninterrupted positions and save phases. |
+| F2-ART-001 | FRM carries direction, timing, offsets and action-frame metadata. | KEEP metadata discipline; format/color limits depend on selected renderer. |
+| F2-ANI-001/002 | Registered sequences coordinate approach, animation and pickup callback with delays from an action-frame marker; silent-lab queue observes successive delays, so effect is not a literal frame-number contract. | KEEP phases/markers; REPLACE presentation-owned mutation with a tested authority contract. |
+| F2-EQU-001 | Armor chooses body art and weapon animation category selects held/attack art. | EXTEND per-item identity; original model does not meet arbitrary layered clothes or exact weapon identity automatically. |
+| F2-EXT-001 | sfall adds appearance/animation controls, with executable/runtime dependencies. | Variant-tagged comparison; do not assume CE supports every sfall function. |
+| ALT-001 | Modern FOnline has static/dynamic blocking and model layers/attachments. | Candidate comparison only; local single-player cost and VTM turn scheduling unverified. |
+
+The historical scripting/time/persistence cluster remains useful within its scope. [QUEUE_LIFETIME_CORRECTION.md](QUEUE_LIFETIME_CORRECTION.md) explicitly supersedes any wording in F2-SYS-006/007/009 that might imply ordinary script timers survive map departure. Research availability is not implementation acceptance.
+
+## Current measured evidence — 2026-10-10
+
+- [Installation inspection](INSTALLATION_INSPECTION_2026-10-10.md) and [master/full MAP structural audit](MASTER_RECOVERY_AND_MAP_AUDIT_2026-10-10.md) record private input identities and reader bounds.
+- [CE executable lab](CE_EXECUTABLE_LAB_2026-10-10.md) records pinned Linux startup; it does not execute the original Windows installation.
+- [Navigation](CE_NAVIGATION_2026-10-10.md): 21 requests, six directions/returns, occupied-destination approach and bypass, 53 native tile observations. A2-01/A2-02 remain REFERENCE_PARTIAL.
+- [Redirection](CE_REDIRECTION_2026-10-10.md): five scenarios, 429 poses, last target wins, repeated destination selects run, Escape pauses via options/resumes, current-tile click stops. Frame/offset resets differ from C's proposed continuous-next-node policy; A2-03 remains REFERENCE_PARTIAL.
+- [Door/access](CE_DOOR_2026-10-10.md): three starts/216 pose-state changes, native UI selection, approach/gesture, eight opening frames, delayed passability and interior crossing. One locker approached from interior; its use was unmeasured at that checkpoint. A2-05 REFERENCE_PARTIAL. Local drift recovered to exact reference hashes before measurement.
+- [Container/selection](CE_CONTAINER_2026-10-10.md): three starts; locked refusal14499, unlocked empty inventory14497, native selection/visor/gesture and target matching; approach redirection prevents opening in observed window. 328 total/47 interaction native observations. A2-06 partial; A2-03 receives interaction cancellation evidence. No transfer or ground pickup measured.
+- [Ground pickup](CE_PICKUP_2026-10-10.md): separate original DENBUS1 fixture, item200/pid4; two starts/132 observations, approach/gesture and one quantity-one ownership slot, item disconnected from map. Approach cancellation preserves ground, resumed pickup needs additional recorded UI click; failed earlier retry retained. FRM marker4 differs from first observed transfer7; exact callback/contact remains open. A2-08 partial; former-pixel second click is not action receipt replay.
+- Native raw object IDs can repeat: wall and guard ID 47 in this measured map. Earlier identity principles below do not establish globally unique native object IDs.
+- [Pickup cycle](CE_PICKUP_CYCLE_2026-10-10.md): eight starts/526 queue-state observations; successive silent CONTINUE/pickup delays reconcile marker4/first property7. Early gesture cancellation keeps ground, late trial already owned; post-effect move and physical repeat retain one unit. Native save/load before/after/during gesture restores tile/ownership; during-gesture save clears pending action. A2-09 partial; not phase-preserving Vampiro persistence.
+- [A2 cases](A2_ACCEPTANCE_CASES_01.json) keep five other cases unexecuted (A2-01/02/03/05/06/08/09 partial) and all Vampiro acceptance unverified. Current priority comes from the master and [assimilation plan](ASSIMILATION_PLAN_01.md), not the historical inspection list at the end of this file.
+- 66 reader/evidence tests and six source-hash guards validate the published evidence. They do not rerun CE or choose an engine.
 
 ## Evidence policy
 
@@ -407,3 +444,4 @@ This remains a research conclusion until promoted through project architecture r
 8. NPC scheduling/AI state that survives map unloads, if any.
 
 The next matrix gate is reached when scripting, dialogue, time, world state and save/load are understood well enough to cross-check the M2 technical contract without guessing about Fallout 2 behavior.
+

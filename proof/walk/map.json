@@ -1,0 +1,12 @@
+{
+  "id": "pasaje-01", "width": 17, "height": 13, "start": [3,10], "entry": [12,3],
+  "objects": [
+    {"id":"dumpster","name":"Contenedor","pos":[5.5,5.5],"cells":[[5,5],[6,5],[5,6],[6,6]],"solid":true,"opaque":true,"asset":"dumpster","brief":"Un contenedor desbordado corta el paso.","description":"Metal húmedo, bolsas rotas y olor a lluvia vieja. Junto al contenedor hay algo pequeño que refleja la luz."},
+    {"id":"key","name":"Llave de bronce","pos":[7,5],"cells":[],"solid":false,"opaque":false,"asset":"key","brief":"Ves una llave de bronce en el suelo.","description":"Una llave gastada, con una cinta roja en la argolla. Reconocés la llave del refugio."},
+    {"id":"contact","name":"Mujer del pasaje","pos":[7,9],"cells":[[7,9]],"solid":true,"opaque":false,"asset":"contact","brief":"Una mujer fuma junto al muro. Te observa acercarte.","description":"Abrigo oscuro, botas gastadas y un cigarrillo casi consumido. Parece más cansada que sorprendida de verte."},
+    {"id":"door","name":"Puerta del refugio","pos":[12,4],"cells":[[12,4]],"solid":true,"opaque":true,"asset":"door","brief":"Distinguís la puerta del refugio, al fondo del pasaje.","description":"Una puerta de chapa repintada. La cerradura está marcada por años de uso. Es la entrada a tu refugio."}
+  ],
+  "walls": [[2,3],[2,4],[2,5],[2,6],[9,5],[9,6],[9,7],[9,9],[9,10],[10,1],[10,2],[10,3],[10,4],[11,4],[13,4],[14,4],[15,1],[15,2],[15,3],[15,4]],
+  "intro": "La noche se termina. Entrá al refugio: necesitás encontrar tu llave en el pasaje.",
+  "palette": "urbano-nocturno-01"
+}

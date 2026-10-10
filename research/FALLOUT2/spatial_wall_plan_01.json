@@ -1,0 +1,62 @@
+{
+  "map": "NCR1.MAP",
+  "role": "depth-wall",
+  "actions": [
+    {
+      "op": "move",
+      "tile": 14309
+    },
+    {
+      "op": "move",
+      "tile": 14509
+    },
+    {
+      "op": "move",
+      "tile": 14510
+    },
+    {
+      "op": "move",
+      "tile": 14511
+    },
+    {
+      "op": "move",
+      "tile": 14311
+    },
+    {
+      "op": "move",
+      "tile": 14110
+    },
+    {
+      "op": "move",
+      "tile": 14110
+    },
+    {
+      "op": "move",
+      "tile": 14311
+    },
+    {
+      "op": "move",
+      "tile": 14511
+    },
+    {
+      "op": "move",
+      "tile": 14510
+    },
+    {
+      "op": "move",
+      "tile": 14509
+    },
+    {
+      "op": "move",
+      "tile": 14309
+    },
+    {
+      "op": "move",
+      "tile": 13915
+    },
+    {
+      "op": "scan",
+      "limit": 20
+    }
+  ]
+}

@@ -1,0 +1,2333 @@
+{
+  "kind": "MEASURED_CE_REDIRECTION_SCOPED_EVIDENCE",
+  "status": "REFERENCE_PARTIALLY_OBSERVED",
+  "failure": null,
+  "ce_revision": "e97087b9582f37075db347a89898887320753f8b",
+  "binary_sha256": "70516cf855af0b8a5c826b0f090f646b29e5672c48e9b981322448edc6dc636c",
+  "input_hashes": {
+    "master.dat": "9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711",
+    "critter.dat": "da83d615967c0bac41fbc50e6b86b3088401ff69ed9d8b2e5be1d6ac0c125bcd",
+    "patch000.dat": "d24788cf50294a27713a368f06cedb9b30c00ba709c2f1e0662ca2f6dddf2fc1"
+  },
+  "original_inputs_unchanged": {
+    "master.dat": true,
+    "critter.dat": true,
+    "patch000.dat": true
+  },
+  "adapter_source_sha256": "21c9f17a594f3f0a1f7a71754fef96e5247c29c671fd635032912ff14bf9b8b2",
+  "adapter_binary_sha256": "4f105da625b47d785ebe0bc4783431bcb05d7b1e17b82f34132d45fb7b27137a",
+  "controller_sha256": "721d279f7c948f5aa1fb9d846be42ce7fb05f5250fdc3dba2c05ba084357bc6d",
+  "native_symbol_offsets": {
+    "DUDE": 2910080,
+    "ELEVATION": 2757408,
+    "CURSOR_X": 2906580,
+    "CURSOR_Y": 2906584,
+    "HOT_X": 2906548,
+    "HOT_Y": 2906552,
+    "PROJECT": 842352,
+    "UNPROJECT": 842384,
+    "NEIGHBOR": 846672,
+    "BLOCKING": 687552,
+    "MOUSE_MODE": 2218232,
+    "OBJECT_TABLE": 2920704
+  },
+  "configs": {
+    "fallout2.cfg": "[system]\nmaster_dat=master.dat\ncritter_dat=critter.dat\nmaster_patches=data\ncritter_patches=data\nlanguage=english\nart_cache_size=32\ninterrupt_walk=1\n[sound]\ninitialize=0\nsounds=0\nmusic=0\nspeech=0\n[preferences]\ncombat_speed=0\nplayer_speedup=0\nrunning=0\n",
+    "f2_res.ini": "[MAIN]\nSCR_WIDTH=800\nSCR_HEIGHT=600\nWINDOWED=1\nSCALE_2X=0\n",
+    "ddraw.ini": "[Misc]\nSkipOpeningMovies=1\nStartingMap=NCR1.MAP\n"
+  },
+  "intervention": "SDL relative mouse/buttons substituted; keyboard through XTEST; read-only native queries and pose logging; no authoritative writes",
+  "limitations": [
+    "SDL polling snapshots occur before input processing, not at every simulation phase",
+    "Native anchor is tile projection + [16,8] + Object x/y; not anatomical foot or pixel-volume proof",
+    "Wall-clock/capture load and default NPC randomness uncontrolled; no 150ms or deterministic replay claim",
+    "CE Linux DAT-only, original Windows and Vampiro unverified"
+  ],
+  "date": "2026-10-10",
+  "map": {
+    "name": "NCR1.MAP",
+    "version": 20,
+    "index": 42,
+    "elevation": 0,
+    "resource_sha256": "11464ce6dd1f5d374523b470ddb7590419d1a88cef72c34c8199fe71bfd01e00"
+  },
+  "private_raw_evidence_sha256": "8b7165ad59ae03851e8e17767522ebc764a3e3c1eee1fa8f2f408567c52a8f8e",
+  "cases": [
+    {
+      "scenario": "single",
+      "start": {
+        "sequence": 3,
+        "cursor_before": [
+          400,
+          300
+        ],
+        "cursor_tile_before": 14517,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 14097,
+        "anchor_xy": [
+          400,
+          250
+        ]
+      },
+      "trigger": {
+        "sequence": 8,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 3,
+          "y": -4
+        },
+        "sdl_tick_ms": 14276,
+        "anchor_xy": [
+          403,
+          246
+        ]
+      },
+      "after_first_input": {
+        "sequence": 13,
+        "cursor_before": [
+          416,
+          262
+        ],
+        "cursor_tile_before": 14115,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 2,
+          "y": 1
+        },
+        "sdl_tick_ms": 14453,
+        "anchor_xy": [
+          402,
+          251
+        ]
+      },
+      "endpoint": {
+        "sequence": 34,
+        "cursor_before": [
+          416,
+          262
+        ],
+        "cursor_tile_before": 14115,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 14115,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 15111,
+        "anchor_xy": [
+          416,
+          262
+        ]
+      },
+      "complete": true,
+      "initial": {
+        "label": "initial_walk",
+        "target": 13911,
+        "projection": {
+          "sequence": 4,
+          "requested_tile": 13911,
+          "projected_center": [
+            496,
+            226
+          ],
+          "roundtrip_tile": 13911,
+          "sdl_tick_ms": 14114,
+          "blocker": null
+        },
+        "verified": {
+          "sequence": 5,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 0,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 14146,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "down": {
+          "sequence": 6,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 0,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 14163,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "release_before_handling": {
+          "sequence": 7,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 0,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 14259,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        }
+      },
+      "actions": [
+        {
+          "label": "interrupt",
+          "target": 14115,
+          "projection": {
+            "sequence": 9,
+            "requested_tile": 14115,
+            "projected_center": [
+              416,
+              262
+            ],
+            "roundtrip_tile": 14115,
+            "sdl_tick_ms": 14291,
+            "blocker": null
+          },
+          "verified": {
+            "sequence": 10,
+            "cursor_before": [
+              416,
+              262
+            ],
+            "cursor_tile_before": 14115,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 3,
+              "y": -4
+            },
+            "sdl_tick_ms": 14324,
+            "anchor_xy": [
+              403,
+              246
+            ]
+          },
+          "down": {
+            "sequence": 11,
+            "cursor_before": [
+              416,
+              262
+            ],
+            "cursor_tile_before": 14115,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 3,
+              "y": -4
+            },
+            "sdl_tick_ms": 14340,
+            "anchor_xy": [
+              403,
+              246
+            ]
+          },
+          "release_before_handling": {
+            "sequence": 12,
+            "cursor_before": [
+              416,
+              262
+            ],
+            "cursor_tile_before": 14115,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 1,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 7,
+              "y": -5
+            },
+            "sdl_tick_ms": 14437,
+            "anchor_xy": [
+              407,
+              245
+            ]
+          }
+        }
+      ],
+      "interrupt_boundaries": [
+        {
+          "release_sequence": 12,
+          "before_anchor_xy": [
+            407,
+            245
+          ],
+          "first_changed_pose": {
+            "sdl_tick_ms": 14453,
+            "input_sequence": 13,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 2,
+              "elevation": 0,
+              "x": 2,
+              "y": 1
+            },
+            "anchor_xy": [
+              402,
+              251
+            ],
+            "blocker_at_actor": null
+          },
+          "delta_anchor_xy": [
+            -5,
+            6
+          ],
+          "elapsed_native_ms": 16
+        }
+      ]
+    },
+    {
+      "scenario": "repeated",
+      "start": {
+        "sequence": 62,
+        "cursor_before": [
+          400,
+          250
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 5,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 16869,
+        "anchor_xy": [
+          400,
+          250
+        ]
+      },
+      "trigger": {
+        "sequence": 67,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 3,
+          "y": -4
+        },
+        "sdl_tick_ms": 17045,
+        "anchor_xy": [
+          403,
+          246
+        ]
+      },
+      "after_first_input": {
+        "sequence": 72,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 18022462,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 9,
+          "y": -7
+        },
+        "sdl_tick_ms": 17223,
+        "anchor_xy": [
+          409,
+          243
+        ]
+      },
+      "endpoint": {
+        "sequence": 96,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13911,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 17977,
+        "anchor_xy": [
+          496,
+          226
+        ]
+      },
+      "complete": true,
+      "initial": {
+        "label": "initial_walk",
+        "target": 13911,
+        "projection": {
+          "sequence": 63,
+          "requested_tile": 13911,
+          "projected_center": [
+            496,
+            226
+          ],
+          "roundtrip_tile": 13911,
+          "sdl_tick_ms": 16886,
+          "blocker": null
+        },
+        "verified": {
+          "sequence": 64,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 5,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 16918,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "down": {
+          "sequence": 65,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 5,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 16934,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "release_before_handling": {
+          "sequence": 66,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 5,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 17029,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        }
+      },
+      "actions": [
+        {
+          "label": "interrupt",
+          "target": 13911,
+          "projection": {
+            "sequence": 68,
+            "requested_tile": 13911,
+            "projected_center": [
+              496,
+              226
+            ],
+            "roundtrip_tile": 13911,
+            "sdl_tick_ms": 17060,
+            "blocker": null
+          },
+          "verified": {
+            "sequence": 69,
+            "cursor_before": [
+              496,
+              226
+            ],
+            "cursor_tile_before": 13911,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 3,
+              "y": -4
+            },
+            "sdl_tick_ms": 17092,
+            "anchor_xy": [
+              403,
+              246
+            ]
+          },
+          "down": {
+            "sequence": 70,
+            "cursor_before": [
+              496,
+              226
+            ],
+            "cursor_tile_before": 13911,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 3,
+              "y": -4
+            },
+            "sdl_tick_ms": 17109,
+            "anchor_xy": [
+              403,
+              246
+            ]
+          },
+          "release_before_handling": {
+            "sequence": 71,
+            "cursor_before": [
+              496,
+              226
+            ],
+            "cursor_tile_before": 13911,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 1,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 7,
+              "y": -5
+            },
+            "sdl_tick_ms": 17205,
+            "anchor_xy": [
+              407,
+              245
+            ]
+          }
+        }
+      ],
+      "interrupt_boundaries": [
+        {
+          "release_sequence": 71,
+          "before_anchor_xy": [
+            407,
+            245
+          ],
+          "first_changed_pose": {
+            "sdl_tick_ms": 17223,
+            "input_sequence": 72,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 18022462,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 9,
+              "y": -7
+            },
+            "anchor_xy": [
+              409,
+              243
+            ],
+            "blocker_at_actor": null
+          },
+          "delta_anchor_xy": [
+            2,
+            -2
+          ],
+          "elapsed_native_ms": 18
+        }
+      ]
+    },
+    {
+      "scenario": "rapid",
+      "start": {
+        "sequence": 162,
+        "cursor_before": [
+          400,
+          250
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 3,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 21060,
+        "anchor_xy": [
+          400,
+          250
+        ]
+      },
+      "trigger": {
+        "sequence": 167,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 3,
+          "y": -4
+        },
+        "sdl_tick_ms": 21238,
+        "anchor_xy": [
+          403,
+          246
+        ]
+      },
+      "after_first_input": {
+        "sequence": 172,
+        "cursor_before": [
+          416,
+          262
+        ],
+        "cursor_tile_before": 14115,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 2,
+          "y": 1
+        },
+        "sdl_tick_ms": 21417,
+        "anchor_xy": [
+          402,
+          251
+        ]
+      },
+      "second_trigger": {
+        "sequence": 173,
+        "cursor_before": [
+          416,
+          262
+        ],
+        "cursor_tile_before": 14115,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 2,
+          "y": 1
+        },
+        "sdl_tick_ms": 21432,
+        "anchor_xy": [
+          402,
+          251
+        ]
+      },
+      "endpoint": {
+        "sequence": 202,
+        "cursor_before": [
+          368,
+          250
+        ],
+        "cursor_tile_before": 13716,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13716,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 4,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 22378,
+        "anchor_xy": [
+          368,
+          250
+        ]
+      },
+      "complete": true,
+      "initial": {
+        "label": "initial_walk",
+        "target": 13911,
+        "projection": {
+          "sequence": 163,
+          "requested_tile": 13911,
+          "projected_center": [
+            496,
+            226
+          ],
+          "roundtrip_tile": 13911,
+          "sdl_tick_ms": 21077,
+          "blocker": null
+        },
+        "verified": {
+          "sequence": 164,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 3,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 21108,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "down": {
+          "sequence": 165,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 3,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 21124,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "release_before_handling": {
+          "sequence": 166,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 3,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 21221,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        }
+      },
+      "actions": [
+        {
+          "label": "interrupt",
+          "target": 14115,
+          "projection": {
+            "sequence": 168,
+            "requested_tile": 14115,
+            "projected_center": [
+              416,
+              262
+            ],
+            "roundtrip_tile": 14115,
+            "sdl_tick_ms": 21254,
+            "blocker": null
+          },
+          "verified": {
+            "sequence": 169,
+            "cursor_before": [
+              416,
+              262
+            ],
+            "cursor_tile_before": 14115,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 3,
+              "y": -4
+            },
+            "sdl_tick_ms": 21287,
+            "anchor_xy": [
+              403,
+              246
+            ]
+          },
+          "down": {
+            "sequence": 170,
+            "cursor_before": [
+              416,
+              262
+            ],
+            "cursor_tile_before": 14115,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 3,
+              "y": -4
+            },
+            "sdl_tick_ms": 21302,
+            "anchor_xy": [
+              403,
+              246
+            ]
+          },
+          "release_before_handling": {
+            "sequence": 171,
+            "cursor_before": [
+              416,
+              262
+            ],
+            "cursor_tile_before": 14115,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 1,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 7,
+              "y": -5
+            },
+            "sdl_tick_ms": 21399,
+            "anchor_xy": [
+              407,
+              245
+            ]
+          }
+        },
+        {
+          "label": "second_redirect",
+          "target": 13716,
+          "projection": {
+            "sequence": 174,
+            "requested_tile": 13716,
+            "projected_center": [
+              368,
+              250
+            ],
+            "roundtrip_tile": 13716,
+            "sdl_tick_ms": 21449,
+            "blocker": null
+          },
+          "verified": {
+            "sequence": 175,
+            "cursor_before": [
+              368,
+              250
+            ],
+            "cursor_tile_before": 13716,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 2,
+              "elevation": 0,
+              "x": 2,
+              "y": 1
+            },
+            "sdl_tick_ms": 21481,
+            "anchor_xy": [
+              402,
+              251
+            ]
+          },
+          "down": {
+            "sequence": 176,
+            "cursor_before": [
+              368,
+              250
+            ],
+            "cursor_tile_before": 13716,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 2,
+              "elevation": 0,
+              "x": 2,
+              "y": 1
+            },
+            "sdl_tick_ms": 21497,
+            "anchor_xy": [
+              402,
+              251
+            ]
+          },
+          "release_before_handling": {
+            "sequence": 177,
+            "cursor_before": [
+              368,
+              250
+            ],
+            "cursor_tile_before": 13716,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 1,
+              "rotation": 2,
+              "elevation": 0,
+              "x": 6,
+              "y": 7
+            },
+            "sdl_tick_ms": 21592,
+            "anchor_xy": [
+              406,
+              257
+            ]
+          }
+        }
+      ],
+      "interrupt_boundaries": [
+        {
+          "release_sequence": 171,
+          "before_anchor_xy": [
+            407,
+            245
+          ],
+          "first_changed_pose": {
+            "sdl_tick_ms": 21417,
+            "input_sequence": 172,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 2,
+              "elevation": 0,
+              "x": 2,
+              "y": 1
+            },
+            "anchor_xy": [
+              402,
+              251
+            ],
+            "blocker_at_actor": null
+          },
+          "delta_anchor_xy": [
+            -5,
+            6
+          ],
+          "elapsed_native_ms": 18
+        },
+        {
+          "release_sequence": 177,
+          "before_anchor_xy": [
+            406,
+            257
+          ],
+          "first_changed_pose": {
+            "sdl_tick_ms": 21609,
+            "input_sequence": 178,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 4,
+              "elevation": 0,
+              "x": -8,
+              "y": 0
+            },
+            "anchor_xy": [
+              392,
+              250
+            ],
+            "blocker_at_actor": null
+          },
+          "delta_anchor_xy": [
+            -14,
+            -7
+          ],
+          "elapsed_native_ms": 17
+        }
+      ]
+    },
+    {
+      "scenario": "escape",
+      "start": {
+        "sequence": 229,
+        "cursor_before": [
+          400,
+          250
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 24269,
+        "anchor_xy": [
+          400,
+          250
+        ]
+      },
+      "trigger": {
+        "sequence": 234,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 3,
+          "y": -4
+        },
+        "sdl_tick_ms": 24446,
+        "anchor_xy": [
+          403,
+          246
+        ]
+      },
+      "before_escape": {
+        "sequence": 235,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 3,
+          "y": -4
+        },
+        "sdl_tick_ms": 24461,
+        "anchor_xy": [
+          403,
+          246
+        ]
+      },
+      "options_open": {
+        "sequence": 236,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 3,
+          "y": -4
+        },
+        "sdl_tick_ms": 24687,
+        "anchor_xy": [
+          403,
+          246
+        ]
+      },
+      "options_later": {
+        "sequence": 237,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 3,
+          "y": -4
+        },
+        "sdl_tick_ms": 25604,
+        "anchor_xy": [
+          403,
+          246
+        ]
+      },
+      "after_options_close": {
+        "sequence": 238,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 1,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 7,
+          "y": -5
+        },
+        "sdl_tick_ms": 25736,
+        "anchor_xy": [
+          407,
+          245
+        ]
+      },
+      "endpoint": {
+        "sequence": 294,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13911,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 27552,
+        "anchor_xy": [
+          496,
+          226
+        ]
+      },
+      "complete": true,
+      "initial": {
+        "label": "initial_walk",
+        "target": 13911,
+        "projection": {
+          "sequence": 230,
+          "requested_tile": 13911,
+          "projected_center": [
+            496,
+            226
+          ],
+          "roundtrip_tile": 13911,
+          "sdl_tick_ms": 24285,
+          "blocker": null
+        },
+        "verified": {
+          "sequence": 231,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 1,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 24316,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "down": {
+          "sequence": 232,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 1,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 24332,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "release_before_handling": {
+          "sequence": 233,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 1,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 24429,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        }
+      },
+      "actions": [],
+      "interrupt_boundaries": []
+    },
+    {
+      "scenario": "stop",
+      "start": {
+        "sequence": 360,
+        "cursor_before": [
+          400,
+          250
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 3,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 32185,
+        "anchor_xy": [
+          400,
+          250
+        ]
+      },
+      "trigger": {
+        "sequence": 365,
+        "cursor_before": [
+          496,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16842814,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 3,
+          "y": -4
+        },
+        "sdl_tick_ms": 32363,
+        "anchor_xy": [
+          403,
+          246
+        ]
+      },
+      "after_first_input": {
+        "sequence": 370,
+        "cursor_before": [
+          400,
+          250
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 32542,
+        "anchor_xy": [
+          400,
+          250
+        ]
+      },
+      "endpoint": {
+        "sequence": 391,
+        "cursor_before": [
+          400,
+          250
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "sdl_tick_ms": 33201,
+        "anchor_xy": [
+          400,
+          250
+        ]
+      },
+      "complete": true,
+      "initial": {
+        "label": "initial_walk",
+        "target": 13911,
+        "projection": {
+          "sequence": 361,
+          "requested_tile": 13911,
+          "projected_center": [
+            496,
+            226
+          ],
+          "roundtrip_tile": 13911,
+          "sdl_tick_ms": 32201,
+          "blocker": null
+        },
+        "verified": {
+          "sequence": 362,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 3,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 32233,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "down": {
+          "sequence": 363,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 3,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 32248,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        },
+        "release_before_handling": {
+          "sequence": 364,
+          "cursor_before": [
+            496,
+            226
+          ],
+          "cursor_tile_before": 13911,
+          "mouse_mode": 0,
+          "dude": {
+            "id": 18000,
+            "tile": 13915,
+            "pid": 16777216,
+            "fid": 16777278,
+            "flags": 536871972,
+            "frame": 0,
+            "rotation": 3,
+            "elevation": 0,
+            "x": 0,
+            "y": 0
+          },
+          "sdl_tick_ms": 32344,
+          "anchor_xy": [
+            400,
+            250
+          ]
+        }
+      },
+      "actions": [
+        {
+          "label": "interrupt",
+          "target": 13915,
+          "projection": {
+            "sequence": 366,
+            "requested_tile": 13915,
+            "projected_center": [
+              400,
+              250
+            ],
+            "roundtrip_tile": 13915,
+            "sdl_tick_ms": 32378,
+            "blocker": null
+          },
+          "verified": {
+            "sequence": 367,
+            "cursor_before": [
+              400,
+              250
+            ],
+            "cursor_tile_before": 13915,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 3,
+              "y": -4
+            },
+            "sdl_tick_ms": 32412,
+            "anchor_xy": [
+              403,
+              246
+            ]
+          },
+          "down": {
+            "sequence": 368,
+            "cursor_before": [
+              400,
+              250
+            ],
+            "cursor_tile_before": 13915,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 3,
+              "y": -4
+            },
+            "sdl_tick_ms": 32428,
+            "anchor_xy": [
+              403,
+              246
+            ]
+          },
+          "release_before_handling": {
+            "sequence": 369,
+            "cursor_before": [
+              400,
+              250
+            ],
+            "cursor_tile_before": 13915,
+            "mouse_mode": 0,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16842814,
+              "flags": 536871972,
+              "frame": 1,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 7,
+              "y": -5
+            },
+            "sdl_tick_ms": 32526,
+            "anchor_xy": [
+              407,
+              245
+            ]
+          }
+        }
+      ],
+      "interrupt_boundaries": [
+        {
+          "release_sequence": 369,
+          "before_anchor_xy": [
+            407,
+            245
+          ],
+          "first_changed_pose": {
+            "sdl_tick_ms": 32542,
+            "input_sequence": 370,
+            "dude": {
+              "id": 18000,
+              "tile": 13915,
+              "pid": 16777216,
+              "fid": 16777278,
+              "flags": 536871972,
+              "frame": 0,
+              "rotation": 0,
+              "elevation": 0,
+              "x": 0,
+              "y": 0
+            },
+            "anchor_xy": [
+              400,
+              250
+            ],
+            "blocker_at_actor": null
+          },
+          "delta_anchor_xy": [
+            -7,
+            5
+          ],
+          "elapsed_native_ms": 16
+        }
+      ]
+    }
+  ],
+  "native_pose_columns": [
+    "sdl_tick_ms",
+    "input_sequence",
+    "id",
+    "tile",
+    "x",
+    "y",
+    "frame",
+    "rotation",
+    "fid",
+    "flags",
+    "elevation",
+    "anchor_x",
+    "anchor_y",
+    "blocker_at_actor"
+  ],
+  "visual_evidence": {
+    "kind": "ACTUAL_CE_X_FRAME_CAPTURES",
+    "selected_gif": "Fallout2_CE_cambio_de_destino.gif",
+    "source_capture": "rapid.gif",
+    "gif_sha256": "84e7cb45dc86643a65feee86cd7540e547d43b64e4c8f473b2c2016ea6eb6060",
+    "file_size_bytes": 250915,
+    "frame_times_ms": [
+      21159,
+      21208,
+      21257,
+      21305,
+      21349,
+      21397,
+      21445,
+      21493,
+      21542,
+      21591,
+      21638,
+      21686,
+      21735,
+      21784,
+      21832,
+      21880,
+      21928,
+      21977,
+      22025,
+      22073,
+      22120,
+      22168,
+      22216,
+      22264,
+      22311,
+      22360,
+      22409,
+      22457
+    ],
+    "options_png_sha256": "680bd20bf065fed4545f97743f2a47910dbb59ebb4ee84ef7e671de29eff8393",
+    "options_visual_observed": "Options menu with Save Game, Load Game, Preferences, Exit Game, Done; actor remains in scene",
+    "original_art_published": false
+  },
+  "key_events": [
+    {
+      "t_ms": 24573,
+      "event": "key_submit",
+      "key": "Escape"
+    },
+    {
+      "t_ms": 25715,
+      "event": "key_submit",
+      "key": "Escape"
+    }
+  ],
+  "coverage": {
+    "A2-03": {
+      "status": "REFERENCE_PARTIAL",
+      "observed": [
+        "single partial-step redirect reaches new target",
+        "two partial-step redirects reach last target",
+        "repeated destination changes walk animation 1 to run 19",
+        "Escape opens options, pose stays unchanged between snapshots, closing resumes original route",
+        "clicking current actor tile interrupts and stops at that tile",
+        "same-tile offset/frame reset after changed direction and stop"
+      ],
+      "open": [
+        "exact 150ms schedule and logical timing",
+        "pending interaction cancellation and resources",
+        "all repeated-input races or interrupted save/load",
+        "Windows original comparison",
+        "Vampiro implementation and adaptation acceptance"
+      ]
+    }
+  },
+  "native_pose_rows": [
+    [14066,1,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [14082,2,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [14097,3,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [14114,4,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [14146,5,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [14163,6,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [14259,7,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [14276,8,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [14291,9,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [14324,10,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [14340,11,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [14388,11,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [14437,12,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [14453,13,18000,13915,2,1,0,2,16842814,536871972,0,402,251,null],
+    [14468,14,18000,13915,2,1,0,2,16842814,536871972,0,402,251,null],
+    [14501,15,18000,13915,2,1,0,2,16842814,536871972,0,402,251,null],
+    [14533,16,18000,13915,2,1,0,2,16842814,536871972,0,402,251,null],
+    [14566,17,18000,13915,6,7,1,2,16842814,536871972,0,406,257,null],
+    [14597,18,18000,13915,6,7,1,2,16842814,536871972,0,406,257,null],
+    [14631,19,18000,13915,6,7,1,2,16842814,536871972,0,406,257,null],
+    [14663,20,18000,13915,6,7,1,2,16842814,536871972,0,406,257,null],
+    [14681,20,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14695,21,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14727,22,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14759,23,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14792,24,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14823,25,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14856,26,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14887,27,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14919,28,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14952,29,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [14983,30,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [15015,31,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [15047,32,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [15080,33,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [15111,34,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [15999,35,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [16016,36,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [16047,37,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [16063,38,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [16160,39,18000,14115,0,0,0,2,16777278,536871972,0,416,262,null],
+    [16177,40,18000,14115,-3,-3,0,5,16842814,536871972,0,413,259,null],
+    [16210,41,18000,14115,-3,-3,0,5,16842814,536871972,0,413,259,null],
+    [16241,42,18000,14115,-3,-3,0,5,16842814,536871972,0,413,259,null],
+    [16273,43,18000,14115,-3,-3,0,5,16842814,536871972,0,413,259,null],
+    [16288,43,18000,14115,-7,-3,1,5,16842814,536871972,0,409,259,null],
+    [16304,44,18000,14115,-7,-3,1,5,16842814,536871972,0,409,259,null],
+    [16336,45,18000,14115,-7,-3,1,5,16842814,536871972,0,409,259,null],
+    [16368,46,18000,14115,-7,-3,1,5,16842814,536871972,0,409,259,null],
+    [16401,47,18000,14115,-12,-3,2,5,16842814,536871972,0,404,259,null],
+    [16434,48,18000,14115,-12,-3,2,5,16842814,536871972,0,404,259,null],
+    [16466,49,18000,14115,-12,-3,2,5,16842814,536871972,0,404,259,null],
+    [16498,50,18000,14115,-12,-3,2,5,16842814,536871972,0,404,259,null],
+    [16516,50,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16531,51,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16563,52,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16596,53,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16629,54,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16661,55,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16692,56,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16726,57,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16757,58,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16789,59,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16822,60,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16853,61,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16869,62,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16886,63,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16918,64,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [16934,65,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [17029,66,18000,13915,0,0,0,5,16777278,536871972,0,400,250,null],
+    [17045,67,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [17060,68,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [17092,69,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [17109,70,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [17157,70,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [17205,71,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [17223,72,18000,13915,9,-7,0,0,18022462,536871972,0,409,243,null],
+    [17237,73,18000,13915,9,-7,0,0,18022462,536871972,0,409,243,null],
+    [17270,74,18000,13915,14,-9,1,0,18022462,536871972,0,414,241,null],
+    [17301,75,18000,13915,14,-9,1,0,18022462,536871972,0,414,241,null],
+    [17318,75,18000,13714,7,-1,2,0,18022462,536871972,0,423,237,null],
+    [17334,76,18000,13714,7,-1,2,0,18022462,536871972,0,423,237,null],
+    [17365,77,18000,13714,15,-3,3,0,18022462,536871972,0,431,235,null],
+    [17398,78,18000,13714,15,-3,3,0,18022462,536871972,0,431,235,null],
+    [17415,78,18000,13713,8,-1,4,1,18022462,536871972,0,440,225,null],
+    [17430,79,18000,13713,8,-1,4,1,18022462,536871972,0,440,225,null],
+    [17462,80,18000,13713,20,-1,5,1,18022462,536871972,0,452,225,null],
+    [17495,81,18000,13713,20,-1,5,1,18022462,536871972,0,452,225,null],
+    [17511,81,18000,13712,1,-1,6,1,18022462,536871972,0,465,225,null],
+    [17527,82,18000,13712,1,-1,6,1,18022462,536871972,0,465,225,null],
+    [17560,83,18000,13712,9,-1,7,1,18022462,536871972,0,473,225,null],
+    [17592,84,18000,13712,9,-1,7,1,18022462,536871972,0,473,225,null],
+    [17608,84,18000,13712,22,-1,8,1,18022462,536871972,0,486,225,null],
+    [17623,85,18000,13712,22,-1,8,1,18022462,536871972,0,486,225,null],
+    [17656,86,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17688,87,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17720,88,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17753,89,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17785,90,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17817,91,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17849,92,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17880,93,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17913,94,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17946,95,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [17977,96,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [18973,97,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [18990,98,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [19021,99,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [19036,100,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [19133,101,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [19150,102,18000,13911,-8,0,0,4,16842814,536871972,0,488,226,null],
+    [19181,103,18000,13911,-8,0,0,4,16842814,536871972,0,488,226,null],
+    [19214,104,18000,13911,-8,0,0,4,16842814,536871972,0,488,226,null],
+    [19246,105,18000,13911,-8,0,0,4,16842814,536871972,0,488,226,null],
+    [19261,105,18000,13911,-14,-1,1,4,16842814,536871972,0,482,225,null],
+    [19278,106,18000,13911,-14,-1,1,4,16842814,536871972,0,482,225,null],
+    [19311,107,18000,13911,-14,-1,1,4,16842814,536871972,0,482,225,null],
+    [19343,108,18000,13911,-14,-1,1,4,16842814,536871972,0,482,225,null],
+    [19376,109,18000,13911,-23,0,2,4,16842814,536871972,0,473,226,null],
+    [19409,110,18000,13911,-23,0,2,4,16842814,536871972,0,473,226,null],
+    [19440,111,18000,13911,-23,0,2,4,16842814,536871972,0,473,226,null],
+    [19473,112,18000,13911,-23,0,2,4,16842814,536871972,0,473,226,null],
+    [19489,112,18000,13911,-31,0,3,4,16842814,536871972,0,465,226,null],
+    [19505,113,18000,13911,-31,0,3,4,16842814,536871972,0,465,226,null],
+    [19536,114,18000,13911,-31,0,3,4,16842814,536871972,0,465,226,null],
+    [19568,115,18000,13911,-31,0,3,4,16842814,536871972,0,465,226,null],
+    [19601,116,18000,13712,-8,-1,4,4,16842814,536871972,0,456,225,null],
+    [19632,117,18000,13712,-8,-1,4,4,16842814,536871972,0,456,225,null],
+    [19664,118,18000,13712,-8,-1,4,4,16842814,536871972,0,456,225,null],
+    [19697,119,18000,13712,-8,-1,4,4,16842814,536871972,0,456,225,null],
+    [19713,119,18000,13712,-15,0,5,4,16842814,536871972,0,449,226,null],
+    [19729,120,18000,13712,-15,0,5,4,16842814,536871972,0,449,226,null],
+    [19762,121,18000,13712,-15,0,5,4,16842814,536871972,0,449,226,null],
+    [19793,122,18000,13712,-15,0,5,4,16842814,536871972,0,449,226,null],
+    [19825,123,18000,13712,-26,-1,6,4,16842814,536871972,0,438,225,null],
+    [19858,124,18000,13712,-26,-1,6,4,16842814,536871972,0,438,225,null],
+    [19891,125,18000,13712,-26,-1,6,4,16842814,536871972,0,438,225,null],
+    [19922,126,18000,13712,-26,-1,6,4,16842814,536871972,0,438,225,null],
+    [19939,126,18000,13713,-4,0,7,3,16842814,536871972,0,428,226,null],
+    [19954,127,18000,13713,-4,0,7,3,16842814,536871972,0,428,226,null],
+    [19986,128,18000,13713,-4,0,7,3,16842814,536871972,0,428,226,null],
+    [20017,129,18000,13713,-4,0,7,3,16842814,536871972,0,428,226,null],
+    [20049,130,18000,13713,-8,-1,0,3,16842814,536871972,0,424,225,null],
+    [20081,131,18000,13713,-8,-1,0,3,16842814,536871972,0,424,225,null],
+    [20114,132,18000,13713,-8,-1,0,3,16842814,536871972,0,424,225,null],
+    [20146,133,18000,13713,-8,-1,0,3,16842814,536871972,0,424,225,null],
+    [20162,133,18000,13713,-12,3,1,3,16842814,536871972,0,420,229,null],
+    [20177,134,18000,13713,-12,3,1,3,16842814,536871972,0,420,229,null],
+    [20210,135,18000,13713,-12,3,1,3,16842814,536871972,0,420,229,null],
+    [20242,136,18000,13713,-12,3,1,3,16842814,536871972,0,420,229,null],
+    [20273,137,18000,13714,-1,-2,2,3,16842814,536871972,0,415,236,null],
+    [20305,138,18000,13714,-1,-2,2,3,16842814,536871972,0,415,236,null],
+    [20338,139,18000,13714,-1,-2,2,3,16842814,536871972,0,415,236,null],
+    [20370,140,18000,13714,-1,-2,2,3,16842814,536871972,0,415,236,null],
+    [20386,140,18000,13714,-5,-2,3,3,16842814,536871972,0,411,236,null],
+    [20402,141,18000,13714,-5,-2,3,3,16842814,536871972,0,411,236,null],
+    [20436,142,18000,13714,-5,-2,3,3,16842814,536871972,0,411,236,null],
+    [20467,143,18000,13714,-5,-2,3,3,16842814,536871972,0,411,236,null],
+    [20500,144,18000,13714,-8,-1,4,3,16842814,536871972,0,408,237,null],
+    [20532,145,18000,13714,-8,-1,4,3,16842814,536871972,0,408,237,null],
+    [20564,146,18000,13714,-8,-1,4,3,16842814,536871972,0,408,237,null],
+    [20596,147,18000,13714,-8,-1,4,3,16842814,536871972,0,408,237,null],
+    [20612,147,18000,13714,-12,5,5,3,16842814,536871972,0,404,243,null],
+    [20628,148,18000,13714,-12,5,5,3,16842814,536871972,0,404,243,null],
+    [20660,149,18000,13714,-12,5,5,3,16842814,536871972,0,404,243,null],
+    [20692,150,18000,13714,-12,5,5,3,16842814,536871972,0,404,243,null],
+    [20725,151,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [20756,152,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [20789,153,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [20820,154,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [20852,155,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [20885,156,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [20917,157,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [20949,158,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [20982,159,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [21013,160,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [21044,161,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [21060,162,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [21077,163,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [21108,164,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [21124,165,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [21221,166,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [21238,167,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [21254,168,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [21287,169,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [21302,170,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [21351,170,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [21399,171,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [21417,172,18000,13915,2,1,0,2,16842814,536871972,0,402,251,null],
+    [21432,173,18000,13915,2,1,0,2,16842814,536871972,0,402,251,null],
+    [21449,174,18000,13915,2,1,0,2,16842814,536871972,0,402,251,null],
+    [21481,175,18000,13915,2,1,0,2,16842814,536871972,0,402,251,null],
+    [21496,176,18000,13915,2,1,0,2,16842814,536871972,0,402,251,null],
+    [21528,176,18000,13915,6,7,1,2,16842814,536871972,0,406,257,null],
+    [21592,177,18000,13915,6,7,1,2,16842814,536871972,0,406,257,null],
+    [21609,178,18000,13915,-8,0,0,4,16842814,536871972,0,392,250,null],
+    [21641,179,18000,13915,-8,0,0,4,16842814,536871972,0,392,250,null],
+    [21672,180,18000,13915,-8,0,0,4,16842814,536871972,0,392,250,null],
+    [21704,181,18000,13915,-8,0,0,4,16842814,536871972,0,392,250,null],
+    [21721,181,18000,13915,-14,-1,1,4,16842814,536871972,0,386,249,null],
+    [21736,182,18000,13915,-14,-1,1,4,16842814,536871972,0,386,249,null],
+    [21769,183,18000,13915,-14,-1,1,4,16842814,536871972,0,386,249,null],
+    [21800,184,18000,13915,-14,-1,1,4,16842814,536871972,0,386,249,null],
+    [21833,185,18000,13915,-23,0,2,4,16842814,536871972,0,377,250,null],
+    [21864,186,18000,13915,-23,0,2,4,16842814,536871972,0,377,250,null],
+    [21896,187,18000,13915,-23,0,2,4,16842814,536871972,0,377,250,null],
+    [21928,188,18000,13915,-23,0,2,4,16842814,536871972,0,377,250,null],
+    [21945,188,18000,13915,-31,0,3,4,16842814,536871972,0,369,250,null],
+    [21961,189,18000,13915,-31,0,3,4,16842814,536871972,0,369,250,null],
+    [21994,190,18000,13915,-31,0,3,4,16842814,536871972,0,369,250,null],
+    [22024,191,18000,13915,-31,0,3,4,16842814,536871972,0,369,250,null],
+    [22058,192,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22089,193,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22120,194,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22152,195,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22185,196,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22217,197,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22250,198,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22282,199,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22313,200,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22345,201,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [22377,202,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [23428,203,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [23444,204,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [23476,205,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [23492,206,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [23589,207,18000,13716,0,0,0,4,16777278,536871972,0,368,250,null],
+    [23606,208,18000,13716,8,0,0,1,16842814,536871972,0,376,250,null],
+    [23638,209,18000,13716,8,0,0,1,16842814,536871972,0,376,250,null],
+    [23671,210,18000,13716,8,0,0,1,16842814,536871972,0,376,250,null],
+    [23703,211,18000,13716,8,0,0,1,16842814,536871972,0,376,250,null],
+    [23719,211,18000,13716,14,0,1,1,16842814,536871972,0,382,250,null],
+    [23734,212,18000,13716,14,0,1,1,16842814,536871972,0,382,250,null],
+    [23766,213,18000,13716,14,0,1,1,16842814,536871972,0,382,250,null],
+    [23799,214,18000,13716,14,0,1,1,16842814,536871972,0,382,250,null],
+    [23832,215,18000,13716,24,0,2,1,16842814,536871972,0,392,250,null],
+    [23864,216,18000,13716,24,0,2,1,16842814,536871972,0,392,250,null],
+    [23897,217,18000,13716,24,0,2,1,16842814,536871972,0,392,250,null],
+    [23932,218,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [23964,219,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [23995,220,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24027,221,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24059,222,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24090,223,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24123,224,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24154,225,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24186,226,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24219,227,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24253,228,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24269,229,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24285,230,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24316,231,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24332,232,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24429,233,18000,13915,0,0,0,1,16777278,536871972,0,400,250,null],
+    [24446,234,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [24461,235,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [24687,236,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [25604,237,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [25639,237,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [25736,238,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [25752,239,18000,13915,13,-6,2,0,16842814,536871972,0,413,244,null],
+    [25784,240,18000,13915,13,-6,2,0,16842814,536871972,0,413,244,null],
+    [25816,241,18000,13915,13,-6,2,0,16842814,536871972,0,413,244,null],
+    [25848,242,18000,13915,13,-6,2,0,16842814,536871972,0,413,244,null],
+    [25865,242,18000,13714,0,0,3,0,16842814,536871972,0,416,238,null],
+    [25880,243,18000,13714,0,0,3,0,16842814,536871972,0,416,238,null],
+    [25912,244,18000,13714,0,0,3,0,16842814,536871972,0,416,238,null],
+    [25944,245,18000,13714,0,0,3,0,16842814,536871972,0,416,238,null],
+    [25977,246,18000,13714,4,-4,4,0,16842814,536871972,0,420,234,null],
+    [26007,247,18000,13714,4,-4,4,0,16842814,536871972,0,420,234,null],
+    [26039,248,18000,13714,4,-4,4,0,16842814,536871972,0,420,234,null],
+    [26071,249,18000,13714,4,-4,4,0,16842814,536871972,0,420,234,null],
+    [26088,249,18000,13714,9,-5,5,0,16842814,536871972,0,425,233,null],
+    [26103,250,18000,13714,9,-5,5,0,16842814,536871972,0,425,233,null],
+    [26135,251,18000,13714,9,-5,5,0,16842814,536871972,0,425,233,null],
+    [26167,252,18000,13714,9,-5,5,0,16842814,536871972,0,425,233,null],
+    [26200,253,18000,13714,13,-5,6,0,16842814,536871972,0,429,233,null],
+    [26231,254,18000,13714,13,-5,6,0,16842814,536871972,0,429,233,null],
+    [26263,255,18000,13714,13,-5,6,0,16842814,536871972,0,429,233,null],
+    [26296,256,18000,13714,13,-5,6,0,16842814,536871972,0,429,233,null],
+    [26312,256,18000,13713,2,-1,7,1,16842814,536871972,0,434,225,null],
+    [26343,257,18000,13713,2,-1,7,1,16842814,536871972,0,434,225,null],
+    [26376,258,18000,13713,2,-1,7,1,16842814,536871972,0,434,225,null],
+    [26407,259,18000,13713,2,-1,7,1,16842814,536871972,0,434,225,null],
+    [26423,259,18000,13713,10,-1,0,1,16842814,536871972,0,442,225,null],
+    [26440,260,18000,13713,10,-1,0,1,16842814,536871972,0,442,225,null],
+    [26472,261,18000,13713,10,-1,0,1,16842814,536871972,0,442,225,null],
+    [26505,262,18000,13713,10,-1,0,1,16842814,536871972,0,442,225,null],
+    [26537,263,18000,13713,16,-1,1,1,16842814,536871972,0,448,225,null],
+    [26570,264,18000,13713,16,-1,1,1,16842814,536871972,0,448,225,null],
+    [26601,265,18000,13713,16,-1,1,1,16842814,536871972,0,448,225,null],
+    [26634,266,18000,13713,16,-1,1,1,16842814,536871972,0,448,225,null],
+    [26650,266,18000,13713,26,-1,2,1,16842814,536871972,0,458,225,null],
+    [26665,267,18000,13713,26,-1,2,1,16842814,536871972,0,458,225,null],
+    [26697,268,18000,13713,26,-1,2,1,16842814,536871972,0,458,225,null],
+    [26729,269,18000,13713,26,-1,2,1,16842814,536871972,0,458,225,null],
+    [26762,270,18000,13712,2,-1,3,1,16842814,536871972,0,466,225,null],
+    [26793,271,18000,13712,2,-1,3,1,16842814,536871972,0,466,225,null],
+    [26825,272,18000,13712,2,-1,3,1,16842814,536871972,0,466,225,null],
+    [26857,273,18000,13712,2,-1,3,1,16842814,536871972,0,466,225,null],
+    [26874,273,18000,13712,11,0,4,1,16842814,536871972,0,475,226,null],
+    [26889,274,18000,13712,11,0,4,1,16842814,536871972,0,475,226,null],
+    [26922,275,18000,13712,11,0,4,1,16842814,536871972,0,475,226,null],
+    [26953,276,18000,13712,11,0,4,1,16842814,536871972,0,475,226,null],
+    [26985,277,18000,13712,17,0,5,1,16842814,536871972,0,481,226,null],
+    [27017,278,18000,13712,17,0,5,1,16842814,536871972,0,481,226,null],
+    [27049,279,18000,13712,17,0,5,1,16842814,536871972,0,481,226,null],
+    [27082,280,18000,13712,17,0,5,1,16842814,536871972,0,481,226,null],
+    [27099,280,18000,13712,28,-1,6,1,16842814,536871972,0,492,225,null],
+    [27114,281,18000,13712,28,-1,6,1,16842814,536871972,0,492,225,null],
+    [27162,282,18000,13712,28,-1,6,1,16842814,536871972,0,492,225,null],
+    [27195,283,18000,13712,28,-1,6,1,16842814,536871972,0,492,225,null],
+    [27212,283,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27228,284,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27261,285,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27293,286,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27325,287,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27358,288,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27389,289,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27423,290,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27455,291,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27488,292,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27519,293,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [27552,294,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [30075,295,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [30091,296,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [30123,297,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [30139,298,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [30236,299,18000,13911,0,0,0,1,16777278,536871972,0,496,226,null],
+    [30252,300,18000,13911,-8,0,0,4,16842814,536871972,0,488,226,null],
+    [30284,301,18000,13911,-8,0,0,4,16842814,536871972,0,488,226,null],
+    [30317,302,18000,13911,-8,0,0,4,16842814,536871972,0,488,226,null],
+    [30350,303,18000,13911,-8,0,0,4,16842814,536871972,0,488,226,null],
+    [30366,303,18000,13911,-14,-1,1,4,16842814,536871972,0,482,225,null],
+    [30382,304,18000,13911,-14,-1,1,4,16842814,536871972,0,482,225,null],
+    [30416,305,18000,13911,-14,-1,1,4,16842814,536871972,0,482,225,null],
+    [30449,306,18000,13911,-14,-1,1,4,16842814,536871972,0,482,225,null],
+    [30482,307,18000,13911,-23,0,2,4,16842814,536871972,0,473,226,null],
+    [30514,308,18000,13911,-23,0,2,4,16842814,536871972,0,473,226,null],
+    [30546,309,18000,13911,-23,0,2,4,16842814,536871972,0,473,226,null],
+    [30579,310,18000,13911,-23,0,2,4,16842814,536871972,0,473,226,null],
+    [30596,310,18000,13911,-31,0,3,4,16842814,536871972,0,465,226,null],
+    [30612,311,18000,13911,-31,0,3,4,16842814,536871972,0,465,226,null],
+    [30645,312,18000,13911,-31,0,3,4,16842814,536871972,0,465,226,null],
+    [30677,313,18000,13911,-31,0,3,4,16842814,536871972,0,465,226,null],
+    [30710,314,18000,13712,-8,-1,4,4,16842814,536871972,0,456,225,null],
+    [30742,315,18000,13712,-8,-1,4,4,16842814,536871972,0,456,225,null],
+    [30773,316,18000,13712,-8,-1,4,4,16842814,536871972,0,456,225,null],
+    [30805,317,18000,13712,-8,-1,4,4,16842814,536871972,0,456,225,null],
+    [30823,317,18000,13712,-15,0,5,4,16842814,536871972,0,449,226,null],
+    [30837,318,18000,13712,-15,0,5,4,16842814,536871972,0,449,226,null],
+    [30870,319,18000,13712,-15,0,5,4,16842814,536871972,0,449,226,null],
+    [30902,320,18000,13712,-15,0,5,4,16842814,536871972,0,449,226,null],
+    [30934,321,18000,13712,-26,-1,6,4,16842814,536871972,0,438,225,null],
+    [30966,322,18000,13712,-26,-1,6,4,16842814,536871972,0,438,225,null],
+    [30998,323,18000,13712,-26,-1,6,4,16842814,536871972,0,438,225,null],
+    [31029,324,18000,13712,-26,-1,6,4,16842814,536871972,0,438,225,null],
+    [31046,324,18000,13713,-4,0,7,3,16842814,536871972,0,428,226,null],
+    [31062,325,18000,13713,-4,0,7,3,16842814,536871972,0,428,226,null],
+    [31093,326,18000,13713,-4,0,7,3,16842814,536871972,0,428,226,null],
+    [31125,327,18000,13713,-4,0,7,3,16842814,536871972,0,428,226,null],
+    [31158,328,18000,13713,-8,-1,0,3,16842814,536871972,0,424,225,null],
+    [31189,329,18000,13713,-8,-1,0,3,16842814,536871972,0,424,225,null],
+    [31221,330,18000,13713,-8,-1,0,3,16842814,536871972,0,424,225,null],
+    [31253,331,18000,13713,-8,-1,0,3,16842814,536871972,0,424,225,null],
+    [31269,331,18000,13713,-12,3,1,3,16842814,536871972,0,420,229,null],
+    [31286,332,18000,13713,-12,3,1,3,16842814,536871972,0,420,229,null],
+    [31318,333,18000,13713,-12,3,1,3,16842814,536871972,0,420,229,null],
+    [31351,334,18000,13713,-12,3,1,3,16842814,536871972,0,420,229,null],
+    [31383,335,18000,13714,-1,-2,2,3,16842814,536871972,0,415,236,null],
+    [31415,336,18000,13714,-1,-2,2,3,16842814,536871972,0,415,236,null],
+    [31447,337,18000,13714,-1,-2,2,3,16842814,536871972,0,415,236,null],
+    [31479,338,18000,13714,-1,-2,2,3,16842814,536871972,0,415,236,null],
+    [31496,338,18000,13714,-5,-2,3,3,16842814,536871972,0,411,236,null],
+    [31511,339,18000,13714,-5,-2,3,3,16842814,536871972,0,411,236,null],
+    [31544,340,18000,13714,-5,-2,3,3,16842814,536871972,0,411,236,null],
+    [31575,341,18000,13714,-5,-2,3,3,16842814,536871972,0,411,236,null],
+    [31608,342,18000,13714,-8,-1,4,3,16842814,536871972,0,408,237,null],
+    [31639,343,18000,13714,-8,-1,4,3,16842814,536871972,0,408,237,null],
+    [31671,344,18000,13714,-8,-1,4,3,16842814,536871972,0,408,237,null],
+    [31703,345,18000,13714,-8,-1,4,3,16842814,536871972,0,408,237,null],
+    [31720,345,18000,13714,-12,5,5,3,16842814,536871972,0,404,243,null],
+    [31735,346,18000,13714,-12,5,5,3,16842814,536871972,0,404,243,null],
+    [31768,347,18000,13714,-12,5,5,3,16842814,536871972,0,404,243,null],
+    [31799,348,18000,13714,-12,5,5,3,16842814,536871972,0,404,243,null],
+    [31832,349,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [31864,350,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [31896,351,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [31927,352,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [31959,353,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [31991,354,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32022,355,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32060,356,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32104,357,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32136,358,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32169,359,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32184,360,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32201,361,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32233,362,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32248,363,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32344,364,18000,13915,0,0,0,3,16777278,536871972,0,400,250,null],
+    [32362,365,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [32378,366,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [32412,367,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [32428,368,18000,13915,3,-4,0,0,16842814,536871972,0,403,246,null],
+    [32464,368,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [32526,369,18000,13915,7,-5,1,0,16842814,536871972,0,407,245,null],
+    [32542,370,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32557,371,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32590,372,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32623,373,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32654,374,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32687,375,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32718,376,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32750,377,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32782,378,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32815,379,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32846,380,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32879,381,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32912,382,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32944,383,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [32976,384,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [33008,385,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [33040,386,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [33073,387,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [33103,388,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [33135,389,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [33170,390,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null],
+    [33201,391,18000,13915,0,0,0,0,16777278,536871972,0,400,250,null]
+  ]
+}

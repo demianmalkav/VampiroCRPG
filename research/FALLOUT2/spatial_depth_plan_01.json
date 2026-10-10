@@ -1,0 +1,62 @@
+{
+  "map": "NCR1.MAP",
+  "role": "depth-streetlight",
+  "actions": [
+    {
+      "op": "move",
+      "tile": 13911
+    },
+    {
+      "op": "move",
+      "tile": 14111
+    },
+    {
+      "op": "move",
+      "tile": 14112
+    },
+    {
+      "op": "move",
+      "tile": 14113
+    },
+    {
+      "op": "move",
+      "tile": 13913
+    },
+    {
+      "op": "move",
+      "tile": 13712
+    },
+    {
+      "op": "move",
+      "tile": 13712
+    },
+    {
+      "op": "move",
+      "tile": 13913
+    },
+    {
+      "op": "move",
+      "tile": 14113
+    },
+    {
+      "op": "move",
+      "tile": 14112
+    },
+    {
+      "op": "move",
+      "tile": 14111
+    },
+    {
+      "op": "move",
+      "tile": 13911
+    },
+    {
+      "op": "move",
+      "tile": 13915
+    },
+    {
+      "op": "scan",
+      "limit": 12
+    }
+  ]
+}

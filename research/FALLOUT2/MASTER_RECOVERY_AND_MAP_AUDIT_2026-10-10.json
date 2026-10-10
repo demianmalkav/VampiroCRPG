@@ -1,0 +1,307 @@
+{
+  "schema": "fallout-master-recovery-and-static-map-audit-1",
+  "date_argentina": "2026-10-10",
+  "logical_parent": "f7f45e416585ebeeeb786564b204684eb3b9ebe5",
+  "status": "A2_INPUT_TRANSFER_RESOLVED_STATIC_MAP_AUDIT_COMPLETE_RUNTIME_NOT_EXECUTED",
+  "source_folder_url": "https://drive.google.com/drive/folders/1yStYnSN1fpqGkUFyEVSBPY1Ug5VY4XTp",
+  "private_inputs_not_published": true,
+  "parts": [
+    {
+      "file": "master.part1.rar",
+      "bytes": 178257920,
+      "sha256": "526e8c8c040cd8b6a8b6337ddb8151cd2def011fe0a713cf03c1b37b80d0e75f"
+    },
+    {
+      "file": "master.part2.rar",
+      "bytes": 149208726,
+      "sha256": "0c50d1929d720fe2df985a43439c35612c679ef46e778a0f4a1153849d5f5489"
+    }
+  ],
+  "recovery": {
+    "format": "RAR5",
+    "tool": "libarchive 3.7.2 via Python ctypes",
+    "archive_entry": "master.dat",
+    "archive_entry_declared_bytes": 333177805,
+    "output_bytes": 333177805,
+    "sha256": "9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711",
+    "md5": "5acf4f9a8bb017af0f7b35c7f920a48b",
+    "archive_status": "EOF_WITHOUT_ERROR",
+    "original_drive_size_matches": true,
+    "original_drive_checksum_comparison": "NOT_AVAILABLE_FROM_CONNECTOR_METADATA"
+  },
+  "master_dat": {
+    "file": "master.dat",
+    "bytes": 333177805,
+    "sha256": "9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711",
+    "footer": {
+      "tree_size": 944706,
+      "archive_size": 333177805,
+      "data_base": 0,
+      "sorted_case_insensitive": true
+    },
+    "entry_count": 23140,
+    "entries_content_checked": 23140,
+    "extensions": {
+      "": 27,
+      ".aaf": 5,
+      ".acm": 2473,
+      ".bak": 3,
+      ".bio": 3,
+      ".cfg": 30,
+      ".com": 1,
+      ".fon": 5,
+      ".frm": 8071,
+      ".gam": 88,
+      ".gcd": 6,
+      ".int": 1443,
+      ".lbm": 1,
+      ".lip": 1029,
+      ".lnk": 2,
+      ".lst": 23,
+      ".map": 155,
+      ".msg": 833,
+      ".msk": 7,
+      ".mve": 13,
+      ".pal": 48,
+      ".pro": 7650,
+      ".ref": 1,
+      ".rix": 7,
+      ".sve": 11,
+      ".txt": 1205
+    },
+    "roots": {
+      "art": 8167,
+      "color.pal": 1,
+      "data": 25,
+      "font0.aaf": 1,
+      "font0.fon": 1,
+      "font1.aaf": 1,
+      "font1.fon": 1,
+      "font2.aaf": 1,
+      "font2.fon": 1,
+      "font3.aaf": 1,
+      "font3.fon": 1,
+      "font4.aaf": 1,
+      "font5.fon": 1,
+      "maps": 260,
+      "premade": 9,
+      "proto": 7683,
+      "scripts": 1448,
+      "sound": 4562,
+      "text": 975
+    },
+    "frm_frame_counts": {
+      "1": 7692,
+      "10": 1,
+      "11": 1,
+      "12": 19,
+      "14": 1,
+      "15": 2,
+      "17": 1,
+      "19": 1,
+      "2": 45,
+      "24": 1,
+      "3": 14,
+      "4": 26,
+      "5": 10,
+      "6": 14,
+      "7": 28,
+      "8": 127,
+      "9": 88
+    },
+    "frm_frame_records_checked": 10774,
+    "frm_area_mismatch_count": 0,
+    "frm_marker_outside_range": [],
+    "errors": [],
+    "map_headers_checked": 155,
+    "proto_headers_checked": 7650
+  },
+  "maps": [
+    {
+      "schema": "fallout-static-map-audit-1",
+      "map_path": "maps/NCR1.MAP",
+      "map_source": "master.dat",
+      "bytes": 349080,
+      "sha256": "77473405d6ebf15963e4bc8c91ad57fa7198e59e851760a42c3514fe868d33fc",
+      "inputs": [
+        {
+          "file": "master.dat",
+          "bytes": 333177805,
+          "sha256": "9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711"
+        },
+        {
+          "file": "critter.dat",
+          "bytes": 166951131,
+          "sha256": "da83d615967c0bac41fbc50e6b86b3088401ff69ed9d8b2e5be1d6ac0c125bcd"
+        }
+      ],
+      "version": 20,
+      "header_flags": 12,
+      "local_vars": 0,
+      "global_vars": 4,
+      "bytes_consumed": 349080,
+      "exact_eof": true,
+      "top_level_objects": 3230,
+      "nested_objects": 163,
+      "elevation_counts": [
+        3230,
+        0,
+        0
+      ],
+      "kinds": {
+        "scenery": 1050,
+        "walls": 1644,
+        "misc": 448,
+        "critters": 51,
+        "items": 37
+      },
+      "script_counts": [
+        0,
+        0,
+        0,
+        27,
+        51
+      ],
+      "mixed_script_slot_types": 13,
+      "missing_dependencies": [],
+      "critter_art_resolution": "BASE_ONLY_NOT_ALL_ANIMATIONS",
+      "runtime_executed": false,
+      "collision_paths_tested": false,
+      "limitation": "Static DAT roots only; no scripts executed, loose overrides not scanned.",
+      "door_count": 32,
+      "door_state_counts": {
+        "hidden": 0,
+        "no_block": 1,
+        "open_flags": {
+          "1": 1,
+          "0": 31
+        }
+      },
+      "resolved_dependency_count": 1098,
+      "critter_base_count": 17,
+      "one_door_probe": {
+        "offset": 107044,
+        "id": 127,
+        "tile": 15061,
+        "rotation": 0,
+        "fid": 33555978,
+        "flags": 2684354576,
+        "pid": 33555964,
+        "sid": -1,
+        "script_index": -1,
+        "door_open_flags": 1
+      }
+    },
+    {
+      "schema": "fallout-static-map-audit-1",
+      "map_path": "maps/NCR1.MAP",
+      "map_source": "patch000.dat",
+      "bytes": 353040,
+      "sha256": "11464ce6dd1f5d374523b470ddb7590419d1a88cef72c34c8199fe71bfd01e00",
+      "inputs": [
+        {
+          "file": "master.dat",
+          "bytes": 333177805,
+          "sha256": "9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711"
+        },
+        {
+          "file": "critter.dat",
+          "bytes": 166951131,
+          "sha256": "da83d615967c0bac41fbc50e6b86b3088401ff69ed9d8b2e5be1d6ac0c125bcd"
+        },
+        {
+          "file": "patch000.dat",
+          "bytes": 2896671,
+          "sha256": "d24788cf50294a27713a368f06cedb9b30c00ba709c2f1e0662ca2f6dddf2fc1"
+        }
+      ],
+      "version": 20,
+      "header_flags": 12,
+      "local_vars": 0,
+      "global_vars": 4,
+      "bytes_consumed": 353040,
+      "exact_eof": true,
+      "top_level_objects": 3275,
+      "nested_objects": 163,
+      "elevation_counts": [
+        3275,
+        0,
+        0
+      ],
+      "kinds": {
+        "scenery": 1090,
+        "walls": 1649,
+        "misc": 448,
+        "critters": 51,
+        "items": 37
+      },
+      "script_counts": [
+        0,
+        0,
+        0,
+        27,
+        51
+      ],
+      "mixed_script_slot_types": 13,
+      "missing_dependencies": [],
+      "critter_art_resolution": "BASE_ONLY_NOT_ALL_ANIMATIONS",
+      "runtime_executed": false,
+      "collision_paths_tested": false,
+      "limitation": "Static DAT roots only; no scripts executed, loose overrides not scanned.",
+      "door_count": 32,
+      "door_state_counts": {
+        "hidden": 0,
+        "no_block": 1,
+        "open_flags": {
+          "1": 1,
+          "0": 31
+        }
+      },
+      "resolved_dependency_count": 1098,
+      "critter_base_count": 17,
+      "one_door_probe": {
+        "offset": 107044,
+        "id": 300,
+        "tile": 15061,
+        "rotation": 0,
+        "fid": 33555978,
+        "flags": 2684354576,
+        "pid": 33555964,
+        "sid": -1,
+        "script_index": -1,
+        "door_open_flags": 1
+      }
+    }
+  ],
+  "validation": {
+    "synthetic_parser_tests": 11,
+    "synthetic_parser_result": "PASS",
+    "missing_volume_probe": {
+      "result": "REJECTED_NO_FINAL_OUTPUT",
+      "library_error": "Unpacker has written too many bytes",
+      "partial_bytes": 163577856
+    },
+    "existing_reference_guard": "REJECTED_OVERWRITE",
+    "reference_sha256_after_probes": "9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711",
+    "regression_scope": "Research readers only; game/runtime code unchanged"
+  },
+  "loose_override_scope": {
+    "data/maps": "EMPTY_AT_CURRENT_READ",
+    "data/proto/items": "EMPTY_AT_CURRENT_READ",
+    "data/proto/critters": "EMPTY_AT_CURRENT_READ",
+    "other_loose_folders": "NOT_EXHAUSTIVELY_RESCANNED"
+  },
+  "runtime": {
+    "original_exe_executed": false,
+    "ce_built": false,
+    "a2_cases_executed": 0,
+    "a2_case_count": 12,
+    "observed_missing_environment": [
+      "Wine",
+      "CMake",
+      "pkg-config",
+      "Xvfb",
+      "SDL2 runtime/development headers"
+    ]
+  }
+}

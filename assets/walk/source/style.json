@@ -1,0 +1,83 @@
+{
+  "id": "urbano-nocturno-01",
+  "camera_elevation": 30,
+  "pixels_per_unit": 62.2253967444,
+  "render_scale": 2,
+  "samples": 12,
+  "materials": {
+    "coat": "#27343c",
+    "lining": "#52606a",
+    "shirt": "#a3a09b",
+    "skin": "#b29382",
+    "hair": "#222526",
+    "boots": "#222326",
+    "denim": "#303841",
+    "metal": "#54656a",
+    "rust": "#744a3c",
+    "brick": "#63544c",
+    "mortar": "#353e3d",
+    "wood": "#796151",
+    "brass": "#b49a62",
+    "red": "#80383d",
+    "glass": "#415764",
+    "paper": "#aaa18c"
+  },
+  "player": {
+    "coat_material": "coat",
+    "hair_material": "hair",
+    "height": 1.86
+  },
+  "contact": {
+    "coat_material": "red",
+    "hair_material": "hair",
+    "height": 1.78
+  },
+  "light": {
+    "key": [
+      1,
+      0.74,
+      0.5
+    ],
+    "fill": [
+      0.4,
+      0.56,
+      0.75
+    ],
+    "world_strength": 0.14
+  },
+  "directions": [
+    [
+      0,
+      -1
+    ],
+    [
+      1,
+      -1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      -1,
+      -1
+    ]
+  ],
+  "walk_frames": 8
+}

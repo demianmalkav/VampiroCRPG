@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>El pasaje — muestra recorrible</title><link rel="stylesheet" href="/scene.css"><script src="/scene.js" defer></script></head>
+<body>
+<header><div><p class="eyebrow">NUEVA YORK · MUESTRA RECORRIBLE 02</p><h1>El pasaje</h1></div><nav aria-label="Partida"><button id="inventory-toggle">Inventario <span id="inventory-count">0</span></button><button id="help-toggle">Controles</button><button id="save">Guardar</button><button id="load">Cargar</button><button id="reset">Reiniciar</button><input id="file" type="file" accept=".json,application/json" hidden></nav></header>
+<main><section id="stage" aria-label="Pasaje nocturno"><canvas id="scene" tabindex="0" aria-label="Mundo isométrico: clic para caminar o actuar, clic derecho para mirar."></canvas>
+<div id="objective"><span class="eyebrow">OBJETIVO</span><p id="goal">Encontrá tu llave y entrá al refugio.</p><span id="progress">La mujer puede orientarte. Mirá junto al contenedor.</span></div>
+<div id="onboarding"><strong>Explorá con el mouse</strong><p>Clic en el suelo: caminar.<br>Clic en una persona u objeto: acercarte y actuar.<br>Clic derecho: mirar y leer su descripción abajo.</p><button id="understood">Entendido</button></div>
+<div id="inventory" hidden><h2>Inventario</h2><div id="items">Todavía no llevás ningún objeto.</div><p>Los objetos que recogés salen del mundo y quedan acá.</p></div>
+<div id="tooltip" hidden></div><div id="movement">Preparando el pasaje…</div><div id="toast" role="alert" hidden></div>
+<div id="success" hidden><span class="eyebrow">RECORRIDO COMPLETO</span><h2>Estás en el refugio.</h2><p>Encontraste la llave, abriste la puerta y cruzaste el umbral.</p><button id="continue">Seguir explorando</button></div>
+</section><section class="visor" aria-label="Visor de observaciones"><div class="visor-title"><span>Lo que percibís</span><span id="clock">00:00</span></div><ol id="log" aria-live="polite"></ol></section>
+<div class="control-strip"><span>Clic: caminar / actuar</span><span>Clic derecho: mirar</span><span>Esc: detenerse</span><span>I: inventario</span><span>WASD / flechas: un paso</span></div></main>
+<footer><span>Pasaje de servicio · Manhattan</span><span id="connection">Iniciando…</span></footer></body></html>

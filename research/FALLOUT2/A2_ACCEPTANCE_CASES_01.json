@@ -1,0 +1,521 @@
+{
+  "kind": "PLANNED_ACCEPTANCE_CASES",
+  "status": "REFERENCE_PARTIALLY_OBSERVED",
+  "scope": "Reference ORIGINAL/CE behavior must be recorded independently of Vampiro adaptation expectations; no overall acceptance inferred from an audit.",
+  "geometry_policy": "No literal translation of square C cell IDs to hex Fallout MAP coordinates.",
+  "cases": [
+    {
+      "id": "A2-01",
+      "subsystem": "geometry",
+      "preconditions": "Empty ground; native geometry and camera recorded.",
+      "stimulus": "Project/unproject representative cell centers and choose each native direction.",
+      "expected_vampiro": "Selected node equals intended node; equal logical distances have comparable durations; C cardinal 300 ms, diagonal 425 ms is adaptation policy, not CE expectation.",
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_NAVIGATION_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "observed": [
+          "six native neighbors from 13915",
+          "native project/unproject and actual cursor agree",
+          "six arrivals and six returns"
+        ],
+        "open": [
+          "duration equivalence and logical clock",
+          "original Windows comparison",
+          "Vampiro implementation"
+        ],
+        "measured_case_count": 12
+      },
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": []
+    },
+    {
+      "id": "A2-02",
+      "subsystem": "blocking",
+      "preconditions": "Crate, wall, dumpster and actor registered with footprints.",
+      "stimulus": "Request destination inside each solid; walk around each edge.",
+      "expected_vampiro": "No route or execution traverses covered cells; decorated surfaces designated nonblocking remain walkable.",
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_NAVIGATION_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "observed": [
+          "streetlight/wall/guard/hydrant occupied requests approach free neighboring tile",
+          "free destination route bypasses streetlight",
+          "no blocker at actor in 53 native tile observations",
+          "desk and locker requests from 13909 yield no movement",
+          "locker tile blocker is auxiliary scenery, not item"
+        ],
+        "open": [
+          "full container perimeter and broader contact/footprint cases",
+          "all edges and wide/multihex footprint",
+          "dynamic blocking between samples",
+          "original Windows comparison",
+          "Vampiro implementation"
+        ],
+        "measured_case_count": 9
+      },
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "intent": "MoveTo(crate_cell)",
+          "result": "DESTINATION_BLOCKED",
+          "position": "unchanged",
+          "resources": "unchanged"
+        },
+        {
+          "intent": "MoveTo(free_cell_beyond_crate)",
+          "result": "route excludes crate footprint"
+        }
+      ],
+      "reference_evidence_additional": [
+        "CE_DOOR_2026-10-10.json",
+        "CE_CONTAINER_2026-10-10.json",
+        "CE_SPATIAL_2026-10-10.json"
+      ],
+      "additional_reference_observed": "Door access allows locker14499 approach at14500; locked use refuses panel. Unlocked empty locker14497 reached at14498 and opens inventory; full perimeter remains unmeasured. Spatial package: all six post neighbors reached in both directions; two solid wall-neighbor tiles rejected, one free neighbor unreachable from exterior; sampled poses have no blocker, one log gap bridged by native receipts and discriminating repeat."
+    },
+    {
+      "id": "A2-03",
+      "subsystem": "redirect",
+      "preconditions": "Actor moves with partially completed segment.",
+      "stimulus": "Redirect at 150 ms and repeatedly before arrival; cancel using Escape.",
+      "expected_vampiro": "No position discontinuity; previous interaction cancelled; last valid destination wins at next node. Record original/CE behavior separately from proposed C policy.",
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_REDIRECTION_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "observed": [
+          "single partial-step redirect reaches new target",
+          "two partial-step redirects reach last target",
+          "repeated destination changes walk animation 1 to run 19",
+          "Escape opens options, pose stays unchanged between snapshots, closing resumes original route",
+          "clicking current actor tile interrupts and stops at that tile",
+          "same-tile offset/frame reset after changed direction and stop"
+        ],
+        "open": [
+          "exact 150ms schedule and logical timing",
+          "exact interruption boundary and other resource/ownership changes beyond measured pickup cases",
+          "all repeated-input races or interrupted save/load",
+          "Windows original comparison",
+          "Vampiro implementation and adaptation acceptance"
+        ],
+        "measured_scenario_count": 5
+      },
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "time_ms": 0,
+          "node": [
+            3,
+            10
+          ],
+          "segment_to": [
+            3,
+            9
+          ],
+          "pending_destination": [
+            3,
+            9
+          ]
+        },
+        {
+          "time_ms": 150,
+          "interpolated_world": [
+            3,
+            9.5
+          ],
+          "redirect_to": [
+            4,
+            10
+          ]
+        },
+        {
+          "time_ms": 150,
+          "after_redirect_world": [
+            3,
+            9.5
+          ],
+          "segment_progress_ms": 150,
+          "pending_destination": [
+            4,
+            10
+          ],
+          "old_interaction": "cancelled"
+        },
+        {
+          "time_ms": 300,
+          "node": [
+            3,
+            9
+          ],
+          "next_segment_to": [
+            4,
+            10
+          ],
+          "next_segment_duration_ms": 425
+        }
+      ],
+      "reference_evidence_additional": [
+        "CE_CONTAINER_2026-10-10.json",
+        "CE_PICKUP_2026-10-10.json",
+        "CE_PICKUP_CYCLE_2026-10-10.json"
+      ],
+      "additional_reference_observed": "Using empty unlocked locker14497 from15709 begins partial run; verified movement redirect to15709 before opening returns actor and leaves locker frame0, no gesture/search/panel, inventories unchanged in bounded observed window. DENBUS1 ground pickup approach also cancelled; item remains ground and inventory empty, then resumed with additional recorded UI click. Early pickup gesture cancellation at observed frames1/2 preserves ground; post-effect move cannot undo ownership. Late trial and precise trigger retained separately."
+    },
+    {
+      "id": "A2-04",
+      "subsystem": "dynamic_block",
+      "preconditions": "Actor approaches target along existing route.",
+      "stimulus": "Block a future segment, keeping current reserved segment clear.",
+      "expected_vampiro": "Revalidate before entering; reroute once per relevant map change or stop with reason; no retries per render frame.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": []
+    },
+    {
+      "id": "A2-05",
+      "subsystem": "door",
+      "preconditions": "Locked door; key not owned, then key owned.",
+      "stimulus": "Use door; cancel before effect; resume; cross only after declared opening moment.",
+      "expected_vampiro": "No opening without key/contact; no body/leaf overlap; open state and passage agree; repeat no duplicate effect.",
+      "reference_observed": {
+        "evidence": "CE_DOOR_2026-10-10.json",
+        "scope": "Initially unlocked door; selection/approach/gesture/opening frames 0\u20137, native blocker removed after logical-open and after first final frame; crossing to interior in three starts",
+        "remaining": [
+          "locked/key condition",
+          "atomic contact/effect boundary",
+          "cancellation before effect",
+          "closure/repeated use/effect uniqueness",
+          "leaf/body overlap exhaustive check"
+        ],
+        "full_case_accepted": false
+      },
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "phase": "CLOSED_LOCKED",
+          "passable": false
+        },
+        {
+          "phase": "UNLOCKING",
+          "passable": false,
+          "cancel_before_effect": "stay locked"
+        },
+        {
+          "phase": "OPENING",
+          "passable": false,
+          "unlock_receipt": "committed once"
+        },
+        {
+          "phase": "OPEN",
+          "passable": true,
+          "leaf": "outside corridor"
+        }
+      ],
+      "reference_status": "REFERENCE_PARTIAL"
+    },
+    {
+      "id": "A2-06",
+      "subsystem": "selection",
+      "preconditions": "Two overlapping perceived objects; one object behind opaque wall.",
+      "stimulus": "Point at each visible piece and right-click inspect; click wall, then free ground.",
+      "expected_vampiro": "Visible front object selected; hidden object not disclosed; wall click does not become movement through wall; world text references same ID.",
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_CONTAINER_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "observed": [
+          "normal visible-art pixel selects compound locker identity",
+          "visor LOOK/LOCKED/SEARCH diagnostics follow chosen locker state",
+          "inventory native target equals selected unlocked locker",
+          "65 opaque nonzero-pixel overlaps choose observed native front object",
+          "70 roof-suppressed point trials choose no object",
+          "arrow-wall inspect versus move-wall and move-free-ground contrasted",
+          "hidden roof-covered locker disclosed by visor in two original starts; second reads hover LOOK target matching compound identity"
+        ],
+        "open": [
+          "full object hidden behind opaque wall, distinct from roof-covered fixture",
+          "origin of CE roof hit/raster discrepancy",
+          "actor-specific perception adaptation",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ],
+        "full_case_accepted": false,
+        "deviation": "HIDDEN_ROOF_LOCKER_DISCLOSED"
+      },
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [],
+      "reference_evidence_additional": [
+        "CE_SPATIAL_2026-10-10.json"
+      ]
+    },
+    {
+      "id": "A2-07",
+      "subsystem": "depth",
+      "preconditions": "Tall wall, wide dumpster and elevated decoration.",
+      "stimulus": "Walk fixed perimeter in both directions; pass near wall-mounted pieces.",
+      "expected_vampiro": "Feet and body stay coherent with volume; front/back occlusion follows extent, not merely center sort; video mandatory.",
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_SPATIAL_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "full_case_accepted": false,
+        "observed": [
+          "original post six-neighbor perimeter forward/reverse, body/post opaque-pixel order and actual GIFs",
+          "wall-neighbor inputs: blocked versus unreachable recorded separately",
+          "interior walls/roof exposure and 103 actor-point egg flags; private captures/GIF frames reviewed"
+        ],
+        "open": [
+          "wide dumpster and elevated decorations",
+          "all render extents/frames and atomic occlusion equivalence",
+          "logger omission root cause",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ]
+      },
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [],
+      "reference_evidence_additional": [
+        "CE_SPATIAL_2026-10-10.json"
+      ]
+    },
+    {
+      "id": "A2-08",
+      "subsystem": "pickup_phases",
+      "preconditions": "Unique ground item within reachable contact.",
+      "stimulus": "Use; cancel before effect; use again; cancel after effect; resend same action.",
+      "expected_vampiro": "Item stays ground before effect and is owned once after effect; rendering cannot decide transfer; reference action-frame measured.",
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_PICKUP_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "scope": "Original DENBUS1 item200/pid4. Queue kinds/delays explain marker4 versus first sampled property7 in silent lab; early gesture press1/release2 cancels and remains ground, late release7 already owned; post-effect movement and physical gesture repeat keep one unit. Native save/load before/after/during gesture measured; during-gesture save clears pending action, not phase persistence.",
+        "open": [
+          "atomic contact/effect entry/exit instrumentation",
+          "target/action receipt replay",
+          "other scripted items and all interruption races",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ],
+        "full_case_accepted": false
+      },
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "phase": "approach",
+          "item_owner": "ground"
+        },
+        {
+          "phase": "prepare",
+          "item_owner": "ground",
+          "cancel": "no transfer"
+        },
+        {
+          "phase": "effect",
+          "item_owner": "actor",
+          "receipt": "one committed transfer"
+        },
+        {
+          "phase": "finish_or_cancel",
+          "item_owner": "actor",
+          "repeat_same_action": "existing receipt, no second transfer"
+        }
+      ],
+      "reference_evidence_additional": [
+        "CE_PICKUP_CYCLE_2026-10-10.json"
+      ]
+    },
+    {
+      "id": "A2-09",
+      "subsystem": "save",
+      "preconditions": "Movement and pending redirected intent; action in pre/post-effect phases.",
+      "stimulus": "Save/load at each boundary and compare with uninterrupted input trace.",
+      "expected_vampiro": "Segment, intent, phase, receipts and future work match; no teleport or duplicate effect; namespace/version explicit.",
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_PICKUP_CYCLE_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "scope": "F6/Return native save and F7 load at ground, owned and pre-effect gesture. Intervening acquired/moved state reversed on load; tile/ground/owner/quantity checked. During-gesture save clears action before load; no pending pickup automatically resumed.",
+        "open": [
+          "save/load during movement and pending redirect",
+          "full semantic world/RNG/clock/queue equality",
+          "all action receipt boundaries",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ],
+        "full_case_accepted": false
+      },
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "operation": "save",
+          "state": "between confirmed transactions"
+        },
+        {
+          "operation": "load",
+          "state": "same segment/progress/intent/phase/receipts/future queue"
+        },
+        {
+          "operation": "continue identical inputs",
+          "state": "semantically equal to uninterrupted run"
+        }
+      ]
+    },
+    {
+      "id": "A2-10",
+      "subsystem": "contact",
+      "preconditions": "Target near actor but wall separates contact point.",
+      "stimulus": "Attempt talk/use/feed; alter target availability while approaching.",
+      "expected_vampiro": "No action through barrier; permissions/contact rechecked at effect; no acquisition or resource debit on rejection.",
+      "reference_observed": {
+        "runtime": "CE_LINUX_DAT_ONLY",
+        "revision": "e97087b9582f37075db347a89898887320753f8b",
+        "evidence": "CE_SPATIAL_2026-10-10.json",
+        "status": "REFERENCE_PARTIAL",
+        "full_case_accepted": false,
+        "observed": [
+          "locker14497 selected at distance14 with original room access closed, UI use and move do not approach/open/transfer",
+          "original door opened by UI then crossing to15709, locker approach14498/contact1 and correct inventory target",
+          "hidden inaccessible locker disclosure/use refusal repeated"
+        ],
+        "open": [
+          "near target separated by wall, rather than distant closed-access fixture",
+          "target removed/availability changed during approach",
+          "atomic barrier/permission revalidation at effect",
+          "general contact gate beyond source distance check",
+          "Windows original comparison",
+          "Vampiro implementation"
+        ]
+      },
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [],
+      "reference_evidence_additional": [
+        "CE_SPATIAL_2026-10-10.json"
+      ]
+    },
+    {
+      "id": "A2-11",
+      "subsystem": "clock",
+      "preconditions": "Same authority input trace; different render rates or hidden window.",
+      "stimulus": "Measure at two render rates; pause through declared campaign operation.",
+      "expected_vampiro": "Gameplay results follow logical clock; FPS/visibility do not define random draws or resource transfers. Explicit pause halts campaign work consistently.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": []
+    },
+    {
+      "id": "A2-12",
+      "subsystem": "legacy_save",
+      "preconditions": "Untouched C v1 historical map/save and separate A/B saves.",
+      "stimulus": "Load historical save in historical runner; attempt loading it in new namespace.",
+      "expected_vampiro": "Historical runner retains semantics; new laboratory explicitly rejects incompatible version without silently rewriting history or changing current world.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "loader": "historical C",
+          "schema": "m2-walk-save-1",
+          "result": "original semantics retained"
+        },
+        {
+          "loader": "new laboratory",
+          "schema": "m2-walk-save-1",
+          "result": "INCOMPATIBLE_VERSION",
+          "current_world": "unchanged"
+        }
+      ]
+    }
+  ],
+  "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents.",
+  "vampiro_status": "NOT_VERIFIED",
+  "reference_evidence": "CE_NAVIGATION_2026-10-10.json",
+  "reference_note": "Siete arranques/575 poses nativas, 138 ensayos de cursor: 65 superposiciones opacas frontales, 70 supresiones por techo y 103 puntos egg. Per\u00edmetro del poste en ambos sentidos; pared con vecinos bloqueados/inaccesibles; armario seleccionado pero sin efecto con acceso cerrado, panel correcto a contacto1 despu\u00e9s de abrir/entrar. Revelaci\u00f3n de armario oculto por techo repetida dos veces: discrepancia CE con percepci\u00f3n prevista para Vampiro. Omisi\u00f3n de un tramo del log contrastada con recibos nativos y repetici\u00f3n independiente; causa del logger sin verificar. 83 tests/siete guards PASS. A2-01/02/03/05/06/07/08/09/10 parciales, tres casos sin ejecutar; todo Vampiro sin verificar.",
+  "reference_evidence_additional": [
+    "CE_REDIRECTION_2026-10-10.json",
+    "CE_DOOR_2026-10-10.json",
+    "CE_CONTAINER_2026-10-10.json",
+    "CE_PICKUP_2026-10-10.json",
+    "CE_PICKUP_CYCLE_2026-10-10.json",
+    "CE_SPATIAL_2026-10-10.json"
+  ]
+}

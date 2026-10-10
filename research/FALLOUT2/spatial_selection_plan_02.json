@@ -1,0 +1,10 @@
+{
+  "map": "NCR1.MAP",
+  "role": "selection-balanced",
+  "actions": [
+    {
+      "op": "scan",
+      "limit": 80
+    }
+  ]
+}

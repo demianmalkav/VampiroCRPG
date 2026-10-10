@@ -1,0 +1,28 @@
+{
+  "status": "VERIFIED_LOCAL",
+  "implementation_parent": "c77782be52e3a9b2916e6468bf283b248549e8a0",
+  "files": {
+    ".github/workflows/walk-proof.yml": "ff7af2a2a8ea36f207ce0823eee57d4ff127bb297ea4b9aba090a8461d65d2ba",
+    "LEEME.txt": "6475e2e1f406ab7de84f6b60937502fcc2c45c660d2693d319695da155ebdb0d",
+    "assets/walk/source/material-atlas.png": "d2644879505e2372448b72fdb30b2dc26aa744393c6880e23d2d95d76a3c7d72",
+    "assets/walk/source/ny-provenance.json": "359f53ba66f7fc73ba47a04ffaf4bae7738513853f32648407f25795b5a3252f",
+    "assets/walk/source/style.json": "361d3f597acb97de8ded783c222598a01aa49ec3119ff1ea7f8e707ec4768fc6",
+    "proof/walk/README.md": "009df204cc0a0f0ea83e2de056d643a586329deae0f536089d0752185047141f",
+    "proof/walk/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "proof/walk/__main__.py": "520de2dc90d7fe2b578cb745558cfe75433d7a4e25ed1b087a222993f538ff9d",
+    "proof/walk/index.html": "a13ce7c721ecdd84c69598a8efd24b67a072fbabe6e9d2076b48afbec666f2e4",
+    "proof/walk/map.json": "f7a944b8af50b8d3a79a89fd2ee909e49ea1e2d0ce7b47ea71ef982c01d44c63",
+    "proof/walk/scene.css": "ab339d249efba151ee4c6e00fa9192e4451fc656a2569e2841b8f110acdbb74b",
+    "proof/walk/scene.js": "fd70ae933513906a48504a7aa19afda6e9b6ce80dee34aedc5ab4a669a4c06cf",
+    "proof/walk/session.py": "ce5a606735fbf4589397e6a5b0f8bb0fec0dcaf0ad0d2afd13389db1724e3ec6",
+    "proof/walk/world.py": "dd34714c67ff64c94b4e5f6f8d3193380e7d0eb4e57513d454a7946ffa0fa3d5",
+    "qa/walk/browser.cjs": "6fd41fca6dc0f9e11f5c9d4c4f2542ecad6c15bc11710ea6ca0d33dec6d14d10",
+    "qa/walk/check_art.py": "2f47b46d7209b665ac9bbd57868469bb7bda26cbcbe4974b564b6a408c4ae007",
+    "qa/walk/package.py": "3701729c10e1341b1d09deff91112febb8d70756689185cfaa21f4ddbc91de98",
+    "tools/art/build_ny_source.py": "0c7c13949121ce88b5aaeb58737a9cc2671aecdbdc2bee3d6d023a49ca0c5287",
+    "tools/art/build_walk.py": "86e827d283dcf1b6f828b44f3f823d03becacab92543b9eee0a9ebbdef403011",
+    "tools/art/export_ny.py": "7ffe4409b2bb7352571fe4ec48039c7d67b032dedc09b934af2e8d4c8a6018a6",
+    "tools/art/prepare_ny.py": "ac30956f0de303197fe6d381f11cada23b1e9129b00d5b3bfe2a8686adb82934",
+    "tools/art/variant_ny.py": "055a2b3c6daf70079977e253255a7e10a76dcc861901150ce49858267a959927"
+  }
+}

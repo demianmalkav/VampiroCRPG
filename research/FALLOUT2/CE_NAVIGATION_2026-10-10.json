@@ -1,0 +1,2640 @@
+{
+  "kind": "MEASURED_CE_NAVIGATION_SCOPED_EVIDENCE",
+  "binary_sha256": "70516cf855af0b8a5c826b0f090f646b29e5672c48e9b981322448edc6dc636c",
+  "ce_revision": "e97087b9582f37075db347a89898887320753f8b",
+  "input_hashes": {
+    "master.dat": "9b096d3035edafd4077deeb8ee7877a803b9db98497aa4596624b5c058a84711",
+    "critter.dat": "da83d615967c0bac41fbc50e6b86b3088401ff69ed9d8b2e5be1d6ac0c125bcd",
+    "patch000.dat": "d24788cf50294a27713a368f06cedb9b30c00ba709c2f1e0662ca2f6dddf2fc1"
+  },
+  "original_inputs_unchanged": {
+    "master.dat": true,
+    "critter.dat": true,
+    "patch000.dat": true
+  },
+  "adapter_source_sha256": "b1e063d3752644cc7f0655aca78a06335b39f7a6867bac37ac0c007d100c498e",
+  "adapter_binary_sha256": "0f45a2605f949d12f885282ee9776d4371ab77ef4f87bfa91c6ef56e9241b528",
+  "controller_sha256": "47d122cffa79dfbfa93994c62d79da92da43c7623135ffc0926ef849ccc9bcfa",
+  "native_symbol_offsets": {
+    "DUDE": 2910080,
+    "ELEVATION": 2757408,
+    "CURSOR_X": 2906580,
+    "CURSOR_Y": 2906584,
+    "HOT_X": 2906548,
+    "HOT_Y": 2906552,
+    "PROJECT": 842352,
+    "UNPROJECT": 842384,
+    "NEIGHBOR": 846672,
+    "BLOCKING": 687552,
+    "MOUSE_MODE": 2218232,
+    "OBJECT_TABLE": 2920704
+  },
+  "intervention": "Controlled SDL relative mouse only; native projection/unprojection/neighbor/blocker queries. No authoritative gameplay state writes.",
+  "native_tile_transitions": [
+    {
+      "sdl_tick_ms": 14155,
+      "input_sequence": 1,
+      "dude": {
+        "id": 18000,
+        "tile": 13915,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 0,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 14925,
+      "input_sequence": 6,
+      "dude": {
+        "id": 18000,
+        "tile": 13714,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 0,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 17000,
+      "input_sequence": 12,
+      "dude": {
+        "id": 18000,
+        "tile": 13915,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 3,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 19127,
+      "input_sequence": 18,
+      "dude": {
+        "id": 18000,
+        "tile": 13914,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 21317,
+      "input_sequence": 24,
+      "dude": {
+        "id": 18000,
+        "tile": 13915,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 4,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 23345,
+      "input_sequence": 30,
+      "dude": {
+        "id": 18000,
+        "tile": 14115,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 2,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 25583,
+      "input_sequence": 36,
+      "dude": {
+        "id": 18000,
+        "tile": 13915,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 5,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 27684,
+      "input_sequence": 42,
+      "dude": {
+        "id": 18000,
+        "tile": 13916,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 3,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 29748,
+      "input_sequence": 48,
+      "dude": {
+        "id": 18000,
+        "tile": 13915,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 0,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 31987,
+      "input_sequence": 54,
+      "dude": {
+        "id": 18000,
+        "tile": 13716,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 4,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 34096,
+      "input_sequence": 60,
+      "dude": {
+        "id": 18000,
+        "tile": 13915,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 36219,
+      "input_sequence": 66,
+      "dude": {
+        "id": 18000,
+        "tile": 13715,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 5,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 38187,
+      "input_sequence": 72,
+      "dude": {
+        "id": 18000,
+        "tile": 13915,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 2,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 40451,
+      "input_sequence": 78,
+      "dude": {
+        "id": 18000,
+        "tile": 13914,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 40901,
+      "input_sequence": 78,
+      "dude": {
+        "id": 18000,
+        "tile": 14113,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 43053,
+      "input_sequence": 84,
+      "dude": {
+        "id": 18000,
+        "tile": 14112,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 0,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 43505,
+      "input_sequence": 84,
+      "dude": {
+        "id": 18000,
+        "tile": 14111,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 7,
+        "rotation": 5,
+        "elevation": 0,
+        "x": 2,
+        "y": -1
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 44067,
+      "input_sequence": 84,
+      "dude": {
+        "id": 18000,
+        "tile": 13911,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 5,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 46577,
+      "input_sequence": 90,
+      "dude": {
+        "id": 18000,
+        "tile": 13712,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 4,
+        "rotation": 4,
+        "elevation": 0,
+        "x": -8,
+        "y": -1
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 46914,
+      "input_sequence": 90,
+      "dude": {
+        "id": 18000,
+        "tile": 13713,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 7,
+        "rotation": 3,
+        "elevation": 0,
+        "x": -4,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 47252,
+      "input_sequence": 90,
+      "dude": {
+        "id": 18000,
+        "tile": 13714,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 2,
+        "rotation": 3,
+        "elevation": 0,
+        "x": -1,
+        "y": -2
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 47700,
+      "input_sequence": 90,
+      "dude": {
+        "id": 18000,
+        "tile": 13915,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 3,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 50338,
+      "input_sequence": 96,
+      "dude": {
+        "id": 18000,
+        "tile": 13914,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 50788,
+      "input_sequence": 96,
+      "dude": {
+        "id": 18000,
+        "tile": 14113,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 7,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 4,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 51236,
+      "input_sequence": 96,
+      "dude": {
+        "id": 18000,
+        "tile": 14112,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 4,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 51685,
+      "input_sequence": 96,
+      "dude": {
+        "id": 18000,
+        "tile": 14311,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 54261,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 14112,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 4,
+        "rotation": 4,
+        "elevation": 0,
+        "x": -8,
+        "y": -1
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 54598,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 14113,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 7,
+        "rotation": 4,
+        "elevation": 0,
+        "x": -4,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 55048,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 13914,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 4,
+        "elevation": 0,
+        "x": -3,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 55498,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 13915,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 7,
+        "rotation": 4,
+        "elevation": 0,
+        "x": -8,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 55947,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 13716,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 4,
+        "elevation": 0,
+        "x": -7,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 56286,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 13717,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 6,
+        "rotation": 4,
+        "elevation": 0,
+        "x": -2,
+        "y": -1
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 56738,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 13518,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 2,
+        "rotation": 4,
+        "elevation": 0,
+        "x": -3,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 57635,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 13318,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 4,
+        "rotation": 5,
+        "elevation": 0,
+        "x": -2,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 58084,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 13118,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 5,
+        "elevation": 0,
+        "x": -2,
+        "y": -1
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 58537,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 12918,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 4,
+        "rotation": 5,
+        "elevation": 0,
+        "x": -4,
+        "y": -1
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 58876,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 12718,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 7,
+        "rotation": 5,
+        "elevation": 0,
+        "x": -1,
+        "y": 1
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 59328,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 12518,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 5,
+        "elevation": 0,
+        "x": -1,
+        "y": 4
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 59779,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 12318,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 7,
+        "rotation": 4,
+        "elevation": 0,
+        "x": -3,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 60230,
+      "input_sequence": 102,
+      "dude": {
+        "id": 18000,
+        "tile": 12319,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 4,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 64231,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 12318,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 64681,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 12517,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 7,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 4,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 65133,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 12516,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 4,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 65585,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 12715,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 7,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 8,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 65924,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 12714,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 2,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 66375,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 12913,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 6,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 2,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 66825,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 12912,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 2,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 4,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 67276,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 13111,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 6,
+        "rotation": 1,
+        "elevation": 0,
+        "x": 6,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 67732,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 13110,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 2,
+        "rotation": 2,
+        "elevation": 0,
+        "x": 8,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 67953,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 13310,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 4,
+        "rotation": 2,
+        "elevation": 0,
+        "x": 1,
+        "y": -12
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 68291,
+      "input_sequence": 108,
+      "dude": {
+        "id": 18000,
+        "tile": 13510,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 2,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 71604,
+      "input_sequence": 114,
+      "dude": {
+        "id": 18000,
+        "tile": 13709,
+        "pid": 16777216,
+        "fid": 16842814,
+        "flags": 536871972,
+        "frame": 3,
+        "rotation": 2,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    },
+    {
+      "sdl_tick_ms": 71943,
+      "input_sequence": 114,
+      "dude": {
+        "id": 18000,
+        "tile": 13909,
+        "pid": 16777216,
+        "fid": 16777278,
+        "flags": 536871972,
+        "frame": 0,
+        "rotation": 2,
+        "elevation": 0,
+        "x": 0,
+        "y": 0
+      },
+      "blocker_at_actor": null
+    }
+  ],
+  "limitations": [
+    "Unsuspended memory samples, about 40ms apart; no atomic phase or duration claim",
+    "CE Linux DAT-only reference, not Windows original or Vampiro acceptance",
+    "Random seed remains default; NPCs can move during experiments",
+    "Native tile log contains initial observation plus changes seen at SDL polling, not an atomic every-phase simulation trace",
+    "GIFs show actual CE assets for private reference; no Vampiro art acceptance",
+    "Capture load and uncontrolled NPC activity prevent exact timing or deterministic replay claims"
+  ],
+  "status": "REFERENCE_PARTIALLY_OBSERVED",
+  "date": "2026-10-10",
+  "map": {
+    "name": "NCR1.MAP",
+    "version": 20,
+    "index": 42,
+    "elevation": 0,
+    "resource_sha256": "11464ce6dd1f5d374523b470ddb7590419d1a88cef72c34c8199fe71bfd01e00"
+  },
+  "private_raw_evidence_sha256": "b017aa66c74c94c7ba2d47d99bd9d3624c63fa16f34450626ee8de469f1921fd",
+  "cases": [
+    {
+      "label": "direction-0",
+      "requested_tile": 13714,
+      "before": {
+        "sequence": 2,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13714,
+          13914,
+          14115,
+          13916,
+          13716,
+          13715
+        ]
+      },
+      "projection": {
+        "sequence": 3,
+        "requested_tile": 13714,
+        "projected_center": [
+          416,
+          238
+        ],
+        "roundtrip_tile": 13714,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 4,
+        "cursor_before": [
+          416,
+          238
+        ],
+        "cursor_tile_before": 13714,
+        "mouse_mode": 0
+      },
+      "route": [
+        13915,
+        13714
+      ],
+      "after": {
+        "sequence": 7,
+        "dude": {
+          "id": 18000,
+          "tile": 13714,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        2,
+        7
+      ]
+    },
+    {
+      "label": "return-0",
+      "requested_tile": 13915,
+      "before": {
+        "sequence": 8,
+        "dude": {
+          "id": 18000,
+          "tile": 13714,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13713,
+          13913,
+          13914,
+          13915,
+          13715,
+          13514
+        ]
+      },
+      "projection": {
+        "sequence": 9,
+        "requested_tile": 13915,
+        "projected_center": [
+          384,
+          262
+        ],
+        "roundtrip_tile": 13915,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 10,
+        "cursor_before": [
+          384,
+          262
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0
+      },
+      "route": [
+        13714,
+        13915
+      ],
+      "after": {
+        "sequence": 13,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 3,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        8,
+        13
+      ]
+    },
+    {
+      "label": "direction-1",
+      "requested_tile": 13914,
+      "before": {
+        "sequence": 14,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 3,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13714,
+          13914,
+          14115,
+          13916,
+          13716,
+          13715
+        ]
+      },
+      "projection": {
+        "sequence": 15,
+        "requested_tile": 13914,
+        "projected_center": [
+          432,
+          250
+        ],
+        "roundtrip_tile": 13914,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 16,
+        "cursor_before": [
+          432,
+          250
+        ],
+        "cursor_tile_before": 13914,
+        "mouse_mode": 0
+      },
+      "route": [
+        13915,
+        13914
+      ],
+      "after": {
+        "sequence": 19,
+        "dude": {
+          "id": 18000,
+          "tile": 13914,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        14,
+        19
+      ]
+    },
+    {
+      "label": "return-1",
+      "requested_tile": 13915,
+      "before": {
+        "sequence": 20,
+        "dude": {
+          "id": 18000,
+          "tile": 13914,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13913,
+          14113,
+          14114,
+          14115,
+          13915,
+          13714
+        ]
+      },
+      "projection": {
+        "sequence": 21,
+        "requested_tile": 13915,
+        "projected_center": [
+          368,
+          250
+        ],
+        "roundtrip_tile": 13915,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 22,
+        "cursor_before": [
+          368,
+          250
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0
+      },
+      "route": [
+        13914,
+        13915
+      ],
+      "after": {
+        "sequence": 25,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 4,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        20,
+        25
+      ]
+    },
+    {
+      "label": "direction-2",
+      "requested_tile": 14115,
+      "before": {
+        "sequence": 26,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 4,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13714,
+          13914,
+          14115,
+          13916,
+          13716,
+          13715
+        ]
+      },
+      "projection": {
+        "sequence": 27,
+        "requested_tile": 14115,
+        "projected_center": [
+          416,
+          262
+        ],
+        "roundtrip_tile": 14115,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 28,
+        "cursor_before": [
+          416,
+          262
+        ],
+        "cursor_tile_before": 14115,
+        "mouse_mode": 0
+      },
+      "route": [
+        13915,
+        14115
+      ],
+      "after": {
+        "sequence": 31,
+        "dude": {
+          "id": 18000,
+          "tile": 14115,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        26,
+        31
+      ]
+    },
+    {
+      "label": "return-2",
+      "requested_tile": 13915,
+      "before": {
+        "sequence": 32,
+        "dude": {
+          "id": 18000,
+          "tile": 14115,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13914,
+          14114,
+          14315,
+          14116,
+          13916,
+          13915
+        ]
+      },
+      "projection": {
+        "sequence": 33,
+        "requested_tile": 13915,
+        "projected_center": [
+          384,
+          238
+        ],
+        "roundtrip_tile": 13915,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 34,
+        "cursor_before": [
+          384,
+          238
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0
+      },
+      "route": [
+        14115,
+        13915
+      ],
+      "after": {
+        "sequence": 37,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 5,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        32,
+        37
+      ]
+    },
+    {
+      "label": "direction-3",
+      "requested_tile": 13916,
+      "before": {
+        "sequence": 38,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 5,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13714,
+          13914,
+          14115,
+          13916,
+          13716,
+          13715
+        ]
+      },
+      "projection": {
+        "sequence": 39,
+        "requested_tile": 13916,
+        "projected_center": [
+          384,
+          262
+        ],
+        "roundtrip_tile": 13916,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 40,
+        "cursor_before": [
+          384,
+          262
+        ],
+        "cursor_tile_before": 13916,
+        "mouse_mode": 0
+      },
+      "route": [
+        13915,
+        13916
+      ],
+      "after": {
+        "sequence": 43,
+        "dude": {
+          "id": 18000,
+          "tile": 13916,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 3,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        38,
+        43
+      ]
+    },
+    {
+      "label": "return-3",
+      "requested_tile": 13915,
+      "before": {
+        "sequence": 44,
+        "dude": {
+          "id": 18000,
+          "tile": 13916,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 3,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13915,
+          14115,
+          14116,
+          14117,
+          13917,
+          13716
+        ]
+      },
+      "projection": {
+        "sequence": 45,
+        "requested_tile": 13915,
+        "projected_center": [
+          416,
+          238
+        ],
+        "roundtrip_tile": 13915,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 46,
+        "cursor_before": [
+          416,
+          238
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0
+      },
+      "route": [
+        13916,
+        13915
+      ],
+      "after": {
+        "sequence": 49,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        44,
+        49
+      ]
+    },
+    {
+      "label": "direction-4",
+      "requested_tile": 13716,
+      "before": {
+        "sequence": 50,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13714,
+          13914,
+          14115,
+          13916,
+          13716,
+          13715
+        ]
+      },
+      "projection": {
+        "sequence": 51,
+        "requested_tile": 13716,
+        "projected_center": [
+          368,
+          250
+        ],
+        "roundtrip_tile": 13716,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 52,
+        "cursor_before": [
+          368,
+          250
+        ],
+        "cursor_tile_before": 13716,
+        "mouse_mode": 0
+      },
+      "route": [
+        13915,
+        13716
+      ],
+      "after": {
+        "sequence": 55,
+        "dude": {
+          "id": 18000,
+          "tile": 13716,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 4,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        50,
+        55
+      ]
+    },
+    {
+      "label": "return-4",
+      "requested_tile": 13915,
+      "before": {
+        "sequence": 56,
+        "dude": {
+          "id": 18000,
+          "tile": 13716,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 4,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13715,
+          13915,
+          13916,
+          13917,
+          13717,
+          13516
+        ]
+      },
+      "projection": {
+        "sequence": 57,
+        "requested_tile": 13915,
+        "projected_center": [
+          432,
+          250
+        ],
+        "roundtrip_tile": 13915,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 58,
+        "cursor_before": [
+          432,
+          250
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0
+      },
+      "route": [
+        13716,
+        13915
+      ],
+      "after": {
+        "sequence": 61,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        56,
+        61
+      ]
+    },
+    {
+      "label": "direction-5",
+      "requested_tile": 13715,
+      "before": {
+        "sequence": 62,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13714,
+          13914,
+          14115,
+          13916,
+          13716,
+          13715
+        ]
+      },
+      "projection": {
+        "sequence": 63,
+        "requested_tile": 13715,
+        "projected_center": [
+          384,
+          238
+        ],
+        "roundtrip_tile": 13715,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 64,
+        "cursor_before": [
+          384,
+          238
+        ],
+        "cursor_tile_before": 13715,
+        "mouse_mode": 0
+      },
+      "route": [
+        13915,
+        13715
+      ],
+      "after": {
+        "sequence": 67,
+        "dude": {
+          "id": 18000,
+          "tile": 13715,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 5,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        62,
+        67
+      ]
+    },
+    {
+      "label": "return-5",
+      "requested_tile": 13915,
+      "before": {
+        "sequence": 68,
+        "dude": {
+          "id": 18000,
+          "tile": 13715,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 5,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13514,
+          13714,
+          13915,
+          13716,
+          13516,
+          13515
+        ]
+      },
+      "projection": {
+        "sequence": 69,
+        "requested_tile": 13915,
+        "projected_center": [
+          416,
+          262
+        ],
+        "roundtrip_tile": 13915,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 70,
+        "cursor_before": [
+          416,
+          262
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0
+      },
+      "route": [
+        13715,
+        13915
+      ],
+      "after": {
+        "sequence": 73,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        68,
+        73
+      ]
+    },
+    {
+      "label": "target-0-13912",
+      "requested_tile": 13912,
+      "before": {
+        "sequence": 74,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13714,
+          13914,
+          14115,
+          13916,
+          13716,
+          13715
+        ]
+      },
+      "projection": {
+        "sequence": 75,
+        "requested_tile": 13912,
+        "projected_center": [
+          480,
+          238
+        ],
+        "roundtrip_tile": 13912,
+        "blocker": {
+          "id": 60,
+          "tile": 13912,
+          "pid": 33554724,
+          "fid": 33554661,
+          "flags": 2147516416,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "cursor_verified": {
+        "sequence": 76,
+        "cursor_before": [
+          480,
+          238
+        ],
+        "cursor_tile_before": 13912,
+        "mouse_mode": 0
+      },
+      "route": [
+        13915,
+        13914,
+        14113
+      ],
+      "after": {
+        "sequence": 79,
+        "dude": {
+          "id": 18000,
+          "tile": 14113,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        74,
+        79
+      ]
+    },
+    {
+      "label": "target-1-13911",
+      "requested_tile": 13911,
+      "before": {
+        "sequence": 80,
+        "dude": {
+          "id": 18000,
+          "tile": 14113,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13912,
+          14112,
+          14313,
+          14114,
+          13914,
+          13913
+        ]
+      },
+      "projection": {
+        "sequence": 81,
+        "requested_tile": 13911,
+        "projected_center": [
+          432,
+          226
+        ],
+        "roundtrip_tile": 13911,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 82,
+        "cursor_before": [
+          432,
+          226
+        ],
+        "cursor_tile_before": 13911,
+        "mouse_mode": 0
+      },
+      "route": [
+        14113,
+        14112,
+        14111,
+        13911
+      ],
+      "after": {
+        "sequence": 85,
+        "dude": {
+          "id": 18000,
+          "tile": 13911,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 5,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        80,
+        85
+      ]
+    },
+    {
+      "label": "target-2-13915",
+      "requested_tile": 13915,
+      "before": {
+        "sequence": 86,
+        "dude": {
+          "id": 18000,
+          "tile": 13911,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 6,
+          "rotation": 5,
+          "elevation": 0,
+          "x": -2,
+          "y": -1
+        },
+        "neighbors": [
+          13710,
+          13910,
+          14111,
+          13912,
+          13712,
+          13711
+        ]
+      },
+      "projection": {
+        "sequence": 87,
+        "requested_tile": 13915,
+        "projected_center": [
+          304,
+          274
+        ],
+        "roundtrip_tile": 13915,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 88,
+        "cursor_before": [
+          304,
+          274
+        ],
+        "cursor_tile_before": 13915,
+        "mouse_mode": 0
+      },
+      "route": [
+        13911,
+        13712,
+        13713,
+        13714,
+        13915
+      ],
+      "after": {
+        "sequence": 91,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 3,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        86,
+        91
+      ]
+    },
+    {
+      "label": "target-3-14310",
+      "requested_tile": 14310,
+      "before": {
+        "sequence": 92,
+        "dude": {
+          "id": 18000,
+          "tile": 13915,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 3,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13714,
+          13914,
+          14115,
+          13916,
+          13716,
+          13715
+        ]
+      },
+      "projection": {
+        "sequence": 93,
+        "requested_tile": 14310,
+        "projected_center": [
+          560,
+          250
+        ],
+        "roundtrip_tile": 14310,
+        "blocker": {
+          "id": 47,
+          "tile": 14310,
+          "pid": 50332269,
+          "fid": 50331669,
+          "flags": 8,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "cursor_verified": {
+        "sequence": 94,
+        "cursor_before": [
+          560,
+          250
+        ],
+        "cursor_tile_before": 14310,
+        "mouse_mode": 0
+      },
+      "route": [
+        13915,
+        13914,
+        14113,
+        14112,
+        14311
+      ],
+      "after": {
+        "sequence": 97,
+        "dude": {
+          "id": 18000,
+          "tile": 14311,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        92,
+        97
+      ]
+    },
+    {
+      "label": "target-4-12519",
+      "requested_tile": 12519,
+      "before": {
+        "sequence": 98,
+        "dude": {
+          "id": 18000,
+          "tile": 14311,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 1,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          14110,
+          14310,
+          14511,
+          14312,
+          14112,
+          14111
+        ]
+      },
+      "projection": {
+        "sequence": 99,
+        "requested_tile": 12519,
+        "projected_center": [
+          64,
+          190
+        ],
+        "roundtrip_tile": 12519,
+        "blocker": {
+          "id": 47,
+          "tile": 12519,
+          "pid": 16777353,
+          "fid": 16805975,
+          "flags": 536879104,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 3,
+          "y": 3
+        }
+      },
+      "cursor_verified": {
+        "sequence": 100,
+        "cursor_before": [
+          64,
+          190
+        ],
+        "cursor_tile_before": 12519,
+        "mouse_mode": 0
+      },
+      "route": [
+        14311,
+        14112,
+        14113,
+        13914,
+        13915,
+        13716,
+        13717,
+        13518,
+        13318,
+        13118,
+        12918,
+        12718,
+        12518,
+        12318,
+        12319
+      ],
+      "after": {
+        "sequence": 103,
+        "dude": {
+          "id": 18000,
+          "tile": 12319,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 4,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        98,
+        103
+      ]
+    },
+    {
+      "label": "target-5-13710",
+      "requested_tile": 13710,
+      "before": {
+        "sequence": 104,
+        "dude": {
+          "id": 18000,
+          "tile": 12319,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 4,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          12118,
+          12318,
+          12519,
+          12320,
+          12120,
+          12119
+        ]
+      },
+      "projection": {
+        "sequence": 105,
+        "requested_tile": 13710,
+        "projected_center": [
+          704,
+          286
+        ],
+        "roundtrip_tile": 13710,
+        "blocker": {
+          "id": 1032,
+          "tile": 13710,
+          "pid": 33554675,
+          "fid": 33554548,
+          "flags": 2147516416,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "cursor_verified": {
+        "sequence": 106,
+        "cursor_before": [
+          704,
+          286
+        ],
+        "cursor_tile_before": 13710,
+        "mouse_mode": 0
+      },
+      "route": [
+        12319,
+        12318,
+        12517,
+        12516,
+        12715,
+        12714,
+        12913,
+        12912,
+        13111,
+        13110,
+        13310,
+        13510
+      ],
+      "after": {
+        "sequence": 109,
+        "dude": {
+          "id": 18000,
+          "tile": 13510,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        104,
+        109
+      ]
+    },
+    {
+      "label": "target-6-13909",
+      "requested_tile": 13909,
+      "before": {
+        "sequence": 110,
+        "dude": {
+          "id": 18000,
+          "tile": 13510,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13509,
+          13709,
+          13710,
+          13711,
+          13511,
+          13310
+        ]
+      },
+      "projection": {
+        "sequence": 111,
+        "requested_tile": 13909,
+        "projected_center": [
+          448,
+          262
+        ],
+        "roundtrip_tile": 13909,
+        "blocker": null
+      },
+      "cursor_verified": {
+        "sequence": 112,
+        "cursor_before": [
+          448,
+          262
+        ],
+        "cursor_tile_before": 13909,
+        "mouse_mode": 0
+      },
+      "route": [
+        13510,
+        13709,
+        13909
+      ],
+      "after": {
+        "sequence": 115,
+        "dude": {
+          "id": 18000,
+          "tile": 13909,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        110,
+        115
+      ]
+    },
+    {
+      "label": "target-7-14902",
+      "requested_tile": 14902,
+      "before": {
+        "sequence": 116,
+        "dude": {
+          "id": 18000,
+          "tile": 13909,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13708,
+          13908,
+          14109,
+          13910,
+          13710,
+          13709
+        ]
+      },
+      "projection": {
+        "sequence": 117,
+        "requested_tile": 14902,
+        "projected_center": [
+          656,
+          274
+        ],
+        "roundtrip_tile": 14902,
+        "blocker": {
+          "id": 974,
+          "tile": 14902,
+          "pid": 33556076,
+          "fid": 33556089,
+          "flags": 2684387328,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "cursor_verified": {
+        "sequence": 118,
+        "cursor_before": [
+          656,
+          274
+        ],
+        "cursor_tile_before": 14902,
+        "mouse_mode": 0
+      },
+      "route": [
+        13909
+      ],
+      "after": {
+        "sequence": 121,
+        "dude": {
+          "id": 18000,
+          "tile": 13909,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        116,
+        121
+      ]
+    },
+    {
+      "label": "target-8-14499",
+      "requested_tile": 14499,
+      "before": {
+        "sequence": 122,
+        "dude": {
+          "id": 18000,
+          "tile": 13909,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        },
+        "neighbors": [
+          13708,
+          13908,
+          14109,
+          13910,
+          13710,
+          13709
+        ]
+      },
+      "projection": {
+        "sequence": 123,
+        "requested_tile": 14499,
+        "projected_center": [
+          688,
+          226
+        ],
+        "roundtrip_tile": 14499,
+        "blocker": {
+          "id": 531,
+          "tile": 14499,
+          "pid": 33554499,
+          "fid": 33554453,
+          "flags": 2684354568,
+          "frame": 0,
+          "rotation": 0,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "cursor_verified": {
+        "sequence": 124,
+        "cursor_before": [
+          688,
+          226
+        ],
+        "cursor_tile_before": 14499,
+        "mouse_mode": 0
+      },
+      "route": [
+        13909
+      ],
+      "after": {
+        "sequence": 127,
+        "dude": {
+          "id": 18000,
+          "tile": 13909,
+          "pid": 16777216,
+          "fid": 16777278,
+          "flags": 536871972,
+          "frame": 0,
+          "rotation": 2,
+          "elevation": 0,
+          "x": 0,
+          "y": 0
+        }
+      },
+      "settled": true,
+      "sampling_limit_seconds": 12,
+      "input_sequence_range": [
+        122,
+        127
+      ]
+    }
+  ],
+  "visual_evidence": {
+    "kind": "ACTUAL_CE_X_FRAME_CAPTURES",
+    "public_original_art": false,
+    "selected_gif": "Fallout2_CE_rodeo_observado.gif",
+    "selected_gif_sha256": "d3f402ed3f45f7be84c759de33bccf3f2ad2d23bb5f6a03a3f064d5c17ef2897",
+    "source_capture": "target-2-13915.gif",
+    "frame_times_ms": [
+      126,
+      254,
+      381,
+      506,
+      632,
+      757,
+      885,
+      1010,
+      1136,
+      1262,
+      1388,
+      1515,
+      1642,
+      1768,
+      1894,
+      2020
+    ],
+    "file_size_bytes": 274967
+  },
+  "coverage": {
+    "A2-01": {
+      "status": "REFERENCE_PARTIAL",
+      "observed": [
+        "six native neighbors from 13915",
+        "native project/unproject and actual cursor agree",
+        "six arrivals and six returns"
+      ],
+      "open": [
+        "duration equivalence and logical clock",
+        "original Windows comparison",
+        "Vampiro implementation"
+      ]
+    },
+    "A2-02": {
+      "status": "REFERENCE_PARTIAL",
+      "observed": [
+        "streetlight/wall/guard/hydrant occupied requests approach free neighboring tile",
+        "free destination route bypasses streetlight",
+        "no blocker at actor in 53 native tile observations",
+        "desk and locker requests from 13909 yield no movement",
+        "locker tile blocker is auxiliary scenery, not item"
+      ],
+      "open": [
+        "reachable container approach and full perimeter",
+        "all edges and wide/multihex footprint",
+        "dynamic blocking between samples",
+        "original Windows comparison",
+        "Vampiro implementation"
+      ]
+    }
+  },
+  "locker_tile_objects": [
+    {
+      "id": 531,
+      "tile": 14499,
+      "pid": 33554499,
+      "fid": 33554453,
+      "flags": 2684354568,
+      "frame": 0,
+      "rotation": 0,
+      "elevation": 0,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": 12,
+      "tile": 14499,
+      "pid": 4294967295,
+      "fid": 100663545,
+      "flags": 2684355612,
+      "frame": 0,
+      "rotation": 0,
+      "elevation": 0,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": 491,
+      "tile": 14499,
+      "pid": 132,
+      "fid": 58,
+      "flags": 536875008,
+      "frame": 0,
+      "rotation": 0,
+      "elevation": 0,
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

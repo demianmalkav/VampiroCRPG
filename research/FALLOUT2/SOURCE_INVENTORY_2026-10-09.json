@@ -1,0 +1,818 @@
+{
+  "research_date_local": "2026-10-09",
+  "research_date_utc": "2026-10-10",
+  "timezone": "America/Buenos_Aires",
+  "purpose": "Inventory of public Fallout 2 reverse engineering and related tooling; targeted source inspection before assimilation.",
+  "project_base_commit": "9e7d7a21c3ca0618f612174cbcc6feaa872649c4",
+  "evidence_scope": {
+    "repository_inventory": "API metadata and immutable default-branch heads; not a claim of whole-repository reading.",
+    "retrieved_files": "Retrieved at pinned revisions; selected relevant passages inspected. Retrieval is not full assimilation.",
+    "source_inspection": "Targeted CE/RE spatial blocking, path building, draw layering, FRM/FID selection, pickup action-frame callbacks, queue lifetime; FOnline blocking and model layers/attachments.",
+    "execution": "No upstream engine/compiler/editor built or executed. No original Fallout data archive parsed. No whole-game walkthrough or binary-equivalence verification.",
+    "art": "No claim that an engine or export pipeline produces the required artistic finish.",
+    "copyright": "Third-party sources remain research inputs outside the project repository. No Fallout asset, script, map or third-party implementation copied into VampiroCRPG."
+  },
+  "repositories": [
+    {
+      "repository": "alexbatalov/fallout2-re",
+      "url": "https://github.com/alexbatalov/fallout2-re",
+      "commit": "b135fc46ef40c4aecd156f3cebcf88ec531bb8ac",
+      "commit_date_utc": "2023-01-20T16:44:03Z",
+      "default_branch": "main",
+      "archived": false,
+      "api_license_identifier": "NOASSERTION",
+      "license_note": "Sustainable Use License; CE license text inspected, RE README declaration inspected."
+    },
+    {
+      "repository": "alexbatalov/fallout2-ce",
+      "url": "https://github.com/alexbatalov/fallout2-ce",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "commit_date_utc": "2025-02-16T08:35:06Z",
+      "default_branch": "main",
+      "archived": false,
+      "api_license_identifier": "NOASSERTION",
+      "license_note": "Sustainable Use License; CE license text inspected, RE README declaration inspected."
+    },
+    {
+      "repository": "sfall-team/sfall",
+      "url": "https://github.com/sfall-team/sfall",
+      "commit": "6c65e67342bda1488671601e417194199ec72a09",
+      "commit_date_utc": "2026-10-03T12:34:36Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": "GPL-3.0",
+      "license_note": "License identifier is an inventory signal, not a rights grant for game content or every dependency."
+    },
+    {
+      "repository": "rotators/fallout2-docs",
+      "url": "https://github.com/rotators/fallout2-docs",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "commit_date_utc": "2026-09-12T23:28:30Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": null,
+      "license_note": "Automated metadata is not a license conclusion; inspect exact component before reuse."
+    },
+    {
+      "repository": "JanSimek/fallout2-modding",
+      "url": "https://github.com/JanSimek/fallout2-modding",
+      "commit": "a892a3ee901931d34a9ed77b4653da0ab14382c6",
+      "commit_date_utc": "2026-01-22T20:22:30Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": null,
+      "license_note": "Automated metadata is not a license conclusion; inspect exact component before reuse."
+    },
+    {
+      "repository": "cvet/fonline",
+      "url": "https://github.com/cvet/fonline",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "commit_date_utc": "2026-10-09T22:36:39Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": "MIT",
+      "license_note": "License identifier is an inventory signal, not a rights grant for game content or every dependency."
+    },
+    {
+      "repository": "BGforgeNet/Fallout2_Unofficial_Patch",
+      "url": "https://github.com/BGforgeNet/Fallout2_Unofficial_Patch",
+      "commit": "aced3527b56d3f73ee03a21ef567886b0dde66ac",
+      "commit_date_utc": "2026-10-09T02:17:06Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": null,
+      "license_note": "Automated metadata is not a license conclusion; inspect exact component before reuse."
+    },
+    {
+      "repository": "APAmk2/FORT",
+      "url": "https://github.com/APAmk2/FORT",
+      "commit": "e3df1f585c0607b9bbaec43a1feee0537b7cc9a9",
+      "commit_date_utc": "2024-11-30T11:11:17Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": "GPL-2.0",
+      "license_note": "License identifier is an inventory signal, not a rights grant for game content or every dependency."
+    },
+    {
+      "repository": "darkf/darkfo",
+      "url": "https://github.com/darkf/darkfo",
+      "commit": "9e9d9349e13b343bddefe3b8eed70797821cf0ba",
+      "commit_date_utc": "2019-03-07T08:19:23Z",
+      "default_branch": "master",
+      "archived": true,
+      "api_license_identifier": "Apache-2.0",
+      "license_note": "License identifier is an inventory signal, not a rights grant for game content or every dependency."
+    },
+    {
+      "repository": "JanSimek/gecko",
+      "url": "https://github.com/JanSimek/gecko",
+      "commit": "c14c0438468976bf91e1cf55603c62571e05eaef",
+      "commit_date_utc": "2026-10-09T15:26:15Z",
+      "default_branch": "master",
+      "archived": null,
+      "api_license_identifier": null,
+      "license_note": "Automated metadata is not a license conclusion; inspect exact component before reuse."
+    },
+    {
+      "repository": "sfall-team/sslc",
+      "url": "https://github.com/sfall-team/sslc",
+      "commit": "3991207639c133bd14948fae6c18df59310b5287",
+      "commit_date_utc": "2026-09-17T13:21:01Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": null,
+      "license_note": "Automated metadata is not a license conclusion; inspect exact component before reuse."
+    },
+    {
+      "repository": "BGforgeNet/BGforge-MLS",
+      "url": "https://github.com/BGforgeNet/BGforge-MLS",
+      "commit": "55caa048f09e4f894f42e32ec079825083c7d598",
+      "commit_date_utc": "2026-10-04T05:35:20Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": "NOASSERTION",
+      "license_note": "Automated metadata is not a license conclusion; inspect exact component before reuse."
+    },
+    {
+      "repository": "rotators/fallout-animations",
+      "url": "https://github.com/rotators/fallout-animations",
+      "commit": "95f6469096cb71694249fac7bcef48cfba0ac882",
+      "commit_date_utc": "2026-03-07T17:23:28Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": null,
+      "license_note": "Automated metadata is not a license conclusion; inspect exact component before reuse."
+    },
+    {
+      "repository": "rotators/foclassic",
+      "url": "https://github.com/rotators/foclassic",
+      "commit": "cffbea6b514d62d9c607c2c3489111b2bfb62b62",
+      "commit_date_utc": "2019-02-07T12:44:23Z",
+      "default_branch": "master",
+      "archived": true,
+      "api_license_identifier": "GPL-3.0",
+      "license_note": "License identifier is an inventory signal, not a rights grant for game content or every dependency."
+    },
+    {
+      "repository": "falltergeist/falltergeist",
+      "url": "https://github.com/falltergeist/falltergeist",
+      "commit": "32cbee70af05eab32cd3907f9387c64ce66d1366",
+      "commit_date_utc": "2022-07-15T09:52:25Z",
+      "default_branch": "develop",
+      "archived": false,
+      "api_license_identifier": "GPL-3.0",
+      "license_note": "License identifier is an inventory signal, not a rights grant for game content or every dependency."
+    },
+    {
+      "repository": "falltergeist/frm2png",
+      "url": "https://github.com/falltergeist/frm2png",
+      "commit": "4788b4d0ed8aa67571871714372eb92e4ede6829",
+      "commit_date_utc": "2018-01-14T19:18:35Z",
+      "default_branch": "develop",
+      "archived": false,
+      "api_license_identifier": null,
+      "license_note": "Automated metadata is not a license conclusion; inspect exact component before reuse."
+    },
+    {
+      "repository": "falltergeist/dat-unpacker",
+      "url": "https://github.com/falltergeist/dat-unpacker",
+      "commit": "d536ef630d9a47e866cddd7e826480c3ac34bb3d",
+      "commit_date_utc": "2022-05-28T10:18:44Z",
+      "default_branch": "develop",
+      "archived": false,
+      "api_license_identifier": "MIT",
+      "license_note": "License identifier is an inventory signal, not a rights grant for game content or every dependency."
+    },
+    {
+      "repository": "BGforgeNet/Fallout2_Hero_Appearance",
+      "url": "https://github.com/BGforgeNet/Fallout2_Hero_Appearance",
+      "commit": "d9533daa062d34d315b720b3331ab4c8c242ed6d",
+      "commit_date_utc": "2026-02-28T12:41:02Z",
+      "default_branch": "master",
+      "archived": false,
+      "api_license_identifier": null,
+      "license_note": "Automated metadata is not a license conclusion; inspect exact component before reuse."
+    }
+  ],
+  "retrieved_files": [
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/animation.cc",
+      "sha": "0884eb28815718b6e29877db50cf0f424acc6c31",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/animation.cc",
+      "bytes": 105182
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/animation.h",
+      "sha": "b5293a02752a29cf09eee4807363445482e879cd",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/animation.h",
+      "bytes": 6391
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/object.cc",
+      "sha": "20b7aeffe1f58b947f2885f1ecd751cb41737c9f",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/object.cc",
+      "bytes": 152074
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/object.h",
+      "sha": "3fd3775f63dcd58192503937b35da1b4d6a317da",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/object.h",
+      "bytes": 4874
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/art.cc",
+      "sha": "205b360952d9a9b7ab10d1d829397b39fe4a02df",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/art.cc",
+      "bytes": 35214
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/art.h",
+      "sha": "6fb665da10c3234370c56f62cd1eb12ee23544f4",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/art.h",
+      "bytes": 4838
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/tile.cc",
+      "sha": "0ac02c41ed2ce39b4cd38bc2b0fb8d6f14ba29d1",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/tile.cc",
+      "bytes": 49744
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/queue.cc",
+      "sha": "9056904da68ccdc0ced8ec23d43c1ba8b2856d07",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/queue.cc",
+      "bytes": 15466
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/actions.cc",
+      "sha": "99ded11f7a085f955524ff19b1e568955b1352b3",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/actions.cc",
+      "bytes": 75956
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/inventory.cc",
+      "sha": "7afc8cf896b1b2d227e179e731313cc17be0edf1",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/inventory.cc",
+      "bytes": 224535
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/light.cc",
+      "sha": "60bd80d1d36c2b850ef3acf66d2f1b79a3e4bf68",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/light.cc",
+      "bytes": 2801
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "CMakeLists.txt",
+      "sha": "5e03941804372cfa3acf4626c4d8769afdd38624",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/CMakeLists.txt",
+      "bytes": 9783
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "LICENSE.md",
+      "sha": "2b66da9e6ee6b7f85abf2fcd1b2ea07a1a4da9bb",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/LICENSE.md",
+      "bytes": 3599
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/frm.md",
+      "sha": "81453113cd1e1287a5de4f16d0a0c69d6c2cec79",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/frm.md",
+      "bytes": 17455
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/map.md",
+      "sha": "86c1e40942304dbead4272e6aa7c75937f583993",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/map.md",
+      "bytes": 38530
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/pro.md",
+      "sha": "2b52d55501dad287c5da233306446c60343cfb83",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/pro.md",
+      "bytes": 16695
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/fallout2_re.md",
+      "sha": "54d90d5f38721f5799661c4e6644d7cc829d9f97",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/fallout2_re.md",
+      "bytes": 819
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/sfall_refs.md",
+      "sha": "653be6d8869b4655991b1cbdcfa7319486af46c8",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/sfall_refs.md",
+      "bytes": 704
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/tools.md",
+      "sha": "3bd48ada60a9579062cfe4e1b13687597d8399a4",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/tools.md",
+      "bytes": 23873
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/int.md",
+      "sha": "f259c9c917eae3ef295d9a9b505aedb3223d9bed",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/int.md",
+      "bytes": 71229
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/ssl.md",
+      "sha": "3fea3f30d001c5f8a838789c43f1b3e649864e80",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/ssl.md",
+      "bytes": 67131
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/lst.md",
+      "sha": "f011c3a59e09d2ec1e6ff184f45a9827a372375d",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/lst.md",
+      "bytes": 15418
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/Architecture.md",
+      "sha": "aebc260b40b79ee1cdaafbba980f6e083927880c",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/Architecture.md",
+      "bytes": 1507
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/GettingStarted.md",
+      "sha": "c99fadb5009546917950e1c31e24d84e61eaef60",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/GettingStarted.md",
+      "bytes": 1620
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/MapsMovementGeometry.md",
+      "sha": "dcc3d5049c73a3f939ddcd797b16c677c4e6d0b8",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/MapsMovementGeometry.md",
+      "bytes": 1786
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/ModelAnimation.md",
+      "sha": "a7325a00288d51cdd9820192266b083f1b48cc9b",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/ModelAnimation.md",
+      "bytes": 2108
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/FrontendAndRendering.md",
+      "sha": "1562bbed5f72308300dad0cc623811503015d1d0",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/FrontendAndRendering.md",
+      "bytes": 5348
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "LICENSE",
+      "sha": "cb16aac1bf127f46b4ebcc3e6514a75c05d217c3",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/LICENSE",
+      "bytes": 1112
+    },
+    {
+      "repo": "sfall-team/sfall",
+      "path": "sfall/Modules/Animations.cpp",
+      "sha": "16174ecfd9e6515ce467f8a89a5f4a805a851f29",
+      "commit": "6c65e67342bda1488671601e417194199ec72a09",
+      "url": "https://github.com/sfall-team/sfall/blob/6c65e67342bda1488671601e417194199ec72a09/sfall/Modules/Animations.cpp",
+      "bytes": 23145
+    },
+    {
+      "repo": "sfall-team/sfall",
+      "path": "sfall/Modules/ExtraArt.cpp",
+      "sha": "f4ca4e16c05afb9e65ebcdac5a59bb884635795a",
+      "commit": "6c65e67342bda1488671601e417194199ec72a09",
+      "url": "https://github.com/sfall-team/sfall/blob/6c65e67342bda1488671601e417194199ec72a09/sfall/Modules/ExtraArt.cpp",
+      "bytes": 4286
+    },
+    {
+      "repo": "sfall-team/sfall",
+      "path": "artifacts/scripting/README.md",
+      "sha": "fae0d659b4e8ec25b60b6bd9756a60417fce6831",
+      "commit": "6c65e67342bda1488671601e417194199ec72a09",
+      "url": "https://github.com/sfall-team/sfall/blob/6c65e67342bda1488671601e417194199ec72a09/artifacts/scripting/README.md",
+      "bytes": 1571
+    },
+    {
+      "repo": "sfall-team/sfall",
+      "path": "artifacts/example_mods/rain/readme.txt",
+      "sha": "2858e1257bd87f2abf61cdbc8d661b2741c72c57",
+      "commit": "6c65e67342bda1488671601e417194199ec72a09",
+      "url": "https://github.com/sfall-team/sfall/blob/6c65e67342bda1488671601e417194199ec72a09/artifacts/example_mods/rain/readme.txt",
+      "bytes": 237
+    },
+    {
+      "repo": "JanSimek/fallout2-modding",
+      "path": "website/docs/formats/architecture.mdx",
+      "sha": "1bbbfa6f4c3bfaff3e9503de645e27a68f4def8a",
+      "commit": "a892a3ee901931d34a9ed77b4653da0ab14382c6",
+      "url": "https://github.com/JanSimek/fallout2-modding/blob/a892a3ee901931d34a9ed77b4653da0ab14382c6/website/docs/formats/architecture.mdx",
+      "bytes": 6509
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/en/explanation/maps-and-movement.md",
+      "sha": "044d6a0376e5e167b1a2028347928c4abb3efe68",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/en/explanation/maps-and-movement.md",
+      "bytes": 28859
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/en/how-to/content/model-animation.md",
+      "sha": "7798cd562df997adaf3ed73285cc19dacef07f56",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/en/how-to/content/model-animation.md",
+      "bytes": 20096
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/en/how-to/build/embedding-project.md",
+      "sha": "b12042f941c57061b001bd0d6b9865fa8c5dc435",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/en/how-to/build/embedding-project.md",
+      "bytes": 7856
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/en/tutorials/first-client.md",
+      "sha": "a94cdf9d8c0ea26bac8a44b47c502481862e9dbd",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/en/tutorials/first-client.md",
+      "bytes": 4103
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/en/tutorials/first-project.md",
+      "sha": "3b2e7f32116399dc9891e1c9ba753cdb3143ce21",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/en/tutorials/first-project.md",
+      "bytes": 5493
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Examples/MinimalProject/README.md",
+      "sha": "cf50622cef80b66c8e24cd4c7817789c05e47dd6",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Examples/MinimalProject/README.md",
+      "bytes": 5336
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Examples/ContentShowcase/README.md",
+      "sha": "81cda8079c45d63bb42734533b2fd2a86d32426f",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Examples/ContentShowcase/README.md",
+      "bytes": 9788
+    },
+    {
+      "repo": "JanSimek/gecko",
+      "path": "README.md",
+      "sha": "a2000e8dcc97994f81c68e6a42e448d6573a5816",
+      "commit": "c14c0438468976bf91e1cf55603c62571e05eaef",
+      "url": "https://github.com/JanSimek/gecko/blob/c14c0438468976bf91e1cf55603c62571e05eaef/README.md",
+      "bytes": 10251
+    },
+    {
+      "repo": "sfall-team/sslc",
+      "path": "README.md",
+      "sha": "609e460614c685ad244d37d9b84ede6dcbc35707",
+      "commit": "3991207639c133bd14948fae6c18df59310b5287",
+      "url": "https://github.com/sfall-team/sslc/blob/3991207639c133bd14948fae6c18df59310b5287/README.md",
+      "bytes": 923
+    },
+    {
+      "repo": "BGforgeNet/BGforge-MLS",
+      "path": "README.md",
+      "sha": "e3e295136f82dfac9cead6f41967a6a9832df52c",
+      "commit": "55caa048f09e4f894f42e32ec079825083c7d598",
+      "url": "https://github.com/BGforgeNet/BGforge-MLS/blob/55caa048f09e4f894f42e32ec079825083c7d598/README.md",
+      "bytes": 10117
+    },
+    {
+      "repo": "rotators/fallout-animations",
+      "path": "README.md",
+      "sha": "a7db5d29b0367e5fa9a6f18dd1812df3a2fe9843",
+      "commit": "95f6469096cb71694249fac7bcef48cfba0ac882",
+      "url": "https://github.com/rotators/fallout-animations/blob/95f6469096cb71694249fac7bcef48cfba0ac882/README.md",
+      "bytes": 201
+    },
+    {
+      "repo": "BGforgeNet/Fallout2_Unofficial_Patch",
+      "path": "README.md",
+      "sha": "36508319aeadb63cc3f12c72c1f249cdfff73b8e",
+      "commit": "aced3527b56d3f73ee03a21ef567886b0dde66ac",
+      "url": "https://github.com/BGforgeNet/Fallout2_Unofficial_Patch/blob/aced3527b56d3f73ee03a21ef567886b0dde66ac/README.md",
+      "bytes": 2780
+    },
+    {
+      "repo": "alexbatalov/fallout2-re",
+      "path": "src/game/anim.c",
+      "sha": "4db6ab9f1e99f5d8f29c33591cf8ec9c6b30d0e5",
+      "commit": "b135fc46ef40c4aecd156f3cebcf88ec531bb8ac",
+      "url": "https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/src/game/anim.c",
+      "bytes": 102106
+    },
+    {
+      "repo": "alexbatalov/fallout2-re",
+      "path": "src/game/actions.c",
+      "sha": "db081bf9e5d643eafa1176983a4a8968994f81ec",
+      "commit": "b135fc46ef40c4aecd156f3cebcf88ec531bb8ac",
+      "url": "https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/src/game/actions.c",
+      "bytes": 71887
+    },
+    {
+      "repo": "alexbatalov/fallout2-re",
+      "path": "src/game/object.c",
+      "sha": "77f9b8a36e844679298fbddc3f2c18a3ccdd84a0",
+      "commit": "b135fc46ef40c4aecd156f3cebcf88ec531bb8ac",
+      "url": "https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/src/game/object.c",
+      "bytes": 147632
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/game_mouse.cc",
+      "sha": "a80ec3ce2c49f1c99eb5ceb3b08da804e68acbbe",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/game_mouse.cc",
+      "bytes": 76432
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/proto_types.h",
+      "sha": "71cac4e8e08304703534eee1fc643381887d39e5",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/proto_types.h",
+      "bytes": 12449
+    },
+    {
+      "repo": "sfall-team/sfall",
+      "path": "LICENSE",
+      "sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "commit": "6c65e67342bda1488671601e417194199ec72a09",
+      "url": "https://github.com/sfall-team/sfall/blob/6c65e67342bda1488671601e417194199ec72a09/LICENSE",
+      "bytes": 35149
+    },
+    {
+      "repo": "sfall-team/sfall",
+      "path": "artifacts/ddraw.ini",
+      "sha": "00ec4000244256450afb6e391c5cce60245dae52",
+      "commit": "6c65e67342bda1488671601e417194199ec72a09",
+      "url": "https://github.com/sfall-team/sfall/blob/6c65e67342bda1488671601e417194199ec72a09/artifacts/ddraw.ini",
+      "bytes": 43492
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Source/Common/Geometry.cpp",
+      "sha": "396f0e96f4ac23b410f5c2765a98307a048c268f",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Source/Common/Geometry.cpp",
+      "bytes": 36484
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Source/Client/ModelInstance.cpp",
+      "sha": "1357f7dd79872131aa7c2e1f77a1696490c2c8ef",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Source/Client/ModelInstance.cpp",
+      "bytes": 120063
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Source/Server/Map.cpp",
+      "sha": "faa3e685fdd283782b292795e7bbaf6c888a73f9",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Source/Server/Map.cpp",
+      "bytes": 47414
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "Docs/en/how-to/content/model-format.md",
+      "sha": "682c4cd47d07e0694ea0d6aa18d99373b41c72a2",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/Docs/en/how-to/content/model-format.md",
+      "bytes": 29856
+    },
+    {
+      "repo": "JanSimek/gecko",
+      "path": "docs/FRM-File-Format-and-Critter-Animation-System.md",
+      "sha": "195d2912faffd9761075a9853f4a96c3268bb149",
+      "commit": "c14c0438468976bf91e1cf55603c62571e05eaef",
+      "url": "https://github.com/JanSimek/gecko/blob/c14c0438468976bf91e1cf55603c62571e05eaef/docs/FRM-File-Format-and-Critter-Animation-System.md",
+      "bytes": 8993
+    },
+    {
+      "repo": "JanSimek/gecko",
+      "path": "docs/PRO-File-Architecture.md",
+      "sha": "836328cd20584fec9e3647bcfa619d944c84f38e",
+      "commit": "c14c0438468976bf91e1cf55603c62571e05eaef",
+      "url": "https://github.com/JanSimek/gecko/blob/c14c0438468976bf91e1cf55603c62571e05eaef/docs/PRO-File-Architecture.md",
+      "bytes": 4193
+    },
+    {
+      "repo": "JanSimek/gecko",
+      "path": "docs/README.md",
+      "sha": "954495330acbbaa73fb6b979a164a98b994eb3bb",
+      "commit": "c14c0438468976bf91e1cf55603c62571e05eaef",
+      "url": "https://github.com/JanSimek/gecko/blob/c14c0438468976bf91e1cf55603c62571e05eaef/docs/README.md",
+      "bytes": 882
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/dat.md",
+      "sha": "d474bbd63b027862c87826fa2a603ce3a08bbcf5",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/dat.md",
+      "bytes": 19195
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "content/pages/savegame.md",
+      "sha": "13ff537458c6d40e0bc77cde3e75ba6bb06de5cb",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/content/pages/savegame.md",
+      "bytes": 25119
+    },
+    {
+      "repo": "rotators/foclassic",
+      "path": "README.md",
+      "sha": "f62e3849130e3991900a5a0f887d93be3a91ba44",
+      "commit": "cffbea6b514d62d9c607c2c3489111b2bfb62b62",
+      "url": "https://github.com/rotators/foclassic/blob/cffbea6b514d62d9c607c2c3489111b2bfb62b62/README.md",
+      "bytes": 2533
+    },
+    {
+      "repo": "falltergeist/falltergeist",
+      "path": "README.md",
+      "sha": "0a83a3b738a2a2ea1cfeaf0fafc677408c56a655",
+      "commit": "32cbee70af05eab32cd3907f9387c64ce66d1366",
+      "url": "https://github.com/falltergeist/falltergeist/blob/32cbee70af05eab32cd3907f9387c64ce66d1366/README.md",
+      "bytes": 3314
+    },
+    {
+      "repo": "falltergeist/frm2png",
+      "path": "README.md",
+      "sha": "7c397f6b77be23015c5e4dc42e178a47938156f1",
+      "commit": "4788b4d0ed8aa67571871714372eb92e4ede6829",
+      "url": "https://github.com/falltergeist/frm2png/blob/4788b4d0ed8aa67571871714372eb92e4ede6829/README.md",
+      "bytes": 867
+    },
+    {
+      "repo": "falltergeist/dat-unpacker",
+      "path": "README.md",
+      "sha": "b5af2553361929e7472d8add0c6cdf8d0174c7b7",
+      "commit": "d536ef630d9a47e866cddd7e826480c3ac34bb3d",
+      "url": "https://github.com/falltergeist/dat-unpacker/blob/d536ef630d9a47e866cddd7e826480c3ac34bb3d/README.md",
+      "bytes": 1363
+    },
+    {
+      "repo": "BGforgeNet/Fallout2_Hero_Appearance",
+      "path": "README.md",
+      "sha": "0a73c35b3ea924eb2424d2af8d06d82aaeb5f0f0",
+      "commit": "d9533daa062d34d315b720b3331ab4c8c242ed6d",
+      "url": "https://github.com/BGforgeNet/Fallout2_Hero_Appearance/blob/d9533daa062d34d315b720b3331ab4c8c242ed6d/README.md",
+      "bytes": 2501
+    },
+    {
+      "repo": "alexbatalov/fallout2-re",
+      "path": "README.md",
+      "sha": "bfd1534e70389d039f03ccb974b0fb7ed27ce209",
+      "commit": "b135fc46ef40c4aecd156f3cebcf88ec531bb8ac",
+      "url": "https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/README.md",
+      "bytes": 2146
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "README.md",
+      "sha": "8143ece585716321d8d2aafe3948a3c91db970e9",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/README.md",
+      "bytes": 7888
+    },
+    {
+      "repo": "sfall-team/sfall",
+      "path": "README.md",
+      "sha": "4adfa15c0812579874eb9b5961a9d0dd87e326a6",
+      "commit": "6c65e67342bda1488671601e417194199ec72a09",
+      "url": "https://github.com/sfall-team/sfall/blob/6c65e67342bda1488671601e417194199ec72a09/README.md",
+      "bytes": 6390
+    },
+    {
+      "repo": "rotators/fallout2-docs",
+      "path": "README.md",
+      "sha": "9fd6f1d1dbc0c8ee536c23dbd12521c5209c90bd",
+      "commit": "fa5b3a90b342975998f10e270c5cd7f5293af9e9",
+      "url": "https://github.com/rotators/fallout2-docs/blob/fa5b3a90b342975998f10e270c5cd7f5293af9e9/README.md",
+      "bytes": 5994
+    },
+    {
+      "repo": "JanSimek/fallout2-modding",
+      "path": "README.md",
+      "sha": "babe44abbe28376bf121272f1232fdbfb2068c14",
+      "commit": "a892a3ee901931d34a9ed77b4653da0ab14382c6",
+      "url": "https://github.com/JanSimek/fallout2-modding/blob/a892a3ee901931d34a9ed77b4653da0ab14382c6/README.md",
+      "bytes": 1232
+    },
+    {
+      "repo": "cvet/fonline",
+      "path": "README.md",
+      "sha": "2e5d56c3c3b8db9bef829e3579960dbf9dec98c3",
+      "commit": "8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb",
+      "url": "https://github.com/cvet/fonline/blob/8b6a5f60204e6f24623a6c6341e66c0a22fc1aeb/README.md",
+      "bytes": 17473
+    },
+    {
+      "repo": "darkf/darkfo",
+      "path": "README.md",
+      "sha": "b36b7eb874c1821ded3a0f143b35324e3aa2d425",
+      "commit": "9e9d9349e13b343bddefe3b8eed70797821cf0ba",
+      "url": "https://github.com/darkf/darkfo/blob/9e9d9349e13b343bddefe3b8eed70797821cf0ba/README.md",
+      "bytes": 6248
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/proto_instance.cc",
+      "sha": "02bb39d34f9f557e54c76621f31672c6a9964480",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/proto_instance.cc",
+      "bytes": 62926
+    },
+    {
+      "repo": "alexbatalov/fallout2-ce",
+      "path": "src/display_monitor.cc",
+      "sha": "977c0295edafdec9a6d9c03f4d6d130650419691",
+      "commit": "e97087b9582f37075db347a89898887320753f8b",
+      "url": "https://github.com/alexbatalov/fallout2-ce/blob/e97087b9582f37075db347a89898887320753f8b/src/display_monitor.cc",
+      "bytes": 13262
+    }
+  ],
+  "retrieval_limits": [
+    {
+      "repository": "BGforgeNet/sslc",
+      "issue": "404; superseded by verified sfall-team/sslc."
+    },
+    {
+      "repository": "alexbatalov/fallout2-ce",
+      "path": "src/object_types.h",
+      "issue": "404; no retry or finding based on this path."
+    },
+    {
+      "url": "https://fodev.net/files/mirrors/teamx-utils/F2_scripts.rar",
+      "issue": "Binary RAR link discovered; contents not retrieved/verified."
+    },
+    {
+      "url": "https://www.nma-fallout.com/threads/making-a-new-critter-for-fallout-2.219904/",
+      "issue": "Author tutorial located in search; full page blocked 403, attachments unverified."
+    }
+  ]
+}
