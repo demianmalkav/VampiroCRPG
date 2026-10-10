@@ -1,6 +1,6 @@
 # Plan de asimilación de Fallout 2
 
-Estado: A1_CONTRACT_DEFINED / A2_PENDING, 2026-10-09 Argentina. Dirección autorizó comenzar la asimilación orientada a motor productivo, campaña individual primero y online en un orden posterior. A1 documental y auditoría baseline ejecutados; gates A2–A5 pendientes. Motor productivo todavía no seleccionado.
+Estado: A1_CONTRACT_DEFINED / A2_RESOURCE_INSPECTION_COMPLETE_RUNTIME_NOT_EXECUTED, 2026-10-09 Argentina / 2026-10-10 UTC. Dirección autorizó comenzar la asimilación orientada a motor productivo, campaña individual primero y online en un orden posterior. A1 documental y auditoría baseline ejecutados; inspección privada inicial de A2 completada; gates conductuales A2–A5 pendientes. Motor productivo todavía no seleccionado.
 
 ## Objetivo
 
@@ -22,7 +22,9 @@ Entrega: [contrato espacial reconciliado](../../docs/FALLOUT_ASSIMILATION_A1_SPA
 
 ## A2 — Laboratorio ejecutable de referencia — NEXT
 
-Referencia privada ya identificada en Drive: `Fallout2_clean_Windows11.rar`, ID `1G8uAAZ_QIiF9XYQ1dAJrp40s-N4LA8BS`, 741208238 bytes. Ficha: ISO/Windows 11, versión declarada 1.02d + 1.02.31 todavía no inspeccionada. Fetch autenticado devuelve 413; resolver transferencia soportada antes de afirmar ejecución. No pedir al usuario localizar otra copia ni tratarlo como material ausente.
+**Avance vigente:** el usuario subió la carpeta descomprimida y el acceso funciona. [Inspección](INSTALLATION_INSPECTION_2026-10-10.md) y [evidencia](INSTALLATION_INSPECTION_2026-10-10.json): quince descargas con SHA256; sfall 2.19a/Hi-Res 4.1.8.0 identificados; tres DAT, 7.786 entradas y 224.382 registros de cuadros comprobados; cabeceras de quince mapas/tres prototipos. `master.dat` (333177805 bytes) devuelve 413 por límite de 268435456; no se ejecutó EXE ni se construyó CE. Continuar desde estos archivos reales, sin volver a pedir la instalación entera. Los doce casos permanecen NOT_EXECUTED.
+
+Antecedente de transferencia: `Fallout2_clean_Windows11.rar`, ID `1G8uAAZ_QIiF9XYQ1dAJrp40s-N4LA8BS`, 741208238 bytes, devuelve 413 y no se descargó. Su bloqueo queda superado para inspección por la carpeta descomprimida. La ficha declaraba ISO/Windows 11, 1.02d + 1.02.31: la lectura nueva identifica sfall/Hi-Res pero mantiene sin resolver el segundo número y la versión exacta del EXE. No pedir al usuario localizar otra copia ni tratarlo como material ausente.
 
 **Trabajo:** fijar una revisión CE y una instalación legítima disponible; registrar versión y hashes de recursos de entrada. Comparar con RE sólo cuando una diferencia CE pueda afectar el contrato. Escena mínima: avatar, muro, caja/contenedor, puerta, objeto y un contacto. Primero medir el comportamiento del juego, luego considerar un mapa propio editable.
 

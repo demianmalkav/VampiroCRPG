@@ -1,6 +1,6 @@
-# Asimilación vigente — A1 definido, A2 pendiente
+# Asimilación vigente — A1 definido, A2 en inspección
 
-Dirección autorizó una base productiva para campaña individual de Nueva York, con online futuro en un orden posterior. [Contrato espacial A1](../../docs/FALLOUT_ASSIMILATION_A1_SPATIAL_CONTRACT.md) · [adaptación de motor y reglas](../../docs/VAMPIRO_ENGINE_ADAPTATION_SINGLEPLAYER_01.md) · [auditoría ejecutada de tres defectos](A1_BASELINE_AUDIT_2026-10-09.json) · [12 casos aún no ejecutados](A2_ACCEPTANCE_CASES_01.json). Cierre de contrato no equivale a motor elegido, fallas corregidas o calidad aceptada. NEXT: laboratorio A2; el archivo original está identificado, pero el fetch del RAR devuelve 413.
+Dirección autorizó una base productiva para campaña individual de Nueva York, con online futuro en un orden posterior. [Contrato espacial A1](../../docs/FALLOUT_ASSIMILATION_A1_SPATIAL_CONTRACT.md) · [adaptación de motor y reglas](../../docs/VAMPIRO_ENGINE_ADAPTATION_SINGLEPLAYER_01.md) · [auditoría ejecutada de tres defectos](A1_BASELINE_AUDIT_2026-10-09.json) · [12 casos aún no ejecutados](A2_ACCEPTANCE_CASES_01.json). Cierre de contrato no equivale a motor elegido, fallas corregidas o calidad aceptada. [Instalación privada inspeccionada](INSTALLATION_INSPECTION_2026-10-10.md): acceso descomprimido confirmado, quince archivos descargados/hasheados y 7.786 entradas verificadas en tres DAT. `master.dat` supera el límite del conector; NEXT: completar dependencia/entorno y ejecutar A2. El bloqueo del RAR no impide ya la inspección.
 
 # Fallout 2 System Analysis
 

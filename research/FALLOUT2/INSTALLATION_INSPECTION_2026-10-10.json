@@ -1,0 +1,2740 @@
+{
+  "schema": "fallout-private-resource-audit-1",
+  "archives": [
+    {
+      "file": "critter.dat",
+      "bytes": 166951131,
+      "sha256": "da83d615967c0bac41fbc50e6b86b3088401ff69ed9d8b2e5be1d6ac0c125bcd",
+      "footer": {
+        "tree_size": 299044,
+        "archive_size": 166951131,
+        "data_base": 0,
+        "sorted_case_insensitive": true
+      },
+      "entry_count": 7120,
+      "entries_content_checked": 7120,
+      "extensions": {
+        ".fr0": 495,
+        ".fr1": 495,
+        ".fr2": 495,
+        ".fr3": 495,
+        ".fr4": 495,
+        ".fr5": 495,
+        ".frm": 4149,
+        ".lst": 1
+      },
+      "roots": {
+        "art": 7120
+      },
+      "frm_frame_counts": {
+        "1": 887,
+        "10": 251,
+        "11": 860,
+        "12": 735,
+        "13": 79,
+        "14": 93,
+        "15": 148,
+        "16": 90,
+        "17": 278,
+        "18": 67,
+        "189": 1,
+        "19": 255,
+        "2": 12,
+        "20": 18,
+        "21": 6,
+        "22": 477,
+        "24": 7,
+        "25": 5,
+        "26": 6,
+        "29": 7,
+        "3": 157,
+        "4": 677,
+        "5": 260,
+        "58": 1,
+        "6": 375,
+        "7": 424,
+        "8": 615,
+        "9": 328
+      },
+      "frm_frame_records_checked": 224365,
+      "frm_area_mismatch_count": 2970,
+      "frm_marker_outside_range": [],
+      "errors": [],
+      "frm_samples": [
+        {
+          "path": "art\\critters\\HANPWRAA.FRM",
+          "sha256": "5da5f6cde9fdf8217f3fa87f35b0bb14aa1d06d6ffe92d70cd94a77bf9c4e327",
+          "version": 4,
+          "fps": 8,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 12,
+          "direction_offsets": [
+            0,
+            35484,
+            62397,
+            101453,
+            135001,
+            162595
+          ],
+          "x_offsets": [
+            -1,
+            -1,
+            -1,
+            1,
+            1,
+            1
+          ],
+          "y_offsets": [
+            5,
+            8,
+            6,
+            6,
+            8,
+            6
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 202548,
+          "physical_frame_area": 202548,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  38,
+                  40
+                ],
+                "height": [
+                  76,
+                  79
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -1,
+                  1
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 35484,
+              "dimensions_range": {
+                "width": [
+                  23,
+                  34
+                ],
+                "height": [
+                  76,
+                  79
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -5,
+                  5
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 62397,
+              "dimensions_range": {
+                "width": [
+                  40,
+                  46
+                ],
+                "height": [
+                  76,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  3
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 101453,
+              "dimensions_range": {
+                "width": [
+                  36,
+                  38
+                ],
+                "height": [
+                  75,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -1,
+                  1
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 135001,
+              "dimensions_range": {
+                "width": [
+                  23,
+                  34
+                ],
+                "height": [
+                  79,
+                  80
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -4,
+                  4
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 162595,
+              "dimensions_range": {
+                "width": [
+                  39,
+                  46
+                ],
+                "height": [
+                  77,
+                  77
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -3,
+                  3
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\critters\\HANPWRAB.FRM",
+          "sha256": "21fdf093229669267db777a4f7fd7b9112ec0c174f412d5d4ab9e46d8ab8843c",
+          "version": 4,
+          "fps": 10,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 8,
+          "direction_offsets": [
+            0,
+            22576,
+            43601,
+            65620,
+            87643,
+            109185
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            2
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 131869,
+          "physical_frame_area": 131869,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  34,
+                  40
+                ],
+                "height": [
+                  74,
+                  78
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  2,
+                  6
+                ],
+                "y": [
+                  -8,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 22576,
+              "dimensions_range": {
+                "width": [
+                  25,
+                  53
+                ],
+                "height": [
+                  70,
+                  75
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  6,
+                  11
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 43601,
+              "dimensions_range": {
+                "width": [
+                  33,
+                  40
+                ],
+                "height": [
+                  71,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  2,
+                  6
+                ],
+                "y": [
+                  0,
+                  8
+                ]
+              }
+            },
+            {
+              "offset": 65620,
+              "dimensions_range": {
+                "width": [
+                  34,
+                  40
+                ],
+                "height": [
+                  71,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -5,
+                  -2
+                ],
+                "y": [
+                  -1,
+                  9
+                ]
+              }
+            },
+            {
+              "offset": 87643,
+              "dimensions_range": {
+                "width": [
+                  24,
+                  53
+                ],
+                "height": [
+                  72,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -11,
+                  -6
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 109185,
+              "dimensions_range": {
+                "width": [
+                  33,
+                  40
+                ],
+                "height": [
+                  74,
+                  78
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -5,
+                  -2
+                ],
+                "y": [
+                  -8,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\critters\\HANPWRAE.FRM",
+          "sha256": "221f2909d8921c7e97dfd5771bde14b3c2ff6ae36a3ece551d73e7d20ebbd758",
+          "version": 4,
+          "fps": 8,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 8,
+          "direction_offsets": [
+            0,
+            22459,
+            44311,
+            69777,
+            93126,
+            115063
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 140075,
+          "physical_frame_area": 140075,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  37,
+                  44
+                ],
+                "height": [
+                  60,
+                  80
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  2
+                ],
+                "y": [
+                  -12,
+                  2
+                ]
+              }
+            },
+            {
+              "offset": 22459,
+              "dimensions_range": {
+                "width": [
+                  36,
+                  42
+                ],
+                "height": [
+                  65,
+                  75
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -3,
+                  2
+                ],
+                "y": [
+                  -11,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 44311,
+              "dimensions_range": {
+                "width": [
+                  43,
+                  46
+                ],
+                "height": [
+                  66,
+                  75
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -3,
+                  2
+                ],
+                "y": [
+                  -13,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 69777,
+              "dimensions_range": {
+                "width": [
+                  37,
+                  43
+                ],
+                "height": [
+                  70,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -3,
+                  2
+                ],
+                "y": [
+                  -15,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 93126,
+              "dimensions_range": {
+                "width": [
+                  35,
+                  42
+                ],
+                "height": [
+                  64,
+                  75
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -3,
+                  1
+                ],
+                "y": [
+                  -12,
+                  2
+                ]
+              }
+            },
+            {
+              "offset": 115063,
+              "dimensions_range": {
+                "width": [
+                  44,
+                  47
+                ],
+                "height": [
+                  61,
+                  78
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  4
+                ],
+                "y": [
+                  -12,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\critters\\HANPWRAK.FRM",
+          "sha256": "4f6978202d936673f9b1012a09a5e78a59a268cf5c5be3a2c475c26bdf0b3653",
+          "version": 4,
+          "fps": 10,
+          "action_frame": 7,
+          "action_in_frame_range": true,
+          "frames_per_direction": 13,
+          "direction_offsets": [
+            0,
+            36030,
+            71022,
+            99306,
+            130869,
+            164132
+          ],
+          "x_offsets": [
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 195868,
+          "physical_frame_area": 195868,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  40,
+                  50
+                ],
+                "height": [
+                  53,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -5,
+                  6
+                ],
+                "y": [
+                  -4,
+                  5
+                ]
+              }
+            },
+            {
+              "offset": 36030,
+              "dimensions_range": {
+                "width": [
+                  23,
+                  51
+                ],
+                "height": [
+                  52,
+                  78
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -7,
+                  12
+                ],
+                "y": [
+                  -2,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 71022,
+              "dimensions_range": {
+                "width": [
+                  34,
+                  40
+                ],
+                "height": [
+                  50,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -7,
+                  9
+                ],
+                "y": [
+                  -5,
+                  7
+                ]
+              }
+            },
+            {
+              "offset": 99306,
+              "dimensions_range": {
+                "width": [
+                  38,
+                  50
+                ],
+                "height": [
+                  44,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -6,
+                  5
+                ],
+                "y": [
+                  -5,
+                  5
+                ]
+              }
+            },
+            {
+              "offset": 130869,
+              "dimensions_range": {
+                "width": [
+                  23,
+                  51
+                ],
+                "height": [
+                  46,
+                  79
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -11,
+                  7
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 164132,
+              "dimensions_range": {
+                "width": [
+                  34,
+                  39
+                ],
+                "height": [
+                  56,
+                  79
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -8,
+                  6
+                ],
+                "y": [
+                  -2,
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\critters\\HANPWRAL.FRM",
+          "sha256": "3a23c6f8ffcda9b5675b0fa716a63e176012edc63f471eba5a7c72f8e3c90717",
+          "version": 4,
+          "fps": 10,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 11,
+          "direction_offsets": [
+            0,
+            32981,
+            63856,
+            95018,
+            126465,
+            158274
+          ],
+          "x_offsets": [
+            2,
+            3,
+            2,
+            -3,
+            -1,
+            -2
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            -1,
+            -1,
+            0
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 191989,
+          "physical_frame_area": 191989,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  38,
+                  41
+                ],
+                "height": [
+                  73,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  2
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 32981,
+              "dimensions_range": {
+                "width": [
+                  23,
+                  45
+                ],
+                "height": [
+                  72,
+                  78
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -6,
+                  5
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 63856,
+              "dimensions_range": {
+                "width": [
+                  38,
+                  42
+                ],
+                "height": [
+                  66,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  2
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 95018,
+              "dimensions_range": {
+                "width": [
+                  38,
+                  42
+                ],
+                "height": [
+                  68,
+                  76
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  3
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 126465,
+              "dimensions_range": {
+                "width": [
+                  23,
+                  46
+                ],
+                "height": [
+                  73,
+                  79
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -6,
+                  5
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 158274,
+              "dimensions_range": {
+                "width": [
+                  38,
+                  42
+                ],
+                "height": [
+                  74,
+                  77
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -3,
+                  2
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\critters\\HMJMPSAA.FRM",
+          "sha256": "b9c1667d4d328012e9c5723dd254205e7fb369fcb98015f875a4a665f1e35bb2",
+          "version": 4,
+          "fps": 8,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 12,
+          "direction_offsets": [
+            0,
+            19910,
+            35615,
+            59720,
+            79142,
+            95060
+          ],
+          "x_offsets": [
+            -1,
+            -1,
+            -1,
+            0,
+            2,
+            0
+          ],
+          "y_offsets": [
+            3,
+            5,
+            4,
+            3,
+            5,
+            3
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 118700,
+          "physical_frame_area": 118700,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  25,
+                  28
+                ],
+                "height": [
+                  63,
+                  69
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  0,
+                  1
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 19910,
+              "dimensions_range": {
+                "width": [
+                  13,
+                  28
+                ],
+                "height": [
+                  65,
+                  66
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -5,
+                  8
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 35615,
+              "dimensions_range": {
+                "width": [
+                  28,
+                  35
+                ],
+                "height": [
+                  64,
+                  65
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  3
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 59720,
+              "dimensions_range": {
+                "width": [
+                  25,
+                  28
+                ],
+                "height": [
+                  63,
+                  63
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  0
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 79142,
+              "dimensions_range": {
+                "width": [
+                  14,
+                  28
+                ],
+                "height": [
+                  65,
+                  66
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -7,
+                  4
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 95060,
+              "dimensions_range": {
+                "width": [
+                  27,
+                  35
+                ],
+                "height": [
+                  63,
+                  67
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -4,
+                  2
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\critters\\HMJMPSAB.FRM",
+          "sha256": "9d063d50e1c777b6a60522c71bf97cf5b8a12aa01313c290934dc38e5d901c38",
+          "version": 4,
+          "fps": 10,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 8,
+          "direction_offsets": [
+            0,
+            13126,
+            26714,
+            39186,
+            51833,
+            65271
+          ],
+          "x_offsets": [
+            -2,
+            -4,
+            -2,
+            0,
+            6,
+            3
+          ],
+          "y_offsets": [
+            4,
+            4,
+            3,
+            0,
+            0,
+            2
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 78119,
+          "physical_frame_area": 78119,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  22,
+                  29
+                ],
+                "height": [
+                  63,
+                  67
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  3,
+                  5
+                ],
+                "y": [
+                  -7,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 13126,
+              "dimensions_range": {
+                "width": [
+                  17,
+                  43
+                ],
+                "height": [
+                  60,
+                  63
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  6,
+                  11
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 26714,
+              "dimensions_range": {
+                "width": [
+                  20,
+                  30
+                ],
+                "height": [
+                  61,
+                  66
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  1,
+                  6
+                ],
+                "y": [
+                  0,
+                  8
+                ]
+              }
+            },
+            {
+              "offset": 39186,
+              "dimensions_range": {
+                "width": [
+                  22,
+                  29
+                ],
+                "height": [
+                  60,
+                  65
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -6,
+                  -3
+                ],
+                "y": [
+                  0,
+                  7
+                ]
+              }
+            },
+            {
+              "offset": 51833,
+              "dimensions_range": {
+                "width": [
+                  17,
+                  43
+                ],
+                "height": [
+                  60,
+                  63
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -11,
+                  -6
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 65271,
+              "dimensions_range": {
+                "width": [
+                  20,
+                  30
+                ],
+                "height": [
+                  63,
+                  66
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -5,
+                  -2
+                ],
+                "y": [
+                  -8,
+                  -1
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\critters\\HMJMPSAL.FRM",
+          "sha256": "06f735e9bb84e6516a67cc6594853f162c986e5ce6a1770335d461a270f1d856",
+          "version": 4,
+          "fps": 8,
+          "action_frame": 8,
+          "action_in_frame_range": true,
+          "frames_per_direction": 11,
+          "direction_offsets": [
+            0,
+            19993,
+            41045,
+            60171,
+            79484,
+            100814
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 120875,
+          "physical_frame_area": 120875,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  26,
+                  31
+                ],
+                "height": [
+                  61,
+                  63
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  2
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "offset": 19993,
+              "dimensions_range": {
+                "width": [
+                  13,
+                  38
+                ],
+                "height": [
+                  60,
+                  65
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -4,
+                  5
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 41045,
+              "dimensions_range": {
+                "width": [
+                  27,
+                  30
+                ],
+                "height": [
+                  57,
+                  64
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  2
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 60171,
+              "dimensions_range": {
+                "width": [
+                  27,
+                  31
+                ],
+                "height": [
+                  57,
+                  63
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -3,
+                  3
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 79484,
+              "dimensions_range": {
+                "width": [
+                  14,
+                  38
+                ],
+                "height": [
+                  60,
+                  66
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -5,
+                  5
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 100814,
+              "dimensions_range": {
+                "width": [
+                  27,
+                  30
+                ],
+                "height": [
+                  61,
+                  63
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  2
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\critters\\HMJMPSAT.FRM",
+          "sha256": "6419644d4028b9942a0b32550c341d09a6fb5396c1bdde92001e8245e614c6dd",
+          "version": 4,
+          "fps": 20,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 10,
+          "direction_offsets": [
+            0,
+            18096,
+            40249,
+            56615,
+            73242,
+            95599
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 113684,
+          "physical_frame_area": 113684,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  23,
+                  38
+                ],
+                "height": [
+                  60,
+                  72
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  2,
+                  9
+                ],
+                "y": [
+                  -10,
+                  -1
+                ]
+              }
+            },
+            {
+              "offset": 18096,
+              "dimensions_range": {
+                "width": [
+                  24,
+                  61
+                ],
+                "height": [
+                  56,
+                  62
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  7,
+                  18
+                ],
+                "y": [
+                  -1,
+                  2
+                ]
+              }
+            },
+            {
+              "offset": 40249,
+              "dimensions_range": {
+                "width": [
+                  22,
+                  38
+                ],
+                "height": [
+                  56,
+                  65
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  4,
+                  9
+                ],
+                "y": [
+                  1,
+                  11
+                ]
+              }
+            },
+            {
+              "offset": 56615,
+              "dimensions_range": {
+                "width": [
+                  23,
+                  39
+                ],
+                "height": [
+                  57,
+                  66
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -9,
+                  -3
+                ],
+                "y": [
+                  0,
+                  12
+                ]
+              }
+            },
+            {
+              "offset": 73242,
+              "dimensions_range": {
+                "width": [
+                  24,
+                  62
+                ],
+                "height": [
+                  56,
+                  61
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -19,
+                  -7
+                ],
+                "y": [
+                  -1,
+                  2
+                ]
+              }
+            },
+            {
+              "offset": 95599,
+              "dimensions_range": {
+                "width": [
+                  22,
+                  39
+                ],
+                "height": [
+                  60,
+                  72
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -8,
+                  -4
+                ],
+                "y": [
+                  -9,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\critters\\HMJMPSDD.FRM",
+          "sha256": "febdb8ea7cf3d0053c2dd451d02bf708d235f3149078c351412f6aa150f0f232",
+          "version": 4,
+          "fps": 8,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 5,
+          "direction_offsets": [
+            0,
+            9185,
+            15591,
+            24873,
+            33965,
+            40308
+          ],
+          "x_offsets": [
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            1
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            -1,
+            -2
+          ],
+          "stored_direction_blocks": 6,
+          "declared_frame_area": 49375,
+          "physical_frame_area": 49375,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  28,
+                  29
+                ],
+                "height": [
+                  63,
+                  65
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  1
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 9185,
+              "dimensions_range": {
+                "width": [
+                  13,
+                  24
+                ],
+                "height": [
+                  65,
+                  66
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -4,
+                  1
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 15591,
+              "dimensions_range": {
+                "width": [
+                  28,
+                  30
+                ],
+                "height": [
+                  63,
+                  64
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  1
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 24873,
+              "dimensions_range": {
+                "width": [
+                  28,
+                  29
+                ],
+                "height": [
+                  62,
+                  65
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -1,
+                  3
+                ],
+                "y": [
+                  -1,
+                  3
+                ]
+              }
+            },
+            {
+              "offset": 33965,
+              "dimensions_range": {
+                "width": [
+                  14,
+                  23
+                ],
+                "height": [
+                  65,
+                  66
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -2,
+                  3
+                ],
+                "y": [
+                  -1,
+                  1
+                ]
+              }
+            },
+            {
+              "offset": 40308,
+              "dimensions_range": {
+                "width": [
+                  27,
+                  30
+                ],
+                "height": [
+                  62,
+                  64
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  -1,
+                  1
+                ],
+                "y": [
+                  -2,
+                  1
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "map_headers": [],
+      "proto_headers": []
+    },
+    {
+      "file": "patch000.dat",
+      "bytes": 2896671,
+      "sha256": "d24788cf50294a27713a368f06cedb9b30c00ba709c2f1e0662ca2f6dddf2fc1",
+      "footer": {
+        "tree_size": 17941,
+        "archive_size": 2896671,
+        "data_base": 0,
+        "sorted_case_insensitive": false
+      },
+      "entry_count": 489,
+      "entries_content_checked": 489,
+      "extensions": {
+        ".frm": 1,
+        ".gam": 1,
+        ".int": 445,
+        ".lst": 1,
+        ".map": 15,
+        ".msg": 17,
+        ".pal": 1,
+        ".pro": 3,
+        ".txt": 5
+      },
+      "roots": {
+        "art": 2,
+        "data": 4,
+        "maps": 15,
+        "patch.txt": 1,
+        "proto": 3,
+        "readme.txt": 1,
+        "scripts": 446,
+        "text": 17
+      },
+      "frm_frame_counts": {
+        "1": 1
+      },
+      "frm_frame_records_checked": 1,
+      "frm_area_mismatch_count": 0,
+      "frm_marker_outside_range": [],
+      "errors": [],
+      "frm_samples": [
+        {
+          "path": "Art\\intrface\\HELPSCRN.FRM",
+          "sha256": "1132d3317ad4722ff96acd05e6b48acf4ce28469a6ba0df1f17d3ab6ada79181",
+          "version": 4,
+          "fps": 0,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 1,
+          "direction_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 1,
+          "declared_frame_area": 307212,
+          "physical_frame_area": 307212,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  640,
+                  640
+                ],
+                "height": [
+                  480,
+                  480
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  0,
+                  0
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "map_headers": [
+        {
+          "path": "Maps\\denbus1.map",
+          "bytes": 351640,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 23895,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 59,
+          "flags": 8,
+          "darkness": 1,
+          "global_vars_count": 10,
+          "map_index": 6,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\denbus2.map",
+          "bytes": 301028,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 20100,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 60,
+          "flags": 12,
+          "darkness": 1,
+          "global_vars_count": 13,
+          "map_index": -1,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\ENCPRES.MAP",
+          "bytes": 267728,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 20100,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 1075,
+          "flags": 12,
+          "darkness": 1,
+          "global_vars_count": 1,
+          "map_index": 132,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\GECKJUNK.map",
+          "bytes": 286840,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 26311,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 859,
+          "flags": 12,
+          "darkness": 1,
+          "global_vars_count": 8,
+          "map_index": 33,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\KLACANYN.map",
+          "bytes": 141148,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 21871,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 342,
+          "flags": 12,
+          "darkness": 1,
+          "global_vars_count": 19,
+          "map_index": 48,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\klatoxcv.map",
+          "bytes": 450128,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 20100,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 311,
+          "flags": 0,
+          "darkness": 1,
+          "global_vars_count": 18,
+          "map_index": 12,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\modmain.map",
+          "bytes": 249280,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 20100,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 195,
+          "flags": 12,
+          "darkness": 1,
+          "global_vars_count": 4,
+          "map_index": 18,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\NAVARRO.map",
+          "bytes": 694508,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 20100,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 1152,
+          "flags": 0,
+          "darkness": 1,
+          "global_vars_count": 24,
+          "map_index": 109,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\NCR1.MAP",
+          "bytes": 353040,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 13915,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 223,
+          "flags": 12,
+          "darkness": 1,
+          "global_vars_count": 4,
+          "map_index": 42,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\Newr2.map",
+          "bytes": 654784,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 20100,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 354,
+          "flags": 0,
+          "darkness": 1,
+          "global_vars_count": 1,
+          "map_index": 55,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\Newrst.map",
+          "bytes": 341564,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 27097,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 357,
+          "flags": 8,
+          "darkness": 1,
+          "global_vars_count": 2,
+          "map_index": 60,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\redwan1.map",
+          "bytes": 393128,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 27093,
+          "entering_elevation": 1,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 947,
+          "flags": 8,
+          "darkness": 1,
+          "global_vars_count": 0,
+          "map_index": 63,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\rndparih.map",
+          "bytes": 104724,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 20100,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 1270,
+          "flags": 12,
+          "darkness": 1,
+          "global_vars_count": 1,
+          "map_index": 107,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\VCTYCTYD.map",
+          "bytes": 239416,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 20100,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 309,
+          "flags": 12,
+          "darkness": 1,
+          "global_vars_count": 7,
+          "map_index": 15,
+          "last_visit_time": 0
+        },
+        {
+          "path": "Maps\\VCTYDWTN.map",
+          "bytes": 343924,
+          "version": 20,
+          "header_only": true,
+          "entering_tile": 24117,
+          "entering_elevation": 0,
+          "entering_rotation": 0,
+          "local_vars_count": 0,
+          "script_index": 665,
+          "flags": 12,
+          "darkness": 1,
+          "global_vars_count": 9,
+          "map_index": 16,
+          "last_visit_time": 0
+        }
+      ],
+      "proto_headers": [
+        {
+          "path": "Proto\\Critters\\00000216.pro",
+          "bytes": 416,
+          "pid": 16777432,
+          "object_type": 1,
+          "message_num": 21600,
+          "fid": 16777268,
+          "header_only": true
+        },
+        {
+          "path": "Proto\\Critters\\00000274.pro",
+          "bytes": 416,
+          "pid": 16777490,
+          "object_type": 1,
+          "message_num": 27400,
+          "fid": 16777280,
+          "header_only": true
+        },
+        {
+          "path": "Proto\\Items\\00000031.PRO",
+          "bytes": 81,
+          "pid": 31,
+          "object_type": 0,
+          "message_num": 3100,
+          "fid": 1,
+          "header_only": true
+        }
+      ]
+    },
+    {
+      "file": "f2_res.dat",
+      "bytes": 651823,
+      "sha256": "3d5b06e34876c85ab658f0a9f45add39091420f2db670794154ce8a2f51cb87d",
+      "footer": {
+        "tree_size": 6084,
+        "archive_size": 651823,
+        "data_base": 0,
+        "sorted_case_insensitive": true
+      },
+      "entry_count": 177,
+      "entries_content_checked": 177,
+      "extensions": {
+        ".edg": 155,
+        ".frm": 16,
+        ".msg": 6
+      },
+      "roots": {
+        "art": 16,
+        "maps": 155,
+        "text": 6
+      },
+      "frm_frame_counts": {
+        "1": 16
+      },
+      "frm_frame_records_checked": 16,
+      "frm_area_mismatch_count": 0,
+      "frm_marker_outside_range": [],
+      "errors": [],
+      "frm_samples": [
+        {
+          "path": "art\\intrface\\HR_ALLTLK.FRM",
+          "sha256": "654950bdc0fad41b9060ee9a1d58685eff14b0c7d15d52f12201dc0ef8793fdc",
+          "version": 4,
+          "fps": 0,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 1,
+          "direction_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 1,
+          "declared_frame_area": 307212,
+          "physical_frame_area": 307212,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  640,
+                  640
+                ],
+                "height": [
+                  480,
+                  480
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  0,
+                  0
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\intrface\\HR_IFACE_800.FRM",
+          "sha256": "13c0030c21260961473c3703aa06ff96b3587e4423b17d3303cef96d1b4f159b",
+          "version": 4,
+          "fps": 0,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 1,
+          "direction_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 1,
+          "declared_frame_area": 79212,
+          "physical_frame_area": 79212,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  800,
+                  800
+                ],
+                "height": [
+                  99,
+                  99
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  0,
+                  0
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\intrface\\HR_IFACE_CHI_800.FRM",
+          "sha256": "f6be40514ce8c6319283ad3c23e96674b067b9c62c24cbc669fa3bfcfdc6a12d",
+          "version": 4,
+          "fps": 0,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 1,
+          "direction_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 1,
+          "declared_frame_area": 79212,
+          "physical_frame_area": 79212,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  800,
+                  800
+                ],
+                "height": [
+                  99,
+                  99
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  0,
+                  0
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\intrface\\HR_IFACE_SELECT.FRM",
+          "sha256": "fc1313b2aca9d6b9be608c1fd126100ff9578410bbb402760b5357b8e0df791b",
+          "version": 4,
+          "fps": 0,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 1,
+          "direction_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 1,
+          "declared_frame_area": 20912,
+          "physical_frame_area": 20912,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  190,
+                  190
+                ],
+                "height": [
+                  110,
+                  110
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  0,
+                  0
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "path": "art\\intrface\\HR_IFACELFT1.FRM",
+          "sha256": "4747dcf4fce391b23bdd05192d85e8e0dde989554dcb5e11f43506a5442ae153",
+          "version": 4,
+          "fps": 0,
+          "action_frame": 0,
+          "action_in_frame_range": true,
+          "frames_per_direction": 1,
+          "direction_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "x_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "y_offsets": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "stored_direction_blocks": 1,
+          "declared_frame_area": 63372,
+          "physical_frame_area": 63372,
+          "area_matches_physical": true,
+          "directions": [
+            {
+              "offset": 0,
+              "dimensions_range": {
+                "width": [
+                  640,
+                  640
+                ],
+                "height": [
+                  99,
+                  99
+                ]
+              },
+              "frame_delta_range": {
+                "x": [
+                  0,
+                  0
+                ],
+                "y": [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "map_headers": [],
+      "proto_headers": []
+    }
+  ],
+  "inspected_utc_date": "2026-10-10",
+  "inspected_argentina_date": "2026-10-09",
+  "status": "A2_RESOURCE_INSPECTION_COMPLETE_RUNTIME_NOT_EXECUTED",
+  "source_folder_url": "https://drive.google.com/drive/folders/1yStYnSN1fpqGkUFyEVSBPY1Ug5VY4XTp",
+  "metadata_only": true,
+  "downloads": [
+    {
+      "file": "COLOR.PAL",
+      "bytes": 33536,
+      "sha256": "315e06106c42646067117bc84cfdb11c992a5a3a5e058fcaaf24d5c0531a5df9"
+    },
+    {
+      "file": "FALLOUT2.EXE",
+      "bytes": 1189888,
+      "sha256": "048684f802b05859e2b160fa358be1b99075bf31b49a312a536645581aa16b5f"
+    },
+    {
+      "file": "critter.dat",
+      "bytes": 166951131,
+      "sha256": "da83d615967c0bac41fbc50e6b86b3088401ff69ed9d8b2e5be1d6ac0c125bcd"
+    },
+    {
+      "file": "ddraw.dll",
+      "bytes": 429568,
+      "sha256": "49819bc09296d6b63bf79c2cfd7e17f31b695f299ad07a0b4726bdf08f96736e"
+    },
+    {
+      "file": "ddraw.ini",
+      "bytes": 18308,
+      "sha256": "e55e323ffb6789bf97c2ad4991324fee266602af3220f45877e494d86c2a0992"
+    },
+    {
+      "file": "f2_res.dat",
+      "bytes": 651823,
+      "sha256": "3d5b06e34876c85ab658f0a9f45add39091420f2db670794154ce8a2f51cb87d"
+    },
+    {
+      "file": "f2_res.dll",
+      "bytes": 290816,
+      "sha256": "2d3c52cf624b22958db7fa44e3db71c2d0478503da5ceb40f0636dea1202fb5a"
+    },
+    {
+      "file": "f2_res.ini",
+      "bytes": 9903,
+      "sha256": "c3ef1eaf5dd3e4a75b0b5814ce9d49d898972461c4898caec9e8f89137d9ca28"
+    },
+    {
+      "file": "f2_res_README.rtf",
+      "bytes": 45277,
+      "sha256": "9e1cc28df9af6091724ed40fd93ba4d59a254f48bab387a309f2cf537435716a"
+    },
+    {
+      "file": "fallout2.cfg",
+      "bytes": 962,
+      "sha256": "5be9bb0a6889e8b6257065677057619ef619c6dc893495cc9c6370d628bcfe9d"
+    },
+    {
+      "file": "ncJunkie.int",
+      "bytes": 16112,
+      "sha256": "3dfaf5e99fbf8f0e7e3c415702f8a82ae18b4df6d9be047f8f690a11c5c057e8"
+    },
+    {
+      "file": "ncPerson.int",
+      "bytes": 16144,
+      "sha256": "f9a9d0ee526a97777fa1446aa6cb30a845acc6f2c3f4f86edf60b5e798a9ec61"
+    },
+    {
+      "file": "patch000.dat",
+      "bytes": 2896671,
+      "sha256": "d24788cf50294a27713a368f06cedb9b30c00ba709c2f1e0662ca2f6dddf2fc1"
+    },
+    {
+      "file": "readme.txt",
+      "bytes": 22533,
+      "sha256": "93554f896c16da26374719be8343ddda3cc581d260349bb017ff6f2ccdc79d01"
+    },
+    {
+      "file": "sfall-readme.txt",
+      "bytes": 34527,
+      "sha256": "4bcfd928e8f07b1e1c17ea76108c088782598857ab6d16e33fd4064ed848f27a"
+    }
+  ],
+  "versions": {
+    "base_game": {
+      "readme_claim": "1.02d US final patch",
+      "actual_executable_version": "UNVERIFIED_NOT_EXECUTED",
+      "exe_sha256": "048684f802b05859e2b160fa358be1b99075bf31b49a312a536645581aa16b5f"
+    },
+    "sfall": {
+      "readme": "2.19a",
+      "dll_ascii_label": "SFALL 2.19a",
+      "dll_fixed_file_version": "2.19.1.0",
+      "configuration_header": "v2.18"
+    },
+    "high_resolution_patch": {
+      "dll_file_version": "4.1.8.0",
+      "dll_product_name": "Fallout 2 High Resolution Patch"
+    },
+    "prior_install_info_secondary_version": "1.02.31_UNRESOLVED"
+  },
+  "split_direction_example": {
+    "files": [
+      {
+        "path": "art\\critters\\HAPOWRBA.FR0",
+        "physical_frame_area": 35816,
+        "declared_frame_area": 214923
+      },
+      {
+        "path": "art\\critters\\HAPOWRBA.FR1",
+        "physical_frame_area": 36002,
+        "declared_frame_area": 214923
+      },
+      {
+        "path": "art\\critters\\HAPOWRBA.FR2",
+        "physical_frame_area": 37605,
+        "declared_frame_area": 214923
+      },
+      {
+        "path": "art\\critters\\HAPOWRBA.FR3",
+        "physical_frame_area": 33726,
+        "declared_frame_area": 214923
+      },
+      {
+        "path": "art\\critters\\HAPOWRBA.FR4",
+        "physical_frame_area": 34326,
+        "declared_frame_area": 214923
+      },
+      {
+        "path": "art\\critters\\HAPOWRBA.FR5",
+        "physical_frame_area": 37448,
+        "declared_frame_area": 214923
+      }
+    ],
+    "physical_frame_area_sum": 214923,
+    "same_declared_area_in_six_files": true
+  },
+  "loose_script_checks": [
+    {
+      "file": "ncPerson.int",
+      "same_bytes_as_patch000_dat": true,
+      "scope": "only_these_two_files"
+    },
+    {
+      "file": "ncJunkie.int",
+      "same_bytes_as_patch000_dat": true,
+      "scope": "only_these_two_files"
+    }
+  ],
+  "access_limits": [
+    {
+      "file": "master.dat",
+      "bytes": 333177805,
+      "authenticated_fetch": "HTTP_413",
+      "connector_max_bytes": 268435456
+    },
+    {
+      "path": "data/ART/INTRFACE",
+      "listed_entries": 100,
+      "complete_listing_verified": false
+    }
+  ],
+  "runtime": {
+    "original_exe_executed": false,
+    "ce_built": false,
+    "a2_acceptance_cases_executed": 0,
+    "case_count": 12,
+    "environment_tools_found": {
+      "wine": false,
+      "cmake": false,
+      "pkg-config": false,
+      "Xvfb": false
+    }
+  },
+  "verification": {
+    "parser_unit_tests": 6,
+    "parser_unit_tests_result": "PASS",
+    "archives_validated": 3,
+    "entries_content_checked": 7786,
+    "validation_errors": 0,
+    "limitation": "Structural/index/inflate/frame-bound checks only; not behavior or external authenticity certification."
+  }
+}
