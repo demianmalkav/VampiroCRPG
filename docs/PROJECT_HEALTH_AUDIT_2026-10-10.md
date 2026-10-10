@@ -76,7 +76,13 @@ SYSTEM_MATRIX de GitHub negaba ejecución/lectura de datos mientras Drive ya las
 
 Los runs [38074198813](https://github.com/demianmalkav/VampiroCRPG/actions/runs/38074198813) y [38074194433](https://github.com/demianmalkav/VampiroCRPG/actions/runs/38074194433) pasaron en HEAD 4ef0067. Walk proof descubre tests sólo en tests/, por tanto no verifica tools/research.
 
-Se añade Research evidence: 25 tests existentes, más guards de navegación/redirección con hashes de sus fuentes. Biblioteca estándar, sin originales ni nueva dependencia mayor. Su primera ejecución remota debe consultarse por el SHA de cierre; configuración versionada no equivale por sí sola a run PASS. Tampoco pasa a ser una nueva ejecución conductual del juego.
+Se añade Research evidence: 25 tests existentes, más guards de navegación/redirección con hashes de sus fuentes. Biblioteca estándar, sin originales ni nueva dependencia mayor. La primera ejecución reveló una dependencia oculta y exigió la corrección documentada en H16. Su primera ejecución remota debe consultarse por el SHA de cierre; configuración versionada no equivale por sí sola a run PASS. Tampoco pasa a ser una nueva ejecución conductual del juego.
+
+### H16 — Dependencia gráfica oculta de los verificadores — MEDIA — CORREGIDO
+
+La primera ejecución Research evidence en c99a6e9 falló en import: los dos guards importaban CE_REVISION/INPUTS de run_fallout_ce_lab, que a su vez requería PIL/ImageGrab al cargar el módulo. El entorno local tenía Pillow y ocultaba esa dependencia; once tests de lectores pasaron y los dos módulos de guards no pudieron cargar en el runner limpio.
+
+Se separa la identidad fijada en ce_reference_identity.py y se cambian sólo los imports de ambos guards. No cambia el adaptador/controlador medido, el laboratorio ejecutable, los datos, ni las reglas de validación. Verificación local con Python -S (sin site-packages): 25 tests y dos guards PASS; identidad nueva igual a las constantes del laboratorio mediante inspección AST. Las fuentes históricas medidas conservan sus hashes. El run fallido se conserva como evidencia, no se reporta como verde.
 
 ### H08 — Registro de dudas detrás de la verificación — ALTA — RECONCILIADO
 

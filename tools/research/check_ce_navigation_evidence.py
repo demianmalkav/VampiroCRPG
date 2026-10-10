@@ -5,7 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from run_fallout_ce_lab import CE_REVISION, INPUTS
+from ce_reference_identity import CE_REVISION, INPUTS
 
 ELF_SHA = "70516cf855af0b8a5c826b0f090f646b29e5672c48e9b981322448edc6dc636c"
 LABELS = {f"{prefix}-{d}" for prefix in ("direction", "return") for d in range(6)}

@@ -5,7 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from run_fallout_ce_lab import CE_REVISION, INPUTS
+from ce_reference_identity import CE_REVISION, INPUTS
 from check_ce_navigation_evidence import ELF_SHA, neighbors, require
 
 
