@@ -1,0 +1,329 @@
+{
+  "kind": "PLANNED_ACCEPTANCE_CASES",
+  "status": "NOT_EXECUTED",
+  "scope": "Reference ORIGINAL/CE behavior must be recorded independently of Vampiro adaptation expectations; no overall acceptance inferred from an audit.",
+  "geometry_policy": "No literal translation of square C cell IDs to hex Fallout MAP coordinates.",
+  "cases": [
+    {
+      "id": "A2-01",
+      "subsystem": "geometry",
+      "preconditions": "Empty ground; native geometry and camera recorded.",
+      "stimulus": "Project/unproject representative cell centers and choose each native direction.",
+      "expected_vampiro": "Selected node equals intended node; equal logical distances have comparable durations; C cardinal 300 ms, diagonal 425 ms is adaptation policy, not CE expectation.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": []
+    },
+    {
+      "id": "A2-02",
+      "subsystem": "blocking",
+      "preconditions": "Crate, wall, dumpster and actor registered with footprints.",
+      "stimulus": "Request destination inside each solid; walk around each edge.",
+      "expected_vampiro": "No route or execution traverses covered cells; decorated surfaces designated nonblocking remain walkable.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "intent": "MoveTo(crate_cell)",
+          "result": "DESTINATION_BLOCKED",
+          "position": "unchanged",
+          "resources": "unchanged"
+        },
+        {
+          "intent": "MoveTo(free_cell_beyond_crate)",
+          "result": "route excludes crate footprint"
+        }
+      ]
+    },
+    {
+      "id": "A2-03",
+      "subsystem": "redirect",
+      "preconditions": "Actor moves with partially completed segment.",
+      "stimulus": "Redirect at 150 ms and repeatedly before arrival; cancel using Escape.",
+      "expected_vampiro": "No position discontinuity; previous interaction cancelled; last valid destination wins at next node. Record original/CE behavior separately from proposed C policy.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "time_ms": 0,
+          "node": [
+            3,
+            10
+          ],
+          "segment_to": [
+            3,
+            9
+          ],
+          "pending_destination": [
+            3,
+            9
+          ]
+        },
+        {
+          "time_ms": 150,
+          "interpolated_world": [
+            3,
+            9.5
+          ],
+          "redirect_to": [
+            4,
+            10
+          ]
+        },
+        {
+          "time_ms": 150,
+          "after_redirect_world": [
+            3,
+            9.5
+          ],
+          "segment_progress_ms": 150,
+          "pending_destination": [
+            4,
+            10
+          ],
+          "old_interaction": "cancelled"
+        },
+        {
+          "time_ms": 300,
+          "node": [
+            3,
+            9
+          ],
+          "next_segment_to": [
+            4,
+            10
+          ],
+          "next_segment_duration_ms": 425
+        }
+      ]
+    },
+    {
+      "id": "A2-04",
+      "subsystem": "dynamic_block",
+      "preconditions": "Actor approaches target along existing route.",
+      "stimulus": "Block a future segment, keeping current reserved segment clear.",
+      "expected_vampiro": "Revalidate before entering; reroute once per relevant map change or stop with reason; no retries per render frame.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": []
+    },
+    {
+      "id": "A2-05",
+      "subsystem": "door",
+      "preconditions": "Locked door; key not owned, then key owned.",
+      "stimulus": "Use door; cancel before effect; resume; cross only after declared opening moment.",
+      "expected_vampiro": "No opening without key/contact; no body/leaf overlap; open state and passage agree; repeat no duplicate effect.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "phase": "CLOSED_LOCKED",
+          "passable": false
+        },
+        {
+          "phase": "UNLOCKING",
+          "passable": false,
+          "cancel_before_effect": "stay locked"
+        },
+        {
+          "phase": "OPENING",
+          "passable": false,
+          "unlock_receipt": "committed once"
+        },
+        {
+          "phase": "OPEN",
+          "passable": true,
+          "leaf": "outside corridor"
+        }
+      ]
+    },
+    {
+      "id": "A2-06",
+      "subsystem": "selection",
+      "preconditions": "Two overlapping perceived objects; one object behind opaque wall.",
+      "stimulus": "Point at each visible piece and right-click inspect; click wall, then free ground.",
+      "expected_vampiro": "Visible front object selected; hidden object not disclosed; wall click does not become movement through wall; world text references same ID.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": []
+    },
+    {
+      "id": "A2-07",
+      "subsystem": "depth",
+      "preconditions": "Tall wall, wide dumpster and elevated decoration.",
+      "stimulus": "Walk fixed perimeter in both directions; pass near wall-mounted pieces.",
+      "expected_vampiro": "Feet and body stay coherent with volume; front/back occlusion follows extent, not merely center sort; video mandatory.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": []
+    },
+    {
+      "id": "A2-08",
+      "subsystem": "pickup_phases",
+      "preconditions": "Unique ground item within reachable contact.",
+      "stimulus": "Use; cancel before effect; use again; cancel after effect; resend same action.",
+      "expected_vampiro": "Item stays ground before effect and is owned once after effect; rendering cannot decide transfer; reference action-frame measured.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "phase": "approach",
+          "item_owner": "ground"
+        },
+        {
+          "phase": "prepare",
+          "item_owner": "ground",
+          "cancel": "no transfer"
+        },
+        {
+          "phase": "effect",
+          "item_owner": "actor",
+          "receipt": "one committed transfer"
+        },
+        {
+          "phase": "finish_or_cancel",
+          "item_owner": "actor",
+          "repeat_same_action": "existing receipt, no second transfer"
+        }
+      ]
+    },
+    {
+      "id": "A2-09",
+      "subsystem": "save",
+      "preconditions": "Movement and pending redirected intent; action in pre/post-effect phases.",
+      "stimulus": "Save/load at each boundary and compare with uninterrupted input trace.",
+      "expected_vampiro": "Segment, intent, phase, receipts and future work match; no teleport or duplicate effect; namespace/version explicit.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "operation": "save",
+          "state": "between confirmed transactions"
+        },
+        {
+          "operation": "load",
+          "state": "same segment/progress/intent/phase/receipts/future queue"
+        },
+        {
+          "operation": "continue identical inputs",
+          "state": "semantically equal to uninterrupted run"
+        }
+      ]
+    },
+    {
+      "id": "A2-10",
+      "subsystem": "contact",
+      "preconditions": "Target near actor but wall separates contact point.",
+      "stimulus": "Attempt talk/use/feed; alter target availability while approaching.",
+      "expected_vampiro": "No action through barrier; permissions/contact rechecked at effect; no acquisition or resource debit on rejection.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": []
+    },
+    {
+      "id": "A2-11",
+      "subsystem": "clock",
+      "preconditions": "Same authority input trace; different render rates or hidden window.",
+      "stimulus": "Measure at two render rates; pause through declared campaign operation.",
+      "expected_vampiro": "Gameplay results follow logical clock; FPS/visibility do not define random draws or resource transfers. Explicit pause halts campaign work consistently.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": []
+    },
+    {
+      "id": "A2-12",
+      "subsystem": "legacy_save",
+      "preconditions": "Untouched C v1 historical map/save and separate A/B saves.",
+      "stimulus": "Load historical save in historical runner; attempt loading it in new namespace.",
+      "expected_vampiro": "Historical runner retains semantics; new laboratory explicitly rejects incompatible version without silently rewriting history or changing current world.",
+      "reference_observed": null,
+      "vampiro_observed": null,
+      "evidence_required": [
+        "input trace",
+        "authority before/after",
+        "runtime/source revision",
+        "capture or video when visual"
+      ],
+      "expected_trace": [
+        {
+          "loader": "historical C",
+          "schema": "m2-walk-save-1",
+          "result": "original semantics retained"
+        },
+        {
+          "loader": "new laboratory",
+          "schema": "m2-walk-save-1",
+          "result": "INCOMPATIBLE_VERSION",
+          "current_world": "unchanged"
+        }
+      ]
+    }
+  ],
+  "trace_scope": "Numerical trace A2-03 is the proposed square-grid adaptation profile, not an observed Fallout trace; other geometry uses native equivalents."
+}

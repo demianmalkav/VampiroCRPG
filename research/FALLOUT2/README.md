@@ -1,3 +1,7 @@
+# Asimilación vigente — A1 definido, A2 pendiente
+
+Dirección autorizó una base productiva para campaña individual de Nueva York, con online futuro en un orden posterior. [Contrato espacial A1](../../docs/FALLOUT_ASSIMILATION_A1_SPATIAL_CONTRACT.md) · [adaptación de motor y reglas](../../docs/VAMPIRO_ENGINE_ADAPTATION_SINGLEPLAYER_01.md) · [auditoría ejecutada de tres defectos](A1_BASELINE_AUDIT_2026-10-09.json) · [12 casos aún no ejecutados](A2_ACCEPTANCE_CASES_01.json). Cierre de contrato no equivale a motor elegido, fallas corregidas o calidad aceptada. NEXT: laboratorio A2; el archivo original está identificado, pero el fetch del RAR devuelve 413.
+
 # Fallout 2 System Analysis
 
 Purpose: study Fallout 2 as a design and engineering corpus, and evaluate practical reuse alongside independent implementation. Preserve VampiroCRPG's own visual identity and rules. Engine adaptation is now an open candidate to compare, not a rejected or accepted architecture decision.
@@ -10,7 +14,7 @@ Read in this order:
 
 1. [Research survey](RESEARCH_SURVEY_2026-10-09.md) — source availability, variants, formats, tools, rights and limits.
 2. [Spatial/art/animation findings](SPATIAL_ART_ANIMATION_FINDINGS_01.md) — source-backed findings tied to the failed sample and direction's requirements.
-3. [Assimilation plan](ASSIMILATION_PLAN_01.md) — bounded A1–A5 gates; current NEXT is A1.
+3. [Assimilation plan](ASSIMILATION_PLAN_01.md) — bounded A1–A5 gates; A1 contract defined, current NEXT is A2.
 4. [Pinned inventory](SOURCE_INVENTORY_2026-10-09.json) — exact source revisions and file blob identities; retrieval is not whole-corpus assimilation.
 
 ## Current research documents

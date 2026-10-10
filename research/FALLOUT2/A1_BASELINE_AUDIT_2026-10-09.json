@@ -1,0 +1,86 @@
+{
+  "kind": "A1_BASELINE_AUDIT",
+  "project_base_commit": "8b34f2d2a778dd0922fe6623de9f9f248bd5c475",
+  "scope": "Executed existing Python C authority; renderer interpolation derived from source, no browser or upstream execution.",
+  "sources_sha256": {
+    "proof/walk/world.py": "dd34714c67ff64c94b4e5f6f8d3193380e7d0eb4e57513d454a7946ffa0fa3d5",
+    "proof/walk/map.json": "f7a944b8af50b8d3a79a89fd2ee909e49ea1e2d0ce7b47ea71ef982c01d44c63",
+    "proof/walk/scene.js": "fd70ae933513906a48504a7aa19afda6e9b6ce80dee34aedc5ab4a669a4c06cf",
+    "proof/m2/world.py": "63cfe6a2ab2bcfd8b1ab295f76fb72414c2359653272711f2a5433113bbc6e3b",
+    "tools/research/audit_spatial_a1.py": "486be2207ecbe6476adc16e00aaae8c5e7ca12311ba8f3c6e238205070a67f31"
+  },
+  "observations": [
+    {
+      "id": "A1-D01",
+      "status": "DEFECT_REPRODUCED",
+      "observed": {
+        "crate_cell_free": true,
+        "route": [
+          [
+            3,
+            9
+          ],
+          [
+            3,
+            8
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "expected_contract": "Registered solid crate blocks route and entry."
+    },
+    {
+      "id": "A1-D02",
+      "status": "DEFECT_REPRODUCED",
+      "observed": {
+        "duration_ms": 300,
+        "cardinal_arrived": [
+          3,
+          9
+        ],
+        "diagonal_arrived": [
+          4,
+          9
+        ],
+        "world_speed_ratio": 1.4142135623730951
+      },
+      "expected_contract": "World distance controls duration, not a constant per grid edge."
+    },
+    {
+      "id": "A1-D03",
+      "status": "DEFECT_REPRODUCED",
+      "observed": {
+        "progress_before_ms": 150,
+        "progress_after_ms": 0,
+        "interpolated_before": [
+          3.0,
+          9.5
+        ],
+        "interpolated_after": [
+          3.0,
+          10.0
+        ],
+        "discontinuity_world_units": 0.5
+      },
+      "expected_contract": "Redirect preserves current segment progress and position continuity."
+    }
+  ],
+  "baseline_matches_known_defects": true,
+  "acceptance": "NOT_ACCEPTED",
+  "runtime_modified": false
+}
